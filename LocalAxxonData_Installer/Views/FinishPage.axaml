@@ -1,0 +1,51 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:LocalAxxonData_Installer.Views"
+             Width="700" Height="500"
+             x:Class="LocalAxxonData_Installer.Views.FinishPage">
+    <Grid RowDefinitions="Auto,Auto,*,Auto,Auto">
+        <local:StageTitleBar Grid.Row="0" />
+        <local:ColorBandView Grid.Row="1"
+                             HeaderBrush="#2E7D32"
+                             HeaderText="Установка завершена"
+                             BodyText="Local AxxonData готов к работе"
+                             ShowLogo="True" />
+        <Border Grid.Row="2" Margin="{StaticResource ThemePaddingDownAndSides-Medium}">
+            <Grid>
+                <Border Classes="content-background" />
+                <Grid Margin="{StaticResource ThemePadding-Medium}" VerticalAlignment="Center">
+                    <StackPanel Spacing="{StaticResource ThemeSize-Regular}" HorizontalAlignment="Center">
+                        <TextBlock Text="✓" FontSize="48" Foreground="{StaticResource GreenColor}"
+                                   HorizontalAlignment="Center" />
+                        <TextBlock Text="Успешно установлено!"
+                                   Classes="ONE-H2-Bold" HorizontalAlignment="Center" />
+                        <TextBlock TextWrapping="Wrap" Classes="ONE-H3-Regular" HorizontalAlignment="Center"
+                                   Text="Local AxxonData установлен и готов к использованию." />
+                        <Border Classes="success-block" Padding="8" HorizontalAlignment="Center">
+                            <StackPanel Spacing="4">
+                                <TextBlock Text="http://localhost:8080"
+                                           Classes="ONE-H3-Bold" Foreground="{StaticResource GreenColor}" />
+                            </StackPanel>
+                        </Border>
+                        <TextBlock Text="Зарегистрируйте пользователя и подтвердите email."
+                                   Classes="ONE-Paragraph-Small" Foreground="{StaticResource GrayColor}"
+                                   HorizontalAlignment="Center" />
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </Border>
+        <StackPanel Grid.Row="3" Spacing="{StaticResource ThemeSize-Min}"
+                    Margin="{StaticResource ThemePaddingSides-Medium}">
+            <local:InfoBlockView HeaderText="Начальный пароль"
+                                 BodyText="При первом входе используйте логин admin и пароль, указанный в окне терминала." />
+        </StackPanel>
+        <Border Grid.Row="4" Margin="{StaticResource ThemePaddingSides-Medium}">
+            <Grid>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8">
+                    <Button Classes="Secondary Large" Content="Открыть в браузере" Click="OnOpenBrowserClick" />
+                    <Button Classes="Primary Large" Content="Закрыть" Click="OnFinishClick" />
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

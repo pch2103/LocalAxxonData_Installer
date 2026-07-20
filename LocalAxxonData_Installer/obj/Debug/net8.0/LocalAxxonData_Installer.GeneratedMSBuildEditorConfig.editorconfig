@@ -1,0 +1,95 @@
+is_global = true
+build_property.AvaloniaNameGeneratorIsEnabled = true
+build_property.AvaloniaNameGeneratorBehavior = InitializeComponent
+build_property.AvaloniaNameGeneratorDefaultFieldModifier = internal
+build_property.AvaloniaNameGeneratorFilterByPath = *
+build_property.AvaloniaNameGeneratorFilterByNamespace = *
+build_property.AvaloniaNameGeneratorViewFileNamingStrategy = NamespaceAndClassName
+build_property.AvaloniaNameGeneratorAttachDevTools = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = LocalAxxonData_Installer
+build_property.ProjectDir = F:\CODE\2026\LocalAxxonData_Installer\LocalAxxonData_Installer\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+
+[F:/CODE/2026/LocalAxxonData_Installer/LocalAxxonData_Installer/App.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[F:/CODE/2026/LocalAxxonData_Installer/LocalAxxonData_Installer/Resources/ModifiedResources.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[F:/CODE/2026/LocalAxxonData_Installer/LocalAxxonData_Installer/Resources/ModifiedResourcesColor.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[F:/CODE/2026/LocalAxxonData_Installer/LocalAxxonData_Installer/Styles/ControlsCustomStyles.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[F:/CODE/2026/LocalAxxonData_Installer/LocalAxxonData_Installer/Styles/CustomDarkTheme.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[F:/CODE/2026/LocalAxxonData_Installer/LocalAxxonData_Installer/Styles/WindowStyles.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[F:/CODE/2026/LocalAxxonData_Installer/LocalAxxonData_Installer/Views/AlreadyInstalledPage.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[F:/CODE/2026/LocalAxxonData_Installer/LocalAxxonData_Installer/Views/ColorBandView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[F:/CODE/2026/LocalAxxonData_Installer/LocalAxxonData_Installer/Views/ErrorBlockView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[F:/CODE/2026/LocalAxxonData_Installer/LocalAxxonData_Installer/Views/ErrorPage.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[F:/CODE/2026/LocalAxxonData_Installer/LocalAxxonData_Installer/Views/ExitConfirmPage.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[F:/CODE/2026/LocalAxxonData_Installer/LocalAxxonData_Installer/Views/FinishPage.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[F:/CODE/2026/LocalAxxonData_Installer/LocalAxxonData_Installer/Views/InfoBlockView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[F:/CODE/2026/LocalAxxonData_Installer/LocalAxxonData_Installer/Views/InstallDirPage.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[F:/CODE/2026/LocalAxxonData_Installer/LocalAxxonData_Installer/Views/LanguagePage.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[F:/CODE/2026/LocalAxxonData_Installer/LocalAxxonData_Installer/Views/MainWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[F:/CODE/2026/LocalAxxonData_Installer/LocalAxxonData_Installer/Views/ProgressPage.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[F:/CODE/2026/LocalAxxonData_Installer/LocalAxxonData_Installer/Views/RebootPage.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[F:/CODE/2026/LocalAxxonData_Installer/LocalAxxonData_Installer/Views/ResumeProgressPage.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[F:/CODE/2026/LocalAxxonData_Installer/LocalAxxonData_Installer/Views/SmtpPage.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[F:/CODE/2026/LocalAxxonData_Installer/LocalAxxonData_Installer/Views/StageTitleBar.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[F:/CODE/2026/LocalAxxonData_Installer/LocalAxxonData_Installer/Views/SummaryPage.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[F:/CODE/2026/LocalAxxonData_Installer/LocalAxxonData_Installer/Views/UninstallPage.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[F:/CODE/2026/LocalAxxonData_Installer/LocalAxxonData_Installer/Views/WarningBlockView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[F:/CODE/2026/LocalAxxonData_Installer/LocalAxxonData_Installer/Views/WelcomePage.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

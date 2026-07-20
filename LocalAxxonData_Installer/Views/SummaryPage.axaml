@@ -1,0 +1,58 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:LocalAxxonData_Installer.Views"
+             Width="700" Height="500"
+             x:Class="LocalAxxonData_Installer.Views.SummaryPage">
+    <Grid RowDefinitions="Auto,Auto,*,Auto,Auto">
+        <local:StageTitleBar Grid.Row="0" />
+        <local:ColorBandView Grid.Row="1"
+                             HeaderBrush="#1A73E8"
+                             HeaderText="Готово к установке"
+                             ShowLogo="True" />
+        <Border Grid.Row="2" Margin="{StaticResource ThemePaddingDownAndSides-Medium}">
+            <Grid>
+                <Border Classes="content-background" />
+                <ScrollViewer Margin="{StaticResource ThemePadding-Medium}">
+                    <StackPanel Spacing="{StaticResource ThemeSize-Regular}">
+                        <TextBlock Text="Проверьте параметры установки"
+                                   Classes="ONE-H2-Bold" />
+                        <Border Classes="info-block" Padding="8">
+                            <StackPanel Spacing="4">
+                                <TextBlock Text="Параметры установки"
+                                           Classes="ONE-Paragraph-Bold" />
+                                <TextBlock TextWrapping="Wrap" Classes="ONE-Paragraph-Regular"
+                                           Text="Директория: C:\Program Files\Local AxxonData" />
+                                <TextBlock TextWrapping="Wrap" Classes="ONE-Paragraph-Regular"
+                                           Text="SMTP: настроен" />
+                                <TextBlock TextWrapping="Wrap" Classes="ONE-Paragraph-Regular"
+                                           Text="Начальный пароль: будет запрошен после установки" />
+                            </StackPanel>
+                        </Border>
+                        <Border Classes="error-block" Padding="8">
+                            <StackPanel Spacing="4">
+                                <TextBlock Text="Внимание!"
+                                           Classes="ONE-Paragraph-Bold" Foreground="{StaticResource RedColor}" />
+                                <TextBlock TextWrapping="Wrap" Classes="ONE-Paragraph-Regular"
+                                           Text="Установка потребует перезагрузки компьютера. Сохраните все открытые документы." />
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                </ScrollViewer>
+            </Grid>
+        </Border>
+        <StackPanel Grid.Row="3" Spacing="{StaticResource ThemeSize-Min}"
+                    Margin="{StaticResource ThemePaddingSides-Medium}">
+            <local:InfoBlockView HeaderText="Готово к началу установки"
+                                 BodyText="Нажмите «Установить», чтобы начать. Первая фаза подготовит систему, после чего потребуется перезагрузка." />
+        </StackPanel>
+        <Border Grid.Row="4" Margin="{StaticResource ThemePaddingSides-Medium}">
+            <Grid>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8">
+                    <Button Classes="Secondary Large" Content="← Назад" Click="OnBackClick" />
+                    <Button Classes="Primary Large" Content="Установить" Click="OnInstallClick" />
+                    <Button Classes="Secondary Large" Content="Отмена" Click="OnCancelClick" />
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

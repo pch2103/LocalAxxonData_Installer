@@ -1,0 +1,34 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="LocalAxxonData_Installer.Views.StageTitleBar">
+  <Border Margin="16,0,16,8"
+          Height="{StaticResource ThemeSize-Large}">
+    <Grid ColumnDefinitions="Auto, *, Auto">
+      <Border Grid.Column="0" Background="Transparent" Margin="0 0 6 0"
+              VerticalAlignment="Center"
+              PointerPressed="TitleBar_PointerPressed">
+        <Path Data="{StaticResource InstallIcon}"
+              Width="{StaticResource ThemeSize-Double}"
+              Height="{StaticResource ThemeSize-Double}"
+              Stretch="Uniform"
+              Stroke="Transparent"
+              Fill="{StaticResource ForegroundColor}" />
+      </Border>
+      <Border Grid.Column="1" Background="Transparent" PointerPressed="TitleBar_PointerPressed">
+        <TextBlock Text="Local AxxonData — Мастер установки"
+                   VerticalAlignment="Center"
+                   Classes="ONE-H2-Medium" />
+      </Border>
+      <StackPanel Grid.Column="2" Orientation="Horizontal">
+        <Button Classes="Subtle IconOnlyLarge" Click="CloseButton_Click"
+                VerticalAlignment="Center">
+          <Path Data="{StaticResource CloseIcon}"
+                Width="{StaticResource ThemeSize-Double}"
+                Height="{StaticResource ThemeSize-Double}"
+                Stroke="Transparent"
+                Fill="{StaticResource ForegroundColor}" />
+        </Button>
+      </StackPanel>
+    </Grid>
+  </Border>
+</UserControl>

@@ -1,0 +1,577 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:mxe="clr-namespace:Eremex.AvaloniaUI.Controls.Editors;assembly=Eremex.Avalonia.Controls"
+                    xmlns:mxev="clr-namespace:Eremex.AvaloniaUI.Controls.Editors.Visuals;assembly=Eremex.Avalonia.Controls"
+                    xmlns:mxc="clr-namespace:Eremex.AvaloniaUI.Controls.Common;assembly=Eremex.Avalonia.Controls"
+                    xmlns:sys="using:System"
+                    xmlns:localization="clr-namespace:Eremex.AvaloniaUI.Controls.Localization;assembly=Eremex.Avalonia.Controls"
+                    xmlns:utils="clr-namespace:Eremex.AvaloniaUI.Controls.Utils;assembly=Eremex.Avalonia.Controls">
+
+    <ResourceDictionary.ThemeDictionaries>
+
+        <ResourceDictionary x:Key="Default">
+            <CornerRadius x:Key="PopupCornerRadius">2</CornerRadius>
+            <CornerRadius x:Key="EditorCornerRadius">2</CornerRadius>
+            <CornerRadius x:Key="PopupHeaderCornerRadius">2</CornerRadius>
+            <Thickness x:Key="EditorBorderThickness">1</Thickness>
+            <CornerRadius x:Key="ColorPickerCornerRadius">4</CornerRadius>
+
+            <SolidColorBrush x:Key="TransparentBrush" Color="Transparent" />
+            <SolidColorBrush x:Key="Outline/Neutral/Transparent/Strong"
+                             Color="{StaticResource ThemeBackgroundColor-600}" />
+            <SolidColorBrush x:Key="Outline/Neutral/Transparent/Medium"
+                             Color="{StaticResource ThemeBackgroundColor-500}" />
+            <SolidColorBrush x:Key="Outline/Neutral/Transparent/Light"
+                             Color="{StaticResource ThemeBackgroundColor-400}" />
+            <SolidColorBrush x:Key="Icons/Outline/Gray" Color="{StaticResource ThemeForegroundColor}" />
+            <SolidColorBrush x:Key="Icons/Outline/Disabled" Color="{StaticResource ThemeBackgroundColor-600}" />
+            <SolidColorBrush x:Key="Fill/Accent/Highlighting/Item/Disabled"
+                             Color="{StaticResource ThemeBackgroundColor-900}" />
+            <SolidColorBrush x:Key="Text/Neutral/Primary" Color="{StaticResource ThemeForegroundColor}" />
+            <SolidColorBrush x:Key="Text/Neutral/Tertiary" Color="{StaticResource ThemeForegroundColor}" />
+            <SolidColorBrush x:Key="Fill/Accent/Highlighting/Text" Color="{StaticResource ThemePrimaryColorShade20}" />
+            <SolidColorBrush x:Key="Fill/Neutral/Secondary/Hover" Color="{StaticResource ThemeBackgroundColor-500}" />
+            <SolidColorBrush x:Key="Fill/Neutral/Secondary/Enabled" Color="{StaticResource ThemeBackgroundColor-700}" />
+            <SolidColorBrush x:Key="Fill/Neutral/Secondary/Enabled/Dark"
+                             Color="{StaticResource ThemeBackgroundColor-800}" />
+            <SolidColorBrush x:Key="Outline/Accent/Focus" Color="{StaticResource ThemePrimaryColorTint20}" />
+            <SolidColorBrush x:Key="Fill/Neutral/Primary/Enabled" Color="{StaticResource ThemeBackgroundColor-900}" />
+            <SolidColorBrush x:Key="Fill/Neutral/Primary/Hover" Color="{StaticResource ThemePrimaryColorTint20}" />
+            <SolidColorBrush x:Key="Fill/Accent/Highlighting/Item/Enabled"
+                             Color="{StaticResource ThemePrimaryColorTint20}" />
+            <SolidColorBrush x:Key="Fill/Accent/Highlighting/Item/Hover" Color="{StaticResource ThemePrimaryColor}" />
+            <SolidColorBrush x:Key="Fill/Accent/Highlighting/Item/Pressed"
+                             Color="{StaticResource ThemePrimaryColorShade10}" />
+            <SolidColorBrush x:Key="Text/Neutral/Disabled" Color="{StaticResource ThemeBackgroundColor-600}" />
+            <SolidColorBrush x:Key="Text/Neutral/Secondary" Color="{StaticResource ThemeForegroundColor}" />
+            <SolidColorBrush x:Key="Text/Accent/Primary" Color="{StaticResource ThemeWhite}" />
+            <SolidColorBrush x:Key="Text/On Accent/Primary" Color="{StaticResource ThemeWhite}" />
+            <SolidColorBrush x:Key="Icons/Outline/Selected" Color="{StaticResource ThemeWhite}" />
+            <SolidColorBrush x:Key="Fill/Neutral/Secondary/Pressed" Color="{StaticResource ThemeBackgroundColor-900}" />
+            <SolidColorBrush x:Key="Fill/Neutral/Secondary/Disabled" Color="{StaticResource ThemeBackgroundColor-900}" />
+            <SolidColorBrush x:Key="Fill/Accent/Primary/Enabled" Color="{StaticResource ThemePrimaryColor}" />
+            <SolidColorBrush x:Key="Fill/Accent/Primary/Hover" Color="{StaticResource ThemePrimaryColorTint20}" />
+            <SolidColorBrush x:Key="Fill/Accent/Primary/Pressed" Color="{StaticResource ThemePrimaryColorShade20}" />
+            <SolidColorBrush x:Key="Fill/Accent/Primary/Disabled" Color="{StaticResource ThemeBackgroundColor-700}" />
+            <SolidColorBrush x:Key="Fill/Neutral/Primary/Pressed" Color="{StaticResource ThemePrimaryColorShade20}" />
+            <SolidColorBrush x:Key="Fill/Neutral/Primary/Disabled" Color="{StaticResource ThemeBackgroundColor-900}" />
+            <SolidColorBrush x:Key="Text/Accent/Error" Color="{StaticResource ThemeRed}" />
+            <SolidColorBrush x:Key="Outline/Accent/Error" Color="{StaticResource ThemeRed}" />
+
+
+        </ResourceDictionary>
+
+        <ResourceDictionary x:Key="Dark">
+            <CornerRadius x:Key="PopupCornerRadius">2</CornerRadius>
+            <CornerRadius x:Key="EditorCornerRadius">2</CornerRadius>
+        </ResourceDictionary>
+
+        <ResourceDictionary x:Key="Light">
+            <CornerRadius x:Key="PopupCornerRadius">2</CornerRadius>
+            <CornerRadius x:Key="EditorCornerRadius">2</CornerRadius>
+        </ResourceDictionary>
+
+    </ResourceDictionary.ThemeDictionaries>
+
+    <!-- Кастомизация календаря - добавление возможности ввода времени -->
+    <ControlTheme x:Key="{x:Type mxe:DateEditor}" TargetType="mxe:DateEditor"
+                  BasedOn="{StaticResource {x:Type mxe:PopupEditor}}">
+        <Style Selector="^:activeMode">
+            <Style Selector="^ /template/ Border#PopupBorder">
+                <Setter Property="CornerRadius" Value="4" />
+                <Setter Property="BorderBrush" Value="{DynamicResource ThemeBackgroundColor-600}" />
+            </Style>
+
+            <Setter Property="PopupFooterTemplate">
+                <ControlTemplate x:CompileBindings="False">
+                    <Border BorderThickness="0,1,0,0"
+                            BorderBrush="{DynamicResource ThemeBackgroundColor-700}"
+                            Padding="0, 8, 0 ,0">
+                        <StackPanel Spacing="8">
+                            <Grid ColumnDefinitions="Auto * Auto * Auto *"
+                                  HorizontalAlignment="Center">
+                                <Path Data="{StaticResource TimeIcon}"
+                                      Margin="0,0,8,0"
+                                      Width="{StaticResource ThemeSize-Medium}"
+                                      Height="{StaticResource ThemeSize-Medium}"
+                                      Stretch="Uniform"
+                                      Stroke="Transparent"
+                                      Fill="{StaticResource ForegroundColor}" />
+                                <mxe:SpinEditor Grid.Column="1" x:Name="SpinHours"
+                                                Value="{Binding $parent[mxe:DateEditor].Tag.Hours}"
+                                                Classes="Medium"
+                                                Mask="00"
+                                                Minimum="0"
+                                                Maximum="23"
+                                                Increment="1" />
+                                <TextBlock Grid.Column="2" Text=":" VerticalAlignment="Center" FontWeight="Bold"
+                                           Margin="6,0" />
+                                <mxe:SpinEditor Grid.Column="3" x:Name="SpinMinutes"
+                                                Value="{Binding $parent[mxe:DateEditor].Tag.Minutes}"
+                                                Classes="Medium"
+                                                Mask="00"
+                                                Minimum="0"
+                                                Maximum="59"
+                                                Increment="1" />
+                                <TextBlock Grid.Column="4" Text=":" VerticalAlignment="Center" FontWeight="Bold"
+                                           Margin="6,0" />
+                                <mxe:SpinEditor Grid.Column="5" x:Name="SpinSeconds"
+                                                Value="{Binding $parent[mxe:DateEditor].Tag.Seconds}"
+                                                Classes="Medium"
+                                                Mask="00"
+                                                Minimum="0"
+                                                Maximum="59"
+                                                Increment="1" />
+                            </Grid>
+                            <Grid ColumnDefinitions="* *" Margin="8">
+                                <Button Content="Apply"
+                                        Classes="Primary Medium"
+                                        HorizontalAlignment="Stretch"
+                                        Margin="0,0,4,0"
+                                        Command="{Binding $parent[mxe:DateEditor].ClosePopupCommand}">
+                                    <Button.CommandParameter>
+                                        <mxe:PopupCloseMode>Apply</mxe:PopupCloseMode>
+                                    </Button.CommandParameter>
+                                </Button>
+                                <Button Grid.Column="1"
+                                        Content="Cancel"
+                                        Classes="Secondary Medium"
+                                        HorizontalAlignment="Stretch"
+                                        Command="{Binding $parent[mxe:DateEditor].ClosePopupCommand}">
+                                    <Button.CommandParameter>
+                                        <mxe:PopupCloseMode>Cancel</mxe:PopupCloseMode>
+                                    </Button.CommandParameter>
+                                </Button>
+                            </Grid>
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Setter>
+            <Setter Property="PopupContent">
+                <Setter.Value>
+                    <Template>
+                        <mxe:CalendarControl BorderThickness="0"
+                                             HorizontalAlignment="Center"
+                                             ReadOnly="{Binding $parent[mxe:DateEditor].ReadOnly}"
+                                             FirstDayOfWeek="{Binding $parent[mxe:DateEditor].FirstDayOfWeek}"
+                                             FontSize="{StaticResource ThemeSize-Subs}"
+                                             FontFamily="{StaticResource DefaultFont}"
+                                             FontWeight="SemiBold" />
+                    </Template>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </ControlTheme>
+
+    <!-- Кастомизация кнопки в Editor -->
+    <ControlTheme x:Key="EditorIconButtonBaseTheme" TargetType="Button">
+        <Setter Property="CornerRadius" Value="{StaticResource DefaultCornerRadius}" />
+        <Setter Property="FocusAdorner" Value="{x:Null}" />
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="Padding" Value="{DynamicResource EditorIconButtonPadding}" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="VerticalAlignment" Value="Stretch" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="MinWidth" Value="{StaticResource ButtonMinWidth}" />
+        <Setter Property="Foreground" Value="{DynamicResource IconButtonForeground}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ButtonBorderBrush}" />
+        <Setter Property="Background" Value="{DynamicResource IconButtonBackground}" />
+
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Panel>
+                    <Border x:Name="PART_BackgroundBorder"
+                            Background="{TemplateBinding Background}"
+                            CornerRadius="{StaticResource DefaultCornerRadius}"
+                            Padding="{TemplateBinding Padding}">
+                        <ContentPresenter x:Name="PART_ContentPresenter"
+                                          Content="{TemplateBinding Content}"
+                                          ContentTemplate="{TemplateBinding ContentTemplate}"
+                                          CornerRadius="{StaticResource DefaultCornerRadius}"
+                                          RecognizesAccessKey="True"
+                                          HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+                    </Border>
+                    <Border Name="PART_ButtonBorder"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="{StaticResource DefaultCornerRadius}"
+                            Background="{x:Null}" />
+                </Panel>
+            </ControlTemplate>
+        </Setter>
+
+        <Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Foreground" Value="{DynamicResource IconButtonForeground}" />
+        </Style>
+
+        <!-- PointerOver, KeyboardFocused State -->
+        <Style Selector="^:pointerover, ^:focus-visible">
+            <Setter Property="Foreground" Value="{DynamicResource IconButtonForegroundPointerOver}" />
+
+            <Style Selector="^ /template/ Border#PART_BackgroundBorder">
+                <Setter Property="Background" Value="{DynamicResource IconButtonBackgroundPointerOver}" />
+            </Style>
+            <Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+                <Setter Property="Foreground" Value="{DynamicResource IconButtonForegroundPointerOver}" />
+            </Style>
+        </Style>
+
+        <!-- Pressed State -->
+        <Style Selector="^:pressed">
+            <Setter Property="Foreground" Value="{DynamicResource IconButtonForegroundPressed}" />
+
+            <Style Selector="^ /template/ Border#PART_BackgroundBorder">
+                <Setter Property="Background" Value="{DynamicResource IconButtonBackgroundPressed}" />
+            </Style>
+            <Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+                <Setter Property="Foreground" Value="{DynamicResource IconButtonForegroundPressed}" />
+                <Setter Property="Opacity" Value="0.8" />
+            </Style>
+        </Style>
+
+        <!-- Disabled State -->
+        <Style Selector="^:disabled">
+            <Setter Property="Foreground" Value="{DynamicResource IconButtonForegroundDisabled}" />
+
+            <Style Selector="^ /template/ Border#PART_BackgroundBorder">
+                <Setter Property="Background" Value="{DynamicResource IconButtonBackgroundDisabled}" />
+            </Style>
+            <Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+                <Setter Property="Background" Value="{DynamicResource IconButtonBackgroundDisabled}" />
+                <Setter Property="Foreground" Value="{DynamicResource IconButtonForegroundDisabled}" />
+            </Style>
+        </Style>
+
+        <!--Secondary style-->
+        <Style Selector="^.secondary">
+            <Style Selector="^ /template/ Border#PART_ButtonBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource IconButtonBorderBrush}" />
+            </Style>
+
+            <!-- PointerOver, KeyboardFocused State -->
+            <Style Selector="^:pointerover /template/ Border#PART_ButtonBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource IconButtonSecondaryBorderBrushPointerOver}" />
+                <Setter Property="BorderThickness" Value="{StaticResource EditorBorderThickness}" />
+            </Style>
+            <Style
+                Selector="^:pointerover /template/ Border#PART_BackgroundBorder,
+					 ^:focus-visible /template/ Border#PART_BackgroundBorder">
+                <Setter Property="Background" Value="{DynamicResource IconButtonSecondaryBackgroundPointerOver}" />
+            </Style>
+            <Style Selector="^:focus-visible /template/ Border#PART_ButtonBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource TransparentBrush}" />
+                <Setter Property="BorderThickness" Value="0" />
+            </Style>
+
+            <!-- Pressed State -->
+            <Style Selector="^:pressed /template/ Border#PART_ButtonBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource IconButtonSecondaryBorderBrushPressed}" />
+                <Setter Property="BorderThickness" Value="{StaticResource EditorBorderThickness}" />
+            </Style>
+            <Style Selector="^:pressed /template/ Border#PART_BackgroundBorder">
+                <Setter Property="Background" Value="{DynamicResource IconButtonSecondaryBackgroundPressed}" />
+            </Style>
+        </Style>
+    </ControlTheme>
+
+    <ControlTheme x:Key="{x:Type mxev:EditorIconButton}" TargetType="mxev:EditorIconButton"
+                  BasedOn="{StaticResource EditorIconButtonBaseTheme}" />
+
+    <ControlTheme x:Key="{x:Type mxev:EditorIconToggleButton}" TargetType="mxev:EditorIconToggleButton"
+                  BasedOn="{StaticResource EditorIconButtonBaseTheme}">
+        <Style Selector="^:checked">
+            <Setter Property="Foreground" Value="{DynamicResource IconButtonCheckedForeground}" />
+
+            <Style Selector="^ /template/ Border#PART_BackgroundBorder">
+                <Setter Property="Background" Value="{DynamicResource IconButtonCheckedBackground}" />
+            </Style>
+            <Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+                <Setter Property="Background" Value="{DynamicResource TransparentBrush}" />
+                <Setter Property="Foreground" Value="{DynamicResource IconButtonCheckedForeground}" />
+            </Style>
+
+            <!-- CheckedPointerOver, KeyboardFocused State -->
+            <Style Selector="^:pointerover, ^:focus-visible">
+                <Setter Property="Foreground" Value="{DynamicResource IconButtonCheckedForegroundPointerOver}" />
+
+                <Style Selector="^ /template/ Border#PART_BackgroundBorder">
+                    <Setter Property="Background" Value="{DynamicResource IconButtonCheckedBackgroundPointerOver}" />
+                </Style>
+                <Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+                    <Setter Property="Background" Value="{DynamicResource TransparentBrush}" />
+                    <Setter Property="Foreground" Value="{DynamicResource IconButtonCheckedForegroundPointerOver}" />
+                </Style>
+            </Style>
+
+            <!-- CheckedPressed State -->
+            <Style Selector="^:pressed">
+                <Setter Property="Foreground" Value="{DynamicResource IconButtonCheckedForegroundPressed}" />
+
+                <Style Selector="^ /template/ Border#PART_BackgroundBorder">
+                    <Setter Property="Background" Value="{DynamicResource IconButtonCheckedBackgroundPressed}" />
+                </Style>
+                <Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+                    <Setter Property="Background" Value="{DynamicResource TransparentBrush}" />
+                    <Setter Property="Foreground" Value="{DynamicResource IconButtonCheckedForegroundPressed}" />
+                </Style>
+            </Style>
+
+            <!-- CheckedDisabled State -->
+            <Style Selector="^:disabled">
+                <Setter Property="Foreground" Value="{DynamicResource IconButtonCheckedForegroundDisabled}" />
+
+                <Style Selector="^/template/ Border#PART_BackgroundBorder">
+                    <Setter Property="Background" Value="{DynamicResource IconButtonCheckedBackgroundDisabled}" />
+                </Style>
+                <Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+                    <Setter Property="Background" Value="{DynamicResource TransparentBrush}" />
+                    <Setter Property="Foreground" Value="{DynamicResource IconButtonCheckedForegroundDisabled}" />
+                </Style>
+            </Style>
+        </Style>
+
+        <Style Selector="^.secondary">
+            <Style Selector="^:checked">
+                <Style
+                    Selector="^:pointerover /template/ Border#PART_ButtonBorder,
+                           ^:focus-visible /template/ Border#PART_ButtonBorder">
+                    <Setter Property="BorderBrush" Value="{DynamicResource TransparentBrush}" />
+                    <Setter Property="BorderThickness" Value="0" />
+                </Style>
+
+                <!-- CheckedDisabled State -->
+                <Style Selector="^:disabled /template/ Border#PART_BackgroundBorder">
+                    <Setter Property="Background"
+                            Value="{DynamicResource IconButtonSecondaryCheckedBackgroundDisabled}" />
+                </Style>
+                <Style Selector="^:disabled /template/ Border#PART_ButtonBorder">
+                    <Setter Property="BorderBrush"
+                            Value="{DynamicResource IconButtonSecondaryCheckedBorderBrushDisabled}" />
+                    <Setter Property="BorderThickness" Value="{StaticResource EditorBorderThickness}" />
+                </Style>
+            </Style>
+        </Style>
+    </ControlTheme>
+
+    <!-- Color Control -->
+    <sys:Double x:Key="PopupColorEditorPopupWidth">316</sys:Double>
+    <sys:Double x:Key="ColorEditorWidth">314</sys:Double>
+    <sys:Double x:Key="ColorEditorSplitterHeight">1</sys:Double>
+    <sys:Double x:Key="ColorButtonDefaultSize">21</sys:Double>
+    <Thickness x:Key="ColorButtonMargin">2</Thickness>
+
+    <sys:Double x:Key="GradientColorsPanelFirstRowInterval">6</sys:Double>
+
+    <Thickness x:Key="ColorEditorHeaderMargin">8,0,0,0</Thickness>
+    <Thickness x:Key="ColorEditorHeaderSplitterMargin">2,0,2,0</Thickness>
+    <Thickness x:Key="ColorEditorDescriptionMargin">8,0,18,8</Thickness>
+    <Thickness x:Key="ColorEditorSelectorsMargin">6,0,0,8</Thickness>
+    <Thickness x:Key="ColorEditorPlatformColorSelectorMargin">0,2,0,0</Thickness>
+    <Thickness x:Key="ColorEditorSplitterMargin">2,0,2,8</Thickness>
+    <Thickness x:Key="ColorEditorThemeSelectorMargin">0,8,0,0</Thickness>
+
+    <CornerRadius x:Key="ColorPickerHeaderCornerRadius">6,6,0,0</CornerRadius>
+    <CornerRadius x:Key="ColorPickerFooterCornerRadius">0,0,6,6</CornerRadius>
+    <Thickness x:Key="ColorPickerFooterButtonsMargin">8</Thickness>
+
+    <CornerRadius x:Key="ColorToggleButtonIndicatorRadius">2</CornerRadius>
+
+    <mxev:ColorLocalizationConverter x:Key="ColorLocalizationConverter" />
+
+    <ControlTheme x:Key="ColorValuePresenterTheme" TargetType="ContentControl">
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border Name="PART_ColorValuePresenter"
+                        Background="{TemplateBinding Background}"
+                        ClipToBounds="True"
+                        BorderBrush="{DynamicResource PopupColorEditorColorIndicatorBorderBrush}"
+                        BorderThickness="{StaticResource EditorBorderThickness}"
+                        CornerRadius="{StaticResource EditorCornerRadius}"
+                        Height="{StaticResource ColorIndicatorDefaultSize}"
+                        Width="{StaticResource ColorIndicatorDefaultSize}">
+                    <Grid ColumnDefinitions="*, *"
+                          IsVisible="{Binding $parent[Border].Background, Converter={mxev:TransparentColorToBoolConverter}}">
+                        <Border
+                            Background="{Binding $parent[Border].Background, Converter={mxev:BrushToNonTransparentBrushConverter}}"
+                            CornerRadius="{StaticResource TransparentIndicatorColorCornerRadius}" />
+                        <Border Grid.Column="1" Background="{DynamicResource ColorToggleButtonTransparencyBrush}"
+                                CornerRadius="{StaticResource TransparentIndicatorCellularElementCornerRadius}" />
+                    </Grid>
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
+    <!--More Colors Button-->
+    <ControlTheme x:Key="ColorEditorMoreColorsButtonTheme" TargetType="Button"
+                  BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Background" Value="{DynamicResource ColorEditorMoreColorsButtonBackground}" />
+        <Setter Property="Foreground" Value="{DynamicResource ColorEditorMoreColorsButtonForeground}" />
+        <Setter Property="Width" Value="{StaticResource ColorButtonDefaultSize}" />
+        <Setter Property="Height" Value="{StaticResource ColorButtonDefaultSize}" />
+        <Setter Property="Margin" Value="{StaticResource ColorButtonMargin}" />
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="Padding" Value="0" />
+
+        <Style
+            Selector="^ /template/ Border#PART_ButtonBorder,
+               ^:pointerover /template/ Border#PART_ButtonBorder,
+               ^:focus-visible /template/ Border#PART_ButtonBorder">
+            <Setter Property="BorderBrush" Value="{DynamicResource ColorEditorMoreColorsButtonBorderBrush}" />
+            <Setter Property="BorderThickness" Value="{StaticResource EditorBorderThickness}" />
+            <Setter Property="CornerRadius" Value="{StaticResource EditorCornerRadius}" />
+        </Style>
+
+        <Style Selector="^:pointerover /template/ Border#PART_BackgroundBorder">
+            <Setter Property="Background" Value="{DynamicResource ColorEditorMoreColorsButtonBackgroundPointerOver}" />
+        </Style>
+        <Style Selector="^:pressed /template/ Border#PART_BackgroundBorder">
+            <Setter Property="Background" Value="{DynamicResource ColorEditorMoreColorsButtonBackgroundPressed}" />
+        </Style>
+        <Style Selector="^:pressed /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Opacity" Value="0.8" />
+        </Style>
+    </ControlTheme>
+
+    <!--Color Toggle Button-->
+    <ControlTheme x:Key="{x:Type mxev:ColorToggleButton}" TargetType="mxev:ColorToggleButton">
+        <Setter Property="CornerRadius" Value="{StaticResource EditorCornerRadius}" />
+        <Setter Property="BorderThickness" Value="{StaticResource EditorBorderThickness}" />
+        <Setter Property="Width" Value="{StaticResource ColorButtonDefaultSize}" />
+        <Setter Property="Height" Value="{StaticResource ColorButtonDefaultSize}" />
+        <Setter Property="Margin" Value="{StaticResource ColorButtonMargin}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorEditorToggleButtonBorderBrush}" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border x:Name="PART_ExternalBorder"
+                        CornerRadius="{TemplateBinding CornerRadius}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        Background="{TemplateBinding Background}">
+                    <Panel>
+                        <Border x:Name="PART_InternalIndicator"
+                                CornerRadius="1">
+                            <Border ClipToBounds="True"
+                                    CornerRadius="1">
+                                <Grid ColumnDefinitions="*, *" IsVisible="{TemplateBinding IsTransparentBackground}">
+                                    <Border Background="{TemplateBinding NonTransparentBackground}" />
+                                    <Border Grid.Column="1"
+                                            Background="{DynamicResource ColorToggleButtonTransparencyBrush}" />
+                                </Grid>
+                            </Border>
+                        </Border>
+                        <Path x:Name="PART_CheckGlyph"
+                              Stretch="Uniform"
+                              IsVisible="False"
+                              Fill="{DynamicResource ColorToggleButtonCheckedForeground}"
+                              Data="{StaticResource ApplyIcon}"
+                              Width="11"
+                              Height="10"
+                              VerticalAlignment="Center"
+                              HorizontalAlignment="Center" />
+                    </Panel>
+                </Border>
+            </ControlTemplate>
+        </Setter>
+
+        <Style Selector="^:pointerover, ^:checked">
+            <Style Selector="^ /template/ Border#PART_ExternalBorder">
+                <Setter Property="Background" Value="Transparent" />
+                <Setter Property="BorderBrush" Value="{DynamicResource ThemePrimaryColorTint20}" />
+            </Style>
+            <Style Selector="^ /template/ Border#PART_InternalIndicator">
+                <Setter Property="Margin"
+                        Value="{Binding BorderThickness, RelativeSource={RelativeSource TemplatedParent}}"
+                        x:CompileBindings='False' />
+                <Setter Property="Background" Value="{DynamicResource ThemePrimaryColorTint20}" />
+            </Style>
+        </Style>
+
+        <Style Selector="^:pointerover /template/ Border#PART_InternalIndicator">
+            <Setter Property="BorderBrush" Value="{DynamicResource ThemePrimaryColorTint20}" />
+            <Setter Property="BorderThickness" Value="2" />
+        </Style>
+
+        <Style Selector="^:checked /template/ Path#PART_CheckGlyph">
+            <Setter Property="IsVisible" Value="True" />
+        </Style>
+    </ControlTheme>
+
+    <ControlTheme x:Key="{x:Type mxe:PopupColorEditor}" TargetType="mxe:PopupColorEditor"
+                  BasedOn="{StaticResource {x:Type mxe:PopupEditor}}">
+        <Setter Property="PopupWidth" Value="{StaticResource PopupColorEditorPopupWidth}" />
+        <Setter Property="PopupHorizontalOffset" Value="{DynamicResource PopupHorizontalOffset}" />
+        <Setter Property="PopupBottomOffset" Value="{DynamicResource PopupBottomOffset}" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <DockPanel x:Name="PART_InactiveContentContainer">
+                    <mxev:MxTextBlock x:Name="PART_RealEditorPresenter"
+                                      TextBlock.TextTrimming="CharacterEllipsis"
+                                      mxc:TextBlockHelper.ShowTooltipWhenTrimming="True">
+                        <mxev:MxTextBlock.CustomContent>
+                            <ContentControl Name="PART_ColorValuePresenter"
+                                            Theme="{StaticResource ColorValuePresenterTheme}" />
+                        </mxev:MxTextBlock.CustomContent>
+                    </mxev:MxTextBlock>
+                </DockPanel>
+            </ControlTemplate>
+        </Setter>
+
+        <Style Selector="^:activeMode">
+            <Setter Property="PopupContent">
+                <Setter.Value>
+                    <Template>
+                        <mxe:ColorEditor BorderThickness="0" HorizontalAlignment="Center"
+                                         ReadOnly="{Binding $parent[mxe:PopupColorEditor].ReadOnly}"
+                                         ThemePalette="{Binding $parent[mxe:PopupColorEditor].ThemePalette}"
+                                         ShowConfirmationButtons="{Binding $parent[mxe:PopupColorEditor].ActualPopupFooterButtons, Converter={mxev:PopupFooterButtonVisibleConverter}, ConverterParameter=OkCancel}"
+                                         ColorsShowMode="{Binding $parent[mxe:PopupColorEditor].ColorsShowMode}"
+                                         ShowAlphaChannel="{Binding $parent[mxe:PopupColorEditor].ShowAlphaChannel}"
+                                         FontSize="{StaticResource ThemeSize-Subs}"
+                                         FontFamily="{StaticResource DefaultFont}"
+                                         FontWeight="SemiBold"
+                                         CornerRadius="4" />
+                    </Template>
+                </Setter.Value>
+            </Setter>
+
+            <Style Selector="^:activeMode">
+                <Setter Property="PopupFooterTemplate" Value="{x:Null}" />
+                <Style Selector="^ /template/ Border#PopupBorder">
+                    <Setter Property="CornerRadius" Value="4" />
+                    <Setter Property="BorderBrush" Value="{DynamicResource ThemeBackgroundColor-600}" />
+                </Style>
+
+                <Style Selector="^ /template/ TextBox#PART_RealEditor">
+                    <Setter Property="Theme" Value="{StaticResource PopupColorEditorTextBoxTheme}" />
+                </Style>
+
+                <Style Selector="^:pointerover">
+                    <Setter Property="Background" Value="{DynamicResource PopupColorEditorBackgroundPointerOver}" />
+                    <Style Selector="^.secondary">
+                        <Setter Property="BorderBrush"
+                                Value="{DynamicResource PopupColorEditorSecondaryBorderBrushPointerOver}" />
+                        <Setter Property="Background"
+                                Value="{DynamicResource PopupColorEditorSecondaryBackgroundPointerOver}" />
+                    </Style>
+                </Style>
+                <Style Selector="^:focus-visible">
+                    <Setter Property="BorderBrush" Value="{DynamicResource TransparentBrush}" />
+                    <Setter Property="Background" Value="{DynamicResource PopupColorEditorBackgroundPointerOver}" />
+                    <Style Selector="^.secondary">
+                        <Setter Property="Background"
+                                Value="{DynamicResource PopupColorEditorSecondaryBackgroundPointerOver}" />
+                        <Setter Property="BorderBrush" Value="{DynamicResource TransparentBrush}" />
+                    </Style>
+                </Style>
+            </Style>
+
+            <Style Selector="^[ShowText=False]">
+                <Setter Property="ToolTip.Tip" Value="{Binding $self.DisplayText}" />
+            </Style>
+        </Style>
+    </ControlTheme>
+
+</ResourceDictionary>

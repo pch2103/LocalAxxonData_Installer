@@ -1,0 +1,31 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:LocalAxxonData_Installer.Views"
+             Width="700" Height="500"
+             x:Class="LocalAxxonData_Installer.Views.ResumeProgressPage">
+    <Grid RowDefinitions="Auto,Auto,*,Auto">
+        <local:StageTitleBar Grid.Row="0" />
+        <local:ColorBandView Grid.Row="1"
+                             HeaderBrush="#1A73E8"
+                             HeaderText="Установка: Фаза 2"
+                             BodyText="Продолжение установки после перезагрузки…"
+                             ShowLogo="True" />
+        <Border Grid.Row="2" Margin="{StaticResource ThemePaddingDownAndSides-Medium}">
+            <Grid>
+                <Border Classes="content-background" />
+                <Grid Margin="{StaticResource ThemePadding-Medium}" VerticalAlignment="Center">
+                    <StackPanel Spacing="{StaticResource ThemeSize-Regular}" HorizontalAlignment="Center" Width="320">
+                        <TextBlock Text="Загрузка Docker-образов может занять несколько минут."
+                                   Classes="ONE-H3-Regular"
+                                   HorizontalAlignment="Center" />
+                        <ProgressBar x:Name="InstallResumeBar" Minimum="0" Maximum="100" Height="24"
+                                     Foreground="{StaticResource PrimaryColor}" />
+                        <TextBlock x:Name="PercentText" Text="0%"
+                                   Classes="ONE-Paragraph-Small" Foreground="{StaticResource GrayColor}"
+                                   HorizontalAlignment="Center" />
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

@@ -1,0 +1,43 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:LocalAxxonData_Installer.Views"
+             Width="700" Height="500"
+             x:Class="LocalAxxonData_Installer.Views.UninstallPage">
+    <Grid RowDefinitions="Auto,Auto,*,Auto">
+        <local:StageTitleBar Grid.Row="0" />
+        <local:ColorBandView Grid.Row="1"
+                             HeaderBrush="#616161"
+                             HeaderText="Удаление Local AxxonData"
+                             ShowLogo="True" />
+        <Border Grid.Row="2" Margin="{StaticResource ThemePaddingDownAndSides-Medium}">
+            <Grid>
+                <Border Classes="content-background" />
+                <Grid Margin="{StaticResource ThemePadding-Medium}" VerticalAlignment="Center">
+                    <StackPanel Spacing="{StaticResource ThemeSize-Regular}">
+                        <TextBlock Text="Удаление программы"
+                                   Classes="ONE-H2-Bold" />
+                        <TextBlock TextWrapping="Wrap" Classes="ONE-H3-Regular"
+                                   Text="Вы действительно хотите удалить Local AxxonData и все связанные компоненты? Это действие удалит все данные, включая конфигурации и базы данных." />
+                        <Border Classes="error-block" Padding="8">
+                            <StackPanel Spacing="4">
+                                <TextBlock Text="Внимание!"
+                                           Classes="ONE-Paragraph-Bold" Foreground="{StaticResource RedColor}" />
+                                <TextBlock TextWrapping="Wrap" Classes="ONE-H3-Regular"
+                                            Text="Это действие необратимо. Все данные будут безвозвратно удалены." />
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </Border>
+        <Border Grid.Row="3" Margin="{StaticResource ThemePaddingSides-Medium}">
+            <Grid>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8">
+                    <Button Classes="Secondary Large" Content="← Назад" Click="OnBackClick" />
+                    <Button Classes="Primary Large" Content="Удалить" Click="OnUninstallClick" />
+                    <Button Classes="Secondary Large" Content="Отмена" Click="OnCancelClick" />
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

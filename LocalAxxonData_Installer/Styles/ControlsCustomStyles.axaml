@@ -1,0 +1,218 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mxdg="https://schemas.eremexcontrols.net/avalonia/datagrid"
+        xmlns:mxc="https://schemas.eremexcontrols.net/avalonia/common"
+        xmlns:mxev="clr-namespace:Eremex.AvaloniaUI.Controls.Editors.Visuals;assembly=Eremex.Avalonia.Controls"
+        xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors">
+
+    <Style Selector="TextBlock:disabled">
+        <Setter Property="Foreground" Value="{DynamicResource BackgroundColor-500}" />
+    </Style>
+
+    <Style Selector="mxe|DateEditor, mxe|PopupEditor">
+        <Setter Property="CornerRadius" Value="{StaticResource DefaultCornerRadius}" />
+        <Setter Property="FontFamily" Value="DefaultFont" />
+        <Setter Property="FontSize" Value="{StaticResource ThemeSize-Regular}" />
+    </Style>
+
+    <Style Selector="mxe|DateEditor.Medium, mxe|PopupEditor.Medium, mxe|PopupColorEditor.Medium">
+        <Setter Property="CornerRadius" Value="{StaticResource DefaultCornerRadius}" />
+        <Setter Property="FontFamily" Value="DefaultFont" />
+        <Setter Property="FontSize" Value="{StaticResource ThemeSize-Regular}" />
+    </Style>
+
+    <Style Selector="mxe|DateEditor.Large, mxe|PopupEditor.Large, mxe|PopupColorEditor.Large">
+        <Setter Property="CornerRadius" Value="{StaticResource LargeCornerRadius}" />
+        <Setter Property="FontFamily" Value="DefaultFont" />
+        <Setter Property="FontSize" Value="{StaticResource ThemeSize-Medium}" />
+    </Style>
+
+    <Style Selector="mxe|TextEditor.Medium, mxe|ComboBoxEditor.Medium, mxe|SpinEditor.Medium">
+        <Setter Property="Height" Value="{StaticResource ThemeSize-Double}" />
+        <Setter Property="Padding" Value="6, 0, 6, 1" />
+        <Setter Property="CornerRadius" Value="{StaticResource DefaultCornerRadius}" />
+        <Setter Property="FontFamily" Value="DefaultFont" />
+        <Setter Property="FontSize" Value="{StaticResource ThemeSize-Regular}" />
+    </Style>
+
+    <Style Selector="mxe|TextEditor.Large, mxe|ComboBoxEditor.Large, mxe|SpinEditor.Large">
+        <Setter Property="Height" Value="{StaticResource ThemeSize-Large}" />
+        <Setter Property="Padding" Value="8, 0, 8, 2" />
+        <Setter Property="CornerRadius" Value="{StaticResource DefaultCornerRadius}" />
+        <Setter Property="FontFamily" Value="DefaultFont" />
+        <Setter Property="FontSize" Value="{StaticResource ThemeSize-Medium}" />
+    </Style>
+
+    <Style Selector="ListBoxItem">
+        <Setter Property="CornerRadius" Value="{StaticResource DefaultCornerRadius}" />
+        <Setter Property="FontFamily" Value="DefaultFont" />
+        <Setter Property="Padding" Value="4" />
+    </Style>
+
+    <Style Selector="mxe|CheckEditor.Large, CheckBox.Large">
+        <Setter Property="FontFamily" Value="DefaultFont" />
+        <Setter Property="FontSize" Value="{StaticResource ThemeSize-Medium}" />
+    </Style>
+
+    <Style Selector="mxe|CheckEditor.Medium, CheckBox.Medium">
+        <Setter Property="FontFamily" Value="DefaultFont" />
+        <Setter Property="FontSize" Value="{StaticResource ThemeSize-Regular}" />
+    </Style>
+
+    <Style Selector="mxe|HyperlinkEditor.Large">
+        <Setter Property="FontFamily" Value="DefaultFont" />
+        <Setter Property="FontSize" Value="{StaticResource ThemeSize-Medium}" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="Padding" Value="0" />
+    </Style>
+
+    <Style Selector="RadioButton.Large">
+        <Setter Property="FontFamily" Value="DefaultFont" />
+        <Setter Property="FontSize" Value="{StaticResource ThemeSize-Medium}" />
+    </Style>
+
+    <Style Selector="RadioButton.Medium">
+        <Setter Property="FontFamily" Value="DefaultFont" />
+        <Setter Property="FontSize" Value="{StaticResource ThemeSize-Regular}" />
+    </Style>
+
+    <Style Selector="mxe|HyperlinkEditor.Medium">
+        <Setter Property="FontFamily" Value="DefaultFont" />
+        <Setter Property="Height" Value="{StaticResource ThemeSize-Double}" />
+        <Setter Property="FontSize" Value="{StaticResource ThemeSize-Regular}" />
+        <Setter Property="FontWeight" Value="Bold" />
+    </Style>
+
+    <Style Selector="Button.Empty">
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+    </Style>
+
+    <Style Selector="Button.Empty:pointerover /template/ Border#PART_BackgroundBorder">
+        <Setter Property="Background" Value="{StaticResource TransparentBrush}" />
+    </Style>
+
+    <Style Selector="Button.IconOnlyLarge, ToggleButton.IconOnlyLarge">
+        <Setter Property="Width" Value="{StaticResource ThemeSize-Large}" />
+        <Setter Property="Height" Value="{StaticResource ThemeSize-Large}" />
+        <Setter Property="CornerRadius" Value="{StaticResource DefaultCornerRadius}" />
+    </Style>
+
+    <Style Selector="Button.IconOnlyMedium, ToggleButton.IconOnlyMedium">
+        <Setter Property="Width" Value="{StaticResource ThemeSize-Double}" />
+        <Setter Property="Height" Value="{StaticResource ThemeSize-Double}" />
+        <Setter Property="CornerRadius" Value="{StaticResource DefaultCornerRadius}" />
+    </Style>
+
+    <Style Selector="Button.Medium">
+        <Setter Property="Padding" Value="16,6"/>
+        <Setter Property="MinHeight" Value="{StaticResource ThemeSize-Double}" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="CornerRadius" Value="{StaticResource DefaultCornerRadius}" />
+        <Setter Property="Foreground" Value="{StaticResource ForegroundColor}" />
+        <Setter Property="FontFamily" Value="DefaultFont" />
+        <Setter Property="FontSize" Value="{StaticResource ThemeSize-Regular}" />
+        <Setter Property="FontWeight" Value="Bold" />
+    </Style>
+
+    <Style Selector="Button.Large">
+        <Setter Property="Height" Value="{StaticResource ThemeSize-Large}" />
+        <Setter Property="CornerRadius" Value="{StaticResource LargeCornerRadius}" />
+        <Setter Property="Foreground" Value="{StaticResource ForegroundColor}" />
+        <Setter Property="FontFamily" Value="DefaultFont" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Padding" Value="16,0,16,2"/>
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="FontWeight" Value="Bold" />
+    </Style>
+
+    <Style Selector="Button.Primary">
+        <Setter Property="Background" Value="{StaticResource PrimaryColor}" />
+        <Setter Property="BorderBrush" Value="{StaticResource PrimaryColor}" />
+        <Setter Property="BorderThickness" Value="1" />
+    </Style>
+
+    <Style Selector="Button.Primary /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Foreground" Value="{StaticResource ForegroundColor}" />
+    </Style>
+
+    <Style Selector="Button.Primary:pointerover">
+        <Setter Property="Background" Value="{StaticResource PrimaryColorTint20}" />
+    </Style>
+
+    <Style Selector="Button.Primary:pointerover /template/ Border#PART_BackgroundBorder">
+        <Setter Property="Background" Value="{StaticResource PrimaryColorTint20}" />
+    </Style>
+
+    <Style Selector="Button.Primary:pointerover /template/ Border#PART_ButtonBorder">
+        <Setter Property="BorderBrush" Value="{StaticResource PrimaryColorTint20}" />
+    </Style>
+
+    <Style Selector="Button.Primary:pressed /template/ Border#PART_BackgroundBorder">
+        <Setter Property="Background" Value="{StaticResource PrimaryColorShade10}" />
+    </Style>
+
+    <Style Selector="Button.Primary:pressed /template/ Border#PART_ButtonBorder">
+        <Setter Property="BorderBrush" Value="{StaticResource PrimaryColorShade10}" />
+    </Style>
+
+    <Style Selector="Button.Secondary">
+        <Setter Property="Background" Value="{StaticResource BackgroundColor-600}" />
+        <Setter Property="BorderBrush" Value="{StaticResource BackgroundColor-500}" />
+        <Setter Property="BorderThickness" Value="1" />
+    </Style>
+
+    <Style Selector="Button.Secondary /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Foreground" Value="{StaticResource ForegroundColor}" />
+    </Style>
+
+    <Style Selector="Button.Secondary:pointerover /template/ Border#PART_BackgroundBorder">
+        <Setter Property="Background" Value="{StaticResource BackgroundColor-500}" />
+    </Style>
+
+    <Style Selector="Button.Secondary:pointerover /template/ Border#PART_ButtonBorder">
+        <Setter Property="BorderBrush" Value="{StaticResource BackgroundColor-500}" />
+    </Style>
+
+    <Style Selector="Button.Secondary:pressed /template/ Border#PART_BackgroundBorder">
+        <Setter Property="Background" Value="{StaticResource BackgroundColor-800}" />
+    </Style>
+
+    <Style Selector="Button.Secondary:pressed /template/ Border#PART_ButtonBorder">
+        <Setter Property="BorderBrush" Value="{StaticResource BackgroundColor-600}" />
+    </Style>
+
+    <Style Selector="Button.Subtle">
+        <Setter Property="Foreground" Value="{StaticResource ForegroundColor}" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="1" />
+    </Style>
+
+    <Style Selector="Button.Subtle:pointerover /template/ Border#PART_BackgroundBorder">
+        <Setter Property="Background" Value="{StaticResource BackgroundColor-600}" />
+    </Style>
+
+    <Style Selector="Button.Subtle:pointerover /template/ Border#PART_ButtonBorder">
+        <Setter Property="BorderBrush" Value="{StaticResource BackgroundColor-600}" />
+    </Style>
+
+    <Style Selector="Button.Subtle:pressed /template/ Border#PART_BackgroundBorder">
+        <Setter Property="Background" Value="{StaticResource BackgroundColor-900}" />
+    </Style>
+
+    <Style Selector="Button.Subtle:pressed /template/ Border#PART_ButtonBorder">
+        <Setter Property="BorderBrush" Value="{StaticResource BackgroundColor-700}" />
+    </Style>
+
+    <Style Selector="Button Path">
+        <Setter Property="Fill" Value="{StaticResource ForegroundColor}" />
+    </Style>
+
+    <Style Selector="Button:disabled Path">
+        <Setter Property="Fill" Value="{StaticResource ForegroundColor-40}" />
+    </Style>
+</Styles>

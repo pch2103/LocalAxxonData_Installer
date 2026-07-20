@@ -1,0 +1,48 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:LocalAxxonData_Installer.Views"
+             Width="700" Height="500"
+             x:Class="LocalAxxonData_Installer.Views.RebootPage">
+    <Grid RowDefinitions="Auto,Auto,*,Auto">
+        <local:StageTitleBar Grid.Row="0" />
+        <local:ColorBandView Grid.Row="1"
+                             HeaderBrush="#F57C00"
+                             HeaderText="Требуется перезагрузка"
+                             BodyText="Первая фаза завершена"
+                             ShowLogo="True" />
+        <Border Grid.Row="2" Margin="{StaticResource ThemePaddingDownAndSides-Medium}">
+            <Grid>
+                <Border Classes="content-background" />
+                <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <StackPanel Spacing="{StaticResource ThemeSize-Regular}" HorizontalAlignment="Center">
+                        <TextBlock Text="⟳" FontSize="48" Foreground="{StaticResource OrangeColor}"
+                                   HorizontalAlignment="Center" />
+                        <TextBlock Text="Фаза 1 завершена!"
+                                   Classes="ONE-H2-Bold" HorizontalAlignment="Center" />
+                        <Border Classes="warning-block" Padding="16" HorizontalAlignment="Center" MinWidth="200">
+                            <StackPanel Spacing="4" HorizontalAlignment="Center">
+                                <TextBlock Text="Перезагрузка через"
+                                           Classes="ONE-Paragraph-Regular" HorizontalAlignment="Center" />
+                                <TextBlock x:Name="TimerText" Text="60 сек."
+                                           Classes="ONE-H1-Medium" Foreground="{StaticResource OrangeColor}"
+                                           HorizontalAlignment="Center" />
+                            </StackPanel>
+                        </Border>
+                        <TextBlock Text="После перезагрузки мастер продолжит работу автоматически."
+                                   Classes="ONE-Paragraph-Small" Foreground="{StaticResource GrayColor}"
+                                   HorizontalAlignment="Center" />
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </Border>
+        <Border Grid.Row="3" BorderBrush="{StaticResource ForegroundColor-10}" BorderThickness="0,1,0,0"
+                Padding="16,10">
+            <Grid>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8">
+                    <Button x:Name="DeferButton" Classes="Secondary Large" Content="Отложить" Click="OnDeferClick" />
+                    <Button x:Name="RebootButton" Classes="Primary Large" Content="Перезагрузить" Click="OnRebootClick" />
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

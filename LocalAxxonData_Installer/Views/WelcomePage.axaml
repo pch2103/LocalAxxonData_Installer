@@ -1,0 +1,48 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:LocalAxxonData_Installer.Views"
+             Width="700" Height="500"
+             x:Class="LocalAxxonData_Installer.Views.WelcomePage">
+    <Grid RowDefinitions="Auto,Auto,*,Auto,Auto">
+        <local:StageTitleBar Grid.Row="0" />
+        <local:ColorBandView Grid.Row="1"
+                             HeaderBrush="#1A73E8"
+                             HeaderText="Local AxxonData"
+                             BodyText="Мастер установки"
+                             ShowLogo="True" />
+        <Border Grid.Row="2" Margin="{StaticResource ThemePaddingDownAndSides-Medium}">
+            <Grid>
+                <Border Classes="content-background" />
+                <ScrollViewer Margin="{StaticResource ThemePadding-Medium}">
+                    <StackPanel Spacing="{StaticResource ThemeSize-Regular}">
+                        <TextBlock Text="Добро пожаловать!"
+                                   Classes="ONE-H2-Bold" />
+                        <TextBlock TextWrapping="Wrap" Classes="ONE-H3-Regular"
+                                    Text="Этот мастер установит Local AxxonData на ваш компьютер. Перед началом убедитесь, что в BIOS включена виртуализация (Intel VT-x / AMD-V)." />
+                        <Border Classes="warning-block" Padding="8">
+                            <StackPanel Spacing="4">
+                                <TextBlock Text="Требуется перезагрузка"
+                                           Classes="ONE-Paragraph-Bold" Foreground="{StaticResource OrangeColor}" />
+                                <TextBlock TextWrapping="Wrap" Classes="ONE-H3-Regular"
+                                            Text="Установка выполняется в две фазы. После первой фазы компьютер будет перезагружен, и мастер продолжит работу автоматически." />
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                </ScrollViewer>
+            </Grid>
+        </Border>
+        <StackPanel Grid.Row="3" Spacing="{StaticResource ThemeSize-Min}"
+                    Margin="{StaticResource ThemePaddingSides-Medium}">
+            <local:InfoBlockView HeaderText="Что вы получите"
+                                 BodyText="После установки Local AxxonData будет запущен на локальном Docker-окружении и доступен через браузер." />
+        </StackPanel>
+        <Border Grid.Row="4" Margin="{StaticResource ThemePaddingSides-Medium}">
+            <Grid>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8">
+                    <Button Classes="Primary Large" Content="Далее →" Click="OnNextClick" />
+                    <Button Classes="Secondary Large" Content="Отмена" Click="OnCancelClick" />
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

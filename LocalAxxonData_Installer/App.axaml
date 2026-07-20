@@ -1,0 +1,21 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="LocalAxxonData_Installer.App"
+             xmlns:theme="clr-namespace:Eremex.AvaloniaUI.Themes.DeltaDesign;assembly=Eremex.Avalonia.Themes.DeltaDesign"
+             RequestedThemeVariant="Dark">
+    <Application.Styles>
+        <theme:DeltaDesignTheme />
+        <StyleInclude Source="/Styles/CustomDarkTheme.axaml" />
+        <StyleInclude Source="/Styles/ControlsCustomStyles.axaml" />
+        <StyleInclude Source="/Styles/WindowStyles.axaml" />
+    </Application.Styles>
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceInclude Source="/Resources/ModifiedResourcesColor.axaml" />
+                <ResourceInclude Source="/Resources/ModifiedResources.axaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

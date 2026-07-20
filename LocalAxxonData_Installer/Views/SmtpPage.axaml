@@ -1,0 +1,66 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
+             xmlns:local="clr-namespace:LocalAxxonData_Installer.Views"
+             Width="700" Height="500"
+             x:Class="LocalAxxonData_Installer.Views.SmtpPage">
+    <Grid RowDefinitions="Auto,Auto,*,Auto">
+        <local:StageTitleBar Grid.Row="0" />
+        <local:ColorBandView Grid.Row="1"
+                             HeaderBrush="#1A73E8"
+                             HeaderText="Настройки SMTP"
+                             ShowLogo="True" />
+        <Border Grid.Row="2" Margin="{StaticResource ThemePaddingDownAndSides-Medium}">
+            <Grid>
+                <Border Classes="content-background" />
+                <ScrollViewer Margin="{StaticResource ThemePadding-Medium}">
+                    <StackPanel Spacing="{StaticResource ThemeSize-Regular}">
+                        <TextBlock Text="Настройка почтового сервера (необязательно)"
+                                   Classes="ONE-H3-Bold" />
+                        <StackPanel Spacing="8">
+                            <StackPanel Spacing="4">
+                                <TextBlock Text="SMTP-сервер" Classes="One-Subs-Bold" />
+                                <mxe:TextEditor Classes="Large" Watermark="smtp.example.com" />
+                            </StackPanel>
+                            <Grid ColumnDefinitions="*,*" ColumnSpacing="8">
+                                <StackPanel Spacing="4">
+                                    <TextBlock Text="Порт" Classes="One-Subs-Bold" />
+                                    <mxe:TextEditor Classes="Large" Watermark="587" />
+                                </StackPanel>
+                                <StackPanel Spacing="4">
+                                    <TextBlock Text="Шифрование" Classes="One-Subs-Bold" />
+                                    <mxe:ComboBoxEditor Classes="Large" Watermark="STARTTLS" />
+                                </StackPanel>
+                            </Grid>
+                            <StackPanel Spacing="4">
+                                <TextBlock Text="Имя пользователя" Classes="One-Subs-Bold" />
+                                <mxe:TextEditor Classes="Large" Watermark="user@example.com" />
+                            </StackPanel>
+                            <StackPanel Spacing="4">
+                                <TextBlock Text="Пароль" Classes="One-Subs-Bold" />
+                                <mxe:TextEditor Classes="Large">
+                                    <Interaction.Behaviors>
+                                        <local:PasswordBoxBehavior />
+                                    </Interaction.Behaviors>
+                                </mxe:TextEditor>
+                            </StackPanel>
+                            <StackPanel Spacing="4">
+                                <TextBlock Text="Email отправителя" Classes="One-Subs-Bold" />
+                                <mxe:TextEditor Classes="Large" Watermark="noreply@example.com" />
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </ScrollViewer>
+            </Grid>
+        </Border>
+        <Border Grid.Row="3" Margin="{StaticResource ThemePaddingSides-Medium}">
+            <Grid>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8">
+                    <Button Classes="Secondary Large" Content="← Назад" Click="OnBackClick" />
+                    <Button Classes="Primary Large" Content="Далее →" Click="OnNextClick" />
+                    <Button Classes="Secondary Large" Content="Отмена" Click="OnCancelClick" />
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

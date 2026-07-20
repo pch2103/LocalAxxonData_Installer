@@ -1,0 +1,24 @@
+<mx:MxWindow xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:mx="https://schemas.eremexcontrols.net/avalonia"
+             xmlns:views="clr-namespace:LocalAxxonData_Installer.Views"
+             x:Class="LocalAxxonData_Installer.Views.MainWindow"
+             SizeToContent="WidthAndHeight"
+             SystemDecorations="None"
+             ShowMinimizeButton="False"
+             ShowMaximizeButton="False"
+             ShowCloseButton="False"
+             ShowCaptionSeparator="False"
+             Classes="no-titlebar">
+
+    <Grid>
+        <Border Classes="main-window-background" />
+        <Border Classes="content-overlay" Margin="0,16">
+            <ContentControl x:Name="MainContentControl">
+                <views:LanguagePage />
+            </ContentControl>
+        </Border>
+    </Grid>
+</mx:MxWindow>

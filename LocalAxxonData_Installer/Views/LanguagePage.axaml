@@ -1,0 +1,34 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mx="https://schemas.eremexcontrols.net/avalonia"
+             xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
+             xmlns:local="clr-namespace:LocalAxxonData_Installer.Views"
+             Width="700" Height="500"
+             x:Class="LocalAxxonData_Installer.Views.LanguagePage">
+    <Grid RowDefinitions="Auto,Auto,*,Auto">
+        <local:StageTitleBar Grid.Row="0" />
+        <local:ColorBandView Grid.Row="1"
+                             HeaderBrush="#1A73E8"
+                             HeaderText="Local AxxonData"
+                             ShowLogo="True" />
+        <Border Grid.Row="2" Margin="{StaticResource ThemePaddingDownAndSides-Medium}">
+            <Grid>
+                <Border Classes="content-background" />
+                <Grid Margin="{StaticResource ThemePadding-Medium}" VerticalAlignment="Center"
+                      HorizontalAlignment="Center">
+                    <StackPanel Spacing="{StaticResource ThemeSize-Medium}" Orientation="Vertical">
+                        <TextBlock Text="Выберите язык / Select language"
+                                   Classes="ONE-H1-Medium"
+                                   HorizontalAlignment="Center" />
+                        <StackPanel Orientation="Horizontal" Spacing="12" HorizontalAlignment="Center">
+                            <Button Classes="Primary Large" Content="Русский" x:Name="RussianButton"
+                                    Click="OnRussianClick" />
+                            <Button Classes="Secondary Large" Content="English" x:Name="EnglishButton"
+                                    Click="OnEnglishClick" />
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

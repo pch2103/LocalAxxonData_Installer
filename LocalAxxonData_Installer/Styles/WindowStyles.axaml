@@ -1,0 +1,56 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mx="https://schemas.eremexcontrols.net/avalonia">
+
+    <Style Selector="mx|MxWindow.no-titlebar">
+        <Setter Property="TransparencyLevelHint" Value="AcrylicBlur" />
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
+
+    <Style Selector="mx|MxWindow /template/ Border#PART_CaptionArea">
+        <Setter Property="IsVisible" Value="False"/>
+    </Style>
+
+    <Style Selector="Border.main-window-background">
+        <Setter Property="Background" Value="{DynamicResource BackgroundColor-80}" />
+    </Style>
+    <Style Selector="Border.content-background">
+        <Setter Property="Background" Value="{DynamicResource BackgroundColor-40}" />
+        <Setter Property="CornerRadius" Value="6" />
+        <Setter Property="BorderBrush" Value="{DynamicResource BackgroundColor-800}" />
+        <Setter Property="BorderThickness" Value="1" />
+    </Style>
+    <Style Selector="Border.content-overlay">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Margin" Value="16" />
+    </Style>
+
+    <Style Selector="Border.info-block">
+        <Setter Property="CornerRadius" Value="6" />
+        <Setter Property="BorderBrush" Value="{DynamicResource PrimaryColor}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Background" Value="{DynamicResource PrimaryColor-40}" />
+        <Setter Property="Padding" Value="8" />
+    </Style>
+    <Style Selector="Border.success-block">
+        <Setter Property="CornerRadius" Value="6" />
+        <Setter Property="BorderBrush" Value="{DynamicResource GreenColor}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Background" Value="{DynamicResource GreenColor-40}" />
+        <Setter Property="Padding" Value="8" />
+    </Style>
+    <Style Selector="Border.error-block">
+        <Setter Property="CornerRadius" Value="6" />
+        <Setter Property="BorderBrush" Value="{DynamicResource RedColor}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Background" Value="{DynamicResource RedColor-40}" />
+        <Setter Property="Padding" Value="8" />
+    </Style>
+    <Style Selector="Border.warning-block">
+        <Setter Property="CornerRadius" Value="6" />
+        <Setter Property="BorderBrush" Value="{DynamicResource OrangeColor}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Background" Value="{DynamicResource OrangeColor-40}" />
+        <Setter Property="Padding" Value="8" />
+    </Style>
+</Styles>
