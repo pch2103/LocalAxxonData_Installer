@@ -9,7 +9,7 @@
         <local:ColorBandView Grid.Row="1"
                              HeaderBrush="#1A73E8"
                              HeaderText="Настройки SMTP"
-                             ShowLogo="True" />
+                             BackgroundImageSource="header_back_blue.png" ShowLogo="True" />
         <Border Grid.Row="2" Margin="{StaticResource ThemePaddingDownAndSides-Medium}">
             <Grid>
                 <Border Classes="content-background" />
@@ -27,10 +27,10 @@
                                     <TextBlock Text="Порт" Classes="One-Subs-Bold" />
                                     <mxe:TextEditor Classes="Large" Watermark="587" />
                                 </StackPanel>
-                                <StackPanel Spacing="4">
-                                    <TextBlock Text="Шифрование" Classes="One-Subs-Bold" />
-                                    <mxe:ComboBoxEditor Classes="Large" Watermark="STARTTLS" />
-                                </StackPanel>
+                                 <StackPanel Spacing="4">
+                                     <TextBlock Text="Шифрование" Classes="One-Subs-Bold" />
+                                     <mxe:ComboBoxEditor x:Name="EncryptionCombo" Classes="Large" />
+                                 </StackPanel>
                             </Grid>
                             <StackPanel Spacing="4">
                                 <TextBlock Text="Имя пользователя" Classes="One-Subs-Bold" />
@@ -56,8 +56,18 @@
         <Border Grid.Row="3" Margin="{StaticResource ThemePaddingSides-Medium}">
             <Grid>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8">
-                    <Button Classes="Secondary Large" Content="← Назад" Click="OnBackClick" />
-                    <Button Classes="Primary Large" Content="Далее →" Click="OnNextClick" />
+                    <Button Classes="Secondary Large" Click="OnBackClick">
+                        <Grid ColumnDefinitions="Auto,*" Height="{StaticResource ThemeSize-Large}" VerticalAlignment="Center">
+                            <Path Data="{StaticResource ArrowLeft}" Width="{StaticResource ThemeSize-Double}" Height="{StaticResource ThemeSize-Double}" Margin="0 10 6 0" />
+                            <TextBlock Grid.Column="1" Text="Назад" Classes="ONE-H3-Bold" VerticalAlignment="Center" />
+                        </Grid>
+                    </Button>
+                    <Button Classes="Primary Large" Click="OnNextClick">
+                        <Grid ColumnDefinitions="Auto,*" Height="{StaticResource ThemeSize-Large}" VerticalAlignment="Center">
+                            <Path Data="{StaticResource ArrowRight}" Width="{StaticResource ThemeSize-Double}" Height="{StaticResource ThemeSize-Double}" Margin="0 10 6 0" />
+                            <TextBlock Grid.Column="1" Text="Далее" Classes="ONE-H3-Bold" VerticalAlignment="Center" />
+                        </Grid>
+                    </Button>
                     <Button Classes="Secondary Large" Content="Отмена" Click="OnCancelClick" />
                 </StackPanel>
             </Grid>

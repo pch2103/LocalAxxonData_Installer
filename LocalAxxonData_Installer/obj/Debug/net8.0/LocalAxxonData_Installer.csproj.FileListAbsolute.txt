@@ -193,3 +193,4 @@ F:\CODE\2026\LocalAxxonData_Installer\LocalAxxonData_Installer\bin\Debug\net8.0\
 F:\CODE\2026\LocalAxxonData_Installer\LocalAxxonData_Installer\bin\Debug\net8.0\Avalonia.Xaml.Interactions.Events.dll
 F:\CODE\2026\LocalAxxonData_Installer\LocalAxxonData_Installer\bin\Debug\net8.0\Avalonia.Xaml.Interactions.Responsive.dll
 F:\CODE\2026\LocalAxxonData_Installer\LocalAxxonData_Installer\bin\Debug\net8.0\Avalonia.Xaml.Interactivity.dll
+F:\CODE\2026\LocalAxxonData_Installer\LocalAxxonData_Installer\obj\Debug\net8.0\LocalAxxonData_Installer.sourcelink.json

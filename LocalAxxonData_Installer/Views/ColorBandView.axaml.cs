@@ -4,6 +4,8 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Data.Converters;
 using Avalonia.Media;
+using Avalonia.Media.Imaging;
+using Avalonia.Platform;
 
 namespace LocalAxxonData_Installer.Views;
 
@@ -20,6 +22,9 @@ public partial class ColorBandView : UserControl
 
     public static readonly StyledProperty<bool> ShowLogoProperty =
         AvaloniaProperty.Register<ColorBandView, bool>(nameof(ShowLogo), true);
+
+    public static readonly StyledProperty<string> BackgroundImageSourceProperty =
+        AvaloniaProperty.Register<ColorBandView, string>(nameof(BackgroundImageSource), "");
 
     public IBrush HeaderBrush
     {
@@ -45,9 +50,28 @@ public partial class ColorBandView : UserControl
         set => SetValue(ShowLogoProperty, value);
     }
 
+    public string BackgroundImageSource
+    {
+        get => GetValue(BackgroundImageSourceProperty);
+        set => SetValue(BackgroundImageSourceProperty, value);
+    }
+
     public ColorBandView()
     {
         InitializeComponent();
+        Loaded += (s, e) => UpdateBackgroundImage();
+    }
+
+    private void UpdateBackgroundImage()
+    {
+        var name = BackgroundImageSource;
+        if (string.IsNullOrEmpty(name))
+        {
+            BackgroundImage.Source = null;
+            return;
+        }
+        var uri = new Uri($"avares://LocalAxxonData_Installer/Assets/{name}");
+        BackgroundImage.Source = new Bitmap(AssetLoader.Open(uri));
     }
 }
 

@@ -7,7 +7,7 @@
         <local:ColorBandView Grid.Row="0"
                              HeaderBrush="#616161"
                              HeaderText="Прервать установку?"
-                             ShowLogo="True" />
+                             BackgroundImageSource="header_back_gray.png" ShowLogo="True" />
         <Border Grid.Row="1" Margin="{StaticResource ThemePaddingDownAndSides-Medium}">
             <Grid>
                 <Border Classes="content-background" />
@@ -22,8 +22,7 @@
                 </Grid>
             </Grid>
         </Border>
-        <Border Grid.Row="2" BorderBrush="{StaticResource ForegroundColor-10}" BorderThickness="0,1,0,0"
-                Padding="16,10">
+        <Border Grid.Row="2" Margin="{StaticResource ThemePaddingSides-Medium}">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8">
                 <Button Classes="Secondary Large" Content="Выйти" Click="OnExitClick" />
                 <Button Classes="Primary Large" Content="Продолжить установку" Click="OnContinueClick" />

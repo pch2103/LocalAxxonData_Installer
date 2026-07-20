@@ -10,7 +10,7 @@
         <local:ColorBandView Grid.Row="1"
                              HeaderBrush="#1A73E8"
                              HeaderText="Local AxxonData"
-                             ShowLogo="True" />
+                             BackgroundImageSource="header_back_blue.png" ShowLogo="True" />
         <Border Grid.Row="2" Margin="{StaticResource ThemePaddingDownAndSides-Medium}">
             <Grid>
                 <Border Classes="content-background" />
@@ -21,13 +21,26 @@
                                    Classes="ONE-H1-Medium"
                                    HorizontalAlignment="Center" />
                         <StackPanel Orientation="Horizontal" Spacing="12" HorizontalAlignment="Center">
-                            <Button Classes="Primary Large" Content="Русский" x:Name="RussianButton"
+                            <Button Classes="Secondary Large" Content="Русский" x:Name="RussianButton"
                                     Click="OnRussianClick" />
                             <Button Classes="Secondary Large" Content="English" x:Name="EnglishButton"
                                     Click="OnEnglishClick" />
                         </StackPanel>
                     </StackPanel>
                 </Grid>
+            </Grid>
+        </Border>
+        <Border Grid.Row="3" Margin="{StaticResource ThemePaddingSides-Medium}">
+            <Grid>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8">
+                    <Button Classes="Primary Large" x:Name="NextButton" IsEnabled="False" Click="OnNextClick">
+                        <Grid ColumnDefinitions="Auto,*" Height="{StaticResource ThemeSize-Large}" VerticalAlignment="Center">
+                            <Path Data="{StaticResource ArrowRight}" Width="{StaticResource ThemeSize-Double}" Height="{StaticResource ThemeSize-Double}" Margin="0 10 6 0" />
+                            <TextBlock Grid.Column="1" Text="Далее" Classes="ONE-H3-Bold" VerticalAlignment="Center" />
+                        </Grid>
+                    </Button>
+                    <Button Classes="Secondary Large" Content="Отмена" Click="OnCancelClick" />
+                </StackPanel>
             </Grid>
         </Border>
     </Grid>

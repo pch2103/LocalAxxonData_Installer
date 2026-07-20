@@ -92,6 +92,7 @@
         <SolidColorBrush x:Key="OrangeColor" Color="{DynamicResource ThemeOrange}"/>
         <SolidColorBrush x:Key="OrangeColor-40" Color="{DynamicResource ThemeOrange}" Opacity="0.4"/>
         <SolidColorBrush x:Key="GrayColor" Color="{DynamicResource ThemeBackgroundColor-500}"/>
+        <SolidColorBrush x:Key="SubLabelColor" Color="#A0A0A0"/>
         <SolidColorBrush x:Key="TransparentColor" Color="Transparent" />
     </Styles.Resources>
 

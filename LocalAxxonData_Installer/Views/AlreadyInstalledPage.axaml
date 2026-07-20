@@ -9,7 +9,7 @@
                              HeaderBrush="#1565C0"
                              HeaderText="Local AxxonData"
                              BodyText="Обнаружена существующая установка"
-                             ShowLogo="True" />
+                             BackgroundImageSource="header_back_darkblue.png" ShowLogo="True" />
         <Border Grid.Row="2" Margin="{StaticResource ThemePaddingDownAndSides-Medium}">
             <Grid>
                 <Border Classes="content-background" />

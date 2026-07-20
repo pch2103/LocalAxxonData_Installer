@@ -9,7 +9,7 @@
                              HeaderBrush="#F57C00"
                              HeaderText="Требуется перезагрузка"
                              BodyText="Первая фаза завершена"
-                             ShowLogo="True" />
+                             BackgroundImageSource="header_back_orange.png" ShowLogo="True" />
         <Border Grid.Row="2" Margin="{StaticResource ThemePaddingDownAndSides-Medium}">
             <Grid>
                 <Border Classes="content-background" />
@@ -29,14 +29,13 @@
                             </StackPanel>
                         </Border>
                         <TextBlock Text="После перезагрузки мастер продолжит работу автоматически."
-                                   Classes="ONE-Paragraph-Small" Foreground="{StaticResource GrayColor}"
+                                   Classes="ONE-Paragraph-Small" Foreground="{StaticResource SubLabelColor}"
                                    HorizontalAlignment="Center" />
                     </StackPanel>
                 </Grid>
             </Grid>
         </Border>
-        <Border Grid.Row="3" BorderBrush="{StaticResource ForegroundColor-10}" BorderThickness="0,1,0,0"
-                Padding="16,10">
+        <Border Grid.Row="3" Margin="{StaticResource ThemePaddingSides-Medium}">
             <Grid>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8">
                     <Button x:Name="DeferButton" Classes="Secondary Large" Content="Отложить" Click="OnDeferClick" />

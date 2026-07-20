@@ -4,46 +4,56 @@
              xmlns:local="clr-namespace:LocalAxxonData_Installer.Views"
              Width="700" Height="500"
              x:Class="LocalAxxonData_Installer.Views.InstallDirPage">
-    <Grid RowDefinitions="Auto,Auto,*,Auto,Auto">
+    <Grid RowDefinitions="Auto,Auto,*,Auto">
         <local:StageTitleBar Grid.Row="0" />
         <local:ColorBandView Grid.Row="1"
                              HeaderBrush="#1A73E8"
                              HeaderText="Директория установки"
-                             ShowLogo="True" />
+                             BackgroundImageSource="header_back_blue.png" ShowLogo="True" />
         <Border Grid.Row="2" Margin="{StaticResource ThemePaddingDownAndSides-Medium}">
             <Grid>
                 <Border Classes="content-background" />
-                <Grid Margin="{StaticResource ThemePadding-Medium}" VerticalAlignment="Center">
-                    <StackPanel Spacing="{StaticResource ThemeSize-Regular}">
-                        <TextBlock Text="Выберите папку для установки"
-                                   Classes="ONE-H3-Bold" />
-                        <Grid ColumnDefinitions="*,Auto" ColumnSpacing="8">
-                            <mxe:TextEditor Classes="Large" Watermark="C:\Program Files\Local AxxonData"
-                                            x:Name="PathEditor" />
-                            <Button Grid.Column="1" Content="Обзор…" Classes="Secondary Large" />
-                        </Grid>
-                        <Border Classes="success-block" Padding="8">
-                            <StackPanel Spacing="4">
-                                <TextBlock Text="Доступно: 45.2 ГБ"
-                                           Classes="ONE-Paragraph-Bold" Foreground="{StaticResource GreenColor}" />
-                                <TextBlock TextWrapping="Wrap" Classes="ONE-Paragraph-Regular"
-                                           Text="Требуется: 10 ГБ свободного места." />
-                            </StackPanel>
-                        </Border>
-                    </StackPanel>
+                <Grid RowDefinitions="*,Auto" Margin="{StaticResource ThemePadding-Medium}">
+                    <Grid Grid.Row="0" VerticalAlignment="Center">
+                        <StackPanel Spacing="{StaticResource ThemeSize-Regular}">
+                            <TextBlock Text="Выберите папку для установки"
+                                       Classes="ONE-H3-Bold" />
+                            <Grid ColumnDefinitions="*,Auto" ColumnSpacing="8">
+                                <mxe:TextEditor Classes="Large" Watermark="C:\Program Files\Local AxxonData"
+                                                x:Name="PathEditor" />
+                                <Button Grid.Column="1" Content="Обзор…" Classes="Secondary Large" Click="OnBrowseClick" />
+                            </Grid>
+                            <Border Classes="success-block" Padding="8">
+                                <StackPanel Spacing="4">
+                                    <TextBlock Text="Доступно: 45.2 ГБ"
+                                               Classes="ONE-Paragraph-Bold" Foreground="{StaticResource GreenColor}" />
+                                    <TextBlock TextWrapping="Wrap" Classes="ONE-Paragraph-Regular"
+                                               Text="Требуется: 10 ГБ свободного места." />
+                                </StackPanel>
+                            </Border>
+                        </StackPanel>
+                    </Grid>
+                    <local:InfoBlockView Grid.Row="1"
+                                         HeaderText="Директория установки"
+                                         BodyText="Выберите папку, в которую будет установлен Local AxxonData и все зависимые компоненты." />
                 </Grid>
             </Grid>
         </Border>
-        <StackPanel Grid.Row="3" Spacing="{StaticResource ThemeSize-Min}"
-                    Margin="{StaticResource ThemePaddingSides-Medium}">
-            <local:InfoBlockView HeaderText="Директория установки"
-                                 BodyText="Выберите папку, в которую будет установлен Local AxxonData и все зависимые компоненты." />
-        </StackPanel>
-        <Border Grid.Row="4" Margin="{StaticResource ThemePaddingSides-Medium}">
+        <Border Grid.Row="3" Margin="{StaticResource ThemePaddingSides-Medium}">
             <Grid>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8">
-                    <Button Classes="Secondary Large" Content="← Назад" Click="OnBackClick" />
-                    <Button Classes="Primary Large" Content="Далее →" Click="OnNextClick" />
+                    <Button Classes="Secondary Large" Click="OnBackClick">
+                        <Grid ColumnDefinitions="Auto,*" Height="{StaticResource ThemeSize-Large}" VerticalAlignment="Center">
+                            <Path Data="{StaticResource ArrowLeft}" Width="{StaticResource ThemeSize-Double}" Height="{StaticResource ThemeSize-Double}" Margin="0 10 6 0" />
+                            <TextBlock Grid.Column="1" Text="Назад" Classes="ONE-H3-Bold" VerticalAlignment="Center" />
+                        </Grid>
+                    </Button>
+                    <Button Classes="Primary Large" Click="OnNextClick">
+                        <Grid ColumnDefinitions="Auto,*" Height="{StaticResource ThemeSize-Large}" VerticalAlignment="Center">
+                            <Path Data="{StaticResource ArrowRight}" Width="{StaticResource ThemeSize-Double}" Height="{StaticResource ThemeSize-Double}" Margin="0 10 6 0" />
+                            <TextBlock Grid.Column="1" Text="Далее" Classes="ONE-H3-Bold" VerticalAlignment="Center" />
+                        </Grid>
+                    </Button>
                     <Button Classes="Secondary Large" Content="Отмена" Click="OnCancelClick" />
                 </StackPanel>
             </Grid>

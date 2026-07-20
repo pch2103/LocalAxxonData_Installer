@@ -3,38 +3,38 @@
              xmlns:local="clr-namespace:LocalAxxonData_Installer.Views"
              Width="700" Height="500"
              x:Class="LocalAxxonData_Installer.Views.ErrorPage">
-    <Grid RowDefinitions="Auto,Auto,*,Auto,Auto">
+    <Grid RowDefinitions="Auto,Auto,*,Auto">
         <local:StageTitleBar Grid.Row="0" />
         <local:ColorBandView Grid.Row="1"
                              HeaderBrush="#C62828"
                              HeaderText="Ошибка установки"
                              BodyText="Произошла критическая ошибка"
-                             ShowLogo="True" />
+                             BackgroundImageSource="header_back_red.png" ShowLogo="True" />
         <Border Grid.Row="2" Margin="{StaticResource ThemePaddingDownAndSides-Medium}">
             <Grid>
                 <Border Classes="content-background" />
-                <Grid Margin="{StaticResource ThemePadding-Medium}" VerticalAlignment="Center">
-                    <StackPanel Spacing="{StaticResource ThemeSize-Regular}">
-                        <TextBlock Text="Установка прервана"
-                                   Classes="ONE-H2-Bold" />
-                        <Border Classes="error-block" Padding="8">
-                            <StackPanel Spacing="4">
-                                <TextBlock Text="Ошибка: не удалось запустить Docker-демон"
-                                           Classes="ONE-Paragraph-Bold" Foreground="{StaticResource RedColor}" />
-                                <TextBlock TextWrapping="Wrap" Classes="ONE-H3-Regular"
-                                            Text="Убедитесь, что Docker Desktop установлен и запущен. После исправления проблемы запустите установку заново." />
-                            </StackPanel>
-                        </Border>
-                    </StackPanel>
+                <Grid RowDefinitions="*,Auto" Margin="{StaticResource ThemePadding-Medium}">
+                    <Grid Grid.Row="0" VerticalAlignment="Center">
+                        <StackPanel Spacing="{StaticResource ThemeSize-Regular}">
+                            <TextBlock Text="Установка прервана"
+                                       Classes="ONE-H2-Bold" />
+                            <Border Classes="error-block" Padding="8">
+                                <StackPanel Spacing="4">
+                                    <TextBlock Text="Ошибка: не удалось запустить Docker-демон"
+                                               Classes="ONE-Paragraph-Bold" Foreground="{StaticResource RedColor}" />
+                                    <TextBlock TextWrapping="Wrap" Classes="ONE-H3-Regular"
+                                               Text="Убедитесь, что Docker Desktop установлен и запущен. После исправления проблемы запустите установку заново." />
+                                </StackPanel>
+                            </Border>
+                        </StackPanel>
+                    </Grid>
+                    <local:ErrorBlockView Grid.Row="1"
+                                          HeaderText="Код ошибки: 0x80070001"
+                                          BodyText="Проверьте журнал установки для получения подробной информации." />
                 </Grid>
             </Grid>
         </Border>
-        <StackPanel Grid.Row="3" Spacing="{StaticResource ThemeSize-Min}"
-                    Margin="{StaticResource ThemePaddingSides-Medium}">
-            <local:ErrorBlockView HeaderText="Код ошибки: 0x80070001"
-                                  BodyText="Проверьте журнал установки для получения подробной информации." />
-        </StackPanel>
-        <Border Grid.Row="4" Margin="{StaticResource ThemePaddingSides-Medium}">
+        <Border Grid.Row="3" Margin="{StaticResource ThemePaddingSides-Medium}">
             <Grid>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8">
                     <Button Classes="Secondary Large" Content="Показать журнал" />

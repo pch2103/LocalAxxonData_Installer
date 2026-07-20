@@ -9,19 +9,19 @@
                              HeaderBrush="#1A73E8"
                              HeaderText="Установка: Фаза 1"
                              BodyText="Выполняется установка компонентов…"
-                             ShowLogo="True" />
+                             BackgroundImageSource="header_back_blue.png" ShowLogo="True" />
         <Border Grid.Row="2" Margin="{StaticResource ThemePaddingDownAndSides-Medium}">
             <Grid>
                 <Border Classes="content-background" />
                 <Grid Margin="{StaticResource ThemePadding-Medium}" VerticalAlignment="Center">
-                    <StackPanel Spacing="{StaticResource ThemeSize-Regular}" HorizontalAlignment="Center" Width="320">
+                    <StackPanel Spacing="{StaticResource ThemeSize-Regular}" HorizontalAlignment="Center" Width="400">
                         <TextBlock Text="Пожалуйста, не выключайте компьютер."
                                    Classes="ONE-H3-Regular"
                                    HorizontalAlignment="Center" />
-                        <ProgressBar x:Name="InstallProgressBar" Minimum="0" Maximum="100" Height="24"
+                        <ProgressBar x:Name="InstallProgressBar" Minimum="0" Maximum="100" Height="30"
                                      Foreground="{StaticResource PrimaryColor}" />
                         <TextBlock x:Name="PercentText" Text="0%"
-                                   Classes="ONE-Paragraph-Small" Foreground="{StaticResource GrayColor}"
+                                   Classes="ONE-H3-Bold" Foreground="{StaticResource ForegroundColor}"
                                    HorizontalAlignment="Center" />
                     </StackPanel>
                 </Grid>

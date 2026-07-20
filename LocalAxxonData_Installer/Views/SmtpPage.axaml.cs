@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
@@ -10,29 +11,30 @@ public partial class SmtpPage : UserControl
     public SmtpPage()
     {
         InitializeComponent();
+        EncryptionCombo.ItemsSource = new List<string>
+        {
+            "Без шифрования",
+            "STARTTLS",
+            "SSL/TLS"
+        };
+        EncryptionCombo.SelectedItem = "STARTTLS";
     }
 
     private void OnBackClick(object? sender, RoutedEventArgs e)
     {
         if (VisualRoot is MainWindow mainWindow)
-        {
             mainWindow.ShowInstallDirPage();
-        }
     }
 
     private void OnNextClick(object? sender, RoutedEventArgs e)
     {
         if (VisualRoot is MainWindow mainWindow)
-        {
             mainWindow.ShowSummaryPage();
-        }
     }
 
     private void OnCancelClick(object? sender, RoutedEventArgs e)
     {
         if (VisualRoot is MainWindow mainWindow)
-        {
             mainWindow.ShowExitConfirmPage();
-        }
     }
 }
