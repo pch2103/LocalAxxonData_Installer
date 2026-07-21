@@ -13,44 +13,46 @@
         <Border Grid.Row="2" Margin="{StaticResource ThemePaddingDownAndSides-Medium}">
             <Grid>
                 <Border Classes="content-background" />
-                <ScrollViewer Margin="{StaticResource ThemePadding-Medium}">
+                <Grid Margin="{StaticResource ThemePadding-Medium}">
                     <StackPanel Spacing="{StaticResource ThemeSize-Regular}">
                         <TextBlock Text="Настройка почтового сервера (необязательно)"
                                    Classes="ONE-H3-Bold" />
-                        <StackPanel Spacing="8">
+                        <StackPanel Spacing="16">
                             <StackPanel Spacing="4">
                                 <TextBlock Text="SMTP-сервер" Classes="One-Subs-Bold" />
                                 <mxe:TextEditor Classes="Large" Watermark="smtp.example.com" />
                             </StackPanel>
                             <Grid ColumnDefinitions="*,*" ColumnSpacing="8">
-                                <StackPanel Spacing="4">
+                                <StackPanel Grid.Column="0" Spacing="4">
                                     <TextBlock Text="Порт" Classes="One-Subs-Bold" />
                                     <mxe:TextEditor Classes="Large" Watermark="587" />
                                 </StackPanel>
-                                 <StackPanel Spacing="4">
-                                     <TextBlock Text="Шифрование" Classes="One-Subs-Bold" />
-                                     <mxe:ComboBoxEditor x:Name="EncryptionCombo" Classes="Large" />
-                                 </StackPanel>
+                                <StackPanel Grid.Column="1" Spacing="4">
+                                    <TextBlock Text="Шифрование" Classes="One-Subs-Bold" />
+                                    <mxe:ComboBoxEditor x:Name="EncryptionCombo" Classes="Large" />
+                                </StackPanel>
                             </Grid>
-                            <StackPanel Spacing="4">
-                                <TextBlock Text="Имя пользователя" Classes="One-Subs-Bold" />
-                                <mxe:TextEditor Classes="Large" Watermark="user@example.com" />
-                            </StackPanel>
-                            <StackPanel Spacing="4">
-                                <TextBlock Text="Пароль" Classes="One-Subs-Bold" />
-                                <mxe:TextEditor Classes="Large">
-                                    <Interaction.Behaviors>
-                                        <local:PasswordBoxBehavior />
-                                    </Interaction.Behaviors>
-                                </mxe:TextEditor>
-                            </StackPanel>
+                            <Grid ColumnDefinitions="*,*" ColumnSpacing="8">
+                                <StackPanel Grid.Column="0" Spacing="4">
+                                    <TextBlock Text="Имя пользователя" Classes="One-Subs-Bold" />
+                                    <mxe:TextEditor Classes="Large" Watermark="user@example.com" />
+                                </StackPanel>
+                                <StackPanel Grid.Column="1" Spacing="4">
+                                    <TextBlock Text="Пароль" Classes="One-Subs-Bold" />
+                                    <mxe:TextEditor Classes="Large">
+                                        <Interaction.Behaviors>
+                                            <local:PasswordBoxBehavior />
+                                        </Interaction.Behaviors>
+                                    </mxe:TextEditor>
+                                </StackPanel>
+                            </Grid>
                             <StackPanel Spacing="4">
                                 <TextBlock Text="Email отправителя" Classes="One-Subs-Bold" />
                                 <mxe:TextEditor Classes="Large" Watermark="noreply@example.com" />
                             </StackPanel>
                         </StackPanel>
                     </StackPanel>
-                </ScrollViewer>
+                </Grid>
             </Grid>
         </Border>
         <Border Grid.Row="3" Margin="{StaticResource ThemePaddingSides-Medium}">

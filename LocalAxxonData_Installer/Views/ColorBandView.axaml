@@ -6,7 +6,7 @@
         <local:StringNotEmptyConverter x:Key="StringNotEmptyConverter" />
     </UserControl.Resources>
 
-    <Border MinHeight="72" Margin="0 0 0 8">
+    <Border MinHeight="72" Margin="0 0 0 16">
         <Grid>
             <Rectangle Fill="{Binding HeaderBrush, RelativeSource={RelativeSource AncestorType=local:ColorBandView}}" Opacity="0.85" />
             <Image x:Name="BackgroundImage" Stretch="Fill" />

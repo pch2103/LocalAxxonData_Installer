@@ -169,6 +169,32 @@
         <Setter Property="BorderBrush" Value="{DynamicResource PrimaryColorTint20}" />
     </Style>
 
+    <Style Selector="Button.Red">
+        <Setter Property="Background" Value="#C62828" />
+        <Setter Property="BorderBrush" Value="#C62828" />
+        <Setter Property="BorderThickness" Value="1" />
+    </Style>
+
+    <Style Selector="Button.Red /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Foreground" Value="{StaticResource ForegroundColor}" />
+    </Style>
+
+    <Style Selector="Button.Red:pointerover /template/ Border#PART_BackgroundBorder">
+        <Setter Property="Background" Value="#D45555" />
+    </Style>
+
+    <Style Selector="Button.Red:pointerover /template/ Border#PART_ButtonBorder">
+        <Setter Property="BorderBrush" Value="#D45555" />
+    </Style>
+
+    <Style Selector="Button.Red:pressed /template/ Border#PART_BackgroundBorder">
+        <Setter Property="Background" Value="#A02020" />
+    </Style>
+
+    <Style Selector="Button.Red:pressed /template/ Border#PART_ButtonBorder">
+        <Setter Property="BorderBrush" Value="#A02020" />
+    </Style>
+
     <Style Selector="Button.Secondary">
         <Setter Property="Background" Value="{StaticResource BackgroundColor-600}" />
         <Setter Property="BorderBrush" Value="{StaticResource BackgroundColor-500}" />

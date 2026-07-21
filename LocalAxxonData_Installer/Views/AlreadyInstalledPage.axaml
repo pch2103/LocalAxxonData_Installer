@@ -8,7 +8,7 @@
         <local:ColorBandView Grid.Row="1"
                              HeaderBrush="#1565C0"
                              HeaderText="Local AxxonData"
-                             BodyText="Обнаружена существующая установка"
+                             BodyText="Продукт уже установлен"
                              BackgroundImageSource="header_back_darkblue.png" ShowLogo="True" />
         <Border Grid.Row="2" Margin="{StaticResource ThemePaddingDownAndSides-Medium}">
             <Grid>
@@ -18,17 +18,11 @@
                         <TextBlock Text="Local AxxonData уже установлен"
                                    Classes="ONE-H2-Bold" />
                         <TextBlock TextWrapping="Wrap" Classes="ONE-H3-Regular"
-                                   Text="На этом компьютере уже установлен Local AxxonData. Вы можете удалить существующую установку или запустить повторную настройку." />
-                        <Border Classes="info-block" Padding="8">
-                            <StackPanel Spacing="4">
-                                <TextBlock Text="Текущая установка"
-                                           Classes="ONE-Paragraph-Bold" />
-                                <TextBlock TextWrapping="Wrap" Classes="ONE-Paragraph-Regular"
-                                           Text="Версия: 1.2.0" />
-                                <TextBlock TextWrapping="Wrap" Classes="ONE-Paragraph-Regular"
-                                           Text="Установлен: 15.06.2026" />
-                            </StackPanel>
-                        </Border>
+                                   Text="Вы можете восстановить существующую установку или удалить продукт." />
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="12">
+                            <Button Classes="Primary Large" Content="Восстановление" Click="OnRestoreClick" />
+                            <Button Classes="Red Large" Content="Удаление" Click="OnUninstallClick" />
+                        </StackPanel>
                     </StackPanel>
                 </Grid>
             </Grid>
@@ -36,9 +30,7 @@
         <Border Grid.Row="3" Margin="{StaticResource ThemePaddingSides-Medium}">
             <Grid>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8">
-                    <Button Classes="Secondary Large" Content="Удалить" Click="OnUninstallClick" />
                     <Button Classes="Secondary Large" Content="Выйти" Click="OnExitClick" />
-                    <Button Classes="Primary Large" Content="Продолжить" Click="OnContinueClick" />
                 </StackPanel>
             </Grid>
         </Border>

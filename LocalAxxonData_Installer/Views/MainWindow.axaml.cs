@@ -53,9 +53,19 @@ public partial class MainWindow : MxWindow
         MainContentControl.Content = new ResumeProgressPage();
         ResetSizeToContent();
     }
+    public void ShowRestoreProgressPage()
+    {
+        MainContentControl.Content = new RestoreProgressPage();
+        ResetSizeToContent();
+    }
     public void ShowFinishPage()
     {
-        MainContentControl.Content = new FinishPage();
+        MainContentControl.Content = new FinishPage(FinishMode.Install);
+        ResetSizeToContent();
+    }
+    public void ShowFinishPage(FinishMode mode)
+    {
+        MainContentControl.Content = new FinishPage(mode);
         ResetSizeToContent();
     }
     public void ShowAlreadyInstalledPage()

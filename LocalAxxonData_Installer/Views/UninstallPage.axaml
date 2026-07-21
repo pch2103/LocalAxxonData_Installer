@@ -6,14 +6,15 @@
     <Grid RowDefinitions="Auto,Auto,*,Auto">
         <local:StageTitleBar Grid.Row="0" />
         <local:ColorBandView Grid.Row="1"
-                             HeaderBrush="#616161"
+                             HeaderBrush="#C62828"
                              HeaderText="Удаление Local AxxonData"
-                             BackgroundImageSource="header_back_gray.png" ShowLogo="True" />
+                             BackgroundImageSource="header_back_red.png" ShowLogo="True" />
         <Border Grid.Row="2" Margin="{StaticResource ThemePaddingDownAndSides-Medium}">
             <Grid>
                 <Border Classes="content-background" />
                 <Grid Margin="{StaticResource ThemePadding-Medium}" VerticalAlignment="Center">
-                    <StackPanel Spacing="{StaticResource ThemeSize-Regular}">
+
+                    <StackPanel x:Name="ConfirmationPanel" Spacing="{StaticResource ThemeSize-Regular}">
                         <TextBlock Text="Удаление программы"
                                    Classes="ONE-H2-Bold" />
                         <TextBlock TextWrapping="Wrap" Classes="ONE-H3-Regular"
@@ -23,23 +24,39 @@
                                 <TextBlock Text="Внимание!"
                                            Classes="ONE-Paragraph-Bold" Foreground="{StaticResource RedColor}" />
                                 <TextBlock TextWrapping="Wrap" Classes="ONE-H3-Regular"
-                                            Text="Это действие необратимо. Все данные будут безвозвратно удалены." />
+                                           Text="Это действие необратимо. Все данные будут безвозвратно удалены." />
                             </StackPanel>
                         </Border>
                     </StackPanel>
+
+                    <StackPanel x:Name="ProgressPanel" IsVisible="False" Spacing="{StaticResource ThemeSize-Regular}"
+                                HorizontalAlignment="Center" Width="400">
+                        <TextBlock Text="Выполняется удаление…"
+                                   Classes="ONE-H3-Regular"
+                                   HorizontalAlignment="Center" />
+                        <ProgressBar x:Name="UninstallProgressBar" Minimum="0" Maximum="100" Height="30"
+                                     Foreground="{StaticResource RedColor}" />
+                        <TextBlock x:Name="UninstallPercentText" Text="0%"
+                                   Classes="ONE-H3-Bold" Foreground="{StaticResource RedColor}"
+                                   HorizontalAlignment="Center" />
+                    </StackPanel>
+
                 </Grid>
             </Grid>
         </Border>
         <Border Grid.Row="3" Margin="{StaticResource ThemePaddingSides-Medium}">
             <Grid>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8">
+                <StackPanel x:Name="ConfirmationFooter" Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8">
                     <Button Classes="Secondary Large" Click="OnBackClick">
                         <Grid ColumnDefinitions="Auto,*" Height="{StaticResource ThemeSize-Large}" VerticalAlignment="Center">
                             <Path Data="{StaticResource ArrowLeft}" Width="{StaticResource ThemeSize-Double}" Height="{StaticResource ThemeSize-Double}" Margin="0 10 6 0" />
                             <TextBlock Grid.Column="1" Text="Назад" Classes="ONE-H3-Bold" VerticalAlignment="Center" />
                         </Grid>
                     </Button>
-                    <Button Classes="Primary Large" Content="Удалить" Click="OnUninstallClick" />
+                    <Button Classes="Red Large" Content="Удалить" Click="OnUninstallClick" />
+                    <Button Classes="Secondary Large" Content="Отмена" Click="OnCancelClick" />
+                </StackPanel>
+                <StackPanel x:Name="ProgressFooter" IsVisible="False" Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8">
                     <Button Classes="Secondary Large" Content="Отмена" Click="OnCancelClick" />
                 </StackPanel>
             </Grid>

@@ -11,29 +11,29 @@
                              BodyText="Первая фаза завершена"
                              BackgroundImageSource="header_back_orange.png" ShowLogo="True" />
         <Border Grid.Row="2" Margin="{StaticResource ThemePaddingDownAndSides-Medium}">
-            <Grid>
-                <Border Classes="content-background" />
-                <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
-                    <StackPanel Spacing="{StaticResource ThemeSize-Regular}" HorizontalAlignment="Center">
-                        <TextBlock Text="⟳" FontSize="48" Foreground="{StaticResource OrangeColor}"
-                                   HorizontalAlignment="Center" />
-                        <TextBlock Text="Фаза 1 завершена!"
-                                   Classes="ONE-H2-Bold" HorizontalAlignment="Center" />
-                        <Border Classes="warning-block" Padding="16" HorizontalAlignment="Center" MinWidth="200">
-                            <StackPanel Spacing="4" HorizontalAlignment="Center">
-                                <TextBlock Text="Перезагрузка через"
-                                           Classes="ONE-Paragraph-Regular" HorizontalAlignment="Center" />
-                                <TextBlock x:Name="TimerText" Text="60 сек."
-                                           Classes="ONE-H1-Medium" Foreground="{StaticResource OrangeColor}"
-                                           HorizontalAlignment="Center" />
-                            </StackPanel>
-                        </Border>
-                        <TextBlock Text="После перезагрузки мастер продолжит работу автоматически."
-                                   Classes="ONE-Paragraph-Small" Foreground="{StaticResource SubLabelColor}"
-                                   HorizontalAlignment="Center" />
-                    </StackPanel>
+                <Grid>
+                    <Border Classes="content-background" />
+                    <Grid RowDefinitions="*,Auto,*" HorizontalAlignment="Center">
+                        <StackPanel Grid.Row="1" Spacing="{StaticResource ThemeSize-Regular}" HorizontalAlignment="Center">
+                            <TextBlock Text="⟳" FontSize="48" Foreground="{StaticResource OrangeColor}"
+                                       HorizontalAlignment="Center" />
+                            <TextBlock Text="Фаза 1 завершена!"
+                                       Classes="ONE-H2-Bold" HorizontalAlignment="Center" />
+                            <Border Classes="warning-block" Padding="16" HorizontalAlignment="Center" MinWidth="200">
+                                <StackPanel Spacing="4" HorizontalAlignment="Center">
+                                    <TextBlock Text="Перезагрузка через"
+                                               Classes="ONE-Paragraph-Regular" HorizontalAlignment="Center" />
+                                    <TextBlock x:Name="TimerText" Text="60 сек."
+                                               Classes="ONE-H1-Medium" Foreground="{StaticResource OrangeColor}"
+                                               HorizontalAlignment="Center" />
+                                </StackPanel>
+                            </Border>
+                            <TextBlock Text="После перезагрузки мастер продолжит работу автоматически."
+                                       Classes="ONE-Paragraph-Small" Foreground="{StaticResource SubLabelColor}"
+                                       HorizontalAlignment="Center" />
+                        </StackPanel>
+                    </Grid>
                 </Grid>
-            </Grid>
         </Border>
         <Border Grid.Row="3" Margin="{StaticResource ThemePaddingSides-Medium}">
             <Grid>

@@ -8,30 +8,26 @@ using System.Threading.Tasks;
 
 namespace LocalAxxonData_Installer.Views;
 
-public partial class UninstallPage : UserControl
+public partial class RestoreProgressPage : UserControl
 {
     private CancellationTokenSource? _cts;
+    private bool _isRunning;
 
-    public UninstallPage()
+    public RestoreProgressPage()
     {
         InitializeComponent();
     }
 
-    private void OnBackClick(object? sender, RoutedEventArgs e)
+    protected override void OnAttachedToVisualTree(VisualTreeAttachmentEventArgs e)
     {
-        if (VisualRoot is MainWindow mainWindow)
-        {
-            mainWindow.ShowAlreadyInstalledPage();
-        }
+        base.OnAttachedToVisualTree(e);
+        StartRestore();
     }
 
-    private async void OnUninstallClick(object? sender, RoutedEventArgs e)
+    private async void StartRestore()
     {
-        ConfirmationPanel.IsVisible = false;
-        ConfirmationFooter.IsVisible = false;
-        ProgressPanel.IsVisible = true;
-        ProgressFooter.IsVisible = true;
-
+        if (_isRunning) return;
+        _isRunning = true;
         _cts = new CancellationTokenSource();
         var token = _cts.Token;
 
@@ -47,13 +43,15 @@ public partial class UninstallPage : UserControl
             {
                 break;
             }
-            UninstallProgressBar.Value = i;
-            UninstallPercentText.Text = $"{i}%";
+            RestoreProgressBar.Value = i;
+            PercentText.Text = $"{i}%";
         }
+
+        _isRunning = false;
 
         if (!token.IsCancellationRequested && VisualRoot is MainWindow mainWindow)
         {
-            mainWindow.ShowFinishPage(FinishMode.Uninstall);
+            mainWindow.ShowFinishPage(FinishMode.Restore);
         }
     }
 

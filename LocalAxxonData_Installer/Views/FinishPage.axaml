@@ -5,35 +5,34 @@
              x:Class="LocalAxxonData_Installer.Views.FinishPage">
     <Grid RowDefinitions="Auto,Auto,*,Auto">
         <local:StageTitleBar Grid.Row="0" />
-        <local:ColorBandView Grid.Row="1"
-                             HeaderBrush="#2E7D32"
-                             HeaderText="Установка завершена"
-                             BodyText="Local AxxonData готов к работе"
-                             BackgroundImageSource="header_back_green.png" ShowLogo="True" />
+        <local:ColorBandView Grid.Row="1" x:Name="HeaderBand"
+                             ShowLogo="True" />
         <Border Grid.Row="2" Margin="{StaticResource ThemePaddingDownAndSides-Medium}">
             <Grid>
                 <Border Classes="content-background" />
                 <Grid RowDefinitions="*,Auto" Margin="{StaticResource ThemePadding-Medium}">
                     <Grid Grid.Row="0" VerticalAlignment="Center">
                         <StackPanel Spacing="{StaticResource ThemeSize-Regular}" HorizontalAlignment="Center">
-                            <TextBlock Text="✓" FontSize="48" Foreground="{StaticResource GreenColor}"
+                            <TextBlock x:Name="IconText" FontSize="48" HorizontalAlignment="Center" />
+                            <TextBlock x:Name="TitleText" Classes="ONE-H2-Bold" HorizontalAlignment="Center" />
+                            <TextBlock x:Name="DescriptionText" TextWrapping="Wrap" Classes="ONE-H3-Regular"
                                        HorizontalAlignment="Center" />
-                            <TextBlock Text="Успешно установлено!"
-                                       Classes="ONE-H2-Bold" HorizontalAlignment="Center" />
-                            <TextBlock TextWrapping="Wrap" Classes="ONE-H3-Regular" HorizontalAlignment="Center"
-                                       Text="Local AxxonData установлен и готов к использованию." />
-                            <Border Classes="success-block" Padding="8" HorizontalAlignment="Center">
-                                <StackPanel Spacing="4">
-                                    <TextBlock Text="http://localhost:8080"
-                                               Classes="ONE-H3-Bold" Foreground="{StaticResource GreenColor}" />
-                                </StackPanel>
+                            <Border x:Name="SuccessCard" Classes="success-block" Padding="8" HorizontalAlignment="Center"
+                                    IsVisible="False">
+                                <TextBlock x:Name="SuccessCardText" Classes="ONE-H3-Bold"
+                                           Foreground="{StaticResource GreenColor}" />
                             </Border>
-                            <TextBlock Text="Зарегистрируйте пользователя и подтвердите email."
-                                       Classes="ONE-Paragraph-Small" Foreground="{StaticResource SubLabelColor}"
+                            <Border x:Name="ErrorCard" Classes="error-block" Padding="8" HorizontalAlignment="Center"
+                                    IsVisible="False">
+                                <TextBlock x:Name="ErrorCardText" Classes="ONE-H3-Bold"
+                                           Foreground="{StaticResource RedColor}" />
+                            </Border>
+                            <TextBlock x:Name="FootnoteText" Classes="ONE-Paragraph-Small"
+                                       Foreground="{StaticResource SubLabelColor}"
                                        HorizontalAlignment="Center" />
                         </StackPanel>
                     </Grid>
-                    <local:InfoBlockView Grid.Row="1"
+                    <local:InfoBlockView x:Name="PasswordInfo" Grid.Row="1"
                                          HeaderText="Начальный пароль"
                                          BodyText="При первом входе используйте логин admin и пароль, указанный в окне терминала." />
                 </Grid>
@@ -42,7 +41,8 @@
         <Border Grid.Row="3" Margin="{StaticResource ThemePaddingSides-Medium}">
             <Grid>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8">
-                    <Button Classes="Secondary Large" Content="Открыть в браузере" Click="OnOpenBrowserClick" />
+                    <Button x:Name="OpenBrowserButton" Classes="Secondary Large" Content="Открыть в браузере"
+                            Click="OnOpenBrowserClick" />
                     <Button Classes="Primary Large" Content="Закрыть" Click="OnFinishClick" />
                 </StackPanel>
             </Grid>

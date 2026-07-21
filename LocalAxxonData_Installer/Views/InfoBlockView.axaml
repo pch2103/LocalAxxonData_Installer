@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:local="clr-namespace:LocalAxxonData_Installer.Views"
              x:Class="LocalAxxonData_Installer.Views.InfoBlockView">
-    <Border Classes="info-block" Margin="{DynamicResource ThemePaddingDown-Medium}">
+    <Border Classes="info-block">
         <Grid ColumnDefinitions="Auto, *">
             <PathIcon Grid.Column="0" VerticalAlignment="Top" Margin="0 0 8 0" Data="{DynamicResource InfoIcon}"
                       Foreground="{DynamicResource PrimaryColorTint20}"

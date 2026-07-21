@@ -51,4 +51,10 @@ public partial class LanguagePage : UserControl
         if (VisualRoot is MainWindow mainWindow)
             mainWindow.ShowExitConfirmPage();
     }
+
+    private void OnTestAlreadyInstalledClick(object? sender, RoutedEventArgs e)
+    {
+        if (VisualRoot is MainWindow mainWindow)
+            mainWindow.ShowAlreadyInstalledPage();
+    }
 }

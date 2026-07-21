@@ -12,6 +12,14 @@ public partial class AlreadyInstalledPage : UserControl
         InitializeComponent();
     }
 
+    private void OnRestoreClick(object? sender, RoutedEventArgs e)
+    {
+        if (VisualRoot is MainWindow mainWindow)
+        {
+            mainWindow.ShowRestoreProgressPage();
+        }
+    }
+
     private void OnUninstallClick(object? sender, RoutedEventArgs e)
     {
         if (VisualRoot is MainWindow mainWindow)
@@ -25,14 +33,6 @@ public partial class AlreadyInstalledPage : UserControl
         if (VisualRoot is MainWindow mainWindow)
         {
             mainWindow.CloseWindow();
-        }
-    }
-
-    private void OnContinueClick(object? sender, RoutedEventArgs e)
-    {
-        if (VisualRoot is MainWindow mainWindow)
-        {
-            mainWindow.ShowWelcomePage();
         }
     }
 }
