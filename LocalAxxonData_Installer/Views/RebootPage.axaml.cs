@@ -2,6 +2,7 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
+using LocalAxxonData_Installer.Localization;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
@@ -16,6 +17,18 @@ public partial class RebootPage : UserControl
     public RebootPage()
     {
         InitializeComponent();
+        UpdateLanguage();
+    }
+
+    private void UpdateLanguage()
+    {
+        ColorBand.HeaderText = LocStrings.RebootHeader;
+        ColorBand.BodyText = LocStrings.RebootSubtitle;
+        HeadingText.Text = LocStrings.RebootHeading;
+        CountdownLabelText.Text = LocStrings.RebootCountdownLabel;
+        InfoText.Text = LocStrings.RebootInfo;
+        DeferButton.Content = LocStrings.RebootDefer;
+        RebootButton.Content = LocStrings.RebootNow;
     }
 
     protected override void OnAttachedToVisualTree(VisualTreeAttachmentEventArgs e)
@@ -40,7 +53,7 @@ public partial class RebootPage : UserControl
             for (int i = _countdown; i >= 0; i--)
             {
                 _cts.Token.ThrowIfCancellationRequested();
-                TimerText.Text = $"{i} сек.";
+                TimerText.Text = string.Format(LocStrings.RebootSecFmt, i);
                 await Task.Delay(1000, _cts.Token);
             }
 
@@ -59,7 +72,7 @@ public partial class RebootPage : UserControl
         _cts?.Cancel();
         DeferButton.IsEnabled = false;
         RebootButton.IsEnabled = true;
-        TimerText.Text = "отложено";
+        TimerText.Text = LocStrings.RebootDeferred;
     }
 
     private void OnRebootClick(object? sender, RoutedEventArgs e)

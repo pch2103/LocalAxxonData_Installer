@@ -32,18 +32,16 @@
                                        HorizontalAlignment="Center" />
                         </StackPanel>
                     </Grid>
-                    <local:InfoBlockView x:Name="PasswordInfo" Grid.Row="1"
-                                         HeaderText="Начальный пароль"
-                                         BodyText="При первом входе используйте логин admin и пароль, указанный в окне терминала." />
+                    <local:InfoBlockView x:Name="PasswordInfo" Grid.Row="1" />
                 </Grid>
             </Grid>
         </Border>
         <Border Grid.Row="3" Margin="{StaticResource ThemePaddingSides-Medium}">
             <Grid>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8">
-                    <Button x:Name="OpenBrowserButton" Classes="Secondary Large" Content="Открыть в браузере"
+                    <Button x:Name="OpenBrowserButton" Classes="Secondary Large"
                             Click="OnOpenBrowserClick" />
-                    <Button Classes="Primary Large" Content="Закрыть" Click="OnFinishClick" />
+                    <Button x:Name="FinishButton" Classes="Primary Large" Click="OnFinishClick" />
                 </StackPanel>
             </Grid>
         </Border>

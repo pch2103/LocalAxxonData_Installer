@@ -95,3 +95,140 @@ No test, lint, or typecheck projects exist. The only verification is building.
 ## Build & Validation Workflow
 
 - **Only Use `dotnet build`:** To verify changes, use ONLY `dotnet build`. Do not try to run tests (`dotnet test`) or linters, as they do not exist in this project.
+
+## Eremex Controls Quick Reference (v1.3.x)
+
+### MxWindow (borderless, 700×500)
+```xml
+<mx:MxWindow xmlns:mx="using:Eremex.Avalonia.Controls"
+             SystemDecorations="None"
+             SizeToContent="WidthAndHeight"
+             WindowStartupLocation="CenterScreen"
+             Width="700" Height="500">
+    <ContentControl Name="MainContentControl" />
+</mx:MxWindow>
+```
+
+### TextEditor (single-line text)
+```xml
+<mx:TextEditor Name="Editor" Watermark="placeholder" Text="{Binding Value}" />
+```
+Password mode: use `PasswordBoxBehavior` from `Avalonia.Xaml.Behaviors`.
+
+### ButtonEditor / CheckEditor / ComboBoxEditor / DateEditor / SpinEditor / MemoEditor
+
+| Control | Key Property | Notes |
+|---------|-------------|-------|
+| `ButtonEditor` | `Content`, `Click` | Button with configurable look |
+| `CheckEditor` | `IsChecked`, `Content` | Checkbox |
+| `ComboBoxEditor` | `ItemsSource`, `SelectedItem` | Dropdown |
+| `DateEditor` | `DateTime`, `MaskType` | Date picker |
+| `SpinEditor` | `Value`, `MinValue`, `MaxValue` | Numeric up-down |
+| `MemoEditor` | `Text`, `AcceptsReturn` | Multi-line text |
+
+### MxMessageBox
+```csharp
+await MxMessageBox.ShowAsync("text", "title",
+    MxMessageBoxButtons.YesNo, MxMessageBoxIcon.Question);
+```
+
+### Program.cs — required setup
+```csharp
+BuildAvaloniaApp()
+    .UsePlatformDetect()
+    .UseEMXServices()                // Eremex service registration
+    .LogToTrace()
+    .StartWithClassicDesktopLifetime(args);
+```
+
+## DeltaDesign Theme Resource Overrides
+
+### Style loading order in App.axaml
+```
+DeltaDesignTheme (base) → CustomDarkTheme → ControlsCustomStyles → WindowStyles
+```
+
+### Resource dictionaries
+```xml
+<ResourceInclude Source="avares://.../Resources/ModifiedResourcesColor.axaml" />
+<ResourceInclude Source="avares://.../Resources/ModifiedResources.axaml" />
+```
+
+### Typography tokens (Segoe UI)
+| Token | Size | Weight | Usage |
+|-------|------|--------|-------|
+| `ONE-H2-Bold` | 18px | Bold | Page headings |
+| `ONE-H3-Regular` | 14px | Regular | Body text |
+| `ONE-Paragraph-Regular` | 13px | Regular | Info/error/warning text |
+| `One-Subs-Bold` | 13px | Bold | Field labels |
+| `One-Subs-Regular` | 13px | Regular | Field values |
+
+### Semantic colours (project decisions — differ from Figma)
+| Resource Key | Hex | Usage |
+|-------------|-----|-------|
+| `SemanticColors/DangerBrush` | `#FF0000` | Errors, destructive actions |
+| `SemanticColors/SuccessBrush` | `#20D300` | Success, completion |
+| `SemanticColors/WarningBrush` | `#FF8A00` | Warnings, countdowns |
+
+### Page header colours by phase
+| Phase | Hex | Pages |
+|-------|-----|-------|
+| A (setup) | `#1A73E8` blue | Language → Summary |
+| B (reboot) | `#F57C00` orange | Reboot |
+| C (finish) | `#2E7D32` green | Finish |
+| Reinstall | `#1565C0` dark blue | AlreadyInstalled |
+| Uninstall/Error | `#C62828` red | Uninstall, Error |
+| Exit confirm | `#616161` gray | ExitConfirm |
+
+### Common DeltaDesign resource keys (for ModifiedResources)
+- `DefaultFont`, `WindowBackground`, `ContentBackground`, `BorderBrush`
+- `TextBrush`, `DisabledTextBrush`, `AccentBrush`, `ErrorBrush`
+
+### Rule
+**All colours in XAML must use `{DynamicResource}` — never raw hex.**
+
+## Navigation & Wizard Patterns
+
+```
+MainWindow (MxWindow)
+  └── ContentControl (MainContentControl)  ← Content swapped in code-behind
+        └── [Page] (UserControl)
+              ├── StageTitleBar (drag + close → ExitConfirm)
+              ├── ColorBandView (colored header + logo)
+              ├── [page content with InfoBlock/ErrorBlock/WarningBlock]
+              └── footer (Next/Back/Cancel buttons)
+```
+
+### Adding a new page
+1. Create `NewPage.axaml` + `NewPage.axaml.cs` (UserControl, 700×500, 4-row grid)
+2. Add `ShowNewPage()` to `MainWindow.axaml.cs`
+3. Wire navigation from previous page's `OnNextClick`
+4. Add localization strings to `LocStrings.cs`
+
+### Page code-behind pattern
+```csharp
+public partial class SomePage : UserControl
+{
+    public SomePage() { InitializeComponent(); UpdateLanguage(); }
+    private void UpdateLanguage() { /* populate from LocStrings */ }
+    private void OnNextClick(object? s, RoutedEventArgs e)
+        { if (VisualRoot is MainWindow mw) mw.ShowNextPage(); }
+    private void OnCancelClick(object? s, RoutedEventArgs e)
+        { if (VisualRoot is MainWindow mw) mw.ShowExitConfirmPage(); }
+}
+```
+
+### ExitConfirmPage restores previous content
+```csharp
+_previousContent = MainContentControl.Content;
+MainContentControl.Content = new ExitConfirmPage();
+// On continue:
+MainContentControl.Content = _previousContent;
+```
+
+### Progress auto-advance with CancellationTokenSource
+```csharp
+private CancellationTokenSource? _cts;
+// On cancel:
+_cts?.Cancel(); if (VisualRoot is MainWindow mw) mw.ShowExitConfirmPage();
+```

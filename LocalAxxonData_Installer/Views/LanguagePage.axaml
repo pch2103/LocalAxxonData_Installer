@@ -17,13 +17,13 @@
                 <Grid Margin="{StaticResource ThemePadding-Medium}" VerticalAlignment="Center"
                       HorizontalAlignment="Center">
                     <StackPanel Spacing="{StaticResource ThemeSize-Medium}" Orientation="Vertical">
-                        <TextBlock Text="Выберите язык / Select language"
+                        <TextBlock x:Name="HeadingText"
                                    Classes="ONE-H1-Medium"
                                    HorizontalAlignment="Center" />
                         <StackPanel Orientation="Horizontal" Spacing="12" HorizontalAlignment="Center">
-                            <Button Classes="Secondary Large" Content="Русский" x:Name="RussianButton"
+                            <Button Classes="Secondary Large" x:Name="RussianButton"
                                     Click="OnRussianClick" />
-                            <Button Classes="Secondary Large" Content="English" x:Name="EnglishButton"
+                            <Button Classes="Secondary Large" x:Name="EnglishButton"
                                     Click="OnEnglishClick" />
                         </StackPanel>
                     </StackPanel>
@@ -33,16 +33,13 @@
         <Border Grid.Row="3" Margin="{StaticResource ThemePaddingSides-Medium}">
             <Grid ColumnDefinitions="*,*">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Spacing="8">
-                    <Button Classes="Secondary Large" Content="Тест — продукт уже установлен" Click="OnTestAlreadyInstalledClick" />
+                    <Button Classes="Secondary Large" x:Name="TestButton" Click="OnTestAlreadyInstalledClick" />
                 </StackPanel>
                 <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8">
                     <Button Classes="Primary Large" x:Name="NextButton" IsEnabled="False" Click="OnNextClick">
-                        <Grid ColumnDefinitions="Auto,*" Height="{StaticResource ThemeSize-Large}" VerticalAlignment="Center">
-                            <Path Data="{StaticResource ArrowRight}" Width="{StaticResource ThemeSize-Double}" Height="{StaticResource ThemeSize-Double}" Margin="0 10 6 0" />
-                            <TextBlock Grid.Column="1" Text="Далее" Classes="ONE-H3-Bold" VerticalAlignment="Center" />
-                        </Grid>
+                        <TextBlock x:Name="NextText" Text="Далее" Classes="ONE-H3-Bold" VerticalAlignment="Center" />
                     </Button>
-                    <Button Classes="Secondary Large" Content="Отмена" Click="OnCancelClick" />
+                    <Button Classes="Secondary Large" x:Name="CancelButton" Click="OnCancelClick" />
                 </StackPanel>
             </Grid>
         </Border>

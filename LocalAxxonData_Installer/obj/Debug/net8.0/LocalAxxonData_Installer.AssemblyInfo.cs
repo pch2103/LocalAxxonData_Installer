@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LocalAxxonData_Installer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6370e793160d42a0ad9f0fc4925119e482c08fbf")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a47756a614a1617a716291b38c20aa9565d21873")]
 [assembly: System.Reflection.AssemblyProductAttribute("LocalAxxonData_Installer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LocalAxxonData_Installer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

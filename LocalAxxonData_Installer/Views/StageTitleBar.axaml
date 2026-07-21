@@ -15,7 +15,7 @@
               Fill="{StaticResource ForegroundColor}" />
       </Border>
       <Border Grid.Column="1" Background="Transparent" PointerPressed="TitleBar_PointerPressed">
-        <TextBlock Text="Local AxxonData — Мастер установки"
+        <TextBlock x:Name="TitleText"
                    VerticalAlignment="Center"
                    Classes="ONE-H2-Medium" />
       </Border>

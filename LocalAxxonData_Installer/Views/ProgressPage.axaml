@@ -5,17 +5,15 @@
              x:Class="LocalAxxonData_Installer.Views.ProgressPage">
     <Grid RowDefinitions="Auto,Auto,*,Auto">
         <local:StageTitleBar Grid.Row="0" />
-        <local:ColorBandView Grid.Row="1"
+        <local:ColorBandView x:Name="ColorBand" Grid.Row="1"
                              HeaderBrush="#1A73E8"
-                             HeaderText="Установка: Фаза 1"
-                             BodyText="Выполняется установка компонентов…"
                              BackgroundImageSource="header_back_blue.png" ShowLogo="True" />
         <Border Grid.Row="2" Margin="{StaticResource ThemePaddingDownAndSides-Medium}">
             <Grid>
                 <Border Classes="content-background" />
                 <Grid Margin="{StaticResource ThemePadding-Medium}" VerticalAlignment="Center">
                     <StackPanel Spacing="{StaticResource ThemeSize-Regular}" HorizontalAlignment="Center" Width="400">
-                        <TextBlock Text="Пожалуйста, не выключайте компьютер."
+                        <TextBlock x:Name="StatusText"
                                    Classes="ONE-H3-Regular"
                                    HorizontalAlignment="Center" />
                         <ProgressBar x:Name="InstallProgressBar" Minimum="0" Maximum="100" Height="30"
@@ -30,7 +28,7 @@
         <Border Grid.Row="3" Margin="{StaticResource ThemePaddingSides-Medium}">
             <Grid>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8">
-                    <Button Classes="Secondary Large" Content="Отмена" Click="OnCancelClick" />
+                    <Button Classes="Secondary Large" x:Name="CancelButton" Click="OnCancelClick" />
                 </StackPanel>
             </Grid>
         </Border>

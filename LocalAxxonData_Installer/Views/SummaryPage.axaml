@@ -5,9 +5,8 @@
              x:Class="LocalAxxonData_Installer.Views.SummaryPage">
     <Grid RowDefinitions="Auto,Auto,*,Auto">
         <local:StageTitleBar Grid.Row="0" />
-        <local:ColorBandView Grid.Row="1"
+        <local:ColorBandView x:Name="ColorBand" Grid.Row="1"
                              HeaderBrush="#1A73E8"
-                             HeaderText="Готово к установке"
                              BackgroundImageSource="header_back_blue.png" ShowLogo="True" />
         <Border Grid.Row="2" Margin="{StaticResource ThemePaddingDownAndSides-Medium}">
             <Grid>
@@ -15,33 +14,31 @@
                 <Grid RowDefinitions="*,Auto" Margin="{StaticResource ThemePadding-Medium}">
                     <ScrollViewer Grid.Row="0">
                         <StackPanel Spacing="{StaticResource ThemeSize-Regular}">
-                            <TextBlock Text="Проверьте параметры установки"
+                            <TextBlock x:Name="HeadingText"
                                        Classes="ONE-H2-Bold" />
                             <Border Classes="info-block" Padding="8">
                                 <StackPanel Spacing="4">
-                                    <TextBlock Text="Параметры установки"
+                                    <TextBlock x:Name="InfoHeaderText"
                                                Classes="ONE-Paragraph-Bold" />
-                                    <TextBlock TextWrapping="Wrap" Classes="ONE-Paragraph-Regular"
-                                               Text="Директория: C:\Program Files\Local AxxonData" />
-                                    <TextBlock TextWrapping="Wrap" Classes="ONE-Paragraph-Regular"
-                                               Text="SMTP: настроен" />
-                                    <TextBlock TextWrapping="Wrap" Classes="ONE-Paragraph-Regular"
-                                               Text="Начальный пароль: будет запрошен после установки" />
+                                    <TextBlock x:Name="DirText"
+                                               TextWrapping="Wrap" Classes="ONE-Paragraph-Regular" />
+                                    <TextBlock x:Name="SmtpText"
+                                               TextWrapping="Wrap" Classes="ONE-Paragraph-Regular" />
+                                    <TextBlock x:Name="PasswordText"
+                                               TextWrapping="Wrap" Classes="ONE-Paragraph-Regular" />
                                 </StackPanel>
                             </Border>
                             <Border Classes="error-block" Padding="8">
                                 <StackPanel Spacing="4">
-                                    <TextBlock Text="Внимание!"
+                                    <TextBlock x:Name="WarningHeadingText"
                                                Classes="ONE-Paragraph-Bold" Foreground="{StaticResource RedColor}" />
-                                    <TextBlock TextWrapping="Wrap" Classes="ONE-Paragraph-Regular"
-                                               Text="Установка потребует перезагрузки компьютера. Сохраните все открытые документы." />
+                                    <TextBlock x:Name="WarningBodyText"
+                                               TextWrapping="Wrap" Classes="ONE-Paragraph-Regular" />
                                 </StackPanel>
                             </Border>
                         </StackPanel>
                     </ScrollViewer>
-                    <local:InfoBlockView Grid.Row="1"
-                                         HeaderText="Готово к началу установки"
-                                         BodyText="Нажмите «Установить», чтобы начать. Первая фаза подготовит систему, после чего потребуется перезагрузка." />
+                    <local:InfoBlockView x:Name="InfoBlock" Grid.Row="1" />
                 </Grid>
             </Grid>
         </Border>
@@ -49,13 +46,10 @@
             <Grid>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8">
                     <Button Classes="Secondary Large" Click="OnBackClick">
-                        <Grid ColumnDefinitions="Auto,*" Height="{StaticResource ThemeSize-Large}" VerticalAlignment="Center">
-                            <Path Data="{StaticResource ArrowLeft}" Width="{StaticResource ThemeSize-Double}" Height="{StaticResource ThemeSize-Double}" Margin="0 10 6 0" />
-                            <TextBlock Grid.Column="1" Text="Назад" Classes="ONE-H3-Bold" VerticalAlignment="Center" />
-                        </Grid>
+                        <TextBlock x:Name="BackText" Text="Назад" Classes="ONE-H3-Bold" VerticalAlignment="Center" />
                     </Button>
-                    <Button Classes="Primary Large" Content="Установить" Click="OnInstallClick" />
-                    <Button Classes="Secondary Large" Content="Отмена" Click="OnCancelClick" />
+                    <Button Classes="Primary Large" x:Name="InstallButton" Click="OnInstallClick" />
+                    <Button Classes="Secondary Large" x:Name="CancelButton" Click="OnCancelClick" />
                 </StackPanel>
             </Grid>
         </Border>

@@ -2,6 +2,7 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
+using LocalAxxonData_Installer.Localization;
 
 namespace LocalAxxonData_Installer.Views;
 
@@ -10,6 +11,18 @@ public partial class AlreadyInstalledPage : UserControl
     public AlreadyInstalledPage()
     {
         InitializeComponent();
+        UpdateLanguage();
+    }
+
+    private void UpdateLanguage()
+    {
+        ColorBand.HeaderText = "Local AxxonData";
+        ColorBand.BodyText = LocStrings.AlreadyInstalledSubtitle;
+        TitleText.Text = LocStrings.AlreadyInstalledHeading;
+        DescText.Text = LocStrings.AlreadyInstalledBody;
+        RestoreButton.Content = LocStrings.AlreadyInstalledRestore;
+        UninstallButton.Content = LocStrings.AlreadyInstalledUninstall;
+        ExitButton.Content = LocStrings.Exit;
     }
 
     private void OnRestoreClick(object? sender, RoutedEventArgs e)

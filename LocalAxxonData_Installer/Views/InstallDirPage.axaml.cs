@@ -5,6 +5,7 @@ using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using Avalonia.Platform.Storage;
 using Eremex.AvaloniaUI.Controls.Utils;
+using LocalAxxonData_Installer.Localization;
 
 namespace LocalAxxonData_Installer.Views;
 
@@ -13,6 +14,21 @@ public partial class InstallDirPage : UserControl
     public InstallDirPage()
     {
         InitializeComponent();
+        UpdateLanguage();
+    }
+
+    private void UpdateLanguage()
+    {
+        ColorBand.HeaderText = LocStrings.InstallDirHeader;
+        HeadingText.Text = LocStrings.InstallDirHeading;
+        BrowseButton.Content = LocStrings.InstallDirBrowse;
+        AvailableText.Text = string.Format(LocStrings.InstallDirFreeFmt, "45.2 ГБ");
+        RequiredText.Text = LocStrings.InstallDirRequired;
+        InfoBlock.HeaderText = LocStrings.InstallDirInfoHeader;
+        InfoBlock.BodyText = LocStrings.InstallDirInfoBody;
+        BackText.Text = LocStrings.Back;
+        NextText.Text = LocStrings.Next;
+        CancelButton.Content = LocStrings.Cancel;
     }
 
     private void OnBackClick(object? sender, RoutedEventArgs e)
@@ -39,7 +55,7 @@ public partial class InstallDirPage : UserControl
         if (topLevel == null) return;
         var folders = await topLevel.StorageProvider.OpenFolderPickerAsync(new FolderPickerOpenOptions
         {
-            Title = "Выберите папку для установки",
+            Title = LocStrings.InstallDirPickerTitle,
             AllowMultiple = false
         });
         if (folders.Count >= 1)

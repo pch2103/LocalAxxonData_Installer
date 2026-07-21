@@ -2,6 +2,7 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
+using LocalAxxonData_Installer.Localization;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
@@ -15,6 +16,21 @@ public partial class UninstallPage : UserControl
     public UninstallPage()
     {
         InitializeComponent();
+        UpdateLanguage();
+    }
+
+    private void UpdateLanguage()
+    {
+        ColorBand.HeaderText = LocStrings.UninstallHeader;
+        HeadingText.Text = LocStrings.UninstallHeading;
+        ConfirmText.Text = LocStrings.UninstallConfirmText;
+        WarningHeaderText.Text = LocStrings.UninstallWarningHeader;
+        WarningBodyText.Text = LocStrings.UninstallWarningBody;
+        ProgressText.Text = LocStrings.UninstallProgressLabel;
+        BackText.Text = LocStrings.Back;
+        UninstallButton.Content = LocStrings.UninstallAction;
+        CancelButton1.Content = LocStrings.Cancel;
+        CancelButton2.Content = LocStrings.Cancel;
     }
 
     private void OnBackClick(object? sender, RoutedEventArgs e)

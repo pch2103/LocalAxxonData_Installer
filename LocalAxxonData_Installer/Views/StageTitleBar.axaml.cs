@@ -3,6 +3,7 @@ using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
+using LocalAxxonData_Installer.Localization;
 
 namespace LocalAxxonData_Installer.Views;
 
@@ -11,6 +12,12 @@ public partial class StageTitleBar : UserControl
     public StageTitleBar()
     {
         InitializeComponent();
+        UpdateLanguage();
+    }
+
+    private void UpdateLanguage()
+    {
+        TitleText.Text = LocStrings.StageTitleBarText;
     }
 
     private void CloseButton_Click(object? sender, RoutedEventArgs e)

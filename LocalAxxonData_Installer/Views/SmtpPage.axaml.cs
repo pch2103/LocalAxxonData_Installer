@@ -3,6 +3,7 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
+using LocalAxxonData_Installer.Localization;
 
 namespace LocalAxxonData_Installer.Views;
 
@@ -11,13 +12,29 @@ public partial class SmtpPage : UserControl
     public SmtpPage()
     {
         InitializeComponent();
+        UpdateLanguage();
+        EncryptionCombo.SelectedItem = "STARTTLS";
+    }
+
+    private void UpdateLanguage()
+    {
+        ColorBand.HeaderText = LocStrings.SmtpHeader;
+        HeadingText.Text = LocStrings.SmtpHeading;
+        ServerLabel.Text = LocStrings.SmtpServerLabel;
+        PortLabel.Text = LocStrings.SmtpPortLabel;
+        EncryptionLabel.Text = LocStrings.SmtpEncryptionLabel;
+        UsernameLabel.Text = LocStrings.SmtpUsernameLabel;
+        PasswordLabel.Text = LocStrings.SmtpPasswordLabel;
+        SenderLabel.Text = LocStrings.SmtpSenderLabel;
+        BackText.Text = LocStrings.Back;
+        NextText.Text = LocStrings.Next;
+        CancelButton.Content = LocStrings.Cancel;
         EncryptionCombo.ItemsSource = new List<string>
         {
-            "Без шифрования",
+            LocStrings.SmtpNoEncryption,
             "STARTTLS",
             "SSL/TLS"
         };
-        EncryptionCombo.SelectedItem = "STARTTLS";
     }
 
     private void OnBackClick(object? sender, RoutedEventArgs e)

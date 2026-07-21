@@ -5,23 +5,21 @@
              x:Class="LocalAxxonData_Installer.Views.AlreadyInstalledPage">
     <Grid RowDefinitions="Auto,Auto,*,Auto">
         <local:StageTitleBar Grid.Row="0" />
-        <local:ColorBandView Grid.Row="1"
+        <local:ColorBandView x:Name="ColorBand" Grid.Row="1"
                              HeaderBrush="#1565C0"
-                             HeaderText="Local AxxonData"
-                             BodyText="Продукт уже установлен"
                              BackgroundImageSource="header_back_darkblue.png" ShowLogo="True" />
         <Border Grid.Row="2" Margin="{StaticResource ThemePaddingDownAndSides-Medium}">
             <Grid>
                 <Border Classes="content-background" />
                 <Grid Margin="{StaticResource ThemePadding-Medium}" VerticalAlignment="Center">
                     <StackPanel Spacing="{StaticResource ThemeSize-Regular}">
-                        <TextBlock Text="Local AxxonData уже установлен"
+                        <TextBlock x:Name="TitleText"
                                    Classes="ONE-H2-Bold" />
                         <TextBlock TextWrapping="Wrap" Classes="ONE-H3-Regular"
-                                   Text="Вы можете восстановить существующую установку или удалить продукт." />
+                                   x:Name="DescText" />
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="12">
-                            <Button Classes="Primary Large" Content="Восстановление" Click="OnRestoreClick" />
-                            <Button Classes="Red Large" Content="Удаление" Click="OnUninstallClick" />
+                            <Button Classes="Primary Large" x:Name="RestoreButton" Click="OnRestoreClick" />
+                            <Button Classes="Red Large" x:Name="UninstallButton" Click="OnUninstallClick" />
                         </StackPanel>
                     </StackPanel>
                 </Grid>
@@ -30,7 +28,7 @@
         <Border Grid.Row="3" Margin="{StaticResource ThemePaddingSides-Medium}">
             <Grid>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8">
-                    <Button Classes="Secondary Large" Content="Выйти" Click="OnExitClick" />
+                    <Button Classes="Secondary Large" x:Name="ExitButton" Click="OnExitClick" />
                 </StackPanel>
             </Grid>
         </Border>

@@ -3,6 +3,7 @@ using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using Avalonia.Media;
+using LocalAxxonData_Installer.Localization;
 
 namespace LocalAxxonData_Installer.Views;
 
@@ -19,6 +20,15 @@ public partial class FinishPage : UserControl
         InitializeComponent();
         _mode = mode;
         UpdateUI();
+        UpdateLanguage();
+    }
+
+    private void UpdateLanguage()
+    {
+        OpenBrowserButton.Content = LocStrings.FinishOpenBrowser;
+        PasswordInfo.HeaderText = LocStrings.FinishInstallPasswordHeader;
+        PasswordInfo.BodyText = LocStrings.FinishInstallPasswordBody;
+        FinishButton.Content = LocStrings.Close;
     }
 
     private static readonly IBrush GreenBrush = Brush.Parse("#2E7D32");
@@ -30,51 +40,51 @@ public partial class FinishPage : UserControl
         {
             case FinishMode.Install:
                 HeaderBand.HeaderBrush = GreenBrush;
-                HeaderBand.HeaderText = "Установка завершена";
-                HeaderBand.BodyText = "Local AxxonData готов к работе";
+                HeaderBand.HeaderText = LocStrings.FinishInstallHeader;
+                HeaderBand.BodyText = LocStrings.FinishInstallSubtitle;
                 HeaderBand.BackgroundImageSource = "header_back_green.png";
                 IconText.Text = "\u2713";
                 IconText.Foreground = GreenBrush;
-                TitleText.Text = "Успешно установлено!";
-                DescriptionText.Text = "Local AxxonData установлен и готов к использованию.";
+                TitleText.Text = LocStrings.FinishInstallTitle;
+                DescriptionText.Text = LocStrings.FinishInstallDesc;
                 SuccessCard.IsVisible = true;
-                SuccessCardText.Text = "http://localhost:8080";
+                SuccessCardText.Text = LocStrings.FinishUrl;
                 ErrorCard.IsVisible = false;
-                FootnoteText.Text = "Зарегистрируйте пользователя и подтвердите email.";
+                FootnoteText.Text = LocStrings.FinishInstallFootnote;
                 PasswordInfo.IsVisible = true;
                 OpenBrowserButton.IsVisible = true;
                 break;
 
             case FinishMode.Restore:
                 HeaderBand.HeaderBrush = GreenBrush;
-                HeaderBand.HeaderText = "Восстановление завершено";
-                HeaderBand.BodyText = "Local AxxonData восстановлен";
+                HeaderBand.HeaderText = LocStrings.FinishRestoreHeader;
+                HeaderBand.BodyText = LocStrings.FinishRestoreSubtitle;
                 HeaderBand.BackgroundImageSource = "header_back_green.png";
                 IconText.Text = "\u2713";
                 IconText.Foreground = GreenBrush;
-                TitleText.Text = "Восстановление завершено!";
-                DescriptionText.Text = "Local AxxonData восстановлен и готов к работе.";
+                TitleText.Text = LocStrings.FinishRestoreTitle;
+                DescriptionText.Text = LocStrings.FinishRestoreDesc;
                 SuccessCard.IsVisible = true;
-                SuccessCardText.Text = "http://localhost:8080";
+                SuccessCardText.Text = LocStrings.FinishUrl;
                 ErrorCard.IsVisible = false;
-                FootnoteText.Text = "Восстановление прошло успешно.";
+                FootnoteText.Text = LocStrings.FinishRestoreFootnote;
                 PasswordInfo.IsVisible = false;
                 OpenBrowserButton.IsVisible = true;
                 break;
 
             case FinishMode.Uninstall:
                 HeaderBand.HeaderBrush = RedBrush;
-                HeaderBand.HeaderText = "Удаление завершено";
-                HeaderBand.BodyText = "Local AxxonData удалён";
+                HeaderBand.HeaderText = LocStrings.FinishUninstallHeader;
+                HeaderBand.BodyText = LocStrings.FinishUninstallSubtitle;
                 HeaderBand.BackgroundImageSource = "header_back_red.png";
                 IconText.Text = "\u2715";
                 IconText.Foreground = RedBrush;
-                TitleText.Text = "Удаление завершено";
-                DescriptionText.Text = "Local AxxonData удалён с компьютера.";
+                TitleText.Text = LocStrings.FinishUninstallTitle;
+                DescriptionText.Text = LocStrings.FinishUninstallDesc;
                 SuccessCard.IsVisible = false;
                 ErrorCard.IsVisible = true;
-                ErrorCardText.Text = "Продукт удалён";
-                FootnoteText.Text = "Все данные удалены.";
+                ErrorCardText.Text = LocStrings.FinishUninstallCard;
+                FootnoteText.Text = LocStrings.FinishUninstallFootnote;
                 PasswordInfo.IsVisible = false;
                 OpenBrowserButton.IsVisible = false;
                 break;

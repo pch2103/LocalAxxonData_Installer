@@ -5,10 +5,8 @@
              x:Class="LocalAxxonData_Installer.Views.ErrorPage">
     <Grid RowDefinitions="Auto,Auto,*,Auto">
         <local:StageTitleBar Grid.Row="0" />
-        <local:ColorBandView Grid.Row="1"
+        <local:ColorBandView x:Name="ColorBand" Grid.Row="1"
                              HeaderBrush="#C62828"
-                             HeaderText="Ошибка установки"
-                             BodyText="Произошла критическая ошибка"
                              BackgroundImageSource="header_back_red.png" ShowLogo="True" />
         <Border Grid.Row="2" Margin="{StaticResource ThemePaddingDownAndSides-Medium}">
             <Grid>
@@ -16,29 +14,27 @@
                 <Grid RowDefinitions="*,Auto" Margin="{StaticResource ThemePadding-Medium}">
                     <Grid Grid.Row="0" VerticalAlignment="Center">
                         <StackPanel Spacing="{StaticResource ThemeSize-Regular}">
-                            <TextBlock Text="Установка прервана"
+                            <TextBlock x:Name="HeadingText"
                                        Classes="ONE-H2-Bold" />
                             <Border Classes="error-block" Padding="8">
                                 <StackPanel Spacing="4">
-                                    <TextBlock Text="Ошибка: не удалось запустить Docker-демон"
+                                    <TextBlock x:Name="ErrorTitleText"
                                                Classes="ONE-Paragraph-Bold" Foreground="{StaticResource RedColor}" />
-                                    <TextBlock TextWrapping="Wrap" Classes="ONE-H3-Regular"
-                                               Text="Убедитесь, что Docker Desktop установлен и запущен. После исправления проблемы запустите установку заново." />
+                                    <TextBlock x:Name="ErrorDescText"
+                                               TextWrapping="Wrap" Classes="ONE-H3-Regular" />
                                 </StackPanel>
                             </Border>
                         </StackPanel>
                     </Grid>
-                    <local:ErrorBlockView Grid.Row="1"
-                                          HeaderText="Код ошибки: 0x80070001"
-                                          BodyText="Проверьте журнал установки для получения подробной информации." />
+                    <local:ErrorBlockView x:Name="ErrorBlock" Grid.Row="1" />
                 </Grid>
             </Grid>
         </Border>
         <Border Grid.Row="3" Margin="{StaticResource ThemePaddingSides-Medium}">
             <Grid>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8">
-                    <Button Classes="Secondary Large" Content="Показать журнал" />
-                    <Button Classes="Primary Large" Content="Закрыть мастер" Click="OnCloseClick" />
+                    <Button Classes="Secondary Large" x:Name="ShowLogButton" />
+                    <Button Classes="Primary Large" x:Name="CloseButton" Click="OnCloseClick" />
                 </StackPanel>
             </Grid>
         </Border>

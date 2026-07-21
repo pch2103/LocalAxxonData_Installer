@@ -4,9 +4,8 @@
              Width="700" Height="500"
              x:Class="LocalAxxonData_Installer.Views.ExitConfirmPage">
     <Grid RowDefinitions="Auto,*,Auto">
-        <local:ColorBandView Grid.Row="0"
+        <local:ColorBandView x:Name="ColorBand" Grid.Row="0"
                              HeaderBrush="#616161"
-                             HeaderText="Прервать установку?"
                              BackgroundImageSource="header_back_gray.png" ShowLogo="True" />
         <Border Grid.Row="1" Margin="{StaticResource ThemePaddingDownAndSides-Medium}">
             <Grid>
@@ -14,9 +13,9 @@
                 <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
                     <StackPanel Spacing="{StaticResource ThemeSize-Regular}" HorizontalAlignment="Center">
                         <TextBlock Text="⚠" FontSize="48" HorizontalAlignment="Center" />
-                        <TextBlock Text="Вы уверены, что хотите выйти?"
+                        <TextBlock x:Name="TitleText"
                                    Classes="ONE-H2-Bold" HorizontalAlignment="Center" TextWrapping="Wrap" />
-                        <TextBlock Text="Установка будет прервана."
+                        <TextBlock x:Name="DescText"
                                    Classes="ONE-H3-Regular" HorizontalAlignment="Center" />
                     </StackPanel>
                 </Grid>
@@ -24,8 +23,8 @@
         </Border>
         <Border Grid.Row="2" Margin="{StaticResource ThemePaddingSides-Medium}">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8">
-                <Button Classes="Secondary Large" Content="Выйти" Click="OnExitClick" />
-                <Button Classes="Primary Large" Content="Продолжить установку" Click="OnContinueClick" />
+                <Button Classes="Secondary Large" x:Name="ExitButton" Click="OnExitClick" />
+                <Button Classes="Primary Large" x:Name="ContinueButton" Click="OnContinueClick" />
             </StackPanel>
         </Border>
     </Grid>

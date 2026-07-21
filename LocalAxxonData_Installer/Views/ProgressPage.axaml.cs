@@ -1,6 +1,7 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
+using LocalAxxonData_Installer.Localization;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
@@ -15,6 +16,15 @@ public partial class ProgressPage : UserControl
     public ProgressPage()
     {
         InitializeComponent();
+        UpdateLanguage();
+    }
+
+    private void UpdateLanguage()
+    {
+        ColorBand.HeaderText = LocStrings.ProgressHeader;
+        ColorBand.BodyText = LocStrings.ProgressSubtitle;
+        StatusText.Text = LocStrings.ProgressBody;
+        CancelButton.Content = LocStrings.Cancel;
     }
 
     protected override void OnAttachedToVisualTree(VisualTreeAttachmentEventArgs e)

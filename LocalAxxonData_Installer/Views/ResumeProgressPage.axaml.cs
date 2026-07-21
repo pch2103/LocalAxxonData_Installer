@@ -2,6 +2,7 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
+using LocalAxxonData_Installer.Localization;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
@@ -16,6 +17,15 @@ public partial class ResumeProgressPage : UserControl
     public ResumeProgressPage()
     {
         InitializeComponent();
+        UpdateLanguage();
+    }
+
+    private void UpdateLanguage()
+    {
+        ColorBand.HeaderText = LocStrings.ResumeHeader;
+        ColorBand.BodyText = LocStrings.ResumeSubtitle;
+        StatusText.Text = LocStrings.ResumeBody;
+        CancelButton.Content = LocStrings.Cancel;
     }
 
     protected override void OnAttachedToVisualTree(VisualTreeAttachmentEventArgs e)
