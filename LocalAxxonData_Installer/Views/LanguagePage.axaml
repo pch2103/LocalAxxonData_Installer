@@ -3,15 +3,12 @@
              xmlns:mx="https://schemas.eremexcontrols.net/avalonia"
              xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
              xmlns:local="clr-namespace:LocalAxxonData_Installer.Views"
-             Width="700" Height="500"
+             Width="700"
              x:Class="LocalAxxonData_Installer.Views.LanguagePage">
-    <Grid RowDefinitions="Auto,Auto,*,Auto">
-        <local:StageTitleBar Grid.Row="0" />
-        <local:ColorBandView Grid.Row="1"
-                             HeaderBrush="#1A73E8"
-                             HeaderText="Local AxxonData"
-                             BackgroundImageSource="header_back_blue.png" ShowLogo="True" />
-        <Border Grid.Row="2" Margin="{StaticResource ThemePaddingDownAndSides-Medium}">
+    <Grid RowDefinitions="*,Auto">
+
+        
+        <Border Grid.Row="0" Margin="{StaticResource ThemePaddingDownAndSides-Medium}">
             <Grid>
                 <Border Classes="content-background" />
                 <Grid Margin="{StaticResource ThemePadding-Medium}" VerticalAlignment="Center"
@@ -30,7 +27,7 @@
                 </Grid>
             </Grid>
         </Border>
-        <Border Grid.Row="3" Margin="{StaticResource ThemePaddingSides-Medium}">
+        <Border Grid.Row="1" Margin="{StaticResource ThemePaddingSides-Medium}">
             <Grid ColumnDefinitions="*,*">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Spacing="8">
                     <Button Classes="Secondary Large" x:Name="TestButton" Click="OnTestAlreadyInstalledClick" />
@@ -45,3 +42,7 @@
         </Border>
     </Grid>
 </UserControl>
+
+
+
+

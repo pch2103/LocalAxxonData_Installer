@@ -16,7 +16,6 @@ public partial class ExitConfirmPage : UserControl
 
     private void UpdateLanguage()
     {
-        ColorBand.HeaderText = LocStrings.ExitConfirmHeader;
         TitleText.Text = LocStrings.ExitConfirmHeading;
         DescText.Text = LocStrings.ExitConfirmBody;
         ExitButton.Content = LocStrings.Exit;

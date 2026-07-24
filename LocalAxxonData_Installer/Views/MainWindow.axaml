@@ -5,7 +5,8 @@
              xmlns:mx="https://schemas.eremexcontrols.net/avalonia"
              xmlns:views="clr-namespace:LocalAxxonData_Installer.Views"
              x:Class="LocalAxxonData_Installer.Views.MainWindow"
-             SizeToContent="WidthAndHeight"
+             Width="700" Height="500"
+             WindowStartupLocation="CenterScreen"
              SystemDecorations="None"
              ShowMinimizeButton="False"
              ShowMaximizeButton="False"
@@ -16,9 +17,11 @@
     <Grid>
         <Border Classes="main-window-background" />
         <Border Classes="content-overlay" Margin="0,16">
-            <ContentControl x:Name="MainContentControl">
-                <views:LanguagePage />
-            </ContentControl>
+            <Grid RowDefinitions="Auto,Auto,*">
+                <views:StageTitleBar Grid.Row="0" />
+                <views:ColorBandView x:Name="PageColorBand" Grid.Row="1" />
+                <ContentControl x:Name="MainContentControl" Grid.Row="2" />
+            </Grid>
         </Border>
     </Grid>
 </mx:MxWindow>

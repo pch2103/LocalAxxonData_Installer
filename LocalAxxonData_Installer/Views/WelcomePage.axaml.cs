@@ -16,8 +16,6 @@ public partial class WelcomePage : UserControl
 
     private void UpdateLanguage()
     {
-        ColorBand.HeaderText = "Local AxxonData";
-        ColorBand.BodyText = LocStrings.WelcomeSubtitle;
         HeadingText.Text = LocStrings.WelcomeHeading;
         DescText.Text = LocStrings.WelcomeBody;
         WarningHeadingText.Text = LocStrings.WelcomeWarningHeading;

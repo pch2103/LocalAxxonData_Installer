@@ -17,6 +17,11 @@ public partial class LanguagePage : UserControl
 
     private void UpdateLanguage()
     {
+        if (VisualRoot is MainWindow mw)
+        {
+            mw.PageColorBand.HeaderText = LocStrings.LanguagePageHeader;
+            mw.PageColorBand.BodyText = LocStrings.LanguagePageSubtitle;
+        }
         HeadingText.Text = LocStrings.LanguagePageHeading;
         RussianButton.Content = LocStrings.LanguagePageRussian;
         EnglishButton.Content = LocStrings.LanguagePageEnglish;

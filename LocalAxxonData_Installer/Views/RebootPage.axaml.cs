@@ -22,8 +22,6 @@ public partial class RebootPage : UserControl
 
     private void UpdateLanguage()
     {
-        ColorBand.HeaderText = LocStrings.RebootHeader;
-        ColorBand.BodyText = LocStrings.RebootSubtitle;
         HeadingText.Text = LocStrings.RebootHeading;
         CountdownLabelText.Text = LocStrings.RebootCountdownLabel;
         InfoText.Text = LocStrings.RebootInfo;
@@ -85,7 +83,8 @@ public partial class RebootPage : UserControl
     {
         if (VisualRoot is MainWindow mainWindow)
         {
-            mainWindow.ShowResumeProgressPage();
+            mainWindow.ShowProgressPage(ProgressMode.Phase2);
         }
     }
 }
+

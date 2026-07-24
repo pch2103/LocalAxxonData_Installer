@@ -31,20 +31,13 @@ public partial class FinishPage : UserControl
         FinishButton.Content = LocStrings.Close;
     }
 
-    private static readonly IBrush GreenBrush = Brush.Parse("#2E7D32");
-    private static readonly IBrush RedBrush = Brush.Parse("#C62828");
-
     private void UpdateUI()
     {
         switch (_mode)
         {
             case FinishMode.Install:
-                HeaderBand.HeaderBrush = GreenBrush;
-                HeaderBand.HeaderText = LocStrings.FinishInstallHeader;
-                HeaderBand.BodyText = LocStrings.FinishInstallSubtitle;
-                HeaderBand.BackgroundImageSource = "header_back_green.png";
                 IconText.Text = "\u2713";
-                IconText.Foreground = GreenBrush;
+                IconText.Foreground = (IBrush)(Application.Current!.FindResource("PageHeaderGreenBrush")!);
                 TitleText.Text = LocStrings.FinishInstallTitle;
                 DescriptionText.Text = LocStrings.FinishInstallDesc;
                 SuccessCard.IsVisible = true;
@@ -56,12 +49,8 @@ public partial class FinishPage : UserControl
                 break;
 
             case FinishMode.Restore:
-                HeaderBand.HeaderBrush = GreenBrush;
-                HeaderBand.HeaderText = LocStrings.FinishRestoreHeader;
-                HeaderBand.BodyText = LocStrings.FinishRestoreSubtitle;
-                HeaderBand.BackgroundImageSource = "header_back_green.png";
                 IconText.Text = "\u2713";
-                IconText.Foreground = GreenBrush;
+                IconText.Foreground = (IBrush)(Application.Current!.FindResource("PageHeaderGreenBrush")!);
                 TitleText.Text = LocStrings.FinishRestoreTitle;
                 DescriptionText.Text = LocStrings.FinishRestoreDesc;
                 SuccessCard.IsVisible = true;
@@ -73,12 +62,8 @@ public partial class FinishPage : UserControl
                 break;
 
             case FinishMode.Uninstall:
-                HeaderBand.HeaderBrush = RedBrush;
-                HeaderBand.HeaderText = LocStrings.FinishUninstallHeader;
-                HeaderBand.BodyText = LocStrings.FinishUninstallSubtitle;
-                HeaderBand.BackgroundImageSource = "header_back_red.png";
                 IconText.Text = "\u2715";
-                IconText.Foreground = RedBrush;
+                IconText.Foreground = (IBrush)(Application.Current!.FindResource("PageHeaderRedBrush")!);
                 TitleText.Text = LocStrings.FinishUninstallTitle;
                 DescriptionText.Text = LocStrings.FinishUninstallDesc;
                 SuccessCard.IsVisible = false;
@@ -107,3 +92,5 @@ public partial class FinishPage : UserControl
         }
     }
 }
+
+

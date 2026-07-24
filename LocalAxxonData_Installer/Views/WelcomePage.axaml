@@ -1,14 +1,12 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:LocalAxxonData_Installer.Views"
-             Width="700" Height="500"
+             Width="700"
              x:Class="LocalAxxonData_Installer.Views.WelcomePage">
-    <Grid RowDefinitions="Auto,Auto,*,Auto">
-        <local:StageTitleBar Grid.Row="0" />
-        <local:ColorBandView x:Name="ColorBand" Grid.Row="1"
-                             HeaderBrush="#1A73E8"
-                             BackgroundImageSource="header_back_blue.png" ShowLogo="True" />
-        <Border Grid.Row="2" Margin="{StaticResource ThemePaddingDownAndSides-Medium}">
+    <Grid RowDefinitions="*,Auto">
+
+        
+        <Border Grid.Row="0" Margin="{StaticResource ThemePaddingDownAndSides-Medium}">
             <Grid>
                 <Border Classes="content-background" />
                 <Grid RowDefinitions="*,Auto" Margin="{StaticResource ThemePadding-Medium}">
@@ -28,11 +26,11 @@
                             </Border>
                         </StackPanel>
                     </ScrollViewer>
-                    <local:InfoBlockView x:Name="InfoBlock" Grid.Row="1" />
+                    <local:MessageBlockView x:Name="InfoBlock" Grid.Row="1" />
                 </Grid>
             </Grid>
         </Border>
-        <Border Grid.Row="3" Margin="{StaticResource ThemePaddingSides-Medium}">
+        <Border Grid.Row="1" Margin="{StaticResource ThemePaddingSides-Medium}">
             <Grid>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8">
                     <Button Classes="Primary Large" Click="OnNextClick">
@@ -44,3 +42,7 @@
         </Border>
     </Grid>
 </UserControl>
+
+
+
+

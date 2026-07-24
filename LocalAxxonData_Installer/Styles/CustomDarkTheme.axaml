@@ -94,6 +94,12 @@
         <SolidColorBrush x:Key="GrayColor" Color="{DynamicResource ThemeBackgroundColor-500}"/>
         <SolidColorBrush x:Key="SubLabelColor" Color="#A0A0A0"/>
         <SolidColorBrush x:Key="TransparentColor" Color="Transparent" />
+        <SolidColorBrush x:Key="PageHeaderBlueBrush" Color="#1A73E8" />
+        <SolidColorBrush x:Key="PageHeaderOrangeBrush" Color="#F57C00" />
+        <SolidColorBrush x:Key="PageHeaderDarkBlueBrush" Color="#1565C0" />
+        <SolidColorBrush x:Key="PageHeaderRedBrush" Color="#C62828" />
+        <SolidColorBrush x:Key="PageHeaderGrayBrush" Color="#616161" />
+        <SolidColorBrush x:Key="PageHeaderGreenBrush" Color="#2E7D32" />
     </Styles.Resources>
 
     <Style Selector="TextBlock.ONE-Paragraph-Regular">

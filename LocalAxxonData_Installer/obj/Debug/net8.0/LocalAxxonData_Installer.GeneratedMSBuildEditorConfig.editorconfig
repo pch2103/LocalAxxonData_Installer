@@ -67,16 +67,13 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [F:/CODE/2026/LocalAxxonData_Installer/LocalAxxonData_Installer/Views/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[F:/CODE/2026/LocalAxxonData_Installer/LocalAxxonData_Installer/Views/MessageBlockView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [F:/CODE/2026/LocalAxxonData_Installer/LocalAxxonData_Installer/Views/ProgressPage.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [F:/CODE/2026/LocalAxxonData_Installer/LocalAxxonData_Installer/Views/RebootPage.axaml]
-build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
-
-[F:/CODE/2026/LocalAxxonData_Installer/LocalAxxonData_Installer/Views/RestoreProgressPage.axaml]
-build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
-
-[F:/CODE/2026/LocalAxxonData_Installer/LocalAxxonData_Installer/Views/ResumeProgressPage.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [F:/CODE/2026/LocalAxxonData_Installer/LocalAxxonData_Installer/Views/SmtpPage.axaml]

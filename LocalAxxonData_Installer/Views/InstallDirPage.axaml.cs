@@ -19,7 +19,6 @@ public partial class InstallDirPage : UserControl
 
     private void UpdateLanguage()
     {
-        ColorBand.HeaderText = LocStrings.InstallDirHeader;
         HeadingText.Text = LocStrings.InstallDirHeading;
         BrowseButton.Content = LocStrings.InstallDirBrowse;
         AvailableText.Text = string.Format(LocStrings.InstallDirFreeFmt, "45.2 ГБ");

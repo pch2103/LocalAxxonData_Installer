@@ -14,7 +14,7 @@ No test, lint, or typecheck projects exist. The only verification is building.
 - **Single** .NET 8 / Avalonia 11.3.8 desktop app (`WinExe`), with **Eremex commercial controls** (v1.3.x).
 - **Code-behind wizard** — no MVVM, no DI, no navigation service. `MainWindow` (extends Eremex `MxWindow`) holds a named `ContentControl` (`MainContentControl`). Each Page `UserControl` references `VisualRoot` to call `ShowXxxPage()` methods directly on `MainWindow`.
 - **No `ViewModels/`, `Models/`, or `Services/`** directories. All logic is in `Views/*.axaml.cs`.
-- **Reusable controls** exist in `Views/`: `StageTitleBar`, `ColorBandView`, `InfoBlockView`, `ErrorBlockView`, `WarningBlockView`.
+- **Reusable controls** exist in `Views/`: `StageTitleBar`, `ColorBandView`, `MessageBlockView` (with `MessageSeverity` enum: Info/Warning/Error), `StringNotEmptyConverter`.
 - Entrypoint: `Program.cs` → `App.axaml.cs` → `MainWindow`.
 
 ## Screen flow
@@ -23,18 +23,18 @@ No test, lint, or typecheck projects exist. The only verification is building.
 
 ### Main path — clean install
 
-| Phase | Page | Header | Next → | ← Prev |
-|-------|------|--------|--------|--------|
-| A | `LanguagePage` | #1A73E8 blue | WelcomePage | — |
-| A | `WelcomePage` | #1A73E8 blue | InstallDirPage | LanguagePage |
-| A | `InstallDirPage` | #1A73E8 blue | SmtpPage | WelcomePage |
-| A | `SmtpPage` | #1A73E8 blue | SummaryPage | InstallDirPage |
-| A | `SummaryPage` | #1A73E8 blue | ProgressPage | SmtpPage |
-| B | `ProgressPage` | #1A73E8 blue | RebootPage (auto) | — |
-| B | `RebootPage` | #F57C00 orange | ResumeProgressPage (auto) | — |
-| — | *(computer reboots — installer resumes automatically)* ||||
-| C | `ResumeProgressPage` | #1A73E8 blue | FinishPage (auto) | — |
-| C | `FinishPage` | #2E7D32 green | — | — |
+| Phase | Page | Header | Mode | Next → | ← Prev |
+|-------|------|--------|------|--------|--------|
+| A | `LanguagePage` | #1A73E8 blue | — | WelcomePage | — |
+| A | `WelcomePage` | #1A73E8 blue | — | InstallDirPage | LanguagePage |
+| A | `InstallDirPage` | #1A73E8 blue | — | SmtpPage | WelcomePage |
+| A | `SmtpPage` | #1A73E8 blue | — | SummaryPage | InstallDirPage |
+| A | `SummaryPage` | #1A73E8 blue | — | ProgressPage | SmtpPage |
+| B | `ProgressPage` | #1A73E8 blue | Phase1 | RebootPage (auto) | — |
+| B | `RebootPage` | #F57C00 orange | — | ProgressPage(Phase2, auto) | — |
+| — | *(computer reboots — installer resumes automatically)* |||||
+| C | `ProgressPage` | #1A73E8 blue | Phase2 | FinishPage (auto) | — |
+| C | `FinishPage` | #2E7D32 green | Install/Restore/Uninstall | — | — |
 
 ### Reinstall path
 
@@ -55,9 +55,9 @@ No test, lint, or typecheck projects exist. The only verification is building.
 - Theme: `Eremex.Avalonia.Themes.DeltaDesign` (Dark variant)
 - Styles loaded in `App.axaml` in order: DeltaDesignTheme → CustomDarkTheme → ControlsCustomStyles → WindowStyles
 - Resource overrides: `ModifiedResourcesColor.axaml` before `ModifiedResources.axaml`
-- Window: 700×500 fixed, borderless (`SystemDecorations="None"`), `SizeToContent="WidthAndHeight"`, custom drag title bar
+- Window: 700×500 fixed, `WindowStartupLocation="CenterScreen"`, borderless (`SystemDecorations="None"`), custom drag title bar
 - Font: Segoe UI (desktop default)
-- Typography tokens: `ONE-H2-Bold` (headings), `ONE-H3-Regular` (body), `ONE-Paragraph-Regular` (info blocks), `One-Subs-Bold/Regular` (field labels)
+- Typography tokens: `ONE-H0-Bold` (ColorBand), `ONE-H2-Bold` (headings), `ONE-H3-Bold`/`Regular` (buttons/body), `ONE-Paragraph-Bold`/`Regular` (info blocks), `One-Subs-Bold/Regular` (field labels) — see full table in DeltaDesign section
 - All colours in XAML use `{DynamicResource}` — never raw hex
 
 ## Conventions
@@ -68,6 +68,11 @@ No test, lint, or typecheck projects exist. The only verification is building.
 - Each page's `OnCancelClick` navigates to `ExitConfirmPage` via `mainWindow.ShowExitConfirmPage()`.
 - `ExitConfirmPage` stores `_previousContent` and restores it on "Продолжить".
 - `StageTitleBar` ✕ button calls `ShowExitConfirmPage()` (not `CloseWindow()` directly).
+- **Navigation hub** is `MainWindow.axaml.cs` — all `ShowXxxPage()` methods call `SetPage(page, brushKey, header, body, bgImage)` which sets `MainContentControl.Content` and configures the shared `StageTitleBar` + `ColorBandView`.
+- **Page header colours** use `{DynamicResource PageHeaderXxxBrush}` resource keys (`Blue`, `Orange`, `Green`, `DarkBlue`, `Red`, `Gray`) defined in `Styles/CustomDarkTheme.axaml`.
+- **Single `ProgressPage`** with `ProgressMode` enum (`Phase1`/`Phase2`/`Restore`) handles all progress scenarios.
+- **Single `FinishPage`** with `FinishMode` enum (`Install`/`Restore`/`Uninstall`) handles all finish scenarios.
+- **Unified message block**: use `MessageBlockView` with `Severity="Info|Warning|Error"` instead of separate `InfoBlockView`/`ErrorBlockView`/`WarningBlockView` (these no longer exist).
 
 ## Gotchas
 
@@ -75,7 +80,7 @@ No test, lint, or typecheck projects exist. The only verification is building.
 - Only **Debug** configuration includes `Avalonia.Diagnostics` (see csproj conditional).
 - `app.manifest` is required on Windows for window transparency — do not remove.
 - Password field uses `Avalonia.Xaml.Behaviors` (`PasswordBoxBehavior`) + Eremex `TextEditor` with built-in reveal button class `revealPasswordButton`.
-- Progress pages (`ProgressPage`, `ResumeProgressPage`) auto-advance on completion — use `CancellationTokenSource` to cancel on exit.
+- `ProgressPage` (single, with `ProgressMode` Phase1/Phase2/Restore) auto-advances on completion — use `CancellationTokenSource` to cancel on exit.
 - `RebootPage` has a 60-second countdown timer with "Отложить"/"Перезагрузить" buttons.
 
 ## AI Behavior Rules
@@ -98,11 +103,10 @@ No test, lint, or typecheck projects exist. The only verification is building.
 
 ## Eremex Controls Quick Reference (v1.3.x)
 
-### MxWindow (borderless, 700×500)
+### MxWindow (fixed 700×500, centered)
 ```xml
 <mx:MxWindow xmlns:mx="using:Eremex.Avalonia.Controls"
              SystemDecorations="None"
-             SizeToContent="WidthAndHeight"
              WindowStartupLocation="CenterScreen"
              Width="700" Height="500">
     <ContentControl Name="MainContentControl" />
@@ -157,9 +161,12 @@ DeltaDesignTheme (base) → CustomDarkTheme → ControlsCustomStyles → WindowS
 ### Typography tokens (Segoe UI)
 | Token | Size | Weight | Usage |
 |-------|------|--------|-------|
+| `ONE-H0-Bold` | 18px | Bold | ColorBand header text |
 | `ONE-H2-Bold` | 18px | Bold | Page headings |
-| `ONE-H3-Regular` | 14px | Regular | Body text |
-| `ONE-Paragraph-Regular` | 13px | Regular | Info/error/warning text |
+| `ONE-H3-Bold` | 14px | Bold | Button labels, section headers |
+| `ONE-H3-Regular` | 14px | Regular | Body text, descriptions |
+| `ONE-Paragraph-Bold` | 13px | Bold | Message block headers |
+| `ONE-Paragraph-Regular` | 13px | Regular | Info/error/warning body text |
 | `One-Subs-Bold` | 13px | Bold | Field labels |
 | `One-Subs-Regular` | 13px | Regular | Field values |
 
@@ -190,18 +197,27 @@ DeltaDesignTheme (base) → CustomDarkTheme → ControlsCustomStyles → WindowS
 ## Navigation & Wizard Patterns
 
 ```
-MainWindow (MxWindow)
+MainWindow (MxWindow, 700×500)
+  ├── StageTitleBar (drag + close → ExitConfirm)
+  ├── ColorBandView (colored header + logo + bg image)
   └── ContentControl (MainContentControl)  ← Content swapped in code-behind
         └── [Page] (UserControl)
-              ├── StageTitleBar (drag + close → ExitConfirm)
-              ├── ColorBandView (colored header + logo)
-              ├── [page content with InfoBlock/ErrorBlock/WarningBlock]
+              ├── [page content with MessageBlockView]
               └── footer (Next/Back/Cancel buttons)
 ```
 
+Navigation is driven by `SetPage()` helper in `MainWindow.axaml.cs`:
+
+```csharp
+private void SetPage(UserControl page, string brushKey,
+    string? header = null, string? body = null, string? bgImage = null)
+```
+
+Each `ShowXxxPage()` method creates the page and calls `SetPage()` with the correct colour key, header text, subtitle, and background image. See `MainWindow.axaml.cs` for the full per-page config.
+
 ### Adding a new page
-1. Create `NewPage.axaml` + `NewPage.axaml.cs` (UserControl, 700×500, 4-row grid)
-2. Add `ShowNewPage()` to `MainWindow.axaml.cs`
+1. Create `NewPage.axaml` + `NewPage.axaml.cs` (UserControl, content + footer only — no StageTitleBar/ColorBandView)
+2. Add `ShowNewPage()` to `MainWindow.axaml.cs` that calls `SetPage(new NewPage(), brushKey, header, body, bgImage)`
 3. Wire navigation from previous page's `OnNextClick`
 4. Add localization strings to `LocStrings.cs`
 
@@ -212,7 +228,7 @@ public partial class SomePage : UserControl
     public SomePage() { InitializeComponent(); UpdateLanguage(); }
     private void UpdateLanguage() { /* populate from LocStrings */ }
     private void OnNextClick(object? s, RoutedEventArgs e)
-        { if (VisualRoot is MainWindow mw) mw.ShowNextPage(); }
+        { if (VisualRoot is MainWindow mw) mw.ShowXxxPage(); }  // calls SetPage() internally
     private void OnCancelClick(object? s, RoutedEventArgs e)
         { if (VisualRoot is MainWindow mw) mw.ShowExitConfirmPage(); }
 }

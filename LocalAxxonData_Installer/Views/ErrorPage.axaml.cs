@@ -16,8 +16,6 @@ public partial class ErrorPage : UserControl
 
     private void UpdateLanguage()
     {
-        ColorBand.HeaderText = LocStrings.ErrorHeader;
-        ColorBand.BodyText = LocStrings.ErrorSubtitle;
         HeadingText.Text = LocStrings.ErrorHeading;
         ErrorTitleText.Text = LocStrings.ErrorTitle;
         ErrorDescText.Text = LocStrings.ErrorDesc;

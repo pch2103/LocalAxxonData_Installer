@@ -18,7 +18,6 @@ public partial class SmtpPage : UserControl
 
     private void UpdateLanguage()
     {
-        ColorBand.HeaderText = LocStrings.SmtpHeader;
         HeadingText.Text = LocStrings.SmtpHeading;
         ServerLabel.Text = LocStrings.SmtpServerLabel;
         PortLabel.Text = LocStrings.SmtpPortLabel;

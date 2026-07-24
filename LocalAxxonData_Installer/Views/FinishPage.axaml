@@ -1,13 +1,12 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:LocalAxxonData_Installer.Views"
-             Width="700" Height="500"
+             Width="700"
              x:Class="LocalAxxonData_Installer.Views.FinishPage">
-    <Grid RowDefinitions="Auto,Auto,*,Auto">
-        <local:StageTitleBar Grid.Row="0" />
-        <local:ColorBandView Grid.Row="1" x:Name="HeaderBand"
-                             ShowLogo="True" />
-        <Border Grid.Row="2" Margin="{StaticResource ThemePaddingDownAndSides-Medium}">
+    <Grid RowDefinitions="*,Auto">
+
+        
+        <Border Grid.Row="0" Margin="{StaticResource ThemePaddingDownAndSides-Medium}">
             <Grid>
                 <Border Classes="content-background" />
                 <Grid RowDefinitions="*,Auto" Margin="{StaticResource ThemePadding-Medium}">
@@ -32,11 +31,11 @@
                                        HorizontalAlignment="Center" />
                         </StackPanel>
                     </Grid>
-                    <local:InfoBlockView x:Name="PasswordInfo" Grid.Row="1" />
+                    <local:MessageBlockView x:Name="PasswordInfo" Grid.Row="1" />
                 </Grid>
             </Grid>
         </Border>
-        <Border Grid.Row="3" Margin="{StaticResource ThemePaddingSides-Medium}">
+        <Border Grid.Row="1" Margin="{StaticResource ThemePaddingSides-Medium}">
             <Grid>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8">
                     <Button x:Name="OpenBrowserButton" Classes="Secondary Large"
@@ -47,3 +46,6 @@
         </Border>
     </Grid>
 </UserControl>
+
+
+

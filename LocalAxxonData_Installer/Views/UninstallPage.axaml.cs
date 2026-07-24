@@ -21,7 +21,6 @@ public partial class UninstallPage : UserControl
 
     private void UpdateLanguage()
     {
-        ColorBand.HeaderText = LocStrings.UninstallHeader;
         HeadingText.Text = LocStrings.UninstallHeading;
         ConfirmText.Text = LocStrings.UninstallConfirmText;
         WarningHeaderText.Text = LocStrings.UninstallWarningHeader;

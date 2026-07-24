@@ -16,7 +16,6 @@ public partial class SummaryPage : UserControl
 
     private void UpdateLanguage()
     {
-        ColorBand.HeaderText = LocStrings.SummaryHeader;
         HeadingText.Text = LocStrings.SummaryHeading;
         InfoHeaderText.Text = LocStrings.SummaryInfoHeader;
         DirText.Text = string.Format(LocStrings.SummaryDirFmt, @"C:\Program Files\Local AxxonData");

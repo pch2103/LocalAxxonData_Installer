@@ -12,6 +12,7 @@ public static class LocStrings
     public static string Close => T("Закрыть", "Close");
     public static string Exit => T("Выйти", "Exit");
     public static string Warning => T("Внимание!", "Warning!");
+    public static string ProductName => T("Local AxxonData", "Local AxxonData");
 
     // StageTitleBar
     public static string StageTitleBarText => T("Local AxxonData — Мастер установки", "Local AxxonData — Install Wizard");
@@ -21,6 +22,8 @@ public static class LocStrings
     public static string LanguagePageRussian => T("Русский", "Russian");
     public static string LanguagePageEnglish => T("English", "English");
     public static string LanguagePageTestBtn => T("Тест — продукт уже установлен", "Test — product already installed");
+    public static string LanguagePageHeader => T("Local AxxonData", "Local AxxonData");
+    public static string LanguagePageSubtitle => T("Выберите язык установки", "Select installation language");
 
     // AlreadyInstalledPage
     public static string AlreadyInstalledHeading => T("Local AxxonData уже установлен", "Local AxxonData is already installed");

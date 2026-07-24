@@ -1,14 +1,15 @@
-    <UserControl xmlns="https://github.com/avaloniaui"
+<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:LocalAxxonData_Installer.Views"
+             xmlns:conv="clr-namespace:LocalAxxonData_Installer.Converters"
              x:Class="LocalAxxonData_Installer.Views.ColorBandView">
     <UserControl.Resources>
-        <local:StringNotEmptyConverter x:Key="StringNotEmptyConverter" />
+        <conv:StringNotEmptyConverter x:Key="StringNotEmptyConverter" />
     </UserControl.Resources>
 
     <Border MinHeight="72" Margin="0 0 0 16">
         <Grid>
-            <Rectangle Fill="{Binding HeaderBrush, RelativeSource={RelativeSource AncestorType=local:ColorBandView}}" Opacity="0.85" />
+            <Rectangle Fill="{Binding HeaderBrush, RelativeSource={RelativeSource AncestorType=local:ColorBandView}}" Opacity="0.65" />
             <Image x:Name="BackgroundImage" Stretch="Fill" />
             <Grid ColumnDefinitions="*, Auto" Margin="24 8">
             <StackPanel Grid.Column="0" VerticalAlignment="Center"

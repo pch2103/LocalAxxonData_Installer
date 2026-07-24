@@ -1,8 +1,6 @@
 using System;
-using System.Globalization;
 using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Data.Converters;
 using Avalonia.Media;
 using Avalonia.Media.Imaging;
 using Avalonia.Platform;
@@ -60,6 +58,8 @@ public partial class ColorBandView : UserControl
     {
         InitializeComponent();
         Loaded += (s, e) => UpdateBackgroundImage();
+        BackgroundImageSourceProperty.Changed.AddClassHandler<ColorBandView>(
+            (view, e) => view.UpdateBackgroundImage());
     }
 
     private void UpdateBackgroundImage()
@@ -73,13 +73,4 @@ public partial class ColorBandView : UserControl
         var uri = new Uri($"avares://LocalAxxonData_Installer/Assets/{name}");
         BackgroundImage.Source = new Bitmap(AssetLoader.Open(uri));
     }
-}
-
-public class StringNotEmptyConverter : IValueConverter
-{
-    public object Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
-        => value is string s && !string.IsNullOrEmpty(s);
-
-    public object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
-        => throw new NotImplementedException();
 }

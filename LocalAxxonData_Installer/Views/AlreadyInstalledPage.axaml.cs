@@ -16,8 +16,6 @@ public partial class AlreadyInstalledPage : UserControl
 
     private void UpdateLanguage()
     {
-        ColorBand.HeaderText = "Local AxxonData";
-        ColorBand.BodyText = LocStrings.AlreadyInstalledSubtitle;
         TitleText.Text = LocStrings.AlreadyInstalledHeading;
         DescText.Text = LocStrings.AlreadyInstalledBody;
         RestoreButton.Content = LocStrings.AlreadyInstalledRestore;
@@ -29,7 +27,7 @@ public partial class AlreadyInstalledPage : UserControl
     {
         if (VisualRoot is MainWindow mainWindow)
         {
-            mainWindow.ShowRestoreProgressPage();
+            mainWindow.ShowProgressPage(ProgressMode.Restore);
         }
     }
 
@@ -49,3 +47,4 @@ public partial class AlreadyInstalledPage : UserControl
         }
     }
 }
+
