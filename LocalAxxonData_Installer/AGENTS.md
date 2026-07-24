@@ -53,7 +53,7 @@ No test, lint, or typecheck projects exist. The only verification is building.
 ## Styling
 
 - Theme: `Eremex.Avalonia.Themes.DeltaDesign` (Dark variant)
-- Styles loaded in `App.axaml` in order: DeltaDesignTheme → CustomDarkTheme → ControlsCustomStyles → WindowStyles
+- Styles loaded in `App.axaml` in order: DeltaDesignTheme → Colors → Brushes → Typography → Controls → Layout
 - Resource overrides: `ModifiedResourcesColor.axaml` before `ModifiedResources.axaml`
 - Window: 700×500 fixed, `WindowStartupLocation="CenterScreen"`, borderless (`SystemDecorations="None"`), custom drag title bar
 - Font: Segoe UI (desktop default)
@@ -69,7 +69,7 @@ No test, lint, or typecheck projects exist. The only verification is building.
 - `ExitConfirmPage` stores `_previousContent` and restores it on "Продолжить".
 - `StageTitleBar` ✕ button calls `ShowExitConfirmPage()` (not `CloseWindow()` directly).
 - **Navigation hub** is `MainWindow.axaml.cs` — all `ShowXxxPage()` methods call `SetPage(page, brushKey, header, body, bgImage)` which sets `MainContentControl.Content` and configures the shared `StageTitleBar` + `ColorBandView`.
-- **Page header colours** use `{DynamicResource PageHeaderXxxBrush}` resource keys (`Blue`, `Orange`, `Green`, `DarkBlue`, `Red`, `Gray`) defined in `Styles/CustomDarkTheme.axaml`.
+- **Page header colours** use `{DynamicResource PageHeaderXxxBrush}` resource keys (`Blue`, `Orange`, `Green`, `DarkBlue`, `Red`, `Gray`) defined in `Styles/Colors.axaml` + `Styles/Brushes.axaml`.
 - **Single `ProgressPage`** with `ProgressMode` enum (`Phase1`/`Phase2`/`Restore`) handles all progress scenarios.
 - **Single `FinishPage`** with `FinishMode` enum (`Install`/`Restore`/`Uninstall`) handles all finish scenarios.
 - **Unified message block**: use `MessageBlockView` with `Severity="Info|Warning|Error"` instead of separate `InfoBlockView`/`ErrorBlockView`/`WarningBlockView` (these no longer exist).
@@ -149,7 +149,7 @@ BuildAvaloniaApp()
 
 ### Style loading order in App.axaml
 ```
-DeltaDesignTheme (base) → CustomDarkTheme → ControlsCustomStyles → WindowStyles
+DeltaDesignTheme (base) → Colors → Brushes → Typography → Controls → Layout
 ```
 
 ### Resource dictionaries

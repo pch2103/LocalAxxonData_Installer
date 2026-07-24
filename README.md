@@ -2,6 +2,8 @@
 
 Avalonia desktop installer for the Local AxxonData product. Windows **700×500** fixed window, dark theme, two-phase installation with automatic reboot.
 
+> GitHub: [pch2103/LocalAxxonData_Installer](https://github.com/pch2103/LocalAxxonData_Installer)
+
 ## Tech Stack
 
 - **.NET 8** / **Avalonia 11.3.8** + **Eremex DeltaDesign** v1.3.x
@@ -67,9 +69,11 @@ LocalAxxonData_Installer/
 │   ├── ModifiedResourcesColor.axaml
 │   └── ModifiedResources.axaml
 ├── Styles/
-│   ├── WindowStyles.axaml
-│   ├── CustomDarkTheme.axaml
-│   └── ControlsCustomStyles.axaml
+│   ├── Colors.axaml
+│   ├── Brushes.axaml
+│   ├── Typography.axaml
+│   ├── Controls.axaml
+│   └── Layout.axaml
 ├── Views/
 │   ├── MainWindow.axaml / .cs   — navigation hub, 13 ShowXxxPage methods
 │   ├── StageTitleBar.axaml / .cs
