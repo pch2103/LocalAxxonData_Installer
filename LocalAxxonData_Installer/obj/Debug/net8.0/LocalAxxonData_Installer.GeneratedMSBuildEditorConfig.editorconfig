@@ -28,13 +28,19 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [F:/CODE/2026/LocalAxxonData_Installer/LocalAxxonData_Installer/Resources/ModifiedResourcesColor.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[F:/CODE/2026/LocalAxxonData_Installer/LocalAxxonData_Installer/Styles/ControlsCustomStyles.axaml]
+[F:/CODE/2026/LocalAxxonData_Installer/LocalAxxonData_Installer/Styles/Brushes.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[F:/CODE/2026/LocalAxxonData_Installer/LocalAxxonData_Installer/Styles/CustomDarkTheme.axaml]
+[F:/CODE/2026/LocalAxxonData_Installer/LocalAxxonData_Installer/Styles/Colors.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[F:/CODE/2026/LocalAxxonData_Installer/LocalAxxonData_Installer/Styles/WindowStyles.axaml]
+[F:/CODE/2026/LocalAxxonData_Installer/LocalAxxonData_Installer/Styles/Controls.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[F:/CODE/2026/LocalAxxonData_Installer/LocalAxxonData_Installer/Styles/Layout.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[F:/CODE/2026/LocalAxxonData_Installer/LocalAxxonData_Installer/Styles/Typography.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [F:/CODE/2026/LocalAxxonData_Installer/LocalAxxonData_Installer/Views/AlreadyInstalledPage.axaml]

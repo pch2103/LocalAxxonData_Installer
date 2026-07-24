@@ -5,9 +5,11 @@
              RequestedThemeVariant="Dark">
     <Application.Styles>
         <theme:DeltaDesignTheme />
-        <StyleInclude Source="/Styles/CustomDarkTheme.axaml" />
-        <StyleInclude Source="/Styles/ControlsCustomStyles.axaml" />
-        <StyleInclude Source="/Styles/WindowStyles.axaml" />
+        <StyleInclude Source="/Styles/Colors.axaml" />
+        <StyleInclude Source="/Styles/Brushes.axaml" />
+        <StyleInclude Source="/Styles/Typography.axaml" />
+        <StyleInclude Source="/Styles/Controls.axaml" />
+        <StyleInclude Source="/Styles/Layout.axaml" />
     </Application.Styles>
 
     <Application.Resources>

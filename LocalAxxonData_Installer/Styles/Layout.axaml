@@ -53,4 +53,5 @@
         <Setter Property="Background" Value="{DynamicResource OrangeColor-40}" />
         <Setter Property="Padding" Value="8" />
     </Style>
+
 </Styles>

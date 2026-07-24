@@ -1,10 +1,8 @@
 <Styles xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:mx="https://schemas.eremexcontrols.net/avalonia"
-        xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
-        xmlns:mxev="clr-namespace:Eremex.AvaloniaUI.Controls.Editors.Visuals;assembly=Eremex.Avalonia.Controls">
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <Styles.Resources>
+
         <StreamGeometry x:Key="CloseIcon">M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z</StreamGeometry>
         <StreamGeometry x:Key="ArrowRight">M12.175 7L6.575 1.4L8 -9.37801e-07L16 8L8 16L6.575 14.6L12.175 9L3.73541e-07 9L5.48386e-07 7L12.175 7Z</StreamGeometry>
         <StreamGeometry x:Key="ArrowLeft">M3.825 9L9.425 14.6L8 16L0 8L8 0L9.425 1.4L3.825 7H16V9H3.825Z</StreamGeometry>
@@ -36,30 +34,6 @@
 
         <CornerRadius x:Key="DefaultCornerRadius">4</CornerRadius>
         <CornerRadius x:Key="LargeCornerRadius">6</CornerRadius>
-
-        <Color x:Key="ThemeBackgroundColor">#0A0A0A</Color>
-        <Color x:Key="ThemeBackgroundColor-900">#191919</Color>
-        <Color x:Key="ThemeBackgroundColor-800">#2A2A2A</Color>
-        <Color x:Key="ThemeBackgroundColor-700">#3D3D3D</Color>
-        <Color x:Key="ThemeBackgroundColor-600">#484848</Color>
-        <Color x:Key="ThemeBackgroundColor-500">#656565</Color>
-        <Color x:Key="ThemeBackgroundColor-400">#858585</Color>
-        <Color x:Key="ThemeBackgroundColor-100">#D6D6D6</Color>
-        <Color x:Key="ThemeBackgroundColorLight">#D6D6D6</Color>
-        <Color x:Key="ThemeForegroundColor">#F6F6F6</Color>
-        <Color x:Key="ThemeWhite">#FFFFFF</Color>
-
-        <Color x:Key="ThemePrimaryColorTint20">#0082F7</Color>
-        <Color x:Key="ThemePrimaryColorTint10">#0082F7</Color>
-        <Color x:Key="ThemePrimaryColor">#0070E4</Color>
-        <Color x:Key="ThemePrimaryColorShade10">#0053A8</Color>
-        <Color x:Key="ThemePrimaryColorShade20">#004184</Color>
-
-        <Color x:Key="ThemeRed">#FF0000</Color>
-        <Color x:Key="ThemeGreen">#20D300</Color>
-        <Color x:Key="ThemeOrange">#FF8A00</Color>
-
-        <FontFamily x:Key="DefaultFont">Segoe UI, Roboto, San Francisco, sans-serif</FontFamily>
 
         <SolidColorBrush x:Key="BackgroundColor" Color="Transparent" />
         <SolidColorBrush x:Key="BackgroundColor-900" Color="{DynamicResource ThemeBackgroundColor-900}" />
@@ -94,72 +68,14 @@
         <SolidColorBrush x:Key="GrayColor" Color="{DynamicResource ThemeBackgroundColor-500}"/>
         <SolidColorBrush x:Key="SubLabelColor" Color="#A0A0A0"/>
         <SolidColorBrush x:Key="TransparentColor" Color="Transparent" />
+        <SolidColorBrush x:Key="TransparentBrush" Color="Transparent" />
         <SolidColorBrush x:Key="PageHeaderBlueBrush" Color="#1A73E8" />
         <SolidColorBrush x:Key="PageHeaderOrangeBrush" Color="#F57C00" />
         <SolidColorBrush x:Key="PageHeaderDarkBlueBrush" Color="#1565C0" />
         <SolidColorBrush x:Key="PageHeaderRedBrush" Color="#C62828" />
         <SolidColorBrush x:Key="PageHeaderGrayBrush" Color="#616161" />
         <SolidColorBrush x:Key="PageHeaderGreenBrush" Color="#2E7D32" />
+
     </Styles.Resources>
 
-    <Style Selector="TextBlock.ONE-Paragraph-Regular">
-        <Setter Property="FontFamily" Value="DefaultFont" />
-        <Setter Property="FontSize" Value="11" />
-        <Setter Property="FontWeight" Value="Normal" />
-        <Setter Property="Foreground" Value="{DynamicResource ForegroundColor}" />
-    </Style>
-    <Style Selector="TextBlock.ONE-Paragraph-Bold">
-        <Setter Property="FontFamily" Value="DefaultFont" />
-        <Setter Property="FontSize" Value="12" />
-        <Setter Property="FontWeight" Value="Bold" />
-        <Setter Property="Foreground" Value="{DynamicResource ForegroundColor}" />
-    </Style>
-    <Style Selector="TextBlock.ONE-H3-Bold">
-        <Setter Property="FontFamily" Value="DefaultFont" />
-        <Setter Property="FontSize" Value="14" />
-        <Setter Property="FontWeight" Value="Bold" />
-        <Setter Property="Foreground" Value="{DynamicResource ForegroundColor}" />
-    </Style>
-    <Style Selector="TextBlock.ONE-H3-Regular">
-        <Setter Property="FontFamily" Value="DefaultFont" />
-        <Setter Property="FontSize" Value="14" />
-        <Setter Property="FontWeight" Value="Regular" />
-        <Setter Property="Foreground" Value="{DynamicResource ForegroundColor}" />
-    </Style>
-    <Style Selector="TextBlock.ONE-H1-Medium">
-        <Setter Property="FontSize" Value="20" />
-        <Setter Property="FontWeight" Value="Medium" />
-        <Setter Property="Foreground" Value="{DynamicResource ForegroundColor}" />
-    </Style>
-    <Style Selector="TextBlock.ONE-H0-Bold">
-        <Setter Property="FontSize" Value="22" />
-        <Setter Property="FontWeight" Value="Bold" />
-        <Setter Property="Foreground" Value="{DynamicResource ForegroundColor}" />
-    </Style>
-    <Style Selector="TextBlock.ONE-H2-Medium">
-        <Setter Property="FontSize" Value="16" />
-        <Setter Property="FontWeight" Value="Medium" />
-        <Setter Property="Foreground" Value="{DynamicResource ForegroundColor}" />
-    </Style>
-    <Style Selector="TextBlock.ONE-H2-Bold">
-        <Setter Property="FontSize" Value="16" />
-        <Setter Property="FontWeight" Value="Bold" />
-        <Setter Property="Foreground" Value="{DynamicResource ForegroundColor}" />
-    </Style>
-    <Style Selector="TextBlock.ONE-Paragraph-Small">
-        <Setter Property="FontFamily" Value="DefaultFont" />
-        <Setter Property="FontSize" Value="10" />
-        <Setter Property="FontWeight" Value="Normal" />
-        <Setter Property="Foreground" Value="{DynamicResource ForegroundColor}" />
-    </Style>
-    <Style Selector="TextBlock.One-Subs-Regular">
-        <Setter Property="FontSize" Value="9" />
-        <Setter Property="FontWeight" Value="Normal" />
-        <Setter Property="Foreground" Value="{DynamicResource ForegroundColor}" />
-    </Style>
-    <Style Selector="TextBlock.One-Subs-Bold">
-        <Setter Property="FontSize" Value="9" />
-        <Setter Property="FontWeight" Value="Bold" />
-        <Setter Property="Foreground" Value="{DynamicResource ForegroundColor}" />
-    </Style>
 </Styles>
