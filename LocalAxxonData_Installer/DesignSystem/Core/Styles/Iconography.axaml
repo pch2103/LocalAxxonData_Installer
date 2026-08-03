@@ -1,0 +1,39 @@
+<Styles xmlns="https://github.com/avaloniaui">
+  <!-- Shared by Fluent and Eremex: geometry bounds never define icon-button layout. -->
+  <Style Selector="Path.IconGlyph">
+    <Setter Property="HorizontalAlignment" Value="Center" />
+    <Setter Property="VerticalAlignment" Value="Center" />
+    <Setter Property="Stretch" Value="Uniform" />
+    <Setter Property="Stroke" Value="Transparent" />
+  </Style>
+
+  <Style Selector="Path.IconGlyph.IconSmall">
+    <Setter Property="Width" Value="{StaticResource ThemeIconSize-Small}" />
+    <Setter Property="Height" Value="{StaticResource ThemeIconSize-Small}" />
+  </Style>
+  <Style Selector="Path.IconGlyph.IconMedium">
+    <Setter Property="Width" Value="{StaticResource ThemeIconSize-Medium}" />
+    <Setter Property="Height" Value="{StaticResource ThemeIconSize-Medium}" />
+  </Style>
+  <Style Selector="Path.IconGlyph.IconLarge">
+    <Setter Property="Width" Value="{StaticResource ThemeIconSize-Large}" />
+    <Setter Property="Height" Value="{StaticResource ThemeIconSize-Large}" />
+  </Style>
+
+  <!-- Icon-button size owns its fixed glyph viewport. -->
+  <Style Selector="Button.IconOnlyLarge Path.IconGlyph,
+                   ToggleButton.IconOnlyLarge Path.IconGlyph">
+    <Setter Property="Width" Value="{StaticResource ThemeIconSize-Large}" />
+    <Setter Property="Height" Value="{StaticResource ThemeIconSize-Large}" />
+  </Style>
+  <Style Selector="Button.IconOnlyMedium Path.IconGlyph,
+                   ToggleButton.IconOnlyMedium Path.IconGlyph">
+    <Setter Property="Width" Value="{StaticResource ThemeIconSize-Small}" />
+    <Setter Property="Height" Value="{StaticResource ThemeIconSize-Small}" />
+  </Style>
+
+  <!-- Preserve a geometry's authored coordinate grid inside the fixed viewport. -->
+  <Style Selector="Path.IconGlyph.IconNatural">
+    <Setter Property="Stretch" Value="None" />
+  </Style>
+</Styles>

@@ -16,6 +16,8 @@ public static class LocStrings
 
     // StageTitleBar
     public static string StageTitleBarText => T("Local AxxonData — Мастер установки", "Local AxxonData — Install Wizard");
+    public static string SwitchToLightTheme => T("Переключить на светлую тему", "Switch to light theme");
+    public static string SwitchToDarkTheme => T("Переключить на тёмную тему", "Switch to dark theme");
 
     // LanguagePage
     public static string LanguagePageHeading => T("Выберите язык / Select language", "Select language / Выберите язык");
@@ -112,10 +114,11 @@ public static class LocStrings
     public static string FinishInstallSubtitle => T("Local AxxonData готов к работе", "Local AxxonData is ready");
     public static string FinishInstallTitle => T("Успешно установлено!", "Successfully installed!");
     public static string FinishInstallDesc => T("Local AxxonData установлен и готов к использованию.", "Local AxxonData is installed and ready to use.");
-    public static string FinishInstallFootnote => T("Зарегистрируйте пользователя и подтвердите email.", "Register a user and confirm your email.");
     public static string FinishInstallPasswordHeader => T("Начальный пароль", "Initial password");
     public static string FinishInstallPasswordBody => T("При первом входе используйте логин admin и пароль, указанный в окне терминала.", "On first login, use admin and the password shown in the terminal window.");
     public static string FinishOpenBrowser => T("Открыть в браузере", "Open in browser");
+    public static string FinishCopyAddress => T("Копировать", "Copy");
+    public static string FinishAddressCopied => T("Скопировано", "Copied");
     public static string FinishUrl => T("http://localhost:8080", "http://localhost:8080");
 
     // FinishPage - Restore mode
@@ -123,7 +126,6 @@ public static class LocStrings
     public static string FinishRestoreSubtitle => T("Local AxxonData восстановлен", "Local AxxonData restored");
     public static string FinishRestoreTitle => T("Восстановление завершено!", "Restore complete!");
     public static string FinishRestoreDesc => T("Local AxxonData восстановлен и готов к работе.", "Local AxxonData restored and ready to use.");
-    public static string FinishRestoreFootnote => T("Восстановление прошло успешно.", "Restore completed successfully.");
 
     // FinishPage - Uninstall mode
     public static string FinishUninstallHeader => T("Удаление завершено", "Uninstall Complete");
@@ -131,7 +133,6 @@ public static class LocStrings
     public static string FinishUninstallTitle => T("Удаление завершено", "Uninstall complete");
     public static string FinishUninstallDesc => T("Local AxxonData удалён с компьютера.", "Local AxxonData has been removed from your computer.");
     public static string FinishUninstallCard => T("Продукт удалён", "Product removed");
-    public static string FinishUninstallFootnote => T("Все данные удалены.", "All data has been removed.");
 
     // ErrorPage
     public static string ErrorHeader => T("Ошибка установки", "Installation Error");

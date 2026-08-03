@@ -1,0 +1,182 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="using:ONE.PSIM.DesignSystem.Controls">
+
+  <Style Selector="controls|MessageBlock">
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Border x:Name="PART_Border"
+                Padding="8"
+                BorderThickness="1"
+                CornerRadius="{StaticResource LargeCornerRadius}">
+          <Grid ColumnDefinitions="Auto,*">
+            <Path x:Name="PART_Icon"
+                  Width="20"
+                  Height="20"
+                  Margin="0,0,8,0"
+                  VerticalAlignment="Center"
+                  Stretch="Uniform" />
+            <StackPanel Grid.Column="1"
+                        VerticalAlignment="Center">
+              <TextBlock x:Name="PART_Header"
+                         Text="{TemplateBinding Header}"
+                         TextWrapping="Wrap"
+                         FontFamily="{StaticResource DefaultFont}"
+                         FontSize="{StaticResource OneMessageFontSize}"
+                         FontWeight="Bold"
+                         Foreground="{DynamicResource OneMessageTextBrush}" />
+              <TextBlock x:Name="PART_Message"
+                         Text="{TemplateBinding Message}"
+                         TextWrapping="Wrap"
+                         FontFamily="{StaticResource DefaultFont}"
+                         FontSize="{StaticResource OneMessageFontSize}"
+                         FontWeight="Normal"
+                         Foreground="{DynamicResource OneMessageTextBrush}" />
+            </StackPanel>
+          </Grid>
+        </Border>
+      </ControlTemplate>
+    </Setter>
+  </Style>
+
+  <Style Selector="controls|MessageBlock:info /template/ Border#PART_Border">
+    <Setter Property="Background" Value="{DynamicResource OneInfoMessageBackgroundBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource PrimaryColor}" />
+  </Style>
+  <Style Selector="controls|MessageBlock:info /template/ Path#PART_Icon">
+    <Setter Property="Data" Value="{StaticResource InfoIcon}" />
+    <Setter Property="Fill" Value="{DynamicResource PrimaryColor}" />
+  </Style>
+
+  <Style Selector="controls|MessageBlock:success /template/ Border#PART_Border">
+    <Setter Property="Background" Value="{DynamicResource OneSuccessMessageBackgroundBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource GreenColor}" />
+  </Style>
+  <Style Selector="controls|MessageBlock:success /template/ Path#PART_Icon">
+    <Setter Property="Data" Value="{StaticResource SuccessIcon}" />
+    <Setter Property="Fill" Value="{DynamicResource GreenColor}" />
+  </Style>
+
+  <Style Selector="controls|MessageBlock:warning /template/ Border#PART_Border">
+    <Setter Property="Background" Value="{DynamicResource OneWarningMessageBackgroundBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource OrangeColor}" />
+  </Style>
+  <Style Selector="controls|MessageBlock:warning /template/ Path#PART_Icon">
+    <Setter Property="Data" Value="{StaticResource WarningIcon}" />
+    <Setter Property="Fill" Value="{DynamicResource OrangeColor}" />
+  </Style>
+
+  <Style Selector="controls|MessageBlock:error /template/ Border#PART_Border">
+    <Setter Property="Background" Value="{DynamicResource OneErrorMessageBackgroundBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource RedColor}" />
+  </Style>
+  <Style Selector="controls|MessageBlock:error /template/ Path#PART_Icon">
+    <Setter Property="Data" Value="{StaticResource ErrorIcon}" />
+    <Setter Property="Fill" Value="{DynamicResource RedColor}" />
+  </Style>
+
+  <Style Selector="controls|ThemeToggleButton">
+    <Setter Property="Width" Value="{StaticResource ThemeSize-Large}" />
+    <Setter Property="Height" Value="{StaticResource ThemeSize-Large}" />
+    <Setter Property="Padding" Value="0" />
+    <Setter Property="CornerRadius" Value="{StaticResource DefaultCornerRadius}" />
+    <Setter Property="HorizontalAlignment" Value="Center" />
+    <Setter Property="VerticalAlignment" Value="Center" />
+    <Setter Property="HorizontalContentAlignment" Value="Center" />
+    <Setter Property="VerticalContentAlignment" Value="Center" />
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="Foreground" Value="{DynamicResource OneTextPrimaryBrush}" />
+    <Setter Property="BorderBrush" Value="Transparent" />
+    <Setter Property="BorderThickness" Value="1" />
+  </Style>
+  <Style Selector="controls|ThemeToggleButton:pointerover">
+    <Setter Property="Background" Value="{DynamicResource OneSubtleBackgroundHoverBrush}" />
+    <Setter Property="BorderBrush" Value="Transparent" />
+  </Style>
+  <Style Selector="controls|ThemeToggleButton:pressed">
+    <Setter Property="Background" Value="{DynamicResource OneSubtleBackgroundPressedBrush}" />
+    <Setter Property="BorderBrush" Value="Transparent" />
+  </Style>
+  <Style Selector="controls|ThemeToggleButton:focus">
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="BorderBrush" Value="Transparent" />
+  </Style>
+  <Style Selector="controls|ThemeToggleButton /template/ ContentPresenter#PART_ContentPresenter">
+    <Setter Property="Padding" Value="0" />
+    <Setter Property="HorizontalAlignment" Value="Stretch" />
+    <Setter Property="VerticalAlignment" Value="Stretch" />
+    <Setter Property="HorizontalContentAlignment" Value="Center" />
+    <Setter Property="VerticalContentAlignment" Value="Center" />
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="BorderBrush" Value="Transparent" />
+  </Style>
+  <Style Selector="controls|ThemeToggleButton Path">
+    <Setter Property="Fill" Value="{DynamicResource OneTextPrimaryBrush}" />
+  </Style>
+
+  <Style Selector="ToggleButton.PasswordRevealButton">
+    <Setter Property="Width" Value="{StaticResource ThemeSize-Large}" />
+    <Setter Property="Height" Value="{StaticResource ThemeSize-Large}" />
+    <Setter Property="Padding" Value="0" />
+    <Setter Property="CornerRadius" Value="{StaticResource DefaultCornerRadius}" />
+    <Setter Property="HorizontalContentAlignment" Value="Center" />
+    <Setter Property="VerticalContentAlignment" Value="Center" />
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="BorderBrush" Value="Transparent" />
+    <Setter Property="BorderThickness" Value="0" />
+  </Style>
+  <Style Selector="ToggleButton.PasswordRevealButton /template/ ContentPresenter#PART_ContentPresenter">
+    <Setter Property="Padding" Value="0" />
+    <Setter Property="HorizontalAlignment" Value="Stretch" />
+    <Setter Property="VerticalAlignment" Value="Stretch" />
+    <Setter Property="HorizontalContentAlignment" Value="Center" />
+    <Setter Property="VerticalContentAlignment" Value="Center" />
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="BorderBrush" Value="Transparent" />
+  </Style>
+  <Style Selector="ToggleButton.PasswordRevealButton:pointerover">
+    <Setter Property="Background" Value="{DynamicResource OneControlBackgroundHoverBrush}" />
+  </Style>
+  <Style Selector="ToggleButton.PasswordRevealButton:pressed">
+    <Setter Property="Background" Value="{DynamicResource OneControlBackgroundPressedBrush}" />
+  </Style>
+  <Style Selector="ToggleButton.PasswordRevealButton:checked">
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="BorderBrush" Value="Transparent" />
+    <Setter Property="Foreground" Value="{DynamicResource OneTextPrimaryBrush}" />
+  </Style>
+  <Style Selector="ToggleButton.PasswordRevealButton:checked:pointerover">
+    <Setter Property="Background" Value="{DynamicResource OneControlBackgroundHoverBrush}" />
+    <Setter Property="BorderBrush" Value="Transparent" />
+  </Style>
+  <Style Selector="ToggleButton.PasswordRevealButton:checked:pressed">
+    <Setter Property="Background" Value="{DynamicResource OneControlBackgroundPressedBrush}" />
+    <Setter Property="BorderBrush" Value="Transparent" />
+  </Style>
+  <Style Selector="ToggleButton.PasswordRevealButton:checked /template/ Border#PART_BackgroundBorder,
+                   ToggleButton.PasswordRevealButton:checked /template/ Border#PART_ButtonBorder">
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="BorderBrush" Value="Transparent" />
+  </Style>
+  <Style Selector="ToggleButton.PasswordRevealButton:checked:pointerover /template/ Border#PART_BackgroundBorder,
+                   ToggleButton.PasswordRevealButton:checked:pointerover /template/ Border#PART_ButtonBorder">
+    <Setter Property="Background" Value="{DynamicResource OneControlBackgroundHoverBrush}" />
+    <Setter Property="BorderBrush" Value="Transparent" />
+  </Style>
+  <Style Selector="ToggleButton.PasswordRevealButton:checked:pressed /template/ Border#PART_BackgroundBorder,
+                   ToggleButton.PasswordRevealButton:checked:pressed /template/ Border#PART_ButtonBorder">
+    <Setter Property="Background" Value="{DynamicResource OneControlBackgroundPressedBrush}" />
+    <Setter Property="BorderBrush" Value="Transparent" />
+  </Style>
+  <Style Selector="ToggleButton.PasswordRevealButton Path.PasswordRevealIcon">
+    <Setter Property="Width" Value="{StaticResource ThemeIconSize-Small}" />
+    <Setter Property="Height" Value="{StaticResource ThemeIconSize-Small}" />
+    <Setter Property="Stretch" Value="Uniform" />
+    <!-- The source eye geometry is 21x14 and occupies the top of a square Path.
+         Shift its painted area down to optically center it in the 16 DIP viewport. -->
+    <Setter Property="RenderTransform">
+      <TranslateTransform Y="3" />
+    </Setter>
+    <Setter Property="Fill" Value="{DynamicResource OneTextPrimaryBrush}" />
+  </Style>
+</Styles>

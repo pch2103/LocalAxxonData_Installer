@@ -1,111 +1,91 @@
 # Local AxxonData Installer
 
-Avalonia desktop installer for the Local AxxonData product. Windows **700×500** fixed window, dark theme, two-phase installation with automatic reboot.
+Настольный установщик Local AxxonData на .NET 8, Avalonia 11.3.8 и Eremex
+1.3.62. Интерфейс поддерживает светлую и тёмную темы и использует автономную
+копию `ONE.PSIM.DesignSystem`.
 
-> GitHub: [pch2103/LocalAxxonData_Installer](https://github.com/pch2103/LocalAxxonData_Installer)
+- Репозиторий приложения: <https://github.com/pch2103/LocalAxxonData_Installer>
+- Актуальная дизайн-система: <https://github.com/pch2103/ONE.PSIM.DesignSystem>
+- Установленная версия ядра: `0.1.0-preview.25`
 
-## Tech Stack
+## Архитектура интерфейса
 
-- **.NET 8** / **Avalonia 11.3.8** + **Eremex DeltaDesign** v1.3.x
-- Code-behind wizard architecture (no MVVM, no DI)
-- Dark theme only — Segoe UI font
+Приложение сохраняет code-behind архитектуру мастера без MVVM и DI. Общие
+темы, ресурсы и контролы находятся в каталоге
+`LocalAxxonData_Installer/DesignSystem/` и подключаются одной строкой в
+`App.axaml`:
 
-## Screens Overview
-
-13 screens grouped by phase. Header color indicates the screen purpose.
-
-### Phase A — Settings Collection (blue `#1A73E8`)
-
-User enters installation parameters before setup begins.
-
-| Screen | Description |
-|--------|-------------|
-| **LanguagePage** | Language selection (RU / EN). Shown only on clean install. |
-| **WelcomePage** | Welcome message with BIOS virtualization reminder and two-phase install note. |
-| **InstallDirPage** | Target directory picker with free space check. |
-| **SmtpPage** | SMTP server configuration (optional). Scrollable form with host, port, encryption, credentials. Password field with reveal button. |
-| **SummaryPage** | Parameter review before installation starts. Shows install path, SMTP status, initial password info. Includes reboot warning. |
-
-### Phase B — System Preparation (blue → orange)
-
-First install phase followed by mandatory reboot.
-
-| Screen | Description |
-|--------|-------------|
-| **ProgressPage** | Phase 1 progress bar. Simulated installation with 5‑second animation, auto‑advances to RebootPage. Cancel button aborts installation. |
-| **RebootPage** | 60‑second countdown to reboot (orange `#F57C00` header). "Отложить" pauses, "Перезагрузить" triggers immediate restart. Auto‑resumes to Phase 2 after reboot. |
-
-### Phase C — Final Setup (blue → green)
-
-Resumes automatically after reboot.
-
-| Screen | Description |
-|--------|-------------|
-| **ResumeProgressPage** | Phase 2 progress bar. Docker image download simulation, 8‑second animation. |
-| **FinishPage** | Success screen (green `#2E7D32` header). Large checkmark icon, product URL. "Закрыть" button exits the installer. |
-
-### Reinstall & Recovery
-
-| Screen | Header | Description |
-|--------|--------|-------------|
-| **AlreadyInstalledPage** | Dark blue `#1565C0` | Entry point when product is already detected. Offers Restore (re‑runs ProgressPage) or Uninstall. |
-| **UninstallPage** | Red `#C62828` | Confirmation dialog with irreversible‑action warning. "Удалить" removes everything, "← Назад" returns to options. |
-
-### Cross‑cutting Dialogs
-
-| Screen | Header | Description |
-|--------|--------|-------------|
-| **ExitConfirmPage** | Gray `#616161` | Confirm‑exit overlay triggered by ✕ button or Cancel on any page. "Продолжить" returns to previous screen, "Выйти" closes the window. |
-| **ErrorPage** | Red `#C62828` | Error display with description and log file path. "Закрыть" exits the installer. |
-
-## Project Structure
-
+```xml
+<StyleInclude Source="/DesignSystem/Eremex/Themes/ONEEremexTheme.axaml" />
 ```
+
+Это копируемое ядро, а не ссылка на соседний репозиторий или NuGet-пакет.
+Приложение можно собирать независимо от исходного репозитория дизайн-системы.
+
+Вне ядра остаются только части самого продукта:
+
+- экраны, навигация и сценарии установщика в `Views/`;
+- локализация в `Localization/`;
+- логотип и фоновые изображения в `Assets/`;
+- композиционные контролы `StageTitleBar` и `ColorBandView`;
+- специальная карточка таймера перезагрузки, собранная из системных ресурсов.
+
+Локальных каталогов `Styles/`, `Resources/` и `AppTheme/` нет: текущему
+приложению не потребовались собственные стили стандартных Avalonia/Eremex
+контролов.
+
+## Темы и системные компоненты
+
+Стартовая тема — Dark. Кнопка в заголовке переключает Dark/Light без
+перезапуска. Все зависящие от темы цвета берутся через `DynamicResource`.
+
+Приложение использует системные компоненты:
+
+- `MessageBlock` для Info, Warning, Error и Success сообщений;
+- `ThemeToggleButton` для переключения темы;
+- `PasswordEditorAssist` для Eremex-поля пароля с кнопкой показа;
+- системные роли кнопок, редакторов, типографики и progress bar.
+
+## Обновление дизайн-системы
+
+1. Скачать нужный релиз или ветку `master` репозитория
+   [ONE.PSIM.DesignSystem](https://github.com/pch2103/ONE.PSIM.DesignSystem).
+2. В дизайн-системе выполнить `scripts/Export-PortableThemes.ps1` либо взять
+   уже подготовленный каталог `portable/Eremex/DesignSystem`.
+3. Полностью заменить каталог
+   `LocalAxxonData_Installer/DesignSystem/` содержимым этого снимка. Не
+   накладывать новую версию поверх старой выборочным копированием.
+4. Проверить версии в `DesignSystem/manifest.json` и совместимость package
+   references в `.csproj`.
+5. Собрать Debug и Release, затем визуально проверить обе темы и сценарии
+   мастера.
+
+Файлы внутри `DesignSystem/` не изменяются локально. Универсальное исправление
+сначала вносится в `ONE.PSIM.DesignSystem`, после чего снимок экспортируется и
+копируется повторно. Необходимая продуктовая кастомизация должна находиться
+вне `DesignSystem/` и быть явно документирована.
+
+## Структура проекта
+
+```text
 LocalAxxonData_Installer/
-├── Assets/
-│   ├── axxon-logo.svg
-│   └── header_back_*.png        (6 header background images)
-├── Resources/
-│   ├── ModifiedResourcesColor.axaml
-│   └── ModifiedResources.axaml
-├── Styles/
-│   ├── Colors.axaml
-│   ├── Brushes.axaml
-│   ├── Typography.axaml
-│   ├── Controls.axaml
-│   └── Layout.axaml
-├── Views/
-│   ├── MainWindow.axaml / .cs   — navigation hub, 13 ShowXxxPage methods
-│   ├── StageTitleBar.axaml / .cs
-│   ├── ColorBandView.axaml / .cs
-│   ├── InfoBlockView.axaml / .cs
-│   ├── ErrorBlockView.axaml / .cs
-│   ├── WarningBlockView.axaml / .cs
-│   ├── PasswordBoxBehavior.cs
-│   ├── LanguagePage.axaml / .cs
-│   ├── WelcomePage.axaml / .cs
-│   ├── InstallDirPage.axaml / .cs
-│   ├── SmtpPage.axaml / .cs
-│   ├── SummaryPage.axaml / .cs
-│   ├── ProgressPage.axaml / .cs
-│   ├── RebootPage.axaml / .cs
-│   ├── ResumeProgressPage.axaml / .cs
-│   ├── FinishPage.axaml / .cs
-│   ├── AlreadyInstalledPage.axaml / .cs
-│   ├── UninstallPage.axaml / .cs
-│   ├── ExitConfirmPage.axaml / .cs
-│   └── ErrorPage.axaml / .cs
-├── App.axaml / .cs
-├── Program.cs
-├── app.manifest
-├── LocalAxxonData_Installer.csproj
-├── LocalAxxonData_Installer.sln
-└── AGENTS.md
+├── Assets/                 продуктовые изображения
+├── DesignSystem/           полностью заменяемое ядро preview.21
+│   ├── Core/
+│   ├── Eremex/
+│   └── manifest.json
+├── Localization/           RU/EN строки
+├── Views/                  экраны и code-behind навигация
+├── App.axaml
+└── LocalAxxonData_Installer.csproj
 ```
 
-## Build & Run
+## Сборка и запуск
 
 ```powershell
-dotnet build
-dotnet run --project LocalAxxonData_Installer
+dotnet build .\LocalAxxonData_Installer\LocalAxxonData_Installer.csproj -c Debug
+dotnet run --project .\LocalAxxonData_Installer\LocalAxxonData_Installer.csproj
 ```
+
+Для восстановления Eremex-пакетов должен быть настроен коммерческий NuGet
+feed и лицензия Eremex.

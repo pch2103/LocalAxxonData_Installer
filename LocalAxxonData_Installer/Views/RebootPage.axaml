@@ -11,7 +11,7 @@
                     <Border Classes="content-background" />
                     <Grid RowDefinitions="*,Auto,*" HorizontalAlignment="Center">
                         <StackPanel Grid.Row="1" Spacing="{StaticResource ThemeSize-Regular}" HorizontalAlignment="Center">
-                            <TextBlock Text="⟳" FontSize="48" Foreground="{StaticResource OrangeColor}"
+                            <TextBlock Text="⟳" FontSize="48" Foreground="{DynamicResource OrangeColor}"
                                        HorizontalAlignment="Center" />
                             <TextBlock x:Name="HeadingText"
                                        Classes="ONE-H2-Bold" HorizontalAlignment="Center" />
@@ -20,12 +20,12 @@
                                     <TextBlock x:Name="CountdownLabelText"
                                                Classes="ONE-Paragraph-Regular" HorizontalAlignment="Center" />
                                     <TextBlock x:Name="TimerText" Text="60 сек."
-                                               Classes="ONE-H1-Medium" Foreground="{StaticResource OrangeColor}"
+                                               Classes="ONE-H1-Medium" Foreground="{DynamicResource OrangeColor}"
                                                HorizontalAlignment="Center" />
                                 </StackPanel>
                             </Border>
                             <TextBlock x:Name="InfoText"
-                                       Classes="ONE-Paragraph-Small" Foreground="{StaticResource SubLabelColor}"
+                                       Classes="ONE-Paragraph-Small" Foreground="{DynamicResource OneTextSecondaryBrush}"
                                        HorizontalAlignment="Center" />
                         </StackPanel>
                     </Grid>

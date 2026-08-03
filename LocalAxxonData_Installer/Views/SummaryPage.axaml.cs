@@ -1,3 +1,4 @@
+using System;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
@@ -17,14 +18,16 @@ public partial class SummaryPage : UserControl
     private void UpdateLanguage()
     {
         HeadingText.Text = LocStrings.SummaryHeading;
-        InfoHeaderText.Text = LocStrings.SummaryInfoHeader;
-        DirText.Text = string.Format(LocStrings.SummaryDirFmt, @"C:\Program Files\Local AxxonData");
-        SmtpText.Text = LocStrings.SummarySmtpConfigured;
-        PasswordText.Text = LocStrings.SummaryPasswordNote;
-        WarningHeadingText.Text = LocStrings.Warning;
-        WarningBodyText.Text = LocStrings.SummaryRebootWarning;
-        InfoBlock.HeaderText = LocStrings.SummaryInfoHeader2;
-        InfoBlock.BodyText = LocStrings.SummaryInfoBody;
+        SettingsBlock.Header = LocStrings.SummaryInfoHeader;
+        SettingsBlock.Message = string.Join(
+            Environment.NewLine,
+            string.Format(LocStrings.SummaryDirFmt, @"C:\Program Files\Local AxxonData"),
+            LocStrings.SummarySmtpConfigured,
+            LocStrings.SummaryPasswordNote);
+        WarningBlock.Header = LocStrings.Warning;
+        WarningBlock.Message = LocStrings.SummaryRebootWarning;
+        InfoBlock.Header = LocStrings.SummaryInfoHeader2;
+        InfoBlock.Message = LocStrings.SummaryInfoBody;
         BackText.Text = LocStrings.Back;
         InstallButton.Content = LocStrings.SummaryInstall;
         CancelButton.Content = LocStrings.Cancel;

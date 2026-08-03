@@ -1,6 +1,6 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:LocalAxxonData_Installer.Views"
+             xmlns:one="using:ONE.PSIM.DesignSystem.Controls"
              Width="700"
              x:Class="LocalAxxonData_Installer.Views.UninstallPage">
     <Grid RowDefinitions="*,Auto">
@@ -16,14 +16,8 @@
                                    Classes="ONE-H2-Bold" />
                         <TextBlock x:Name="ConfirmText"
                                    TextWrapping="Wrap" Classes="ONE-H3-Regular" />
-                        <Border Classes="error-block" Padding="8">
-                            <StackPanel Spacing="4">
-                                <TextBlock x:Name="WarningHeaderText"
-                                           Classes="ONE-Paragraph-Bold" Foreground="{StaticResource RedColor}" />
-                                <TextBlock x:Name="WarningBodyText"
-                                           TextWrapping="Wrap" Classes="ONE-H3-Regular" />
-                            </StackPanel>
-                        </Border>
+                        <one:MessageBlock x:Name="WarningBlock"
+                                          Severity="Error" />
                     </StackPanel>
 
                     <StackPanel x:Name="ProgressPanel" IsVisible="False" Spacing="{StaticResource ThemeSize-Regular}"
@@ -32,9 +26,9 @@
                                    Classes="ONE-H3-Regular"
                                    HorizontalAlignment="Center" />
                         <ProgressBar x:Name="UninstallProgressBar" Minimum="0" Maximum="100" Height="30"
-                                     Foreground="{StaticResource RedColor}" />
+                                     Foreground="{DynamicResource OneDangerBackgroundBrush}" />
                         <TextBlock x:Name="UninstallPercentText" Text="0%"
-                                   Classes="ONE-H3-Bold" Foreground="{StaticResource RedColor}"
+                                   Classes="ONE-H3-Bold" Foreground="{DynamicResource OneDangerBackgroundBrush}"
                                    HorizontalAlignment="Center" />
                     </StackPanel>
 
@@ -47,7 +41,7 @@
                     <Button Classes="Secondary Large" Click="OnBackClick">
                         <TextBlock x:Name="BackText" Text="Назад" Classes="ONE-H3-Bold" VerticalAlignment="Center" />
                     </Button>
-                    <Button Classes="Red Large" x:Name="UninstallButton" Click="OnUninstallClick" />
+                    <Button Classes="Danger Large" x:Name="UninstallButton" Click="OnUninstallClick" />
                     <Button Classes="Secondary Large" x:Name="CancelButton1" Click="OnCancelClick" />
                 </StackPanel>
                 <StackPanel x:Name="ProgressFooter" IsVisible="False" Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8">

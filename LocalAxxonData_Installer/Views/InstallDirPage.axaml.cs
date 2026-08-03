@@ -21,10 +21,10 @@ public partial class InstallDirPage : UserControl
     {
         HeadingText.Text = LocStrings.InstallDirHeading;
         BrowseButton.Content = LocStrings.InstallDirBrowse;
-        AvailableText.Text = string.Format(LocStrings.InstallDirFreeFmt, "45.2 ГБ");
-        RequiredText.Text = LocStrings.InstallDirRequired;
-        InfoBlock.HeaderText = LocStrings.InstallDirInfoHeader;
-        InfoBlock.BodyText = LocStrings.InstallDirInfoBody;
+        SpaceBlock.Header = string.Format(LocStrings.InstallDirFreeFmt, "45.2 ГБ");
+        SpaceBlock.Message = LocStrings.InstallDirRequired;
+        InfoBlock.Header = LocStrings.InstallDirInfoHeader;
+        InfoBlock.Message = LocStrings.InstallDirInfoBody;
         BackText.Text = LocStrings.Back;
         NextText.Text = LocStrings.Next;
         CancelButton.Content = LocStrings.Cancel;

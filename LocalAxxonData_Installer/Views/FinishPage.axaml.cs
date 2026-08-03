@@ -1,4 +1,5 @@
 using Avalonia;
+using Avalonia.Automation;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
@@ -26,8 +27,11 @@ public partial class FinishPage : UserControl
     private void UpdateLanguage()
     {
         OpenBrowserButton.Content = LocStrings.FinishOpenBrowser;
-        PasswordInfo.HeaderText = LocStrings.FinishInstallPasswordHeader;
-        PasswordInfo.BodyText = LocStrings.FinishInstallPasswordBody;
+        HostAddressText.Text = LocStrings.FinishUrl;
+        ToolTip.SetTip(CopyAddressButton, LocStrings.FinishCopyAddress);
+        AutomationProperties.SetName(CopyAddressButton, LocStrings.FinishCopyAddress);
+        PasswordInfo.Header = LocStrings.FinishInstallPasswordHeader;
+        PasswordInfo.Message = LocStrings.FinishInstallPasswordBody;
         FinishButton.Content = LocStrings.Close;
     }
 
@@ -40,10 +44,8 @@ public partial class FinishPage : UserControl
                 IconText.Foreground = (IBrush)(Application.Current!.FindResource("PageHeaderGreenBrush")!);
                 TitleText.Text = LocStrings.FinishInstallTitle;
                 DescriptionText.Text = LocStrings.FinishInstallDesc;
-                SuccessCard.IsVisible = true;
-                SuccessCardText.Text = LocStrings.FinishUrl;
+                HostCard.IsVisible = true;
                 ErrorCard.IsVisible = false;
-                FootnoteText.Text = LocStrings.FinishInstallFootnote;
                 PasswordInfo.IsVisible = true;
                 OpenBrowserButton.IsVisible = true;
                 break;
@@ -53,10 +55,8 @@ public partial class FinishPage : UserControl
                 IconText.Foreground = (IBrush)(Application.Current!.FindResource("PageHeaderGreenBrush")!);
                 TitleText.Text = LocStrings.FinishRestoreTitle;
                 DescriptionText.Text = LocStrings.FinishRestoreDesc;
-                SuccessCard.IsVisible = true;
-                SuccessCardText.Text = LocStrings.FinishUrl;
+                HostCard.IsVisible = true;
                 ErrorCard.IsVisible = false;
-                FootnoteText.Text = LocStrings.FinishRestoreFootnote;
                 PasswordInfo.IsVisible = false;
                 OpenBrowserButton.IsVisible = true;
                 break;
@@ -66,10 +66,9 @@ public partial class FinishPage : UserControl
                 IconText.Foreground = (IBrush)(Application.Current!.FindResource("PageHeaderRedBrush")!);
                 TitleText.Text = LocStrings.FinishUninstallTitle;
                 DescriptionText.Text = LocStrings.FinishUninstallDesc;
-                SuccessCard.IsVisible = false;
+                HostCard.IsVisible = false;
                 ErrorCard.IsVisible = true;
-                ErrorCardText.Text = LocStrings.FinishUninstallCard;
-                FootnoteText.Text = LocStrings.FinishUninstallFootnote;
+                ErrorCard.Message = LocStrings.FinishUninstallCard;
                 PasswordInfo.IsVisible = false;
                 OpenBrowserButton.IsVisible = false;
                 break;
@@ -82,6 +81,19 @@ public partial class FinishPage : UserControl
         {
             mainWindow.CloseWindow();
         }
+    }
+
+    private async void OnCopyAddressClick(object? sender, RoutedEventArgs e)
+    {
+        var clipboard = TopLevel.GetTopLevel(this)?.Clipboard;
+        if (clipboard is null)
+        {
+            return;
+        }
+
+        await clipboard.SetTextAsync(LocStrings.FinishUrl);
+        ToolTip.SetTip(CopyAddressButton, LocStrings.FinishAddressCopied);
+        AutomationProperties.SetName(CopyAddressButton, LocStrings.FinishAddressCopied);
     }
 
     private void OnFinishClick(object? sender, RoutedEventArgs e)

@@ -1,0 +1,98 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Styles.Resources>
+        <ResourceDictionary>
+
+    <!-- Resources shared by all theme variants. -->
+    <FontFamily x:Key="DefaultFont">Inter, Roboto, sans-serif</FontFamily>
+
+    <Color x:Key="ThemeBlack">#000000</Color>
+    <Color x:Key="ThemeWhite">#FFFFFF</Color>
+    <Color x:Key="PageHeaderBlueColor">#1A73E8</Color>
+    <Color x:Key="PageHeaderOrangeColor">#F57C00</Color>
+    <Color x:Key="PageHeaderGreenColor">#2E7D32</Color>
+    <Color x:Key="PageHeaderDarkBlueColor">#1565C0</Color>
+    <Color x:Key="PageHeaderRedColor">#C62828</Color>
+    <Color x:Key="PageHeaderGrayColor">#616161</Color>
+
+    <ResourceDictionary.ThemeDictionaries>
+        <!-- Default contains the complete current palette and is the fallback
+             for theme variants that do not override a token. -->
+        <ResourceDictionary x:Key="Default">
+            <Color x:Key="ThemeBackgroundColor">#0A0A0A</Color>
+            <Color x:Key="ThemeBackgroundColor-900">#191919</Color>
+            <Color x:Key="ThemeBackgroundColor-800">#2A2A2A</Color>
+            <Color x:Key="ThemeBackgroundColor-700">#3D3D3D</Color>
+            <Color x:Key="ThemeBackgroundColor-600">#484848</Color>
+            <Color x:Key="ThemeBackgroundColor-500">#656565</Color>
+            <Color x:Key="ThemeBackgroundColor-400">#858585</Color>
+            <Color x:Key="ThemeBackgroundColor-100">#D6D6D6</Color>
+            <Color x:Key="ThemeBackgroundColorLight">#D6D6D6</Color>
+            <Color x:Key="ThemeForegroundColor">#F6F6F6</Color>
+            <Color x:Key="ThemeSpinnerTrackColor">#F6F6F6</Color>
+            <Color x:Key="ThemeSpinnerIndicatorColor">#F6F6F6</Color>
+            <Color x:Key="ThemeTableBorderColor">#3D3D3D</Color>
+            <Color x:Key="ThemeEditorBorderColor">#656565</Color>
+            <Color x:Key="ThemeEditorHoverBackgroundColor">#656565</Color>
+            <Color x:Key="ThemeEditorHoverBorderColor">#858585</Color>
+            <Color x:Key="ThemeSelectionControlOutlineColor">#858585</Color>
+            <Color x:Key="ThemeSelectionControlOutlineHoverColor">#D6D6D6</Color>
+            <Color x:Key="ThemeSelectionControlOutlineDisabledColor">#484848</Color>
+            <Color x:Key="ThemeFeedbackTextColor">#FFFFFF</Color>
+            <Color x:Key="ThemeRed">#FF0000</Color>
+            <Color x:Key="ThemeRedTint20">#FF3333</Color>
+            <Color x:Key="ThemeRedShade10">#CC0000</Color>
+            <Color x:Key="ThemeGreen">#20D300</Color>
+            <Color x:Key="ThemeOrange">#FF8A00</Color>
+
+            <Color x:Key="ThemePrimaryColorTint20">#0082F7</Color>
+            <Color x:Key="ThemePrimaryColorTint10">#0082F7</Color>
+            <Color x:Key="ThemePrimaryColor">#0070E4</Color>
+            <Color x:Key="ThemePrimaryColorShade10">#0053A8</Color>
+            <Color x:Key="ThemePrimaryColorShade20">#004184</Color>
+        </ResourceDictionary>
+
+        <!-- Dark currently inherits the complete Default palette. -->
+        <ResourceDictionary x:Key="Dark" />
+
+        <!-- Light+One palette from UI-KIT-ONE-PSIM-X. -->
+        <ResourceDictionary x:Key="Light">
+            <Color x:Key="ThemeBackgroundColor">#F7F7F7</Color>
+            <Color x:Key="ThemeBackgroundColor-900">#F7F7F7</Color>
+            <Color x:Key="ThemeBackgroundColor-800">#F2F3F5</Color>
+            <Color x:Key="ThemeBackgroundColor-700">#E9EBF2</Color>
+            <Color x:Key="ThemeBackgroundColor-600">#D6D6D6</Color>
+            <Color x:Key="ThemeBackgroundColor-500">#B8B8B8</Color>
+            <Color x:Key="ThemeBackgroundColor-400">#858585</Color>
+            <Color x:Key="ThemeBackgroundColor-100">#858585</Color>
+            <Color x:Key="ThemeBackgroundColorLight">#F2F3F5</Color>
+            <Color x:Key="ThemeForegroundColor">#4B4C53</Color>
+            <Color x:Key="ThemeSpinnerTrackColor">#D6D6D6</Color>
+            <Color x:Key="ThemeSpinnerIndicatorColor">#0070E4</Color>
+            <Color x:Key="ThemeTableBorderColor">#D6D6D6</Color>
+            <Color x:Key="ThemeEditorBorderColor">#D6D6D6</Color>
+            <Color x:Key="ThemeEditorHoverBackgroundColor">#E4E5E8</Color>
+            <Color x:Key="ThemeEditorHoverBorderColor">#858585</Color>
+            <Color x:Key="ThemeSelectionControlOutlineColor">#858585</Color>
+            <Color x:Key="ThemeSelectionControlOutlineHoverColor">#858585</Color>
+            <Color x:Key="ThemeSelectionControlOutlineDisabledColor">#858585</Color>
+            <Color x:Key="ThemeFeedbackTextColor">#000000</Color>
+            <Color x:Key="ThemeRed">#FF0000</Color>
+            <Color x:Key="ThemeRedTint20">#FF3333</Color>
+            <Color x:Key="ThemeRedShade10">#CC0000</Color>
+            <Color x:Key="ThemeGreen">#20D300</Color>
+            <Color x:Key="ThemeOrange">#FF8A00</Color>
+
+            <Color x:Key="ThemePrimaryColorTint20">#0189FF</Color>
+            <Color x:Key="ThemePrimaryColorTint10">#0189FF</Color>
+            <Color x:Key="ThemePrimaryColor">#0070E4</Color>
+            <Color x:Key="ThemePrimaryColorShade10">#2499FF</Color>
+            <Color x:Key="ThemePrimaryColorShade20">#2499FF</Color>
+        </ResourceDictionary>
+    </ResourceDictionary.ThemeDictionaries>
+
+        </ResourceDictionary>
+    </Styles.Resources>
+
+</Styles>

@@ -1,0 +1,43 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:mxdg="https://schemas.eremexcontrols.net/avalonia/datagrid"
+        xmlns:mxtl="https://schemas.eremexcontrols.net/avalonia/treelist"
+        xmlns:mxtlvis="clr-namespace:Eremex.AvaloniaUI.Controls.TreeList.Visuals;assembly=Eremex.Avalonia.Controls"
+        xmlns:visuals="clr-namespace:Eremex.AvaloniaUI.Controls.DataControl.Visuals;assembly=Eremex.Avalonia.Controls">
+  <Style Selector="mxtl|TreeListControl">
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="Foreground" Value="{DynamicResource ForegroundColor}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource OneTableBorderBrush}" />
+    <Setter Property="BorderThickness" Value="1" />
+  </Style>
+  <Style Selector="mxdg|DataGridControl">
+    <Setter Property="BorderBrush" Value="{DynamicResource OneTableBorderBrush}" />
+    <Setter Property="BorderThickness" Value="1" />
+  </Style>
+  <Style Selector="visuals|DataRowControlBase">
+    <Setter Property="BorderBrush" Value="{DynamicResource OneTableBorderBrush}" />
+  </Style>
+  <Style Selector="visuals|CellControl">
+    <Setter Property="BorderBrush" Value="{DynamicResource OneTableBorderBrush}" />
+  </Style>
+  <Style Selector="mxtlvis|TreeListRowControl">
+    <Setter Property="Background" Value="{DynamicResource BackgroundColor-800}" />
+    <Setter Property="Foreground" Value="{DynamicResource ForegroundColor}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource OneTableBorderBrush}" />
+  </Style>
+  <Style Selector="mxtlvis|TreeListCellControl">
+    <Setter Property="Foreground" Value="{DynamicResource ForegroundColor}" />
+    <Setter Property="FontSize" Value="{StaticResource ThemeSize-Subs}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource OneTableBorderBrush}" />
+  </Style>
+  <Style Selector="visuals|ColumnHeaderControl">
+    <Setter Property="Background" Value="{DynamicResource BackgroundColor-700}" />
+    <Setter Property="Foreground" Value="{DynamicResource ForegroundColor}" />
+    <Setter Property="FontSize" Value="{StaticResource ThemeSize-Subs}" />
+    <Setter Property="FontWeight" Value="Bold" />
+    <Setter Property="BorderBrush" Value="{DynamicResource OneTableBorderBrush}" />
+    <Setter Property="BorderThickness" Value="0,0,0,1" />
+  </Style>
+  <Style Selector="mxtlvis|TreeListRowControl:focusedAndSelectedState /template/ Border#RowBorder">
+    <Setter Property="Background" Value="{DynamicResource OneTableSelectionBrush}" />
+  </Style>
+</Styles>

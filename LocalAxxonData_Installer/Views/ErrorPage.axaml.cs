@@ -17,10 +17,10 @@ public partial class ErrorPage : UserControl
     private void UpdateLanguage()
     {
         HeadingText.Text = LocStrings.ErrorHeading;
-        ErrorTitleText.Text = LocStrings.ErrorTitle;
-        ErrorDescText.Text = LocStrings.ErrorDesc;
-        ErrorBlock.HeaderText = LocStrings.ErrorCodeBlock;
-        ErrorBlock.BodyText = LocStrings.ErrorLogInfo;
+        ErrorDescriptionBlock.Header = LocStrings.ErrorTitle;
+        ErrorDescriptionBlock.Message = LocStrings.ErrorDesc;
+        ErrorBlock.Header = LocStrings.ErrorCodeBlock;
+        ErrorBlock.Message = LocStrings.ErrorLogInfo;
         ShowLogButton.Content = LocStrings.ErrorShowLog;
         CloseButton.Content = LocStrings.ErrorClose;
     }

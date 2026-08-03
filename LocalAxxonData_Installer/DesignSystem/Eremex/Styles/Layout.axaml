@@ -1,0 +1,91 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mx="https://schemas.eremexcontrols.net/avalonia">
+
+        <!-- Стиль для окна приложения без заголовка и с размытием заднего плана -->
+        <Style Selector="mx|MxWindow.no-titlebar">
+                <Setter Property="TransparencyLevelHint" Value="AcrylicBlur" />
+                <Setter Property="Background" Value="Transparent" />
+        </Style>
+
+        <Style Selector="mx|MxWindow /template/ Border#PART_CaptionArea">
+                <Setter Property="IsVisible" Value="False"/>
+        </Style>
+
+        <Style Selector="Border.main-window-background">
+                <Setter Property="Background" Value="{DynamicResource BackgroundColor-80}" />
+        </Style>
+        <Style Selector="Border.content-background">
+                <Setter Property="Background" Value="{DynamicResource BackgroundColor-40}" />
+                <Setter Property="CornerRadius" Value="6" />
+                <Setter Property="BorderBrush" Value="{DynamicResource BackgroundColor-800}" />
+                <Setter Property="BorderThickness" Value="1" />
+        </Style>
+        <Style Selector="Border.content-overlay">
+                <Setter Property="Background" Value="Transparent" />
+                <Setter Property="Margin" Value="16" />
+        </Style>
+
+        <!-- Стиль для инфопанелей -->
+
+        <Style Selector="Border.info-block">
+                <Setter Property="CornerRadius" Value="6" />
+                <Setter Property="BorderBrush" Value="{DynamicResource PrimaryColor}" />
+                <Setter Property="BorderThickness" Value="1" />
+                <Setter Property="Background" Value="{DynamicResource OneInfoMessageBackgroundBrush}" />
+                <Setter Property="Padding" Value="8" />
+        </Style>
+        <Style Selector="Border.success-block">
+                <Setter Property="CornerRadius" Value="6" />
+                <Setter Property="BorderBrush" Value="{DynamicResource GreenColor}" />
+                <Setter Property="BorderThickness" Value="1" />
+                <Setter Property="Background" Value="{DynamicResource OneSuccessMessageBackgroundBrush}" />
+                <Setter Property="Padding" Value="8" />
+        </Style>
+        <Style Selector="Border.error-block">
+                <Setter Property="CornerRadius" Value="6" />
+                <Setter Property="BorderBrush" Value="{DynamicResource RedColor}" />
+                <Setter Property="BorderThickness" Value="1" />
+                <Setter Property="Background" Value="{DynamicResource OneErrorMessageBackgroundBrush}" />
+                <Setter Property="Padding" Value="8" />
+        </Style>
+        <Style Selector="Border.warning-block">
+                <Setter Property="CornerRadius" Value="6" />
+                <Setter Property="BorderBrush" Value="{DynamicResource OrangeColor}" />
+                <Setter Property="BorderThickness" Value="1" />
+                <Setter Property="Background" Value="{DynamicResource OneWarningMessageBackgroundBrush}" />
+                <Setter Property="Padding" Value="8" />
+        </Style>
+
+  <Style Selector="TextBlock.One-Subs-Regular.MessageBlockText">
+    <Setter Property="FontSize" Value="{StaticResource OneMessageFontSize}" />
+    <Setter Property="Foreground" Value="{DynamicResource OneMessageTextBrush}" />
+                <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+        <Style Selector="Border.info-block TextBlock.MessageBlockText,
+                         Border.success-block TextBlock.MessageBlockText,
+                         Border.warning-block TextBlock.MessageBlockText,
+                         Border.error-block TextBlock.MessageBlockText">
+                <Setter Property="Foreground" Value="{DynamicResource OneMessageTextBrush}" />
+                <Setter Property="Opacity" Value="1" />
+        </Style>
+        <Style Selector="Path.MessageBlockIcon">
+                <Setter Property="Width" Value="20" />
+                <Setter Property="Height" Value="20" />
+                <Setter Property="Margin" Value="0,0,8,0" />
+                <Setter Property="VerticalAlignment" Value="Center" />
+                <Setter Property="Stretch" Value="Uniform" />
+        </Style>
+        <Style Selector="Border.info-block Path.MessageBlockIcon">
+                <Setter Property="Fill" Value="{DynamicResource PrimaryColor}" />
+        </Style>
+        <Style Selector="Border.success-block Path.MessageBlockIcon">
+                <Setter Property="Fill" Value="{DynamicResource GreenColor}" />
+        </Style>
+        <Style Selector="Border.warning-block Path.MessageBlockIcon">
+                <Setter Property="Fill" Value="{DynamicResource OrangeColor}" />
+        </Style>
+        <Style Selector="Border.error-block Path.MessageBlockIcon">
+                <Setter Property="Fill" Value="{DynamicResource RedColor}" />
+        </Style>
+</Styles>

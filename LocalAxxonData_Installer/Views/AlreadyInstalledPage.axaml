@@ -17,7 +17,7 @@
                                    x:Name="DescText" />
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="12">
                             <Button Classes="Primary Large" x:Name="RestoreButton" Click="OnRestoreClick" />
-                            <Button Classes="Red Large" x:Name="UninstallButton" Click="OnUninstallClick" />
+                            <Button Classes="Danger Large" x:Name="UninstallButton" Click="OnUninstallClick" />
                         </StackPanel>
                     </StackPanel>
                 </Grid>

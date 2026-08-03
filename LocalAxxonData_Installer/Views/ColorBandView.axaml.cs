@@ -10,7 +10,7 @@ namespace LocalAxxonData_Installer.Views;
 public partial class ColorBandView : UserControl
 {
     public static readonly StyledProperty<IBrush> HeaderBrushProperty =
-        AvaloniaProperty.Register<ColorBandView, IBrush>(nameof(HeaderBrush), new SolidColorBrush(Colors.DodgerBlue));
+        AvaloniaProperty.Register<ColorBandView, IBrush>(nameof(HeaderBrush), Brushes.Transparent);
 
     public static readonly StyledProperty<string> HeaderTextProperty =
         AvaloniaProperty.Register<ColorBandView, string>(nameof(HeaderText), "");

@@ -1,5 +1,6 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:one="using:ONE.PSIM.DesignSystem.Controls"
              x:Class="LocalAxxonData_Installer.Views.StageTitleBar">
   <Border Margin="16,0,16,8"
           Height="{StaticResource ThemeSize-Large}">
@@ -12,7 +13,7 @@
               Height="{StaticResource ThemeSize-Double}"
               Stretch="Uniform"
               Stroke="Transparent"
-              Fill="{StaticResource ForegroundColor}" />
+              Fill="{DynamicResource OneTextPrimaryBrush}" />
       </Border>
       <Border Grid.Column="1" Background="Transparent" PointerPressed="TitleBar_PointerPressed">
         <TextBlock x:Name="TitleText"
@@ -20,13 +21,16 @@
                    Classes="ONE-H2-Medium" />
       </Border>
       <StackPanel Grid.Column="2" Orientation="Horizontal">
+        <one:ThemeToggleButton x:Name="ThemeToggleButton"
+                               VerticalAlignment="Center" />
+        <Border Width="12" Background="Transparent" />
         <Button Classes="Subtle IconOnlyLarge" Click="CloseButton_Click"
                 VerticalAlignment="Center">
           <Path Data="{StaticResource CloseIcon}"
                 Width="{StaticResource ThemeSize-Double}"
                 Height="{StaticResource ThemeSize-Double}"
                 Stroke="Transparent"
-                Fill="{StaticResource ForegroundColor}" />
+                Fill="{DynamicResource OneTextPrimaryBrush}" />
         </Button>
       </StackPanel>
     </Grid>

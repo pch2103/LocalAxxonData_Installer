@@ -1,0 +1,7 @@
+<Styles xmlns="https://github.com/avaloniaui">
+  <!-- The host supplies its preferred Avalonia base theme before this include. -->
+  <StyleInclude Source="/DesignSystem/Core/Themes/ONEFoundations.axaml" />
+  <StyleInclude Source="/DesignSystem/Core/Styles/Controls.axaml" />
+  <StyleInclude Source="/DesignSystem/Core/Styles/Layout.axaml" />
+  <StyleInclude Source="/DesignSystem/Core/Styles/Components.axaml" />
+</Styles>

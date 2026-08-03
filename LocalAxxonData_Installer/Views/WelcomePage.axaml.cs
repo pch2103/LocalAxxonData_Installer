@@ -18,10 +18,10 @@ public partial class WelcomePage : UserControl
     {
         HeadingText.Text = LocStrings.WelcomeHeading;
         DescText.Text = LocStrings.WelcomeBody;
-        WarningHeadingText.Text = LocStrings.WelcomeWarningHeading;
-        WarningBodyText.Text = LocStrings.WelcomeWarningBody;
-        InfoBlock.HeaderText = LocStrings.WelcomeInfoHeader;
-        InfoBlock.BodyText = LocStrings.WelcomeInfoBody;
+        WarningBlock.Header = LocStrings.WelcomeWarningHeading;
+        WarningBlock.Message = LocStrings.WelcomeWarningBody;
+        InfoBlock.Header = LocStrings.WelcomeInfoHeader;
+        InfoBlock.Message = LocStrings.WelcomeInfoBody;
         NextText.Text = LocStrings.Next;
         CancelButton.Content = LocStrings.Cancel;
     }

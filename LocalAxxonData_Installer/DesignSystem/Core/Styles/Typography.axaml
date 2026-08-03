@@ -2,25 +2,31 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <Style Selector="TextBlock.ONE-Paragraph-Regular">
-        <Setter Property="FontFamily" Value="DefaultFont" />
+        <Setter Property="FontFamily" Value="{DynamicResource DefaultFont}" />
         <Setter Property="FontSize" Value="11" />
         <Setter Property="FontWeight" Value="Normal" />
         <Setter Property="Foreground" Value="{DynamicResource ForegroundColor}" />
     </Style>
     <Style Selector="TextBlock.ONE-Paragraph-Bold">
-        <Setter Property="FontFamily" Value="DefaultFont" />
+        <Setter Property="FontFamily" Value="{DynamicResource DefaultFont}" />
         <Setter Property="FontSize" Value="12" />
         <Setter Property="FontWeight" Value="Bold" />
         <Setter Property="Foreground" Value="{DynamicResource ForegroundColor}" />
     </Style>
+    <Style Selector="TextBlock.ONE-Paragraph-Small">
+        <Setter Property="FontFamily" Value="{DynamicResource DefaultFont}" />
+        <Setter Property="FontSize" Value="10" />
+        <Setter Property="FontWeight" Value="Normal" />
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundColor}" />
+    </Style>
     <Style Selector="TextBlock.ONE-H3-Bold">
-        <Setter Property="FontFamily" Value="DefaultFont" />
+        <Setter Property="FontFamily" Value="{DynamicResource DefaultFont}" />
         <Setter Property="FontSize" Value="14" />
         <Setter Property="FontWeight" Value="Bold" />
         <Setter Property="Foreground" Value="{DynamicResource ForegroundColor}" />
     </Style>
     <Style Selector="TextBlock.ONE-H3-Regular">
-        <Setter Property="FontFamily" Value="DefaultFont" />
+        <Setter Property="FontFamily" Value="{DynamicResource DefaultFont}" />
         <Setter Property="FontSize" Value="14" />
         <Setter Property="FontWeight" Value="Regular" />
         <Setter Property="Foreground" Value="{DynamicResource ForegroundColor}" />
@@ -45,19 +51,13 @@
         <Setter Property="FontWeight" Value="Bold" />
         <Setter Property="Foreground" Value="{DynamicResource ForegroundColor}" />
     </Style>
-    <Style Selector="TextBlock.ONE-Paragraph-Small">
-        <Setter Property="FontFamily" Value="DefaultFont" />
+    <Style Selector="TextBlock.One-Subs-Regular">
         <Setter Property="FontSize" Value="10" />
         <Setter Property="FontWeight" Value="Normal" />
         <Setter Property="Foreground" Value="{DynamicResource ForegroundColor}" />
     </Style>
-    <Style Selector="TextBlock.One-Subs-Regular">
-        <Setter Property="FontSize" Value="9" />
-        <Setter Property="FontWeight" Value="Normal" />
-        <Setter Property="Foreground" Value="{DynamicResource ForegroundColor}" />
-    </Style>
     <Style Selector="TextBlock.One-Subs-Bold">
-        <Setter Property="FontSize" Value="9" />
+        <Setter Property="FontSize" Value="10" />
         <Setter Property="FontWeight" Value="Bold" />
         <Setter Property="Foreground" Value="{DynamicResource ForegroundColor}" />
     </Style>

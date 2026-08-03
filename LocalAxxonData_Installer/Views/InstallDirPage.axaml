@@ -1,7 +1,7 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
-             xmlns:local="clr-namespace:LocalAxxonData_Installer.Views"
+             xmlns:one="using:ONE.PSIM.DesignSystem.Controls"
              Width="700"
              x:Class="LocalAxxonData_Installer.Views.InstallDirPage">
     <Grid RowDefinitions="*,Auto">
@@ -20,17 +20,11 @@
                                                 x:Name="PathEditor" />
                                 <Button Grid.Column="1" x:Name="BrowseButton" Classes="Secondary Large" Click="OnBrowseClick" />
                             </Grid>
-                            <Border Classes="success-block" Padding="8">
-                                <StackPanel Spacing="4">
-                                    <TextBlock x:Name="AvailableText"
-                                               Classes="ONE-Paragraph-Bold" Foreground="{StaticResource GreenColor}" />
-                                    <TextBlock x:Name="RequiredText"
-                                               TextWrapping="Wrap" Classes="ONE-Paragraph-Regular" />
-                                </StackPanel>
-                            </Border>
+                            <one:MessageBlock x:Name="SpaceBlock"
+                                              Severity="Success" />
                         </StackPanel>
                     </Grid>
-                    <local:MessageBlockView x:Name="InfoBlock" Grid.Row="1" />
+                    <one:MessageBlock x:Name="InfoBlock" Grid.Row="1" />
                 </Grid>
             </Grid>
         </Border>

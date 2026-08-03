@@ -1,0 +1,9 @@
+<Styles xmlns="https://github.com/avaloniaui">
+  <!-- Order is contractual: palette → brushes/metrics/icons → semantics → typography. -->
+  <StyleInclude Source="/DesignSystem/Core/Styles/Colors.axaml" />
+  <StyleInclude Source="/DesignSystem/Core/Styles/Brushes.axaml" />
+  <StyleInclude Source="/DesignSystem/Core/Styles/Iconography.axaml" />
+  <StyleInclude Source="/DesignSystem/Core/Styles/Semantics.axaml" />
+  <StyleInclude Source="/DesignSystem/Core/Styles/FluentThemeOverrides.axaml" />
+  <StyleInclude Source="/DesignSystem/Core/Styles/Typography.axaml" />
+</Styles>

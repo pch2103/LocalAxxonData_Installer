@@ -1,7 +1,7 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
-             xmlns:local="clr-namespace:LocalAxxonData_Installer.Views"
+             xmlns:oneEremex="using:ONE.PSIM.DesignSystem.Eremex"
              Width="700"
              x:Class="LocalAxxonData_Installer.Views.SmtpPage">
     <Grid RowDefinitions="*,Auto">
@@ -36,11 +36,8 @@
                                 </StackPanel>
                                 <StackPanel Grid.Column="1" Spacing="4">
                                     <TextBlock x:Name="PasswordLabel" Classes="One-Subs-Bold" />
-                                    <mxe:TextEditor Classes="Large">
-                                        <Interaction.Behaviors>
-                                            <local:PasswordBoxBehavior />
-                                        </Interaction.Behaviors>
-                                    </mxe:TextEditor>
+                                    <mxe:TextEditor Classes="Large"
+                                                    oneEremex:PasswordEditorAssist.IsPassword="True" />
                                 </StackPanel>
                             </Grid>
                             <StackPanel Spacing="4">

@@ -18,45 +18,45 @@
 
             <SolidColorBrush x:Key="TransparentBrush" Color="Transparent" />
             <SolidColorBrush x:Key="Outline/Neutral/Transparent/Strong"
-                             Color="{StaticResource ThemeBackgroundColor-600}" />
+                             Color="{DynamicResource ThemeBackgroundColor-600}" />
             <SolidColorBrush x:Key="Outline/Neutral/Transparent/Medium"
-                             Color="{StaticResource ThemeBackgroundColor-500}" />
+                             Color="{DynamicResource ThemeBackgroundColor-500}" />
             <SolidColorBrush x:Key="Outline/Neutral/Transparent/Light"
-                             Color="{StaticResource ThemeBackgroundColor-400}" />
-            <SolidColorBrush x:Key="Icons/Outline/Gray" Color="{StaticResource ThemeForegroundColor}" />
-            <SolidColorBrush x:Key="Icons/Outline/Disabled" Color="{StaticResource ThemeBackgroundColor-600}" />
+                             Color="{DynamicResource ThemeBackgroundColor-400}" />
+            <SolidColorBrush x:Key="Icons/Outline/Gray" Color="{DynamicResource ThemeForegroundColor}" />
+            <SolidColorBrush x:Key="Icons/Outline/Disabled" Color="{DynamicResource ThemeBackgroundColor-600}" />
             <SolidColorBrush x:Key="Fill/Accent/Highlighting/Item/Disabled"
-                             Color="{StaticResource ThemeBackgroundColor-900}" />
-            <SolidColorBrush x:Key="Text/Neutral/Primary" Color="{StaticResource ThemeForegroundColor}" />
-            <SolidColorBrush x:Key="Text/Neutral/Tertiary" Color="{StaticResource ThemeForegroundColor}" />
-            <SolidColorBrush x:Key="Fill/Accent/Highlighting/Text" Color="{StaticResource ThemePrimaryColorShade20}" />
-            <SolidColorBrush x:Key="Fill/Neutral/Secondary/Hover" Color="{StaticResource ThemeBackgroundColor-500}" />
-            <SolidColorBrush x:Key="Fill/Neutral/Secondary/Enabled" Color="{StaticResource ThemeBackgroundColor-700}" />
+                             Color="{DynamicResource ThemeBackgroundColor-900}" />
+            <SolidColorBrush x:Key="Text/Neutral/Primary" Color="{DynamicResource ThemeForegroundColor}" />
+            <SolidColorBrush x:Key="Text/Neutral/Tertiary" Color="{DynamicResource ThemeForegroundColor}" />
+            <SolidColorBrush x:Key="Fill/Accent/Highlighting/Text" Color="{DynamicResource ThemePrimaryColorShade20}" />
+            <SolidColorBrush x:Key="Fill/Neutral/Secondary/Hover" Color="{DynamicResource ThemeBackgroundColor-500}" />
+            <SolidColorBrush x:Key="Fill/Neutral/Secondary/Enabled" Color="{DynamicResource ThemeBackgroundColor-700}" />
             <SolidColorBrush x:Key="Fill/Neutral/Secondary/Enabled/Dark"
-                             Color="{StaticResource ThemeBackgroundColor-800}" />
-            <SolidColorBrush x:Key="Outline/Accent/Focus" Color="{StaticResource ThemePrimaryColorTint20}" />
-            <SolidColorBrush x:Key="Fill/Neutral/Primary/Enabled" Color="{StaticResource ThemeBackgroundColor-900}" />
-            <SolidColorBrush x:Key="Fill/Neutral/Primary/Hover" Color="{StaticResource ThemePrimaryColorTint20}" />
+                             Color="{DynamicResource ThemeBackgroundColor-800}" />
+            <SolidColorBrush x:Key="Outline/Accent/Focus" Color="{DynamicResource ThemePrimaryColorTint20}" />
+            <SolidColorBrush x:Key="Fill/Neutral/Primary/Enabled" Color="{DynamicResource ThemeBackgroundColor-900}" />
+            <SolidColorBrush x:Key="Fill/Neutral/Primary/Hover" Color="{DynamicResource ThemePrimaryColorTint20}" />
             <SolidColorBrush x:Key="Fill/Accent/Highlighting/Item/Enabled"
-                             Color="{StaticResource ThemePrimaryColorTint20}" />
-            <SolidColorBrush x:Key="Fill/Accent/Highlighting/Item/Hover" Color="{StaticResource ThemePrimaryColor}" />
+                             Color="{DynamicResource ThemePrimaryColorTint20}" />
+            <SolidColorBrush x:Key="Fill/Accent/Highlighting/Item/Hover" Color="{DynamicResource ThemePrimaryColor}" />
             <SolidColorBrush x:Key="Fill/Accent/Highlighting/Item/Pressed"
-                             Color="{StaticResource ThemePrimaryColorShade10}" />
-            <SolidColorBrush x:Key="Text/Neutral/Disabled" Color="{StaticResource ThemeBackgroundColor-600}" />
-            <SolidColorBrush x:Key="Text/Neutral/Secondary" Color="{StaticResource ThemeForegroundColor}" />
-            <SolidColorBrush x:Key="Text/Accent/Primary" Color="{StaticResource ThemeWhite}" />
-            <SolidColorBrush x:Key="Text/On Accent/Primary" Color="{StaticResource ThemeWhite}" />
-            <SolidColorBrush x:Key="Icons/Outline/Selected" Color="{StaticResource ThemeWhite}" />
-            <SolidColorBrush x:Key="Fill/Neutral/Secondary/Pressed" Color="{StaticResource ThemeBackgroundColor-900}" />
-            <SolidColorBrush x:Key="Fill/Neutral/Secondary/Disabled" Color="{StaticResource ThemeBackgroundColor-900}" />
-            <SolidColorBrush x:Key="Fill/Accent/Primary/Enabled" Color="{StaticResource ThemePrimaryColor}" />
-            <SolidColorBrush x:Key="Fill/Accent/Primary/Hover" Color="{StaticResource ThemePrimaryColorTint20}" />
-            <SolidColorBrush x:Key="Fill/Accent/Primary/Pressed" Color="{StaticResource ThemePrimaryColorShade20}" />
-            <SolidColorBrush x:Key="Fill/Accent/Primary/Disabled" Color="{StaticResource ThemeBackgroundColor-700}" />
-            <SolidColorBrush x:Key="Fill/Neutral/Primary/Pressed" Color="{StaticResource ThemePrimaryColorShade20}" />
-            <SolidColorBrush x:Key="Fill/Neutral/Primary/Disabled" Color="{StaticResource ThemeBackgroundColor-900}" />
-            <SolidColorBrush x:Key="Text/Accent/Error" Color="{StaticResource ThemeRed}" />
-            <SolidColorBrush x:Key="Outline/Accent/Error" Color="{StaticResource ThemeRed}" />
+                             Color="{DynamicResource ThemePrimaryColorShade10}" />
+            <SolidColorBrush x:Key="Text/Neutral/Disabled" Color="{DynamicResource ThemeBackgroundColor-600}" />
+            <SolidColorBrush x:Key="Text/Neutral/Secondary" Color="{DynamicResource ThemeForegroundColor}" />
+            <SolidColorBrush x:Key="Text/Accent/Primary" Color="{DynamicResource ThemeWhite}" />
+            <SolidColorBrush x:Key="Text/On Accent/Primary" Color="{DynamicResource ThemeWhite}" />
+            <SolidColorBrush x:Key="Icons/Outline/Selected" Color="{DynamicResource ThemeWhite}" />
+            <SolidColorBrush x:Key="Fill/Neutral/Secondary/Pressed" Color="{DynamicResource ThemeBackgroundColor-900}" />
+            <SolidColorBrush x:Key="Fill/Neutral/Secondary/Disabled" Color="{DynamicResource ThemeBackgroundColor-900}" />
+            <SolidColorBrush x:Key="Fill/Accent/Primary/Enabled" Color="{DynamicResource ThemePrimaryColor}" />
+            <SolidColorBrush x:Key="Fill/Accent/Primary/Hover" Color="{DynamicResource ThemePrimaryColorTint20}" />
+            <SolidColorBrush x:Key="Fill/Accent/Primary/Pressed" Color="{DynamicResource ThemePrimaryColorShade20}" />
+            <SolidColorBrush x:Key="Fill/Accent/Primary/Disabled" Color="{DynamicResource ThemeBackgroundColor-700}" />
+            <SolidColorBrush x:Key="Fill/Neutral/Primary/Pressed" Color="{DynamicResource ThemePrimaryColorShade20}" />
+            <SolidColorBrush x:Key="Fill/Neutral/Primary/Disabled" Color="{DynamicResource ThemeBackgroundColor-900}" />
+            <SolidColorBrush x:Key="Text/Accent/Error" Color="{DynamicResource ThemeRed}" />
+            <SolidColorBrush x:Key="Outline/Accent/Error" Color="{DynamicResource ThemeRed}" />
 
 
         </ResourceDictionary>
@@ -64,11 +64,231 @@
         <ResourceDictionary x:Key="Dark">
             <CornerRadius x:Key="PopupCornerRadius">2</CornerRadius>
             <CornerRadius x:Key="EditorCornerRadius">2</CornerRadius>
+            <StaticResource x:Key="TextBoxWatermarkBrush"
+                            ResourceKey="TextControlPlaceholderForeground" />
         </ResourceDictionary>
 
         <ResourceDictionary x:Key="Light">
             <CornerRadius x:Key="PopupCornerRadius">2</CornerRadius>
             <CornerRadius x:Key="EditorCornerRadius">2</CornerRadius>
+
+            <!-- Explicit Light+One semantic brushes. Eremex resolves many of
+                 these keys through StaticResource aliases in its templates. -->
+            <SolidColorBrush x:Key="Outline/Neutral/Transparent/Strong"
+                             Color="{DynamicResource ThemeBackgroundColor-600}" />
+            <SolidColorBrush x:Key="Outline/Neutral/Transparent/Medium"
+                             Color="{DynamicResource ThemeBackgroundColor-600}" />
+            <SolidColorBrush x:Key="Outline/Neutral/Transparent/Light"
+                             Color="{DynamicResource ThemeBackgroundColor-600}" />
+            <SolidColorBrush x:Key="Icons/Outline/Gray"
+                             Color="{DynamicResource ThemeForegroundColor}" />
+            <SolidColorBrush x:Key="Icons/Outline/Disabled"
+                             Color="{DynamicResource ThemeBackgroundColor-400}" />
+            <SolidColorBrush x:Key="Icons/Outline/Selected"
+                             Color="{DynamicResource ThemeWhite}" />
+
+            <SolidColorBrush x:Key="Text/Neutral/Primary"
+                             Color="{DynamicResource ThemeForegroundColor}" />
+            <SolidColorBrush x:Key="Text/Neutral/Secondary"
+                             Color="{DynamicResource ThemeForegroundColor}" />
+            <SolidColorBrush x:Key="Text/Neutral/Tertiary"
+                             Color="{DynamicResource ThemeForegroundColor}" />
+            <SolidColorBrush x:Key="Text/Neutral/Disabled"
+                             Color="{DynamicResource ThemeBackgroundColor-400}" />
+            <SolidColorBrush x:Key="Text/Accent/Primary"
+                             Color="{DynamicResource ThemeWhite}" />
+            <SolidColorBrush x:Key="Text/On Accent/Primary"
+                             Color="{DynamicResource ThemeWhite}" />
+
+            <SolidColorBrush x:Key="Fill/Neutral/Primary/Enabled"
+                             Color="{DynamicResource ThemeBackgroundColor-900}" />
+            <SolidColorBrush x:Key="Fill/Neutral/Primary/Hover"
+                             Color="{DynamicResource ThemeBackgroundColor-700}" />
+            <SolidColorBrush x:Key="Fill/Neutral/Primary/Pressed"
+                             Color="{DynamicResource ThemeBackgroundColor-800}" />
+            <SolidColorBrush x:Key="Fill/Neutral/Primary/Disabled"
+                             Color="{DynamicResource ThemeBackgroundColor-700}" />
+            <SolidColorBrush x:Key="Fill/Neutral/Secondary/Enabled"
+                             Color="{DynamicResource ThemeBackgroundColor-700}" />
+            <SolidColorBrush x:Key="Fill/Neutral/Secondary/Enabled/Dark"
+                             Color="{DynamicResource ThemeBackgroundColor-800}" />
+            <SolidColorBrush x:Key="Fill/Neutral/Secondary/Hover"
+                             Color="{DynamicResource ThemeBackgroundColor-600}" />
+            <SolidColorBrush x:Key="Fill/Neutral/Secondary/Pressed"
+                             Color="{DynamicResource ThemeBackgroundColor-900}" />
+            <SolidColorBrush x:Key="Fill/Neutral/Secondary/Disabled"
+                             Color="{DynamicResource ThemeBackgroundColor-700}" />
+
+            <SolidColorBrush x:Key="Fill/Accent/Primary/Enabled"
+                             Color="{DynamicResource ThemePrimaryColor}" />
+            <SolidColorBrush x:Key="Fill/Accent/Primary/Hover"
+                             Color="{DynamicResource ThemePrimaryColorTint20}" />
+            <SolidColorBrush x:Key="Fill/Accent/Primary/Pressed"
+                             Color="{DynamicResource ThemePrimaryColorShade20}" />
+            <SolidColorBrush x:Key="Fill/Accent/Primary/Disabled"
+                             Color="{DynamicResource ThemeBackgroundColor-700}" />
+            <SolidColorBrush x:Key="Fill/Accent/Highlighting/Item/Enabled"
+                             Color="{DynamicResource ThemePrimaryColorTint20}" />
+            <SolidColorBrush x:Key="Fill/Accent/Highlighting/Item/Hover"
+                             Color="{DynamicResource ThemePrimaryColor}" />
+            <SolidColorBrush x:Key="Fill/Accent/Highlighting/Item/Pressed"
+                             Color="{DynamicResource ThemePrimaryColorShade10}" />
+            <SolidColorBrush x:Key="Fill/Accent/Highlighting/Item/Disabled"
+                             Color="{DynamicResource ThemeBackgroundColor-700}" />
+            <SolidColorBrush x:Key="SelectionControlOutline"
+                             Color="{DynamicResource ThemeSelectionControlOutlineColor}" />
+            <SolidColorBrush x:Key="SelectionControlOutlineHover"
+                             Color="{DynamicResource ThemeSelectionControlOutlineHoverColor}" />
+            <SolidColorBrush x:Key="SelectionControlOutlineDisabled"
+                             Color="{DynamicResource ThemeSelectionControlOutlineDisabledColor}" />
+            <SolidColorBrush x:Key="EditorHoverBackground"
+                             Color="{DynamicResource ThemeEditorHoverBackgroundColor}" />
+            <SolidColorBrush x:Key="EditorHoverBorder"
+                             Color="{DynamicResource ThemeEditorHoverBorderColor}" />
+
+            <!-- Theme-local aliases prevent DeltaDesign templates from retaining
+                 brushes resolved while the application was still in Dark mode. -->
+            <StaticResource x:Key="ButtonBackground" ResourceKey="Fill/Neutral/Secondary/Enabled" />
+            <StaticResource x:Key="ButtonForeground" ResourceKey="Text/Accent/Primary" />
+            <StaticResource x:Key="ButtonBackgroundPointerOver" ResourceKey="Fill/Neutral/Secondary/Hover" />
+            <StaticResource x:Key="ButtonForegroundPointerOver" ResourceKey="Text/Accent/Primary" />
+            <StaticResource x:Key="ButtonBackgroundPressed" ResourceKey="Fill/Neutral/Secondary/Pressed" />
+            <StaticResource x:Key="ButtonForegroundPressed" ResourceKey="Text/Accent/Primary" />
+            <StaticResource x:Key="ButtonBackgroundDisabled" ResourceKey="Fill/Neutral/Secondary/Disabled" />
+            <StaticResource x:Key="ButtonForegroundDisabled" ResourceKey="Text/Neutral/Disabled" />
+
+            <StaticResource x:Key="CheckBoxForeground" ResourceKey="Text/Neutral/Primary" />
+            <StaticResource x:Key="CheckBoxForegroundPointerOver" ResourceKey="Text/Neutral/Primary" />
+            <StaticResource x:Key="CheckBoxForegroundPressed" ResourceKey="Text/Neutral/Primary" />
+            <StaticResource x:Key="CheckBoxForegroundDisabled" ResourceKey="Text/Neutral/Disabled" />
+            <StaticResource x:Key="CheckBoxCheckedForeground" ResourceKey="Text/Neutral/Primary" />
+            <StaticResource x:Key="CheckBoxCheckedForegroundPointerOver"
+                            ResourceKey="Text/Neutral/Primary" />
+            <StaticResource x:Key="CheckBoxCheckedForegroundPressed"
+                            ResourceKey="Text/Neutral/Primary" />
+            <StaticResource x:Key="CheckBoxCheckedForegroundDisabled"
+                            ResourceKey="Text/Neutral/Disabled" />
+            <StaticResource x:Key="CheckBoxIndeterminateForeground"
+                            ResourceKey="Text/Neutral/Primary" />
+            <StaticResource x:Key="CheckBoxIndeterminateForegroundPointerOver"
+                            ResourceKey="Text/Neutral/Primary" />
+            <StaticResource x:Key="CheckBoxIndeterminateForegroundPressed"
+                            ResourceKey="Text/Neutral/Primary" />
+            <StaticResource x:Key="CheckBoxIndeterminateForegroundDisabled"
+                            ResourceKey="Text/Neutral/Disabled" />
+            <StaticResource x:Key="CheckBoxRectBorderBrush" ResourceKey="SelectionControlOutline" />
+            <StaticResource x:Key="CheckBoxRectBorderBrushPointerOver" ResourceKey="SelectionControlOutlineHover" />
+            <StaticResource x:Key="CheckBoxRectBorderBrushPressed" ResourceKey="SelectionControlOutlineHover" />
+            <StaticResource x:Key="CheckBoxRectBorderBrushDisabled" ResourceKey="SelectionControlOutlineDisabled" />
+            <StaticResource x:Key="CheckBoxRectBackground" ResourceKey="Fill/Neutral/Secondary/Enabled" />
+            <StaticResource x:Key="CheckBoxRectBackgroundPointerOver" ResourceKey="Fill/Neutral/Secondary/Hover" />
+            <StaticResource x:Key="CheckBoxRectBackgroundPressed" ResourceKey="Fill/Neutral/Secondary/Pressed" />
+            <StaticResource x:Key="CheckBoxRectBackgroundDisabled" ResourceKey="Fill/Neutral/Secondary/Disabled" />
+            <StaticResource x:Key="CheckBoxCheckedRectBackground" ResourceKey="Fill/Accent/Primary/Enabled" />
+            <StaticResource x:Key="CheckBoxCheckedRectBackgroundPointerOver" ResourceKey="Fill/Accent/Primary/Hover" />
+            <StaticResource x:Key="CheckBoxCheckedRectBackgroundPressed" ResourceKey="Fill/Accent/Primary/Pressed" />
+            <StaticResource x:Key="CheckBoxCheckedRectBackgroundDisabled" ResourceKey="Fill/Accent/Primary/Disabled" />
+            <StaticResource x:Key="CheckBoxCheckedStroke" ResourceKey="Icons/Outline/On Accent" />
+
+            <StaticResource x:Key="RadioButtonForeground" ResourceKey="Text/Neutral/Primary" />
+            <StaticResource x:Key="RadioButtonForegroundDisabled" ResourceKey="Text/Neutral/Disabled" />
+            <StaticResource x:Key="RadioButtonOuterEllipseStroke" ResourceKey="SelectionControlOutline" />
+            <StaticResource x:Key="RadioButtonOuterEllipseStrokePointerOver" ResourceKey="SelectionControlOutlineHover" />
+            <StaticResource x:Key="RadioButtonOuterEllipseStrokePressed" ResourceKey="SelectionControlOutlineHover" />
+            <StaticResource x:Key="RadioButtonOuterEllipseStrokeDisabled" ResourceKey="SelectionControlOutlineDisabled" />
+            <StaticResource x:Key="RadioButtonOuterEllipseFill" ResourceKey="Fill/Neutral/Secondary/Enabled" />
+            <StaticResource x:Key="RadioButtonOuterEllipseFillPointerOver" ResourceKey="Fill/Neutral/Secondary/Hover" />
+            <StaticResource x:Key="RadioButtonOuterEllipseFillPressed" ResourceKey="Fill/Neutral/Secondary/Pressed" />
+            <StaticResource x:Key="RadioButtonOuterEllipseFillDisabled" ResourceKey="Fill/Neutral/Secondary/Disabled" />
+            <StaticResource x:Key="RadioButtonCheckedOuterEllipseFill" ResourceKey="Fill/Accent/Primary/Enabled" />
+            <StaticResource x:Key="RadioButtonCheckedOuterEllipseFillPointerOver" ResourceKey="Fill/Accent/Primary/Hover" />
+            <StaticResource x:Key="RadioButtonCheckedOuterEllipseFillPressed" ResourceKey="Fill/Accent/Primary/Pressed" />
+            <StaticResource x:Key="RadioButtonCheckedOuterEllipseFillDisabled" ResourceKey="Fill/Accent/Primary/Disabled" />
+            <StaticResource x:Key="RadioButtonCheckedInnerEllipseFill" ResourceKey="Icons/Outline/On Accent" />
+
+            <StaticResource x:Key="EditorForeground" ResourceKey="Text/Neutral/Primary" />
+            <StaticResource x:Key="TextEditorBackground" ResourceKey="Fill/Neutral/Secondary/Enabled" />
+            <StaticResource x:Key="TextEditorSecondaryBackground" ResourceKey="Fill/Neutral/Primary/Enabled" />
+            <StaticResource x:Key="TextEditorBorderBrush" ResourceKey="Outline/Neutral/Transparent/Medium" />
+            <StaticResource x:Key="TextEditorReadOnlyForeground" ResourceKey="Text/Neutral/Primary" />
+            <StaticResource x:Key="TextEditorForegroundDisabled" ResourceKey="Text/Neutral/Disabled" />
+            <StaticResource x:Key="TextEditorActiveModeBackgroundDisabled"
+                             ResourceKey="Fill/Neutral/Secondary/Disabled" />
+
+            <StaticResource x:Key="TextBoxBackground" ResourceKey="Fill/Neutral/Secondary/Enabled" />
+            <StaticResource x:Key="TextBoxForeground" ResourceKey="Text/Neutral/Primary" />
+            <StaticResource x:Key="TextBoxBorderBrush" ResourceKey="Outline/Neutral/Transparent/Medium" />
+            <StaticResource x:Key="TextBoxWatermarkBrush"
+                            ResourceKey="TextControlPlaceholderForeground" />
+            <StaticResource x:Key="TextBoxForegroundPointerOver"
+                            ResourceKey="Text/Neutral/Primary" />
+            <StaticResource x:Key="TextBoxBackgroundPointerOver" ResourceKey="EditorHoverBackground" />
+            <StaticResource x:Key="TextBoxSecondaryBackgroundPointerOver"
+                            ResourceKey="EditorHoverBackground" />
+            <StaticResource x:Key="TextBoxBorderBrushPointerOver"
+                            ResourceKey="EditorHoverBorder" />
+            <StaticResource x:Key="TextBoxSecondaryBorderBrushPointerOver"
+                            ResourceKey="EditorHoverBorder" />
+            <StaticResource x:Key="TextBoxFocusBackground" ResourceKey="Fill/Neutral/Secondary/Enabled" />
+            <StaticResource x:Key="TextBoxFocusForeground" ResourceKey="Text/Neutral/Primary" />
+            <StaticResource x:Key="TextBoxSecondaryFocusBackground"
+                            ResourceKey="Fill/Neutral/Primary/Enabled" />
+            <StaticResource x:Key="TextBoxForegroundDisabled"
+                            ResourceKey="Text/Neutral/Disabled" />
+            <StaticResource x:Key="TextBoxBackgroundDisabled"
+                            ResourceKey="Fill/Neutral/Secondary/Disabled" />
+            <StaticResource x:Key="TextBoxWatermarkBrushDisabled"
+                            ResourceKey="Text/Neutral/Disabled" />
+            <StaticResource x:Key="TextBoxSecondaryBackgroundDisabled"
+                            ResourceKey="Fill/Neutral/Primary/Disabled" />
+            <StaticResource x:Key="TextBoxSecondaryBorderBrushDisabled"
+                            ResourceKey="Outline/Neutral/Transparent/Light" />
+            <StaticResource x:Key="ComboBoxEditorFocusedBackground"
+                            ResourceKey="Fill/Neutral/Secondary/Enabled" />
+            <StaticResource x:Key="ComboBoxEditorSecondaryFocusedBackground"
+                            ResourceKey="Fill/Neutral/Primary/Enabled" />
+
+            <StaticResource x:Key="PopupEditorPopupBackground"
+                            ResourceKey="Fill/Neutral/Primary/Enabled" />
+            <StaticResource x:Key="PopupEditorPopupHeaderBackground"
+                            ResourceKey="Fill/Neutral/Secondary/Enabled/Dark" />
+            <StaticResource x:Key="PopupEditorPopupFooterBackground"
+                            ResourceKey="Fill/Neutral/Secondary/Enabled/Dark" />
+            <StaticResource x:Key="ListBoxBackground"
+                            ResourceKey="Fill/Neutral/Primary/Enabled" />
+            <StaticResource x:Key="ListBoxForeground"
+                            ResourceKey="Text/Neutral/Primary" />
+            <StaticResource x:Key="ListBoxBorderBrush"
+                            ResourceKey="Outline/Neutral/Transparent/Light" />
+            <StaticResource x:Key="ListBoxItemBackground" ResourceKey="TransparentBrush" />
+            <StaticResource x:Key="ListBoxItemForegroundPointerOver"
+                            ResourceKey="Text/Neutral/Primary" />
+            <StaticResource x:Key="ListBoxItemBackgroundPointerOver"
+                            ResourceKey="Fill/Neutral/Secondary/Hover" />
+            <StaticResource x:Key="ListBoxItemForegroundPressed"
+                            ResourceKey="Text/Neutral/Primary" />
+            <StaticResource x:Key="ListBoxItemBackgroundPressed"
+                            ResourceKey="Fill/Neutral/Secondary/Pressed" />
+            <StaticResource x:Key="ListBoxItemSelectedForeground"
+                            ResourceKey="Text/On Accent/Primary" />
+            <StaticResource x:Key="ListBoxItemSelectedBackground"
+                            ResourceKey="Fill/Accent/Primary/Enabled" />
+            <StaticResource x:Key="ListBoxItemSelectedUnfocusedForeground"
+                            ResourceKey="Text/On Accent/Primary" />
+            <StaticResource x:Key="ListBoxItemSelectedUnfocusedBackground"
+                            ResourceKey="Fill/Accent/Primary/Enabled" />
+            <StaticResource x:Key="ListBoxItemSelectedForegroundPointerOver"
+                            ResourceKey="Text/On Accent/Primary" />
+            <StaticResource x:Key="ListBoxItemSelectedBackgroundPointerOver"
+                            ResourceKey="Fill/Accent/Primary/Hover" />
+            <StaticResource x:Key="ListBoxItemSelectedForegroundPressed"
+                            ResourceKey="Text/On Accent/Primary" />
+            <StaticResource x:Key="ListBoxItemSelectedBackgroundPressed"
+                            ResourceKey="Fill/Accent/Primary/Pressed" />
+
+            <StaticResource x:Key="ProgressBarBackground" ResourceKey="Fill/Neutral/Secondary/Enabled" />
+            <StaticResource x:Key="ProgressBarSecondaryBackground"
+                            ResourceKey="Fill/Neutral/Primary/Enabled" />
         </ResourceDictionary>
 
     </ResourceDictionary.ThemeDictionaries>
@@ -155,7 +375,7 @@
                                              ReadOnly="{Binding $parent[mxe:DateEditor].ReadOnly}"
                                              FirstDayOfWeek="{Binding $parent[mxe:DateEditor].FirstDayOfWeek}"
                                              FontSize="{StaticResource ThemeSize-Subs}"
-                                             FontFamily="{StaticResource DefaultFont}"
+                                             FontFamily="{DynamicResource DefaultFont}"
                                              FontWeight="SemiBold" />
                     </Template>
                 </Setter.Value>
@@ -530,7 +750,7 @@
                                          ColorsShowMode="{Binding $parent[mxe:PopupColorEditor].ColorsShowMode}"
                                          ShowAlphaChannel="{Binding $parent[mxe:PopupColorEditor].ShowAlphaChannel}"
                                          FontSize="{StaticResource ThemeSize-Subs}"
-                                         FontFamily="{StaticResource DefaultFont}"
+                                         FontFamily="{DynamicResource DefaultFont}"
                                          FontWeight="SemiBold"
                                          CornerRadius="4" />
                     </Template>

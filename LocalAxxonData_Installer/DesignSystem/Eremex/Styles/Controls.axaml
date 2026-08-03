@@ -1,0 +1,716 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mxdg="https://schemas.eremexcontrols.net/avalonia/datagrid"
+        xmlns:mxc="https://schemas.eremexcontrols.net/avalonia/common"
+        xmlns:mxev="clr-namespace:Eremex.AvaloniaUI.Controls.Editors.Visuals;assembly=Eremex.Avalonia.Controls"
+        xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors">
+
+    <Style Selector="Canvas.spinner">
+        <Style.Animations>
+            <Animation Duration="0:0:1" IterationCount="Infinite">
+                <KeyFrame Cue="0%">
+                    <Setter Property="RotateTransform.Angle" Value="0"/>
+                </KeyFrame>
+                <KeyFrame Cue="100%">
+                    <Setter Property="RotateTransform.Angle" Value="360"/>
+                </KeyFrame>
+            </Animation>
+        </Style.Animations>
+    </Style>
+
+    <Style Selector="TextBlock:disabled">
+        <Setter Property="Foreground" Value="{DynamicResource BackgroundColor-500}" />
+    </Style>
+
+    <Style Selector="ProgressBar">
+        <Setter Property="Background" Value="{DynamicResource BackgroundColor-700}" />
+        <Setter Property="Foreground" Value="{DynamicResource PrimaryColor}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource BackgroundColor-600}" />
+    </Style>
+
+    <!-- Скругление для выбранной даты календаря mxe|DateEditor -->
+    <Style Selector="CalendarDayButton:selected /template/ Border#PART_BackgroundBorder">
+        <Setter Property="CornerRadius" Value="{StaticResource LargeCornerRadius}" />
+    </Style>
+
+    <!-- mxe|DateEditor - смена иконки для выпадайки на иконку календаря -->
+    <Style Selector="mxe|DateEditor, mxe|PopupEditor">
+        <Setter Property="CornerRadius" Value="{StaticResource DefaultCornerRadius}" />
+        <Setter Property="FontFamily" Value="{DynamicResource DefaultFont}" />
+        <Setter Property="FontSize" Value="{StaticResource ThemeSize-Regular}" />
+        <!--Замена стандарной иконки кадлендаря на нашу-->
+        <Style Selector="^ mxev|EditorIconToggleButton#PART_PopupOpenButton">
+            <Setter Property="Theme">
+                <ControlTheme TargetType="mxev:EditorIconToggleButton">
+                    <Setter Property="Template">
+                        <ControlTemplate>
+                            <Border x:Name="PART_Border"
+                                    CornerRadius="{StaticResource DefaultCornerRadius}"
+                                    Background="Transparent"
+                                    Padding="6, 4 , 4, 4"
+                                    VerticalAlignment="Stretch">
+                                <Path x:Name="PART_Icon"
+                                      Data="{StaticResource CalendarIcon}"
+                                      Fill="{DynamicResource CalendarButtonForeground}"
+                                      Stretch="Uniform"
+                                      Width="16" Height="16"
+                                      VerticalAlignment="Center"
+                                      HorizontalAlignment="Center" />
+                            </Border>
+                        </ControlTemplate>
+                    </Setter>
+
+                    <Style Selector="^:pointerover /template/ Border#PART_Border">
+                        <Setter Property="Background" Value="{DynamicResource ThemeBackgroundColor-400}" />
+                    </Style>
+                    <Style Selector="^:pointerover /template/ Path#PART_Icon">
+                        <Setter Property="Fill" Value="{DynamicResource CalendarButtonForegroundPointerOver}" />
+                    </Style>
+
+                    <Style Selector="^:pressed /template/ Border#PART_Border">
+                        <Setter Property="Background" Value="{DynamicResource CalendarButtonBackgroundPressed}" />
+                    </Style>
+                    <Style Selector="^:pressed /template/ Path#PART_Icon">
+                        <Setter Property="Fill" Value="{DynamicResource CalendarButtonForegroundPressed}" />
+                    </Style>
+
+                    <Style Selector="^:checked /template/ Border#PART_Border">
+                        <Setter Property="Background" Value="{DynamicResource CalendarButtonSelectedBackground}" />
+                    </Style>
+                    <Style Selector="^:checked /template/ Path#PART_Icon">
+                        <Setter Property="Fill" Value="{DynamicResource CalendarButtonSelectedForeground}" />
+                    </Style>
+
+                    <Style Selector="^:disabled /template/ Path#PART_Icon">
+                        <Setter Property="Fill" Value="{DynamicResource CalendarButtonForegroundDisabled}" />
+                        <Setter Property="Opacity" Value="0.5" />
+                    </Style>
+                </ControlTheme>
+            </Setter>
+        </Style>
+    </Style>
+
+    <!-- mxe|PopupEditor.FontIcon - смена иконки для выпадайки на иконку Шрифта -->
+    <Style Selector="mxe|PopupEditor.FontIcon">
+        <Setter Property="CornerRadius" Value="{StaticResource DefaultCornerRadius}" />
+        <Setter Property="FontFamily" Value="{DynamicResource DefaultFont}" />
+        <Setter Property="FontSize" Value="{StaticResource ThemeSize-Regular}" />
+        <!--Замена стандарной иконки стрелки вниз на нашу-->
+        <Style Selector="^ mxev|EditorIconToggleButton#PART_PopupOpenButton">
+            <Setter Property="Theme">
+                <ControlTheme TargetType="mxev:EditorIconToggleButton">
+                    <Setter Property="Template">
+                        <ControlTemplate>
+                            <Border x:Name="PART_Border"
+                                    CornerRadius="{StaticResource DefaultCornerRadius}"
+                                    Background="Transparent"
+                                    Padding="6, 4 , 6, 4"
+                                    VerticalAlignment="Stretch">
+                                <Path x:Name="PART_Icon"
+                                      Data="{StaticResource FontIcon}"
+                                      Fill="{DynamicResource CalendarButtonForeground}"
+                                      Stretch="Uniform"
+                                      Width="16" Height="16"
+                                      VerticalAlignment="Center"
+                                      HorizontalAlignment="Center" />
+                            </Border>
+
+                        </ControlTemplate>
+                    </Setter>
+
+                    <Style Selector="^:pointerover /template/ Border#PART_Border">
+                        <Setter Property="Background" Value="{DynamicResource ThemeBackgroundColor-400}" />
+                    </Style>
+                    <Style Selector="^:pointerover /template/ Path#PART_Icon">
+                        <Setter Property="Fill" Value="{DynamicResource CalendarButtonForegroundPointerOver}" />
+                    </Style>
+
+                    <Style Selector="^:pressed /template/ Border#PART_Border">
+                        <Setter Property="Background" Value="{DynamicResource CalendarButtonBackgroundPressed}" />
+                    </Style>
+                    <Style Selector="^:pressed /template/ Path#PART_Icon">
+                        <Setter Property="Fill" Value="{DynamicResource CalendarButtonForegroundPressed}" />
+                    </Style>
+
+                    <Style Selector="^:checked /template/ Border#PART_Border">
+                        <Setter Property="Background" Value="{DynamicResource CalendarButtonSelectedBackground}" />
+                    </Style>
+                    <Style Selector="^:checked /template/ Path#PART_Icon">
+                        <Setter Property="Fill" Value="{DynamicResource CalendarButtonSelectedForeground}" />
+                    </Style>
+
+                    <Style Selector="^:disabled /template/ Path#PART_Icon">
+                        <Setter Property="Fill" Value="{DynamicResource CalendarButtonForegroundDisabled}" />
+                        <Setter Property="Opacity" Value="0.5" />
+                    </Style>
+                </ControlTheme>
+            </Setter>
+        </Style>
+    </Style>
+
+    <!-- mxe|PopupEditor.Chevron - смена иконки стрелки вниз -->
+    <Style Selector="mxe|ComboBoxEditor, mxe|PopupColorEditor.Chevron">
+        <Setter Property="CornerRadius" Value="{StaticResource DefaultCornerRadius}" />
+        <Setter Property="FontFamily" Value="{DynamicResource DefaultFont}" />
+        <Setter Property="FontSize" Value="{StaticResource ThemeSize-Regular}" />
+        <!--Замена стандарной иконки стрелки вниз на нашу-->
+        <Style Selector="^ mxev|EditorIconToggleButton#PART_PopupOpenButton">
+            <Setter Property="Theme">
+                <ControlTheme TargetType="mxev:EditorIconToggleButton">
+                    <Setter Property="Template">
+                        <ControlTemplate>
+                            <Border x:Name="PART_Border"
+                                    CornerRadius="{StaticResource DefaultCornerRadius}"
+                                    Background="Transparent"
+                                    Padding="8, 6, 8, 0"
+                                    VerticalAlignment="Stretch">
+                                <Path x:Name="PART_Icon"
+                                      Data="{StaticResource ChevronIcon}"
+                                      Fill="{DynamicResource OneTextPrimaryBrush}"
+                                      Stretch="Uniform"
+                                      Width="9" Height="9"
+                                      VerticalAlignment="Center"
+                                      HorizontalAlignment="Center" />
+                            </Border>
+
+                        </ControlTemplate>
+                    </Setter>
+
+                    <Style Selector="^:pointerover /template/ Border#PART_Border">
+                        <Setter Property="Background" Value="{DynamicResource BackgroundColor-600}" />
+                    </Style>
+                    <Style Selector="^:pointerover /template/ Path#PART_Icon">
+                        <Setter Property="Fill" Value="{DynamicResource OneTextPrimaryBrush}" />
+                    </Style>
+
+                    <Style Selector="^:pressed /template/ Border#PART_Border">
+                        <Setter Property="Background" Value="{DynamicResource PrimaryColor}" />
+                    </Style>
+                    <Style Selector="^:pressed /template/ Path#PART_Icon">
+                        <Setter Property="Fill" Value="{DynamicResource OneTextOnAccentBrush}" />
+                    </Style>
+
+                    <Style Selector="^:checked /template/ Border#PART_Border">
+                        <Setter Property="Background" Value="{DynamicResource PrimaryColor}" />
+                    </Style>
+                    <Style Selector="^:checked /template/ Path#PART_Icon">
+                        <Setter Property="Fill" Value="{DynamicResource OneTextOnAccentBrush}" />
+                    </Style>
+
+                    <Style Selector="^:disabled /template/ Path#PART_Icon">
+                        <Setter Property="Fill" Value="{DynamicResource CalendarButtonForegroundDisabled}" />
+                        <Setter Property="Opacity" Value="0.5" />
+                    </Style>
+                </ControlTheme>
+            </Setter>
+        </Style>
+    </Style>
+
+    <Style Selector="mxe|DateEditor.Medium, mxe|PopupEditor.Medium, mxe|PopupColorEditor.Medium">
+        <Setter Property="CornerRadius" Value="{StaticResource DefaultCornerRadius}" />
+        <Setter Property="FontFamily" Value="{DynamicResource DefaultFont}" />
+        <Setter Property="FontSize" Value="{StaticResource ThemeSize-Regular}" />
+    </Style>
+
+    <Style Selector="mxe|DateEditor.Large, mxe|PopupEditor.Large, mxe|PopupColorEditor.Large">
+        <Setter Property="CornerRadius" Value="{StaticResource LargeCornerRadius}" />
+        <Setter Property="FontFamily" Value="{DynamicResource DefaultFont}" />
+        <Setter Property="FontSize" Value="{StaticResource ThemeSize-Medium}" />
+    </Style>
+
+    <!--mxe|TextEditor mxe|ComboBoxEditor mxe|SpinEditor-->
+
+    <Style Selector="mxe|SpinEditor /template/ RepeatButton#PART_IncreaseButton">
+        <Setter Property="CornerRadius" Value="0,0,0,0"/>  <!-- Верхняя кнопка -->
+    </Style>
+
+    <Style Selector="mxe|SpinEditor /template/ RepeatButton#PART_DecreaseButton">
+        <Setter Property="CornerRadius" Value="0,0,0,0"/>  <!-- Нижняя кнопка -->
+    </Style>
+
+    <Style Selector="mxdg|DataGridControl.Large">
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="FontSize" Value="14" />
+    </Style>
+
+    <Style Selector="mxe|DateEditor.Large">
+        <Setter Property="Padding" Value="8, 0, 8, 0" />
+        <Setter Property="CornerRadius" Value="{StaticResource DefaultCornerRadius}" />
+        <Setter Property="FontFamily" Value="{DynamicResource DefaultFont}" />
+        <Setter Property="FontSize" Value="{StaticResource ThemeSize-Medium}" />
+    </Style>
+
+    <Style Selector="mxe|TextEditor.Medium, mxe|ComboBoxEditor.Medium, mxe|SpinEditor.Medium">
+        <Setter Property="Height" Value="{StaticResource ThemeSize-Double}" />
+        <!-- Центровк текста в контролах по вертикали - подобрать -->
+        <Setter Property="Padding" Value="6, 0, 6, 1" />
+        <Setter Property="CornerRadius" Value="{StaticResource DefaultCornerRadius}" />
+        <Setter Property="FontFamily" Value="{DynamicResource DefaultFont}" />
+        <Setter Property="FontSize" Value="{StaticResource ThemeSize-Regular}" />
+        <!-- https://github.com/Eremex/controlthemes/blob/main/Source/Eremex.Avalonia.Themes.DeltaDesign/Controls/ControlsResources.axaml -->
+        <Style.Resources>
+            <!-- размер текста в выпадайке -->
+            <x:Double x:Key="ControlContentThemeFontSize">12</x:Double>
+        </Style.Resources>
+    </Style>
+
+    <Style Selector="mxe|TextEditor.Large, mxe|ComboBoxEditor.Large, mxe|SpinEditor.Large">
+        <Setter Property="Height" Value="{StaticResource ThemeSize-Large}" />
+        <!-- Центровк текста в контролах по вертикали - подобрать -->
+        <Setter Property="Padding" Value="8, 0, 8, 2" />
+        <Setter Property="CornerRadius" Value="{StaticResource DefaultCornerRadius}" />
+        <Setter Property="FontFamily" Value="{DynamicResource DefaultFont}" />
+        <Setter Property="FontSize" Value="{StaticResource ThemeSize-Medium}" />
+        <!-- https://github.com/Eremex/controlthemes/blob/main/Source/Eremex.Avalonia.Themes.DeltaDesign/Controls/ControlsResources.axaml -->
+        <Style.Resources>
+            <!-- размер текста в выпадайке -->
+            <x:Double x:Key="ControlContentThemeFontSize">16</x:Double>
+        </Style.Resources>
+    </Style>
+
+    <Style Selector="mxe|TextEditor:pointerover,
+                     mxe|ComboBoxEditor:pointerover,
+                     mxe|SpinEditor:pointerover">
+        <Setter Property="Background" Value="{DynamicResource OneEditorBackgroundHoverBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource OneTextPrimaryBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource OneEditorBorderHoverBrush}" />
+    </Style>
+
+    <Style Selector="mxe|TextEditor:disabled,
+                     mxe|ComboBoxEditor:disabled,
+                     mxe|SpinEditor:disabled">
+        <Setter Property="Background" Value="{DynamicResource OneControlBackgroundDisabledBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource OneTextDisabledBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource OneControlBorderBrush}" />
+    </Style>
+
+    <Style
+        Selector="mxe|TextEditor[ReadOnly=True],
+    mxe|ComboBoxEditor[ReadOnly=True], mxe|SpinEditor[ReadOnly=True]">
+        <!-- Background of the editor -->
+        <Setter Property="Background" Value="{StaticResource TransparentBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource OneTextPrimaryBrush}" />
+        <!-- Border color -->
+        <Setter Property="BorderBrush" Value="{DynamicResource ForegroundColor-10}" />
+        <Setter Property="Focusable" Value="False" />
+    </Style>
+
+    <Style Selector="TextBox[IsReadOnly=True]">
+        <Setter Property="Background" Value="{StaticResource TransparentBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource OneTextPrimaryBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ForegroundColor-10}" />
+        <Setter Property="Focusable" Value="False" />
+        <Style.Resources>
+            <StaticResource x:Key="TextBoxBackground" ResourceKey="TransparentBrush" />
+            <StaticResource x:Key="TextBoxForeground" ResourceKey="Text/Neutral/Primary" />
+            <StaticResource x:Key="TextBoxBorderBrush" ResourceKey="ForegroundColor-10" />
+        </Style.Resources>
+    </Style>
+
+    <!-- worked -->
+    <Style Selector="mxev|ComboBoxPopupControl">
+        <Setter Property="Background" Value="{DynamicResource BackgroundColor-900}" />
+        <Setter Property="Foreground" Value="{DynamicResource OneTextPrimaryBrush}" />
+    </Style>
+
+    <Style Selector="mxev|ComboBoxPopupControl /template/ ListBox#PART_ItemsSelector">
+        <Setter Property="Padding" Value="4" />
+        <Setter Property="Background" Value="{DynamicResource BackgroundColor-900}" />
+        <Setter Property="Foreground" Value="{DynamicResource OneTextPrimaryBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource OneControlBorderBrush}" />
+    </Style>
+    <Style Selector="mxev|ComboBoxPopupControl /template/ ListBox#PART_ItemsSelector ListBoxItem:selected">
+        <Setter Property="Foreground" Value="{DynamicResource OneTextOnAccentBrush}" />
+    </Style>
+    <Style Selector="mxev|ComboBoxPopupControl /template/ ListBox#PART_ItemsSelector ListBoxItem:selected /template/ ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource PrimaryColor}" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Foreground" Value="{DynamicResource OneTextOnAccentBrush}" />
+    </Style>
+    <Style Selector="mxev|ComboBoxPopupControl /template/ ListBox#PART_ItemsSelector ListBoxItem:selected:pointerover /template/ ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource PrimaryColorTint20}" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Foreground" Value="{DynamicResource OneTextOnAccentBrush}" />
+    </Style>
+    <Style Selector="mxev|ComboBoxPopupControl /template/ ListBox#PART_ItemsSelector ListBoxItem:selected:pressed /template/ ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource PrimaryColorShade10}" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Foreground" Value="{DynamicResource OneTextOnAccentBrush}" />
+    </Style>
+
+    <!-- worked -->
+    <Style Selector="ListBoxItem">
+        <Setter Property="CornerRadius" Value="{StaticResource DefaultCornerRadius}" />
+        <Setter Property="FontFamily" Value="{DynamicResource DefaultFont}" />
+        <Setter Property="Padding" Value="4" />
+    </Style>
+
+    <!-- mxe:CheckEditor  -->
+    <Style Selector="mxe|CheckEditor.Large, CheckBox.Large">
+        <Setter Property="FontFamily" Value="{DynamicResource DefaultFont}" />
+        <Setter Property="FontSize" Value="{StaticResource ThemeSize-Medium}" />
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundColor}" />
+    </Style>
+
+    <Style Selector="mxe|CheckEditor.Medium, CheckBox.Medium">
+        <Setter Property="FontFamily" Value="{DynamicResource DefaultFont}" />
+        <Setter Property="FontSize" Value="{StaticResource ThemeSize-Regular}" />
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundColor}" />
+    </Style>
+
+    <Style Selector="CheckBox">
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundColor}" />
+    </Style>
+
+    <!-- mxe:HyperlinkEditor  -->
+    <Style Selector="mxe|HyperlinkEditor.Large">
+        <Setter Property="FontFamily" Value="{DynamicResource DefaultFont}" />
+        <Setter Property="FontSize" Value="{StaticResource ThemeSize-Medium}" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="Padding" Value="0" />
+    </Style>
+
+    <!--  RadioButton -->
+    <Style Selector="RadioButton.Large">
+        <Setter Property="FontFamily" Value="{DynamicResource DefaultFont}" />
+        <Setter Property="FontSize" Value="{StaticResource ThemeSize-Medium}" />
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundColor}" />
+    </Style>
+
+    <Style Selector="RadioButton.Medium">
+        <Setter Property="FontFamily" Value="{DynamicResource DefaultFont}" />
+        <Setter Property="FontSize" Value="{StaticResource ThemeSize-Regular}" />
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundColor}" />
+    </Style>
+
+    <Style Selector="RadioButton">
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundColor}" />
+    </Style>
+
+    <Style Selector="mxe|HyperlinkEditor.Medium">
+        <Setter Property="FontFamily" Value="{DynamicResource DefaultFont}" />
+        <Setter Property="Height" Value="{StaticResource ThemeSize-Double}" />
+        <Setter Property="FontSize" Value="{StaticResource ThemeSize-Regular}" />
+        <Setter Property="FontWeight" Value="Bold" />
+    </Style>
+
+    <!-- Стиль для гиперссылки -->
+    <Style Selector="Button.Empty">
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+    </Style>
+
+    <Style Selector="Button.Empty:pointerover /template/ Border#PART_BackgroundBorder">
+        <Setter Property="Background" Value="{StaticResource TransparentBrush}" />
+    </Style>
+
+    <!-- Button -->
+    <Style Selector="Button.IconOnlyLarge, ToggleButton.IconOnlyLarge">
+        <Setter Property="Width" Value="{StaticResource ThemeSize-Large}" />
+        <Setter Property="Height" Value="{StaticResource ThemeSize-Large}" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="CornerRadius" Value="{StaticResource DefaultCornerRadius}" />
+    </Style>
+    <Style Selector="Button.IconOnlyMedium, ToggleButton.IconOnlyMedium">
+        <Setter Property="Width" Value="{StaticResource ThemeSize-Double}" />
+        <Setter Property="Height" Value="{StaticResource ThemeSize-Double}" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="CornerRadius" Value="{StaticResource DefaultCornerRadius}" />
+    </Style>
+    <Style Selector="Button.Medium">
+        <Setter Property="Padding" Value="16,6"/>
+        <Setter Property="MinHeight" Value="{StaticResource ThemeSize-Double}" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="CornerRadius" Value="{StaticResource DefaultCornerRadius}" />
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundColor}" />
+        <Setter Property="FontFamily" Value="{DynamicResource DefaultFont}" />
+        <Setter Property="FontSize" Value="{StaticResource ThemeSize-Regular}" />
+        <Setter Property="FontWeight" Value="Bold" />
+    </Style>
+    <Style Selector="Button.Large">
+        <Setter Property="Height" Value="{StaticResource ThemeSize-Large}" />
+        <Setter Property="CornerRadius" Value="{StaticResource LargeCornerRadius}" />
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundColor}" />
+        <Setter Property="FontFamily" Value="{DynamicResource DefaultFont}" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Padding" Value="16,0,16,2"/>
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="FontWeight" Value="Bold" />
+    </Style>
+
+    <!-- Стили состояний Primary кнопок -->
+    <Style Selector="Button.Primary">
+        <Setter Property="Background" Value="{DynamicResource PrimaryColor}" />
+        <Setter Property="Foreground" Value="{DynamicResource ThemeWhite}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource PrimaryColor}" />
+        <Setter Property="BorderThickness" Value="1" />
+    </Style>
+
+    <Style Selector="Button.Primary /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Foreground" Value="{DynamicResource ThemeWhite}" />
+    </Style>
+
+    <!-- Typography classes on nested TextBlocks must not override on-accent text. -->
+    <Style Selector="Button.Primary TextBlock">
+        <Setter Property="Foreground" Value="{DynamicResource ThemeWhite}" />
+    </Style>
+
+    <Style Selector="Button.Primary:pointerover">
+        <Setter Property="Background" Value="{DynamicResource PrimaryColorTint20}" />
+    </Style>
+
+    <Style Selector="Button.Primary:pointerover /template/ Border#PART_BackgroundBorder">
+        <Setter Property="Background" Value="{DynamicResource PrimaryColorTint20}" />
+    </Style>
+    <Style Selector="Button.Primary:pointerover /template/ Border#PART_ButtonBorder">
+        <Setter Property="BorderBrush" Value="{DynamicResource PrimaryColorTint20}" />
+    </Style>
+    <Style Selector="Button.Primary:focus">
+        <Style Selector="^ /template/ Border#PART_BackgroundBorder">
+            <Setter Property="Background" Value="{DynamicResource PrimaryColorTint10}" />
+        </Style>
+        <Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Foreground" Value="{DynamicResource ThemeWhite}" />
+        </Style>
+    </Style>
+
+    <Style Selector="Button.Primary:pressed /template/ Border#PART_BackgroundBorder">
+        <Setter Property="Background" Value="{DynamicResource PrimaryColorShade10}" />
+    </Style>
+    <Style Selector="Button.Primary:pressed /template/ Border#PART_ButtonBorder">
+        <Setter Property="BorderBrush" Value="{DynamicResource PrimaryColorShade10}" />
+    </Style>
+
+    <!-- Danger state fills belong to the full lower template layer. -->
+    <Style Selector="Button.Danger /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Foreground" Value="{DynamicResource OneTextOnAccentBrush}" />
+    </Style>
+    <Style Selector="Button.Danger TextBlock">
+        <Setter Property="Foreground" Value="{DynamicResource OneTextOnAccentBrush}" />
+    </Style>
+    <Style Selector="Button.Danger Path">
+        <Setter Property="Fill" Value="{DynamicResource OneTextOnAccentBrush}" />
+    </Style>
+    <Style Selector="Button.Danger:pointerover">
+        <Setter Property="Background" Value="{DynamicResource OneDangerBackgroundHoverBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource OneDangerBackgroundHoverBrush}" />
+    </Style>
+    <Style Selector="Button.Danger:pointerover /template/ Border#PART_BackgroundBorder">
+        <Setter Property="Background" Value="{DynamicResource OneDangerBackgroundHoverBrush}" />
+    </Style>
+    <Style Selector="Button.Danger:pointerover /template/ Border#PART_ButtonBorder">
+        <Setter Property="BorderBrush" Value="{DynamicResource OneDangerBackgroundHoverBrush}" />
+    </Style>
+    <Style Selector="Button.Danger:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="{DynamicResource OneTextOnAccentBrush}" />
+    </Style>
+    <Style Selector="Button.Danger:pressed">
+        <Setter Property="Background" Value="{DynamicResource OneDangerBackgroundPressedBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource OneDangerBackgroundPressedBrush}" />
+    </Style>
+    <Style Selector="Button.Danger:pressed /template/ Border#PART_BackgroundBorder">
+        <Setter Property="Background" Value="{DynamicResource OneDangerBackgroundPressedBrush}" />
+    </Style>
+    <Style Selector="Button.Danger:pressed /template/ Border#PART_ButtonBorder">
+        <Setter Property="BorderBrush" Value="{DynamicResource OneDangerBackgroundPressedBrush}" />
+    </Style>
+    <Style Selector="Button.Danger:pressed /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="{DynamicResource OneTextOnAccentBrush}" />
+    </Style>
+
+
+    <!-- Стили состояний Secondary кнопок -->
+    <Style Selector="Button.Secondary">
+        <Setter Property="Background" Value="{DynamicResource BackgroundColor-700}" />
+        <Setter Property="Foreground" Value="{DynamicResource OneTextPrimaryBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource BackgroundColor-600}" />
+        <Setter Property="BorderThickness" Value="1" />
+    </Style>
+    <Style Selector="Button.Secondary /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Foreground" Value="{DynamicResource OneTextPrimaryBrush}" />
+    </Style>
+    <Style Selector="Button.Secondary TextBlock">
+        <Setter Property="Foreground" Value="{DynamicResource OneTextPrimaryBrush}" />
+    </Style>
+    <Style Selector="Button.Secondary Path">
+        <Setter Property="Fill" Value="{DynamicResource OneTextPrimaryBrush}" />
+    </Style>
+
+    <Style Selector="Button.Secondary:pointerover">
+        <Setter Property="Background" Value="{DynamicResource OneControlBackgroundHoverBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource OneControlBackgroundHoverBrush}" />
+    </Style>
+
+    <Style Selector="Button.Secondary:pointerover /template/ Border#PART_BackgroundBorder">
+        <Setter Property="Background" Value="{DynamicResource OneControlBackgroundHoverBrush}" />
+    </Style>
+    <Style Selector="Button.Secondary:pointerover /template/ Border#PART_ButtonBorder">
+        <Setter Property="BorderBrush" Value="{DynamicResource OneControlBackgroundHoverBrush}" />
+    </Style>
+    <Style Selector="Button.Secondary:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="{DynamicResource OneTextPrimaryBrush}" />
+    </Style>
+    <Style Selector="Button.Secondary:pointerover TextBlock">
+        <Setter Property="Foreground" Value="{DynamicResource OneTextPrimaryBrush}" />
+    </Style>
+    <Style Selector="Button.Secondary:pointerover Path">
+        <Setter Property="Fill" Value="{DynamicResource OneTextPrimaryBrush}" />
+    </Style>
+    <Style Selector="Button.Secondary:focus">
+        <Style Selector="^ /template/ Border#PART_BackgroundBorder">
+            <Setter Property="Background" Value="{DynamicResource BackgroundColor-700}" />
+        </Style>
+        <Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Foreground" Value="{DynamicResource OneTextPrimaryBrush}" />
+        </Style>
+    </Style>
+
+
+    <Style Selector="Button.Secondary:pressed">
+        <Setter Property="Background" Value="{DynamicResource BackgroundColor-900}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource BackgroundColor-600}" />
+    </Style>
+
+    <Style Selector="Button.Secondary:pressed /template/ Border#PART_BackgroundBorder">
+        <Setter Property="Background" Value="{DynamicResource BackgroundColor-900}" />
+    </Style>
+    <Style Selector="Button.Secondary:pressed /template/ Border#PART_ButtonBorder">
+        <Setter Property="BorderBrush" Value="{DynamicResource BackgroundColor-600}" />
+    </Style>
+    <Style Selector="Button.Secondary:pressed /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="{DynamicResource OneTextPrimaryBrush}" />
+    </Style>
+    <Style Selector="Button.Secondary:pressed TextBlock">
+        <Setter Property="Foreground" Value="{DynamicResource OneTextPrimaryBrush}" />
+    </Style>
+    <Style Selector="Button.Secondary:pressed Path">
+        <Setter Property="Fill" Value="{DynamicResource OneTextPrimaryBrush}" />
+    </Style>
+
+    <!-- Стили состояний Subtle кнопок -->
+    <Style Selector="Button.Subtle">
+        <Setter Property="Foreground" Value="{DynamicResource OneTextPrimaryBrush}" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="1" />
+    </Style>
+
+    <Style Selector="Button.Subtle:focus">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+    </Style>
+    <Style Selector="Button.Subtle:focus /template/ Border#PART_BackgroundBorder">
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
+    <Style Selector="Button.Subtle:focus /template/ Border#PART_ButtonBorder">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+    </Style>
+
+    <Style Selector="Button.Subtle:pointerover">
+        <Setter Property="Background" Value="{DynamicResource OneSubtleBackgroundHoverBrush}" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+    </Style>
+    <Style Selector="Button.Subtle:pointerover /template/ Border#PART_BackgroundBorder">
+        <Setter Property="Background" Value="{DynamicResource OneSubtleBackgroundHoverBrush}" />
+    </Style>
+    <Style Selector="Button.Subtle:pointerover /template/ Border#PART_ButtonBorder">
+        <Setter Property="BorderBrush" Value="Transparent" />
+    </Style>
+    <Style Selector="Button.Subtle:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="{DynamicResource OneTextPrimaryBrush}" />
+    </Style>
+    <Style Selector="Button.Subtle:pointerover Path">
+        <Setter Property="Fill" Value="{DynamicResource OneTextPrimaryBrush}" />
+    </Style>
+    <Style Selector="Button.Subtle:pointerover TextBlock">
+        <Setter Property="Foreground" Value="{DynamicResource OneTextPrimaryBrush}" />
+    </Style>
+
+    <Style Selector="Button.Subtle:pressed">
+        <Setter Property="Background" Value="{DynamicResource OneSubtleBackgroundPressedBrush}" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+    </Style>
+
+    <Style Selector="Button.Subtle:pressed /template/ Border#PART_BackgroundBorder">
+        <Setter Property="Background" Value="{DynamicResource OneSubtleBackgroundPressedBrush}" />
+    </Style>
+    <Style Selector="Button.Subtle:pressed /template/ Border#PART_ButtonBorder">
+        <Setter Property="BorderBrush" Value="Transparent" />
+    </Style>
+    <Style Selector="Button.Subtle:pressed /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="{DynamicResource OneTextPrimaryBrush}" />
+    </Style>
+    <Style Selector="Button.Subtle:pressed Path">
+        <Setter Property="Fill" Value="{DynamicResource OneTextPrimaryBrush}" />
+    </Style>
+    <Style Selector="Button.Subtle:pressed TextBlock">
+        <Setter Property="Foreground" Value="{DynamicResource OneTextPrimaryBrush}" />
+    </Style>
+
+    <!-- Стиль для иконок-путей внутри кнопок -->
+    <Style Selector="Button Path">
+        <Setter Property="Fill" Value="{DynamicResource ForegroundColor}" />
+    </Style>
+
+    <Style Selector="Button.Subtle /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Foreground" Value="{DynamicResource OneTextPrimaryBrush}" />
+    </Style>
+    <Style Selector="Button.Subtle TextBlock">
+        <Setter Property="Foreground" Value="{DynamicResource OneTextPrimaryBrush}" />
+    </Style>
+    <Style Selector="Button.Subtle Path">
+        <Setter Property="Fill" Value="{DynamicResource OneTextPrimaryBrush}" />
+    </Style>
+
+    <Style Selector="Button.Primary Path">
+        <Setter Property="Fill" Value="{DynamicResource ThemeWhite}" />
+    </Style>
+
+    <Style Selector="Button:disabled Path">
+        <Setter Property="Fill" Value="{DynamicResource ForegroundColor-40}" />
+    </Style>
+
+    <Style Selector="Button:disabled">
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundColor-40}" />
+    </Style>
+
+    <Style Selector="Button:disabled /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundColor-40}" />
+    </Style>
+
+    <Style Selector="Button:disabled TextBlock">
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundColor-40}" />
+    </Style>
+
+    <!-- Стиль для кнопки поиска ноды -->
+    <Style Selector="ToggleButton PathIcon.nodeSearch-on">
+        <Setter Property="IsVisible" Value="False" />
+    </Style>
+    <Style Selector="ToggleButton:checked PathIcon.nodeSearch-on">
+        <Setter Property="IsVisible" Value="True" />
+    </Style>
+    <Style Selector="ToggleButton PathIcon.nodeSearch-off">
+        <Setter Property="IsVisible" Value="True" />
+    </Style>
+    <Style Selector="ToggleButton:checked PathIcon.nodeSearch-off">
+        <Setter Property="IsVisible" Value="False" />
+    </Style>
+
+</Styles>

@@ -18,6 +18,8 @@ public partial class StageTitleBar : UserControl
     private void UpdateLanguage()
     {
         TitleText.Text = LocStrings.StageTitleBarText;
+        ThemeToggleButton.SwitchToLightLabel = LocStrings.SwitchToLightTheme;
+        ThemeToggleButton.SwitchToDarkLabel = LocStrings.SwitchToDarkTheme;
     }
 
     private void CloseButton_Click(object? sender, RoutedEventArgs e)

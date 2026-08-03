@@ -1,6 +1,6 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:LocalAxxonData_Installer.Views"
+             xmlns:one="using:ONE.PSIM.DesignSystem.Controls"
              Width="700"
              x:Class="LocalAxxonData_Installer.Views.FinishPage">
     <Grid RowDefinitions="*,Auto">
@@ -16,22 +16,37 @@
                             <TextBlock x:Name="TitleText" Classes="ONE-H2-Bold" HorizontalAlignment="Center" />
                             <TextBlock x:Name="DescriptionText" TextWrapping="Wrap" Classes="ONE-H3-Regular"
                                        HorizontalAlignment="Center" />
-                            <Border x:Name="SuccessCard" Classes="success-block" Padding="8" HorizontalAlignment="Center"
+                            <Border x:Name="HostCard"
+                                    Classes="success-block"
+                                    Width="360"
+                                    MinHeight="40"
+                                    HorizontalAlignment="Center"
                                     IsVisible="False">
-                                <TextBlock x:Name="SuccessCardText" Classes="ONE-H3-Bold"
-                                           Foreground="{StaticResource GreenColor}" />
+                                <Grid ColumnDefinitions="32,*,32">
+                                    <TextBlock x:Name="HostAddressText"
+                                               Grid.Column="1"
+                                               Classes="ONE-H3-Bold"
+                                               Foreground="{DynamicResource OneMessageTextBrush}"
+                                               HorizontalAlignment="Center"
+                                               VerticalAlignment="Center" />
+                                    <Button x:Name="CopyAddressButton"
+                                            Grid.Column="2"
+                                            Classes="Subtle IconOnlyLarge"
+                                            HorizontalAlignment="Right"
+                                            VerticalAlignment="Center"
+                                            Click="OnCopyAddressClick">
+                                        <Path Classes="IconGlyph IconNatural"
+                                              Data="{StaticResource CopyIcon}" />
+                                    </Button>
+                                </Grid>
                             </Border>
-                            <Border x:Name="ErrorCard" Classes="error-block" Padding="8" HorizontalAlignment="Center"
-                                    IsVisible="False">
-                                <TextBlock x:Name="ErrorCardText" Classes="ONE-H3-Bold"
-                                           Foreground="{StaticResource RedColor}" />
-                            </Border>
-                            <TextBlock x:Name="FootnoteText" Classes="ONE-Paragraph-Small"
-                                       Foreground="{StaticResource SubLabelColor}"
-                                       HorizontalAlignment="Center" />
+                            <one:MessageBlock x:Name="ErrorCard"
+                                              Severity="Error"
+                                              HorizontalAlignment="Center"
+                                              IsVisible="False" />
                         </StackPanel>
                     </Grid>
-                    <local:MessageBlockView x:Name="PasswordInfo" Grid.Row="1" />
+                    <one:MessageBlock x:Name="PasswordInfo" Grid.Row="1" />
                 </Grid>
             </Grid>
         </Border>

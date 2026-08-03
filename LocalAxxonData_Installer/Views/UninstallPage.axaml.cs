@@ -23,8 +23,8 @@ public partial class UninstallPage : UserControl
     {
         HeadingText.Text = LocStrings.UninstallHeading;
         ConfirmText.Text = LocStrings.UninstallConfirmText;
-        WarningHeaderText.Text = LocStrings.UninstallWarningHeader;
-        WarningBodyText.Text = LocStrings.UninstallWarningBody;
+        WarningBlock.Header = LocStrings.UninstallWarningHeader;
+        WarningBlock.Message = LocStrings.UninstallWarningBody;
         ProgressText.Text = LocStrings.UninstallProgressLabel;
         BackText.Text = LocStrings.Back;
         UninstallButton.Content = LocStrings.UninstallAction;

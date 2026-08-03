@@ -1,6 +1,6 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:LocalAxxonData_Installer.Views"
+             xmlns:one="using:ONE.PSIM.DesignSystem.Controls"
              Width="700"
              x:Class="LocalAxxonData_Installer.Views.ErrorPage">
     <Grid RowDefinitions="*,Auto">
@@ -14,17 +14,11 @@
                         <StackPanel Spacing="{StaticResource ThemeSize-Regular}">
                             <TextBlock x:Name="HeadingText"
                                        Classes="ONE-H2-Bold" />
-                            <Border Classes="error-block" Padding="8">
-                                <StackPanel Spacing="4">
-                                    <TextBlock x:Name="ErrorTitleText"
-                                               Classes="ONE-Paragraph-Bold" Foreground="{StaticResource RedColor}" />
-                                    <TextBlock x:Name="ErrorDescText"
-                                               TextWrapping="Wrap" Classes="ONE-H3-Regular" />
-                                </StackPanel>
-                            </Border>
+                            <one:MessageBlock x:Name="ErrorDescriptionBlock"
+                                              Severity="Error" />
                         </StackPanel>
                     </Grid>
-                    <local:MessageBlockView x:Name="ErrorBlock" Grid.Row="1" Severity="Error" />
+                    <one:MessageBlock x:Name="ErrorBlock" Grid.Row="1" Severity="Error" />
                 </Grid>
             </Grid>
         </Border>

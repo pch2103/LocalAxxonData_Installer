@@ -1,0 +1,762 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <!--
+    Avalonia 11.3.8 Fluent lightweight resources.
+    Every entry is a concrete brush whose Color tracks the ONE palette.
+    Do not replace these entries with DynamicResource objects: Fluent templates
+    expect IBrush instances during live theme switching.
+  -->
+  <Styles.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.ThemeDictionaries>
+        <ResourceDictionary x:Key="Default">
+          <!-- Standard and accent buttons. -->
+          <SolidColorBrush x:Key="ButtonBackground"
+                           Color="{DynamicResource ThemeBackgroundColor-700}" />
+          <SolidColorBrush x:Key="ButtonBorderBrush"
+                           Color="{DynamicResource ThemeBackgroundColor-600}" />
+          <SolidColorBrush x:Key="ButtonForeground"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="ButtonBackgroundPointerOver"
+                           Color="{DynamicResource ThemeBackgroundColor-600}" />
+          <SolidColorBrush x:Key="ButtonBorderBrushPointerOver"
+                           Color="{DynamicResource ThemeBackgroundColor-600}" />
+          <SolidColorBrush x:Key="ButtonForegroundPointerOver"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="ButtonBackgroundPressed"
+                           Color="{DynamicResource ThemeBackgroundColor-900}" />
+          <SolidColorBrush x:Key="ButtonBorderBrushPressed"
+                           Color="{DynamicResource ThemeBackgroundColor-700}" />
+          <SolidColorBrush x:Key="ButtonForegroundPressed"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="ButtonBackgroundDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-900}" />
+          <SolidColorBrush x:Key="ButtonBorderBrushDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-900}" />
+          <SolidColorBrush x:Key="ButtonForegroundDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-600}" />
+
+          <SolidColorBrush x:Key="AccentButtonBackground"
+                           Color="{DynamicResource ThemePrimaryColor}" />
+          <SolidColorBrush x:Key="AccentButtonBorderBrush"
+                           Color="{DynamicResource ThemePrimaryColor}" />
+          <SolidColorBrush x:Key="AccentButtonForeground"
+                           Color="{DynamicResource ThemeWhite}" />
+          <SolidColorBrush x:Key="AccentButtonBackgroundPointerOver"
+                           Color="{DynamicResource ThemePrimaryColorTint20}" />
+          <SolidColorBrush x:Key="AccentButtonBorderBrushPointerOver"
+                           Color="{DynamicResource ThemePrimaryColorTint20}" />
+          <SolidColorBrush x:Key="AccentButtonForegroundPointerOver"
+                           Color="{DynamicResource ThemeWhite}" />
+          <SolidColorBrush x:Key="AccentButtonBackgroundPressed"
+                           Color="{DynamicResource ThemePrimaryColorShade10}" />
+          <SolidColorBrush x:Key="AccentButtonBorderBrushPressed"
+                           Color="{DynamicResource ThemePrimaryColorShade10}" />
+          <SolidColorBrush x:Key="AccentButtonForegroundPressed"
+                           Color="{DynamicResource ThemeWhite}" />
+          <SolidColorBrush x:Key="AccentButtonBackgroundDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-900}" />
+          <SolidColorBrush x:Key="AccentButtonBorderBrushDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-900}" />
+          <SolidColorBrush x:Key="AccentButtonForegroundDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-600}" />
+
+          <!-- TextBox and password editor. -->
+          <SolidColorBrush x:Key="TextControlBackground"
+                           Color="{DynamicResource ThemeBackgroundColor-700}" />
+          <SolidColorBrush x:Key="TextControlBorderBrush"
+                           Color="{DynamicResource ThemeEditorBorderColor}" />
+          <SolidColorBrush x:Key="TextControlForeground"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="TextControlPlaceholderForeground"
+                           Color="{DynamicResource ThemeBackgroundColor-100}" />
+          <SolidColorBrush x:Key="TextControlBackgroundPointerOver"
+                           Color="{DynamicResource ThemeEditorHoverBackgroundColor}" />
+          <SolidColorBrush x:Key="TextControlBorderBrushPointerOver"
+                           Color="{DynamicResource ThemeEditorHoverBorderColor}" />
+          <SolidColorBrush x:Key="TextControlForegroundPointerOver"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="TextControlPlaceholderForegroundPointerOver"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="TextControlBackgroundFocused"
+                           Color="{DynamicResource ThemeBackgroundColor-900}" />
+          <SolidColorBrush x:Key="TextControlBorderBrushFocused"
+                           Color="{DynamicResource ThemePrimaryColorTint20}" />
+          <SolidColorBrush x:Key="TextControlForegroundFocused"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="TextControlPlaceholderForegroundFocused"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="TextControlBackgroundDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-900}" />
+          <SolidColorBrush x:Key="TextControlBorderBrushDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-600}" />
+          <SolidColorBrush x:Key="TextControlForegroundDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-600}" />
+          <SolidColorBrush x:Key="TextControlPlaceholderForegroundDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-600}" />
+          <SolidColorBrush x:Key="TextControlSelectionHighlightColor"
+                           Color="{DynamicResource ThemePrimaryColorShade20}" />
+          <SolidColorBrush x:Key="TextControlCaretBrush"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+
+          <!-- ComboBox editor and popup. -->
+          <SolidColorBrush x:Key="ComboBoxBackground"
+                           Color="{DynamicResource ThemeBackgroundColor-700}" />
+          <SolidColorBrush x:Key="ComboBoxBorderBrush"
+                           Color="{DynamicResource ThemeEditorBorderColor}" />
+          <SolidColorBrush x:Key="ComboBoxForeground"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="ComboBoxPlaceHolderForeground"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="ComboBoxBackgroundPointerOver"
+                           Color="{DynamicResource ThemeBackgroundColor-500}" />
+          <SolidColorBrush x:Key="ComboBoxBorderBrushPointerOver"
+                           Color="{DynamicResource ThemeBackgroundColor-500}" />
+          <SolidColorBrush x:Key="ComboBoxBackgroundPressed"
+                           Color="{DynamicResource ThemeBackgroundColor-900}" />
+          <SolidColorBrush x:Key="ComboBoxBorderBrushPressed"
+                           Color="{DynamicResource ThemeBackgroundColor-600}" />
+          <SolidColorBrush x:Key="ComboBoxBackgroundUnfocused"
+                           Color="{DynamicResource ThemeBackgroundColor-900}" />
+          <SolidColorBrush x:Key="ComboBoxBackgroundBorderBrushUnfocused"
+                           Color="{DynamicResource ThemePrimaryColorTint20}" />
+          <SolidColorBrush x:Key="ComboBoxBackgroundBorderBrushFocused"
+                           Color="{DynamicResource ThemePrimaryColorTint20}" />
+          <SolidColorBrush x:Key="ComboBoxForegroundFocused"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="ComboBoxForegroundFocusedPressed"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="ComboBoxPlaceHolderForegroundFocusedPressed"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="ComboBoxBackgroundDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-900}" />
+          <SolidColorBrush x:Key="ComboBoxBorderBrushDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-600}" />
+          <SolidColorBrush x:Key="ComboBoxForegroundDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-600}" />
+          <SolidColorBrush x:Key="ComboBoxDropDownGlyphForeground"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="ComboBoxDropDownGlyphForegroundFocused"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="ComboBoxDropDownGlyphForegroundFocusedPressed"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="ComboBoxDropDownGlyphForegroundDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-600}" />
+          <SolidColorBrush x:Key="ComboBoxDropDownBackground"
+                           Color="{DynamicResource ThemeBackgroundColor-900}" />
+          <SolidColorBrush x:Key="ComboBoxDropDownBorderBrush"
+                           Color="{DynamicResource ThemeBackgroundColor-600}" />
+
+          <SolidColorBrush x:Key="ComboBoxItemBackground" Color="Transparent" />
+          <SolidColorBrush x:Key="ComboBoxItemForeground"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="ComboBoxItemBackgroundPointerOver"
+                           Color="{DynamicResource ThemeBackgroundColor-600}" />
+          <SolidColorBrush x:Key="ComboBoxItemBorderBrushPointerOver"
+                           Color="{DynamicResource ThemeBackgroundColor-600}" />
+          <SolidColorBrush x:Key="ComboBoxItemForegroundPointerOver"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="ComboBoxItemBackgroundPressed"
+                           Color="{DynamicResource ThemeBackgroundColor-900}" />
+          <SolidColorBrush x:Key="ComboBoxItemBorderBrushPressed"
+                           Color="{DynamicResource ThemeBackgroundColor-700}" />
+          <SolidColorBrush x:Key="ComboBoxItemForegroundPressed"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="ComboBoxItemBackgroundSelected"
+                           Color="{DynamicResource ThemePrimaryColor}"
+                           Opacity="0.4" />
+          <SolidColorBrush x:Key="ComboBoxItemBorderBrushSelected"
+                           Color="Transparent" />
+          <SolidColorBrush x:Key="ComboBoxItemForegroundSelected"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="ComboBoxItemBackgroundSelectedPointerOver"
+                           Color="{DynamicResource ThemePrimaryColorTint20}"
+                           Opacity="0.4" />
+          <SolidColorBrush x:Key="ComboBoxItemBorderBrushSelectedPointerOver"
+                           Color="Transparent" />
+          <SolidColorBrush x:Key="ComboBoxItemForegroundSelectedPointerOver"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="ComboBoxItemBackgroundSelectedPressed"
+                           Color="{DynamicResource ThemePrimaryColorShade10}"
+                           Opacity="0.4" />
+          <SolidColorBrush x:Key="ComboBoxItemBorderBrushSelectedPressed"
+                           Color="Transparent" />
+          <SolidColorBrush x:Key="ComboBoxItemForegroundSelectedPressed"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="ComboBoxItemBackgroundDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-900}" />
+          <SolidColorBrush x:Key="ComboBoxItemBorderBrushDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-900}" />
+          <SolidColorBrush x:Key="ComboBoxItemForegroundDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-600}" />
+          <SolidColorBrush x:Key="ComboBoxItemBackgroundSelectedDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-600}" />
+          <SolidColorBrush x:Key="ComboBoxItemBorderBrushSelectedDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-600}" />
+          <SolidColorBrush x:Key="ComboBoxItemForegroundSelectedDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-600}" />
+
+          <!-- CheckBox label and indicator. -->
+          <SolidColorBrush x:Key="CheckBoxBackgroundUnchecked" Color="Transparent" />
+          <SolidColorBrush x:Key="CheckBoxBorderBrushUnchecked" Color="Transparent" />
+          <SolidColorBrush x:Key="CheckBoxForegroundUnchecked"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="CheckBoxBackgroundUncheckedPointerOver" Color="Transparent" />
+          <SolidColorBrush x:Key="CheckBoxBorderBrushUncheckedPointerOver" Color="Transparent" />
+          <SolidColorBrush x:Key="CheckBoxForegroundUncheckedPointerOver"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="CheckBoxBackgroundUncheckedPressed" Color="Transparent" />
+          <SolidColorBrush x:Key="CheckBoxBorderBrushUncheckedPressed" Color="Transparent" />
+          <SolidColorBrush x:Key="CheckBoxForegroundUncheckedPressed"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="CheckBoxBackgroundUncheckedDisabled" Color="Transparent" />
+          <SolidColorBrush x:Key="CheckBoxBorderBrushUncheckedDisabled" Color="Transparent" />
+          <SolidColorBrush x:Key="CheckBoxForegroundUncheckedDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-600}" />
+          <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillUnchecked"
+                           Color="{DynamicResource ThemeBackgroundColor-700}" />
+          <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeUnchecked"
+                           Color="{DynamicResource ThemeSelectionControlOutlineColor}" />
+          <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillUncheckedPointerOver"
+                           Color="{DynamicResource ThemeBackgroundColor-500}" />
+          <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeUncheckedPointerOver"
+                           Color="{DynamicResource ThemeSelectionControlOutlineHoverColor}" />
+          <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillUncheckedPressed"
+                           Color="{DynamicResource ThemeBackgroundColor-900}" />
+          <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeUncheckedPressed"
+                           Color="{DynamicResource ThemeSelectionControlOutlineHoverColor}" />
+          <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillUncheckedDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-900}" />
+          <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeUncheckedDisabled"
+                           Color="{DynamicResource ThemeSelectionControlOutlineDisabledColor}" />
+          <SolidColorBrush x:Key="CheckBoxCheckGlyphForegroundUnchecked"
+                           Color="{DynamicResource ThemeWhite}" />
+          <SolidColorBrush x:Key="CheckBoxCheckGlyphForegroundUncheckedPointerOver"
+                           Color="{DynamicResource ThemeWhite}" />
+          <SolidColorBrush x:Key="CheckBoxCheckGlyphForegroundUncheckedPressed"
+                           Color="{DynamicResource ThemeWhite}" />
+          <SolidColorBrush x:Key="CheckBoxCheckGlyphForegroundUncheckedDisabled"
+                           Color="{DynamicResource ThemeWhite}" />
+
+          <!-- Checked and indeterminate CheckBox states share accent semantics. -->
+          <SolidColorBrush x:Key="CheckBoxBackgroundChecked" Color="Transparent" />
+          <SolidColorBrush x:Key="CheckBoxBorderBrushChecked" Color="Transparent" />
+          <SolidColorBrush x:Key="CheckBoxForegroundChecked"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="CheckBoxBackgroundCheckedPointerOver" Color="Transparent" />
+          <SolidColorBrush x:Key="CheckBoxBorderBrushCheckedPointerOver" Color="Transparent" />
+          <SolidColorBrush x:Key="CheckBoxForegroundCheckedPointerOver"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="CheckBoxBackgroundCheckedPressed" Color="Transparent" />
+          <SolidColorBrush x:Key="CheckBoxBorderBrushCheckedPressed" Color="Transparent" />
+          <SolidColorBrush x:Key="CheckBoxForegroundCheckedPressed"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="CheckBoxBackgroundCheckedDisabled" Color="Transparent" />
+          <SolidColorBrush x:Key="CheckBoxBorderBrushCheckedDisabled" Color="Transparent" />
+          <SolidColorBrush x:Key="CheckBoxForegroundCheckedDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-600}" />
+          <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillChecked"
+                           Color="{DynamicResource ThemePrimaryColor}" />
+          <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeChecked"
+                           Color="{DynamicResource ThemePrimaryColor}" />
+          <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillCheckedPointerOver"
+                           Color="{DynamicResource ThemePrimaryColorTint20}" />
+          <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeCheckedPointerOver"
+                           Color="{DynamicResource ThemePrimaryColorTint20}" />
+          <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillCheckedPressed"
+                           Color="{DynamicResource ThemePrimaryColorShade10}" />
+          <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeCheckedPressed"
+                           Color="{DynamicResource ThemePrimaryColorShade10}" />
+          <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillCheckedDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-600}" />
+          <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeCheckedDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-600}" />
+          <SolidColorBrush x:Key="CheckBoxCheckGlyphForegroundChecked"
+                           Color="{DynamicResource ThemeWhite}" />
+          <SolidColorBrush x:Key="CheckBoxCheckGlyphForegroundCheckedPointerOver"
+                           Color="{DynamicResource ThemeWhite}" />
+          <SolidColorBrush x:Key="CheckBoxCheckGlyphForegroundCheckedPressed"
+                           Color="{DynamicResource ThemeWhite}" />
+          <SolidColorBrush x:Key="CheckBoxCheckGlyphForegroundCheckedDisabled"
+                           Color="{DynamicResource ThemeWhite}" />
+
+          <SolidColorBrush x:Key="CheckBoxBackgroundIndeterminate" Color="Transparent" />
+          <SolidColorBrush x:Key="CheckBoxBorderBrushIndeterminate" Color="Transparent" />
+          <SolidColorBrush x:Key="CheckBoxForegroundIndeterminate"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="CheckBoxBackgroundIndeterminatePointerOver" Color="Transparent" />
+          <SolidColorBrush x:Key="CheckBoxBorderBrushIndeterminatePointerOver" Color="Transparent" />
+          <SolidColorBrush x:Key="CheckBoxForegroundIndeterminatePointerOver"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="CheckBoxBackgroundIndeterminatePressed" Color="Transparent" />
+          <SolidColorBrush x:Key="CheckBoxBorderBrushIndeterminatePressed" Color="Transparent" />
+          <SolidColorBrush x:Key="CheckBoxForegroundIndeterminatePressed"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="CheckBoxBackgroundIndeterminateDisabled" Color="Transparent" />
+          <SolidColorBrush x:Key="CheckBoxBorderBrushIndeterminateDisabled" Color="Transparent" />
+          <SolidColorBrush x:Key="CheckBoxForegroundIndeterminateDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-600}" />
+          <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillIndeterminate"
+                           Color="{DynamicResource ThemePrimaryColor}" />
+          <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeIndeterminate"
+                           Color="{DynamicResource ThemePrimaryColor}" />
+          <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillIndeterminatePointerOver"
+                           Color="{DynamicResource ThemePrimaryColorTint20}" />
+          <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeIndeterminatePointerOver"
+                           Color="{DynamicResource ThemePrimaryColorTint20}" />
+          <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillIndeterminatePressed"
+                           Color="{DynamicResource ThemePrimaryColorShade10}" />
+          <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeIndeterminatePressed"
+                           Color="{DynamicResource ThemePrimaryColorShade10}" />
+          <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillIndeterminateDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-600}" />
+          <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeIndeterminateDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-600}" />
+          <SolidColorBrush x:Key="CheckBoxCheckGlyphForegroundIndeterminate"
+                           Color="{DynamicResource ThemeWhite}" />
+          <SolidColorBrush x:Key="CheckBoxCheckGlyphForegroundIndeterminatePointerOver"
+                           Color="{DynamicResource ThemeWhite}" />
+          <SolidColorBrush x:Key="CheckBoxCheckGlyphForegroundIndeterminatePressed"
+                           Color="{DynamicResource ThemeWhite}" />
+          <SolidColorBrush x:Key="CheckBoxCheckGlyphForegroundIndeterminateDisabled"
+                           Color="{DynamicResource ThemeWhite}" />
+
+          <!-- RadioButton label and indicator. -->
+          <SolidColorBrush x:Key="RadioButtonBackground" Color="Transparent" />
+          <SolidColorBrush x:Key="RadioButtonBorderBrush" Color="Transparent" />
+          <SolidColorBrush x:Key="RadioButtonForeground"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="RadioButtonBackgroundPointerOver" Color="Transparent" />
+          <SolidColorBrush x:Key="RadioButtonBorderBrushPointerOver" Color="Transparent" />
+          <SolidColorBrush x:Key="RadioButtonForegroundPointerOver"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="RadioButtonBackgroundPressed" Color="Transparent" />
+          <SolidColorBrush x:Key="RadioButtonBorderBrushPressed" Color="Transparent" />
+          <SolidColorBrush x:Key="RadioButtonForegroundPressed"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="RadioButtonBackgroundDisabled" Color="Transparent" />
+          <SolidColorBrush x:Key="RadioButtonBorderBrushDisabled" Color="Transparent" />
+          <SolidColorBrush x:Key="RadioButtonForegroundDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-600}" />
+          <SolidColorBrush x:Key="RadioButtonOuterEllipseFill"
+                           Color="{DynamicResource ThemeBackgroundColor-700}" />
+          <SolidColorBrush x:Key="RadioButtonOuterEllipseStroke"
+                           Color="{DynamicResource ThemeSelectionControlOutlineColor}" />
+          <SolidColorBrush x:Key="RadioButtonOuterEllipseFillPointerOver"
+                           Color="{DynamicResource ThemeBackgroundColor-500}" />
+          <SolidColorBrush x:Key="RadioButtonOuterEllipseStrokePointerOver"
+                           Color="{DynamicResource ThemeSelectionControlOutlineHoverColor}" />
+          <SolidColorBrush x:Key="RadioButtonOuterEllipseFillPressed"
+                           Color="{DynamicResource ThemeBackgroundColor-900}" />
+          <SolidColorBrush x:Key="RadioButtonOuterEllipseStrokePressed"
+                           Color="{DynamicResource ThemeSelectionControlOutlineHoverColor}" />
+          <SolidColorBrush x:Key="RadioButtonOuterEllipseFillDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-900}" />
+          <SolidColorBrush x:Key="RadioButtonOuterEllipseStrokeDisabled"
+                           Color="{DynamicResource ThemeSelectionControlOutlineDisabledColor}" />
+          <SolidColorBrush x:Key="RadioButtonOuterEllipseCheckedFill"
+                           Color="{DynamicResource ThemePrimaryColor}" />
+          <SolidColorBrush x:Key="RadioButtonOuterEllipseCheckedStroke"
+                           Color="{DynamicResource ThemePrimaryColor}" />
+          <SolidColorBrush x:Key="RadioButtonOuterEllipseCheckedFillPointerOver"
+                           Color="{DynamicResource ThemePrimaryColorTint20}" />
+          <SolidColorBrush x:Key="RadioButtonOuterEllipseCheckedStrokePointerOver"
+                           Color="{DynamicResource ThemePrimaryColorTint20}" />
+          <SolidColorBrush x:Key="RadioButtonOuterEllipseCheckedFillPressed"
+                           Color="{DynamicResource ThemePrimaryColorShade10}" />
+          <SolidColorBrush x:Key="RadioButtonOuterEllipseCheckedStrokePressed"
+                           Color="{DynamicResource ThemePrimaryColorShade10}" />
+          <SolidColorBrush x:Key="RadioButtonOuterEllipseCheckedFillDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-600}" />
+          <SolidColorBrush x:Key="RadioButtonOuterEllipseCheckedStrokeDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-600}" />
+          <SolidColorBrush x:Key="RadioButtonCheckGlyphFill"
+                           Color="{DynamicResource ThemeWhite}" />
+          <SolidColorBrush x:Key="RadioButtonCheckGlyphStroke" Color="Transparent" />
+          <SolidColorBrush x:Key="RadioButtonCheckGlyphFillPointerOver"
+                           Color="{DynamicResource ThemeWhite}" />
+          <SolidColorBrush x:Key="RadioButtonCheckGlyphStrokePointerOver" Color="Transparent" />
+          <SolidColorBrush x:Key="RadioButtonCheckGlyphFillPressed"
+                           Color="{DynamicResource ThemeWhite}" />
+          <SolidColorBrush x:Key="RadioButtonCheckGlyphStrokePressed" Color="Transparent" />
+          <SolidColorBrush x:Key="RadioButtonCheckGlyphFillDisabled"
+                           Color="{DynamicResource ThemeWhite}" />
+          <SolidColorBrush x:Key="RadioButtonCheckGlyphStrokeDisabled" Color="Transparent" />
+        </ResourceDictionary>
+
+        <ResourceDictionary x:Key="Dark" />
+
+        <ResourceDictionary x:Key="Light">
+          <!-- Standard and accent buttons. -->
+          <SolidColorBrush x:Key="ButtonBackground"
+                           Color="{DynamicResource ThemeBackgroundColor-700}" />
+          <SolidColorBrush x:Key="ButtonBorderBrush"
+                           Color="{DynamicResource ThemeBackgroundColor-600}" />
+          <SolidColorBrush x:Key="ButtonForeground"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="ButtonBackgroundPointerOver"
+                           Color="{DynamicResource ThemeBackgroundColor-600}" />
+          <SolidColorBrush x:Key="ButtonBorderBrushPointerOver"
+                           Color="{DynamicResource ThemeBackgroundColor-600}" />
+          <SolidColorBrush x:Key="ButtonForegroundPointerOver"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="ButtonBackgroundPressed"
+                           Color="{DynamicResource ThemeBackgroundColor-900}" />
+          <SolidColorBrush x:Key="ButtonBorderBrushPressed"
+                           Color="{DynamicResource ThemeBackgroundColor-600}" />
+          <SolidColorBrush x:Key="ButtonForegroundPressed"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="ButtonBackgroundDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-700}" />
+          <SolidColorBrush x:Key="ButtonBorderBrushDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-600}" />
+          <SolidColorBrush x:Key="ButtonForegroundDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-400}" />
+
+          <SolidColorBrush x:Key="AccentButtonBackground"
+                           Color="{DynamicResource ThemePrimaryColor}" />
+          <SolidColorBrush x:Key="AccentButtonBorderBrush"
+                           Color="{DynamicResource ThemePrimaryColor}" />
+          <SolidColorBrush x:Key="AccentButtonForeground"
+                           Color="{DynamicResource ThemeWhite}" />
+          <SolidColorBrush x:Key="AccentButtonBackgroundPointerOver"
+                           Color="{DynamicResource ThemePrimaryColorTint20}" />
+          <SolidColorBrush x:Key="AccentButtonBorderBrushPointerOver"
+                           Color="{DynamicResource ThemePrimaryColorTint20}" />
+          <SolidColorBrush x:Key="AccentButtonForegroundPointerOver"
+                           Color="{DynamicResource ThemeWhite}" />
+          <SolidColorBrush x:Key="AccentButtonBackgroundPressed"
+                           Color="{DynamicResource ThemePrimaryColorShade10}" />
+          <SolidColorBrush x:Key="AccentButtonBorderBrushPressed"
+                           Color="{DynamicResource ThemePrimaryColorShade10}" />
+          <SolidColorBrush x:Key="AccentButtonForegroundPressed"
+                           Color="{DynamicResource ThemeWhite}" />
+          <SolidColorBrush x:Key="AccentButtonBackgroundDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-700}" />
+          <SolidColorBrush x:Key="AccentButtonBorderBrushDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-600}" />
+          <SolidColorBrush x:Key="AccentButtonForegroundDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-400}" />
+
+          <!-- TextBox and password editor. -->
+          <SolidColorBrush x:Key="TextControlBackground"
+                           Color="{DynamicResource ThemeBackgroundColor-700}" />
+          <SolidColorBrush x:Key="TextControlBorderBrush"
+                           Color="{DynamicResource ThemeEditorBorderColor}" />
+          <SolidColorBrush x:Key="TextControlForeground"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="TextControlPlaceholderForeground"
+                           Color="{DynamicResource ThemeBackgroundColor-400}" />
+          <SolidColorBrush x:Key="TextControlBackgroundPointerOver"
+                           Color="{DynamicResource ThemeEditorHoverBackgroundColor}" />
+          <SolidColorBrush x:Key="TextControlBorderBrushPointerOver"
+                           Color="{DynamicResource ThemeEditorHoverBorderColor}" />
+          <SolidColorBrush x:Key="TextControlForegroundPointerOver"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="TextControlPlaceholderForegroundPointerOver"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="TextControlBackgroundFocused"
+                           Color="{DynamicResource ThemeBackgroundColor-700}" />
+          <SolidColorBrush x:Key="TextControlBorderBrushFocused"
+                           Color="{DynamicResource ThemePrimaryColorTint20}" />
+          <SolidColorBrush x:Key="TextControlForegroundFocused"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="TextControlPlaceholderForegroundFocused"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="TextControlBackgroundDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-700}" />
+          <SolidColorBrush x:Key="TextControlBorderBrushDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-600}" />
+          <SolidColorBrush x:Key="TextControlForegroundDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-400}" />
+          <SolidColorBrush x:Key="TextControlPlaceholderForegroundDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-400}" />
+          <SolidColorBrush x:Key="TextControlSelectionHighlightColor"
+                           Color="{DynamicResource ThemePrimaryColorShade20}" />
+          <SolidColorBrush x:Key="TextControlCaretBrush"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+
+          <!-- ComboBox editor and popup. -->
+          <SolidColorBrush x:Key="ComboBoxBackground"
+                           Color="{DynamicResource ThemeBackgroundColor-700}" />
+          <SolidColorBrush x:Key="ComboBoxBorderBrush"
+                           Color="{DynamicResource ThemeEditorBorderColor}" />
+          <SolidColorBrush x:Key="ComboBoxForeground"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="ComboBoxPlaceHolderForeground"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="ComboBoxBackgroundPointerOver"
+                           Color="{DynamicResource ThemeBackgroundColor-700}" />
+          <SolidColorBrush x:Key="ComboBoxBorderBrushPointerOver"
+                           Color="{DynamicResource ThemeBackgroundColor-600}" />
+          <SolidColorBrush x:Key="ComboBoxBackgroundPressed"
+                           Color="{DynamicResource ThemeBackgroundColor-900}" />
+          <SolidColorBrush x:Key="ComboBoxBorderBrushPressed"
+                           Color="{DynamicResource ThemeBackgroundColor-600}" />
+          <SolidColorBrush x:Key="ComboBoxBackgroundUnfocused"
+                           Color="{DynamicResource ThemeBackgroundColor-700}" />
+          <SolidColorBrush x:Key="ComboBoxBackgroundBorderBrushUnfocused"
+                           Color="{DynamicResource ThemePrimaryColorTint20}" />
+          <SolidColorBrush x:Key="ComboBoxBackgroundBorderBrushFocused"
+                           Color="{DynamicResource ThemePrimaryColorTint20}" />
+          <SolidColorBrush x:Key="ComboBoxForegroundFocused"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="ComboBoxForegroundFocusedPressed"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="ComboBoxPlaceHolderForegroundFocusedPressed"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="ComboBoxBackgroundDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-700}" />
+          <SolidColorBrush x:Key="ComboBoxBorderBrushDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-600}" />
+          <SolidColorBrush x:Key="ComboBoxForegroundDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-400}" />
+          <SolidColorBrush x:Key="ComboBoxDropDownGlyphForeground"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="ComboBoxDropDownGlyphForegroundFocused"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="ComboBoxDropDownGlyphForegroundFocusedPressed"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="ComboBoxDropDownGlyphForegroundDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-400}" />
+          <SolidColorBrush x:Key="ComboBoxDropDownBackground"
+                           Color="{DynamicResource ThemeBackgroundColor-700}" />
+          <SolidColorBrush x:Key="ComboBoxDropDownBorderBrush"
+                           Color="{DynamicResource ThemeBackgroundColor-600}" />
+
+          <SolidColorBrush x:Key="ComboBoxItemBackground" Color="Transparent" />
+          <SolidColorBrush x:Key="ComboBoxItemForeground"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="ComboBoxItemBackgroundPointerOver"
+                           Color="{DynamicResource ThemeBackgroundColor-600}" />
+          <SolidColorBrush x:Key="ComboBoxItemBorderBrushPointerOver"
+                           Color="{DynamicResource ThemeBackgroundColor-600}" />
+          <SolidColorBrush x:Key="ComboBoxItemForegroundPointerOver"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="ComboBoxItemBackgroundPressed"
+                           Color="{DynamicResource ThemeBackgroundColor-900}" />
+          <SolidColorBrush x:Key="ComboBoxItemBorderBrushPressed"
+                           Color="{DynamicResource ThemeBackgroundColor-600}" />
+          <SolidColorBrush x:Key="ComboBoxItemForegroundPressed"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="ComboBoxItemBackgroundSelected"
+                            Color="{DynamicResource ThemePrimaryColor}" />
+          <SolidColorBrush x:Key="ComboBoxItemBorderBrushSelected"
+                            Color="Transparent" />
+          <SolidColorBrush x:Key="ComboBoxItemForegroundSelected"
+                            Color="{DynamicResource ThemeWhite}" />
+          <SolidColorBrush x:Key="ComboBoxItemBackgroundSelectedPointerOver"
+                            Color="{DynamicResource ThemePrimaryColorTint20}" />
+          <SolidColorBrush x:Key="ComboBoxItemBorderBrushSelectedPointerOver"
+                            Color="Transparent" />
+          <SolidColorBrush x:Key="ComboBoxItemForegroundSelectedPointerOver"
+                            Color="{DynamicResource ThemeWhite}" />
+          <SolidColorBrush x:Key="ComboBoxItemBackgroundSelectedPressed"
+                            Color="{DynamicResource ThemePrimaryColorShade10}" />
+          <SolidColorBrush x:Key="ComboBoxItemBorderBrushSelectedPressed"
+                            Color="Transparent" />
+          <SolidColorBrush x:Key="ComboBoxItemForegroundSelectedPressed"
+                            Color="{DynamicResource ThemeWhite}" />
+          <SolidColorBrush x:Key="ComboBoxItemBackgroundDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-700}" />
+          <SolidColorBrush x:Key="ComboBoxItemBorderBrushDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-600}" />
+          <SolidColorBrush x:Key="ComboBoxItemForegroundDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-400}" />
+          <SolidColorBrush x:Key="ComboBoxItemBackgroundSelectedDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-700}" />
+          <SolidColorBrush x:Key="ComboBoxItemBorderBrushSelectedDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-600}" />
+          <SolidColorBrush x:Key="ComboBoxItemForegroundSelectedDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-400}" />
+
+          <!-- CheckBox label and indicator. -->
+          <SolidColorBrush x:Key="CheckBoxBackgroundUnchecked" Color="Transparent" />
+          <SolidColorBrush x:Key="CheckBoxBorderBrushUnchecked" Color="Transparent" />
+          <SolidColorBrush x:Key="CheckBoxForegroundUnchecked"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="CheckBoxBackgroundUncheckedPointerOver" Color="Transparent" />
+          <SolidColorBrush x:Key="CheckBoxBorderBrushUncheckedPointerOver" Color="Transparent" />
+          <SolidColorBrush x:Key="CheckBoxForegroundUncheckedPointerOver"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="CheckBoxBackgroundUncheckedPressed" Color="Transparent" />
+          <SolidColorBrush x:Key="CheckBoxBorderBrushUncheckedPressed" Color="Transparent" />
+          <SolidColorBrush x:Key="CheckBoxForegroundUncheckedPressed"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="CheckBoxBackgroundUncheckedDisabled" Color="Transparent" />
+          <SolidColorBrush x:Key="CheckBoxBorderBrushUncheckedDisabled" Color="Transparent" />
+          <SolidColorBrush x:Key="CheckBoxForegroundUncheckedDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-400}" />
+          <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillUnchecked"
+                           Color="{DynamicResource ThemeBackgroundColor-700}" />
+          <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeUnchecked"
+                           Color="{DynamicResource ThemeSelectionControlOutlineColor}" />
+          <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillUncheckedPointerOver"
+                           Color="{DynamicResource ThemeBackgroundColor-600}" />
+          <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeUncheckedPointerOver"
+                           Color="{DynamicResource ThemeSelectionControlOutlineHoverColor}" />
+          <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillUncheckedPressed"
+                           Color="{DynamicResource ThemeBackgroundColor-900}" />
+          <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeUncheckedPressed"
+                           Color="{DynamicResource ThemeSelectionControlOutlineHoverColor}" />
+          <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillUncheckedDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-700}" />
+          <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeUncheckedDisabled"
+                           Color="{DynamicResource ThemeSelectionControlOutlineDisabledColor}" />
+          <SolidColorBrush x:Key="CheckBoxCheckGlyphForegroundUnchecked"
+                           Color="{DynamicResource ThemeWhite}" />
+          <SolidColorBrush x:Key="CheckBoxCheckGlyphForegroundUncheckedPointerOver"
+                           Color="{DynamicResource ThemeWhite}" />
+          <SolidColorBrush x:Key="CheckBoxCheckGlyphForegroundUncheckedPressed"
+                           Color="{DynamicResource ThemeWhite}" />
+          <SolidColorBrush x:Key="CheckBoxCheckGlyphForegroundUncheckedDisabled"
+                           Color="{DynamicResource ThemeWhite}" />
+
+          <SolidColorBrush x:Key="CheckBoxBackgroundChecked" Color="Transparent" />
+          <SolidColorBrush x:Key="CheckBoxBorderBrushChecked" Color="Transparent" />
+          <SolidColorBrush x:Key="CheckBoxForegroundChecked"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="CheckBoxBackgroundCheckedPointerOver" Color="Transparent" />
+          <SolidColorBrush x:Key="CheckBoxBorderBrushCheckedPointerOver" Color="Transparent" />
+          <SolidColorBrush x:Key="CheckBoxForegroundCheckedPointerOver"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="CheckBoxBackgroundCheckedPressed" Color="Transparent" />
+          <SolidColorBrush x:Key="CheckBoxBorderBrushCheckedPressed" Color="Transparent" />
+          <SolidColorBrush x:Key="CheckBoxForegroundCheckedPressed"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="CheckBoxBackgroundCheckedDisabled" Color="Transparent" />
+          <SolidColorBrush x:Key="CheckBoxBorderBrushCheckedDisabled" Color="Transparent" />
+          <SolidColorBrush x:Key="CheckBoxForegroundCheckedDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-400}" />
+          <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillChecked"
+                           Color="{DynamicResource ThemePrimaryColor}" />
+          <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeChecked"
+                           Color="{DynamicResource ThemePrimaryColor}" />
+          <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillCheckedPointerOver"
+                           Color="{DynamicResource ThemePrimaryColorTint20}" />
+          <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeCheckedPointerOver"
+                           Color="{DynamicResource ThemePrimaryColorTint20}" />
+          <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillCheckedPressed"
+                           Color="{DynamicResource ThemePrimaryColorShade10}" />
+          <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeCheckedPressed"
+                           Color="{DynamicResource ThemePrimaryColorShade10}" />
+          <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillCheckedDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-400}" />
+          <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeCheckedDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-400}" />
+          <SolidColorBrush x:Key="CheckBoxCheckGlyphForegroundChecked"
+                           Color="{DynamicResource ThemeWhite}" />
+          <SolidColorBrush x:Key="CheckBoxCheckGlyphForegroundCheckedPointerOver"
+                           Color="{DynamicResource ThemeWhite}" />
+          <SolidColorBrush x:Key="CheckBoxCheckGlyphForegroundCheckedPressed"
+                           Color="{DynamicResource ThemeWhite}" />
+          <SolidColorBrush x:Key="CheckBoxCheckGlyphForegroundCheckedDisabled"
+                           Color="{DynamicResource ThemeWhite}" />
+
+          <SolidColorBrush x:Key="CheckBoxBackgroundIndeterminate" Color="Transparent" />
+          <SolidColorBrush x:Key="CheckBoxBorderBrushIndeterminate" Color="Transparent" />
+          <SolidColorBrush x:Key="CheckBoxForegroundIndeterminate"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="CheckBoxBackgroundIndeterminatePointerOver" Color="Transparent" />
+          <SolidColorBrush x:Key="CheckBoxBorderBrushIndeterminatePointerOver" Color="Transparent" />
+          <SolidColorBrush x:Key="CheckBoxForegroundIndeterminatePointerOver"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="CheckBoxBackgroundIndeterminatePressed" Color="Transparent" />
+          <SolidColorBrush x:Key="CheckBoxBorderBrushIndeterminatePressed" Color="Transparent" />
+          <SolidColorBrush x:Key="CheckBoxForegroundIndeterminatePressed"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="CheckBoxBackgroundIndeterminateDisabled" Color="Transparent" />
+          <SolidColorBrush x:Key="CheckBoxBorderBrushIndeterminateDisabled" Color="Transparent" />
+          <SolidColorBrush x:Key="CheckBoxForegroundIndeterminateDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-400}" />
+          <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillIndeterminate"
+                           Color="{DynamicResource ThemePrimaryColor}" />
+          <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeIndeterminate"
+                           Color="{DynamicResource ThemePrimaryColor}" />
+          <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillIndeterminatePointerOver"
+                           Color="{DynamicResource ThemePrimaryColorTint20}" />
+          <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeIndeterminatePointerOver"
+                           Color="{DynamicResource ThemePrimaryColorTint20}" />
+          <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillIndeterminatePressed"
+                           Color="{DynamicResource ThemePrimaryColorShade10}" />
+          <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeIndeterminatePressed"
+                           Color="{DynamicResource ThemePrimaryColorShade10}" />
+          <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillIndeterminateDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-400}" />
+          <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeIndeterminateDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-400}" />
+          <SolidColorBrush x:Key="CheckBoxCheckGlyphForegroundIndeterminate"
+                           Color="{DynamicResource ThemeWhite}" />
+          <SolidColorBrush x:Key="CheckBoxCheckGlyphForegroundIndeterminatePointerOver"
+                           Color="{DynamicResource ThemeWhite}" />
+          <SolidColorBrush x:Key="CheckBoxCheckGlyphForegroundIndeterminatePressed"
+                           Color="{DynamicResource ThemeWhite}" />
+          <SolidColorBrush x:Key="CheckBoxCheckGlyphForegroundIndeterminateDisabled"
+                           Color="{DynamicResource ThemeWhite}" />
+
+          <!-- RadioButton label and indicator. -->
+          <SolidColorBrush x:Key="RadioButtonBackground" Color="Transparent" />
+          <SolidColorBrush x:Key="RadioButtonBorderBrush" Color="Transparent" />
+          <SolidColorBrush x:Key="RadioButtonForeground"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="RadioButtonBackgroundPointerOver" Color="Transparent" />
+          <SolidColorBrush x:Key="RadioButtonBorderBrushPointerOver" Color="Transparent" />
+          <SolidColorBrush x:Key="RadioButtonForegroundPointerOver"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="RadioButtonBackgroundPressed" Color="Transparent" />
+          <SolidColorBrush x:Key="RadioButtonBorderBrushPressed" Color="Transparent" />
+          <SolidColorBrush x:Key="RadioButtonForegroundPressed"
+                           Color="{DynamicResource ThemeForegroundColor}" />
+          <SolidColorBrush x:Key="RadioButtonBackgroundDisabled" Color="Transparent" />
+          <SolidColorBrush x:Key="RadioButtonBorderBrushDisabled" Color="Transparent" />
+          <SolidColorBrush x:Key="RadioButtonForegroundDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-400}" />
+          <SolidColorBrush x:Key="RadioButtonOuterEllipseFill"
+                           Color="{DynamicResource ThemeBackgroundColor-700}" />
+          <SolidColorBrush x:Key="RadioButtonOuterEllipseStroke"
+                           Color="{DynamicResource ThemeSelectionControlOutlineColor}" />
+          <SolidColorBrush x:Key="RadioButtonOuterEllipseFillPointerOver"
+                           Color="{DynamicResource ThemeBackgroundColor-600}" />
+          <SolidColorBrush x:Key="RadioButtonOuterEllipseStrokePointerOver"
+                           Color="{DynamicResource ThemeSelectionControlOutlineHoverColor}" />
+          <SolidColorBrush x:Key="RadioButtonOuterEllipseFillPressed"
+                           Color="{DynamicResource ThemeBackgroundColor-900}" />
+          <SolidColorBrush x:Key="RadioButtonOuterEllipseStrokePressed"
+                           Color="{DynamicResource ThemeSelectionControlOutlineHoverColor}" />
+          <SolidColorBrush x:Key="RadioButtonOuterEllipseFillDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-700}" />
+          <SolidColorBrush x:Key="RadioButtonOuterEllipseStrokeDisabled"
+                           Color="{DynamicResource ThemeSelectionControlOutlineDisabledColor}" />
+          <SolidColorBrush x:Key="RadioButtonOuterEllipseCheckedFill"
+                           Color="{DynamicResource ThemePrimaryColor}" />
+          <SolidColorBrush x:Key="RadioButtonOuterEllipseCheckedStroke"
+                           Color="{DynamicResource ThemePrimaryColor}" />
+          <SolidColorBrush x:Key="RadioButtonOuterEllipseCheckedFillPointerOver"
+                           Color="{DynamicResource ThemePrimaryColorTint20}" />
+          <SolidColorBrush x:Key="RadioButtonOuterEllipseCheckedStrokePointerOver"
+                           Color="{DynamicResource ThemePrimaryColorTint20}" />
+          <SolidColorBrush x:Key="RadioButtonOuterEllipseCheckedFillPressed"
+                           Color="{DynamicResource ThemePrimaryColorShade10}" />
+          <SolidColorBrush x:Key="RadioButtonOuterEllipseCheckedStrokePressed"
+                           Color="{DynamicResource ThemePrimaryColorShade10}" />
+          <SolidColorBrush x:Key="RadioButtonOuterEllipseCheckedFillDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-400}" />
+          <SolidColorBrush x:Key="RadioButtonOuterEllipseCheckedStrokeDisabled"
+                           Color="{DynamicResource ThemeBackgroundColor-400}" />
+          <SolidColorBrush x:Key="RadioButtonCheckGlyphFill"
+                           Color="{DynamicResource ThemeWhite}" />
+          <SolidColorBrush x:Key="RadioButtonCheckGlyphStroke" Color="Transparent" />
+          <SolidColorBrush x:Key="RadioButtonCheckGlyphFillPointerOver"
+                           Color="{DynamicResource ThemeWhite}" />
+          <SolidColorBrush x:Key="RadioButtonCheckGlyphStrokePointerOver" Color="Transparent" />
+          <SolidColorBrush x:Key="RadioButtonCheckGlyphFillPressed"
+                           Color="{DynamicResource ThemeWhite}" />
+          <SolidColorBrush x:Key="RadioButtonCheckGlyphStrokePressed" Color="Transparent" />
+          <SolidColorBrush x:Key="RadioButtonCheckGlyphFillDisabled"
+                           Color="{DynamicResource ThemeWhite}" />
+          <SolidColorBrush x:Key="RadioButtonCheckGlyphStrokeDisabled" Color="Transparent" />
+        </ResourceDictionary>
+      </ResourceDictionary.ThemeDictionaries>
+    </ResourceDictionary>
+  </Styles.Resources>
+</Styles>

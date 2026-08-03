@@ -18,13 +18,13 @@
                            Classes="ONE-H0-Bold"
                            TextAlignment="Left"
                            TextWrapping="Wrap"
-                           Foreground="White"
+                           Foreground="{DynamicResource OneTextOnAccentBrush}"
                            IsVisible="{Binding HeaderText, RelativeSource={RelativeSource AncestorType=local:ColorBandView}, Converter={StaticResource StringNotEmptyConverter}}" />
                 <TextBlock Text="{Binding BodyText, RelativeSource={RelativeSource AncestorType=local:ColorBandView}}"
                            Classes="ONE-Paragraph-Bold"
                            TextAlignment="Left"
                            TextWrapping="Wrap"
-                           Foreground="White"
+                           Foreground="{DynamicResource OneTextOnAccentBrush}"
                            Opacity="0.85"
                            IsVisible="{Binding BodyText, RelativeSource={RelativeSource AncestorType=local:ColorBandView}, Converter={StaticResource StringNotEmptyConverter}}" />
             </StackPanel>

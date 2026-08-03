@@ -1,0 +1,346 @@
+<Styles xmlns="https://github.com/avaloniaui">
+  <Style Selector="TextBlock:disabled">
+    <Setter Property="Foreground" Value="{DynamicResource OneTextDisabledBrush}" />
+  </Style>
+
+  <Style Selector="ProgressBar">
+    <Setter Property="Background" Value="{DynamicResource OneProgressTrackBrush}" />
+    <Setter Property="Foreground" Value="{DynamicResource PrimaryColor}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource OneControlBorderBrush}" />
+  </Style>
+
+  <Style Selector="TextBox">
+    <Setter Property="Background" Value="{DynamicResource OneControlBackgroundBrush}" />
+    <Setter Property="Foreground" Value="{DynamicResource OneTextPrimaryBrush}" />
+    <Setter Property="CaretBrush" Value="{DynamicResource OneTextPrimaryBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource OneEditorBorderBrush}" />
+    <Setter Property="BorderThickness" Value="1" />
+    <Setter Property="FontFamily" Value="{DynamicResource DefaultFont}" />
+    <Setter Property="CornerRadius" Value="{StaticResource DefaultCornerRadius}" />
+  </Style>
+  <Style Selector="TextBox:pointerover">
+    <Setter Property="Background" Value="{DynamicResource OneEditorBackgroundHoverBrush}" />
+    <Setter Property="Foreground" Value="{DynamicResource OneTextPrimaryBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource OneEditorBorderHoverBrush}" />
+  </Style>
+  <Style Selector="TextBox:focus">
+    <Setter Property="Background" Value="{DynamicResource OneEditorBackgroundFocusBrush}" />
+    <Setter Property="Foreground" Value="{DynamicResource OneTextPrimaryBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource PrimaryColorTint20}" />
+  </Style>
+  <Style Selector="TextBox:read-only, TextBox[IsReadOnly=True]">
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="Foreground" Value="{DynamicResource OneTextPrimaryBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource ForegroundColor-10}" />
+    <Setter Property="Focusable" Value="False" />
+  </Style>
+  <Style Selector="TextBox:disabled">
+    <Setter Property="Background" Value="{DynamicResource OneControlBackgroundDisabledBrush}" />
+    <Setter Property="Foreground" Value="{DynamicResource OneTextDisabledBrush}" />
+    <Setter Property="CaretBrush" Value="{DynamicResource OneTextDisabledBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource OneControlBorderBrush}" />
+  </Style>
+  <Style Selector="TextBox.Medium">
+    <Setter Property="Height" Value="{StaticResource ThemeSize-Double}" />
+    <Setter Property="Padding" Value="6,0" />
+    <Setter Property="FontSize" Value="{StaticResource ThemeSize-Regular}" />
+    <Setter Property="VerticalContentAlignment" Value="Center" />
+  </Style>
+  <Style Selector="TextBox.Large">
+    <Setter Property="Height" Value="{StaticResource ThemeSize-Large}" />
+    <Setter Property="Padding" Value="8,0" />
+    <Setter Property="FontSize" Value="{StaticResource ThemeSize-Medium}" />
+    <Setter Property="VerticalContentAlignment" Value="Center" />
+  </Style>
+
+  <Style Selector="ComboBox">
+    <Setter Property="Background" Value="{DynamicResource OneControlBackgroundBrush}" />
+    <Setter Property="Foreground" Value="{DynamicResource OneTextPrimaryBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource OneEditorBorderBrush}" />
+    <Setter Property="BorderThickness" Value="1" />
+    <Setter Property="FontFamily" Value="{DynamicResource DefaultFont}" />
+    <Setter Property="CornerRadius" Value="{StaticResource DefaultCornerRadius}" />
+  </Style>
+  <Style Selector="ComboBox:pointerover">
+    <Setter Property="Background" Value="{DynamicResource OneEditorBackgroundHoverBrush}" />
+    <Setter Property="Foreground" Value="{DynamicResource OneTextPrimaryBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource OneEditorBorderHoverBrush}" />
+  </Style>
+  <Style Selector="ComboBox:focus, ComboBox:dropdownopen">
+    <Setter Property="Background" Value="{DynamicResource OneEditorBackgroundFocusBrush}" />
+    <Setter Property="Foreground" Value="{DynamicResource OneTextPrimaryBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource PrimaryColorTint20}" />
+  </Style>
+  <Style Selector="ComboBox:disabled">
+    <Setter Property="Background" Value="{DynamicResource OneControlBackgroundDisabledBrush}" />
+    <Setter Property="Foreground" Value="{DynamicResource OneTextDisabledBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource OneControlBorderBrush}" />
+  </Style>
+  <Style Selector="ComboBox.Medium">
+    <Setter Property="Height" Value="{StaticResource ThemeSize-Double}" />
+    <Setter Property="Padding" Value="6,0,6,1" />
+    <Setter Property="FontSize" Value="{StaticResource ThemeSize-Regular}" />
+  </Style>
+  <Style Selector="ComboBox.Large">
+    <Setter Property="Height" Value="{StaticResource ThemeSize-Large}" />
+    <Setter Property="Padding" Value="8,0,8,2" />
+    <Setter Property="FontSize" Value="{StaticResource ThemeSize-Medium}" />
+  </Style>
+  <Style Selector="ComboBoxItem">
+    <Setter Property="FontFamily" Value="{DynamicResource DefaultFont}" />
+    <Setter Property="Foreground" Value="{DynamicResource OneTextPrimaryBrush}" />
+  </Style>
+
+  <Style Selector="CheckBox, RadioButton">
+    <Setter Property="Foreground" Value="{DynamicResource OneTextPrimaryBrush}" />
+    <Setter Property="FontFamily" Value="{DynamicResource DefaultFont}" />
+  </Style>
+  <Style Selector="CheckBox.Medium, RadioButton.Medium">
+    <Setter Property="FontSize" Value="{StaticResource ThemeSize-Regular}" />
+  </Style>
+  <Style Selector="CheckBox.Large, RadioButton.Large">
+    <Setter Property="FontSize" Value="{StaticResource ThemeSize-Medium}" />
+  </Style>
+
+  <Style Selector="ListBoxItem">
+    <Setter Property="CornerRadius" Value="{StaticResource DefaultCornerRadius}" />
+    <Setter Property="FontFamily" Value="{DynamicResource DefaultFont}" />
+    <Setter Property="Foreground" Value="{DynamicResource OneTextPrimaryBrush}" />
+    <Setter Property="Padding" Value="{StaticResource ThemePadding-Min}" />
+  </Style>
+  <Style Selector="ListBoxItem:pointerover /template/ ContentPresenter">
+    <Setter Property="Background" Value="{DynamicResource OneControlBackgroundHoverBrush}" />
+    <Setter Property="Foreground" Value="{DynamicResource OneTextPrimaryBrush}" />
+  </Style>
+  <Style Selector="ListBoxItem:selected /template/ ContentPresenter">
+    <Setter Property="Background" Value="{DynamicResource PrimaryColor-40}" />
+    <Setter Property="Foreground" Value="{DynamicResource OneTextPrimaryBrush}" />
+  </Style>
+  <Style Selector="ListBoxItem:disabled /template/ ContentPresenter">
+    <Setter Property="Foreground" Value="{DynamicResource OneTextDisabledBrush}" />
+  </Style>
+
+  <Style Selector="Button.Empty">
+    <Setter Property="Padding" Value="0" />
+    <Setter Property="Margin" Value="0" />
+    <Setter Property="Cursor" Value="Hand" />
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="BorderThickness" Value="0" />
+  </Style>
+  <Style Selector="Button.IconOnlyLarge, ToggleButton.IconOnlyLarge">
+    <Setter Property="Width" Value="{StaticResource ThemeSize-Large}" />
+    <Setter Property="Height" Value="{StaticResource ThemeSize-Large}" />
+    <Setter Property="Padding" Value="0" />
+    <Setter Property="CornerRadius" Value="{StaticResource DefaultCornerRadius}" />
+    <Setter Property="HorizontalContentAlignment" Value="Center" />
+    <Setter Property="VerticalContentAlignment" Value="Center" />
+  </Style>
+  <Style Selector="Button.IconOnlyMedium, ToggleButton.IconOnlyMedium">
+    <Setter Property="Width" Value="{StaticResource ThemeSize-Double}" />
+    <Setter Property="Height" Value="{StaticResource ThemeSize-Double}" />
+    <Setter Property="Padding" Value="0" />
+    <Setter Property="CornerRadius" Value="{StaticResource DefaultCornerRadius}" />
+    <Setter Property="HorizontalContentAlignment" Value="Center" />
+    <Setter Property="VerticalContentAlignment" Value="Center" />
+  </Style>
+  <Style Selector="Button.IconOnlyLarge /template/ ContentPresenter#PART_ContentPresenter,
+                   Button.IconOnlyMedium /template/ ContentPresenter#PART_ContentPresenter,
+                   ToggleButton.IconOnlyLarge /template/ ContentPresenter#PART_ContentPresenter,
+                   ToggleButton.IconOnlyMedium /template/ ContentPresenter#PART_ContentPresenter">
+    <Setter Property="Padding" Value="0" />
+    <Setter Property="HorizontalAlignment" Value="Stretch" />
+    <Setter Property="VerticalAlignment" Value="Stretch" />
+    <Setter Property="HorizontalContentAlignment" Value="Center" />
+    <Setter Property="VerticalContentAlignment" Value="Center" />
+  </Style>
+  <Style Selector="Button.Medium">
+    <Setter Property="Padding" Value="16,6" />
+    <Setter Property="MinHeight" Value="{StaticResource ThemeSize-Double}" />
+    <Setter Property="CornerRadius" Value="{StaticResource DefaultCornerRadius}" />
+    <Setter Property="HorizontalContentAlignment" Value="Center" />
+    <Setter Property="VerticalContentAlignment" Value="Center" />
+    <Setter Property="FontFamily" Value="{DynamicResource DefaultFont}" />
+    <Setter Property="FontSize" Value="{StaticResource ThemeSize-Regular}" />
+    <Setter Property="FontWeight" Value="Bold" />
+  </Style>
+  <Style Selector="Button.Large">
+    <Setter Property="Height" Value="{StaticResource ThemeSize-Large}" />
+    <Setter Property="CornerRadius" Value="{StaticResource LargeCornerRadius}" />
+    <!-- Inter's visual baseline sits slightly below its geometric center. -->
+    <Setter Property="Padding" Value="16,0,16,2" />
+    <Setter Property="HorizontalContentAlignment" Value="Center" />
+    <Setter Property="VerticalContentAlignment" Value="Center" />
+    <Setter Property="FontFamily" Value="{DynamicResource DefaultFont}" />
+    <Setter Property="FontSize" Value="14" />
+    <Setter Property="FontWeight" Value="Bold" />
+  </Style>
+
+  <Style Selector="Button.Primary">
+    <Setter Property="Background" Value="{DynamicResource PrimaryColor}" />
+    <Setter Property="Foreground" Value="{DynamicResource OneTextOnAccentBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource PrimaryColor}" />
+    <Setter Property="BorderThickness" Value="1" />
+  </Style>
+  <Style Selector="Button.Primary TextBlock">
+    <Setter Property="Foreground" Value="{DynamicResource OneTextOnAccentBrush}" />
+  </Style>
+  <Style Selector="Button.Primary Path">
+    <Setter Property="Fill" Value="{DynamicResource OneTextOnAccentBrush}" />
+  </Style>
+  <Style Selector="Button.Primary:pointerover">
+    <Setter Property="Background" Value="{DynamicResource PrimaryColorTint20}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource PrimaryColorTint20}" />
+  </Style>
+  <Style Selector="Button.Primary:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+    <Setter Property="Background" Value="{DynamicResource PrimaryColorTint20}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource PrimaryColorTint20}" />
+    <Setter Property="Foreground" Value="{DynamicResource OneTextOnAccentBrush}" />
+  </Style>
+  <Style Selector="Button.Primary:focus">
+    <Setter Property="Background" Value="{DynamicResource PrimaryColorTint10}" />
+  </Style>
+  <Style Selector="Button.Primary:pressed">
+    <Setter Property="Background" Value="{DynamicResource PrimaryColorShade10}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource PrimaryColorShade10}" />
+  </Style>
+  <Style Selector="Button.Primary:pressed /template/ ContentPresenter#PART_ContentPresenter">
+    <Setter Property="Background" Value="{DynamicResource PrimaryColorShade10}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource PrimaryColorShade10}" />
+    <Setter Property="Foreground" Value="{DynamicResource OneTextOnAccentBrush}" />
+  </Style>
+
+  <Style Selector="Button.Secondary">
+    <Setter Property="Background" Value="{DynamicResource OneControlBackgroundBrush}" />
+    <Setter Property="Foreground" Value="{DynamicResource OneTextPrimaryBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource OneControlBorderBrush}" />
+    <Setter Property="BorderThickness" Value="1" />
+  </Style>
+  <Style Selector="Button.Secondary:pointerover">
+    <Setter Property="Background" Value="{DynamicResource OneControlBackgroundHoverBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource OneControlBackgroundHoverBrush}" />
+  </Style>
+  <Style Selector="Button.Secondary:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+    <Setter Property="Background" Value="{DynamicResource OneControlBackgroundHoverBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource OneControlBackgroundHoverBrush}" />
+    <Setter Property="Foreground" Value="{DynamicResource OneTextPrimaryBrush}" />
+  </Style>
+  <Style Selector="Button.Secondary:focus">
+    <Setter Property="Background" Value="{DynamicResource OneControlBackgroundFocusBrush}" />
+    <Setter Property="Foreground" Value="{DynamicResource OneTextPrimaryBrush}" />
+  </Style>
+  <Style Selector="Button.Secondary:pressed">
+    <Setter Property="Background" Value="{DynamicResource OneControlBackgroundPressedBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource OneControlBorderBrush}" />
+  </Style>
+  <Style Selector="Button.Secondary:pressed /template/ ContentPresenter#PART_ContentPresenter">
+    <Setter Property="Background" Value="{DynamicResource OneControlBackgroundPressedBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource OneControlBorderBrush}" />
+    <Setter Property="Foreground" Value="{DynamicResource OneTextPrimaryBrush}" />
+  </Style>
+
+  <Style Selector="Button.Subtle">
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="Foreground" Value="{DynamicResource OneTextPrimaryBrush}" />
+    <Setter Property="BorderBrush" Value="Transparent" />
+    <Setter Property="BorderThickness" Value="1" />
+  </Style>
+  <Style Selector="Button.Subtle:focus">
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="BorderBrush" Value="Transparent" />
+  </Style>
+  <Style Selector="Button.Subtle:focus /template/ ContentPresenter#PART_ContentPresenter">
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="BorderBrush" Value="Transparent" />
+  </Style>
+  <Style Selector="Button.Subtle:pointerover">
+    <Setter Property="Background" Value="{DynamicResource OneSubtleBackgroundHoverBrush}" />
+    <Setter Property="BorderBrush" Value="Transparent" />
+  </Style>
+  <Style Selector="Button.Subtle:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="BorderBrush" Value="Transparent" />
+    <Setter Property="Foreground" Value="{DynamicResource OneTextPrimaryBrush}" />
+  </Style>
+  <Style Selector="Button.Subtle:pressed">
+    <Setter Property="Background" Value="{DynamicResource OneSubtleBackgroundPressedBrush}" />
+    <Setter Property="BorderBrush" Value="Transparent" />
+  </Style>
+  <Style Selector="Button.Subtle:pressed /template/ ContentPresenter#PART_ContentPresenter">
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="BorderBrush" Value="Transparent" />
+    <Setter Property="Foreground" Value="{DynamicResource OneTextPrimaryBrush}" />
+  </Style>
+  <Style Selector="Button.Secondary TextBlock, Button.Subtle TextBlock">
+    <Setter Property="Foreground" Value="{DynamicResource OneTextPrimaryBrush}" />
+  </Style>
+  <Style Selector="Button.Secondary Path, Button.Subtle Path">
+    <Setter Property="Fill" Value="{DynamicResource OneTextPrimaryBrush}" />
+  </Style>
+  <Style Selector="Button.Secondary:pointerover TextBlock, Button.Secondary:pressed TextBlock,
+                   Button.Subtle:pointerover TextBlock, Button.Subtle:pressed TextBlock">
+    <Setter Property="Foreground" Value="{DynamicResource OneTextPrimaryBrush}" />
+  </Style>
+  <Style Selector="Button.Secondary:pointerover Path, Button.Secondary:pressed Path,
+                   Button.Subtle:pointerover Path, Button.Subtle:pressed Path">
+    <Setter Property="Fill" Value="{DynamicResource OneTextPrimaryBrush}" />
+  </Style>
+  <Style Selector="Button.Subtle:pointerover Path">
+    <Setter Property="Fill" Value="{DynamicResource OneTextPrimaryBrush}" />
+  </Style>
+  <Style Selector="Button.Subtle:pressed Path">
+    <Setter Property="Fill" Value="{DynamicResource OneTextPrimaryBrush}" />
+  </Style>
+  <Style Selector="Button.Subtle:pointerover TextBlock">
+    <Setter Property="Foreground" Value="{DynamicResource OneTextPrimaryBrush}" />
+  </Style>
+  <Style Selector="Button.Subtle:pressed TextBlock">
+    <Setter Property="Foreground" Value="{DynamicResource OneTextPrimaryBrush}" />
+  </Style>
+
+  <Style Selector="Button.Danger">
+    <Setter Property="Background" Value="{DynamicResource OneDangerBackgroundBrush}" />
+    <Setter Property="Foreground" Value="{DynamicResource OneTextOnAccentBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource OneDangerBackgroundBrush}" />
+    <Setter Property="BorderThickness" Value="1" />
+  </Style>
+  <Style Selector="Button.Danger TextBlock">
+    <Setter Property="Foreground" Value="{DynamicResource OneTextOnAccentBrush}" />
+  </Style>
+  <Style Selector="Button.Danger Path">
+    <Setter Property="Fill" Value="{DynamicResource OneTextOnAccentBrush}" />
+  </Style>
+  <Style Selector="Button.Danger:pointerover">
+    <Setter Property="Background" Value="{DynamicResource OneDangerBackgroundHoverBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource OneDangerBackgroundHoverBrush}" />
+  </Style>
+  <Style Selector="Button.Danger:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="Foreground" Value="{DynamicResource OneTextOnAccentBrush}" />
+  </Style>
+  <Style Selector="Button.Danger:pressed">
+    <Setter Property="Background" Value="{DynamicResource OneDangerBackgroundPressedBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource OneDangerBackgroundPressedBrush}" />
+  </Style>
+  <Style Selector="Button.Danger:pressed /template/ ContentPresenter#PART_ContentPresenter">
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="Foreground" Value="{DynamicResource OneTextOnAccentBrush}" />
+  </Style>
+
+  <Style Selector="Button Path">
+    <Setter Property="Fill" Value="{DynamicResource OneTextPrimaryBrush}" />
+  </Style>
+  <Style Selector="Button:disabled">
+    <Setter Property="Foreground" Value="{DynamicResource OneTextDisabledBrush}" />
+  </Style>
+  <Style Selector="Button:disabled /template/ ContentPresenter#PART_ContentPresenter">
+    <Setter Property="Background" Value="{DynamicResource OneControlBackgroundDisabledBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource OneControlBorderBrush}" />
+    <Setter Property="Foreground" Value="{DynamicResource OneTextDisabledBrush}" />
+  </Style>
+  <Style Selector="Button:disabled TextBlock">
+    <Setter Property="Foreground" Value="{DynamicResource OneTextDisabledBrush}" />
+  </Style>
+  <Style Selector="Button:disabled Path">
+    <Setter Property="Fill" Value="{DynamicResource OneTextDisabledBrush}" />
+  </Style>
+</Styles>

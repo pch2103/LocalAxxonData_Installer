@@ -15,9 +15,9 @@
                                    Classes="ONE-H3-Regular"
                                    HorizontalAlignment="Center" />
                         <ProgressBar x:Name="ProgressBarControl" Minimum="0" Maximum="100" Height="30"
-                                     Foreground="{StaticResource PrimaryColor}" />
+                                     Foreground="{DynamicResource PrimaryColor}" />
                         <TextBlock x:Name="PercentText" Text="0%"
-                                   Classes="ONE-H3-Bold" Foreground="{StaticResource ForegroundColor}"
+                                   Classes="ONE-H3-Bold" Foreground="{DynamicResource OneTextPrimaryBrush}"
                                    HorizontalAlignment="Center" />
                     </StackPanel>
                 </Grid>

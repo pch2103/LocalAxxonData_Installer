@@ -1,6 +1,6 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:LocalAxxonData_Installer.Views"
+             xmlns:one="using:ONE.PSIM.DesignSystem.Controls"
              Width="700"
              x:Class="LocalAxxonData_Installer.Views.WelcomePage">
     <Grid RowDefinitions="*,Auto">
@@ -16,17 +16,11 @@
                                        Classes="ONE-H2-Bold" />
                             <TextBlock x:Name="DescText"
                                        TextWrapping="Wrap" Classes="ONE-H3-Regular" />
-                            <Border Classes="warning-block" Padding="8">
-                                <StackPanel Spacing="4">
-                                    <TextBlock x:Name="WarningHeadingText"
-                                               Classes="ONE-Paragraph-Bold" Foreground="{StaticResource OrangeColor}" />
-                                    <TextBlock x:Name="WarningBodyText"
-                                               TextWrapping="Wrap" Classes="ONE-H3-Regular" />
-                                </StackPanel>
-                            </Border>
+                            <one:MessageBlock x:Name="WarningBlock"
+                                              Severity="Warning" />
                         </StackPanel>
                     </ScrollViewer>
-                    <local:MessageBlockView x:Name="InfoBlock" Grid.Row="1" />
+                    <one:MessageBlock x:Name="InfoBlock" Grid.Row="1" />
                 </Grid>
             </Grid>
         </Border>

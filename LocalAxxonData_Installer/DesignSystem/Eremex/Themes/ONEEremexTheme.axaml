@@ -1,0 +1,12 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:theme="clr-namespace:Eremex.AvaloniaUI.Themes.DeltaDesign;assembly=Eremex.Avalonia.Themes.DeltaDesign">
+  <!-- Keep this order aligned with docs/EREMEX-INTEGRATION.md. -->
+  <theme:DeltaDesignTheme />
+  <StyleInclude Source="/DesignSystem/Core/Themes/ONEFoundations.axaml" />
+  <StyleInclude Source="/DesignSystem/Core/Styles/Controls.axaml" />
+  <StyleInclude Source="/DesignSystem/Eremex/Styles/EremexResourceIncludes.axaml" />
+  <StyleInclude Source="/DesignSystem/Eremex/Styles/Controls.axaml" />
+  <StyleInclude Source="/DesignSystem/Eremex/Styles/TreeList.axaml" />
+  <StyleInclude Source="/DesignSystem/Eremex/Styles/Layout.axaml" />
+  <StyleInclude Source="/DesignSystem/Core/Styles/Components.axaml" />
+</Styles>

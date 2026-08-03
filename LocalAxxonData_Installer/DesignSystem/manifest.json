@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "designSystemVersion": "0.1.0-preview.25",
+  "bundle": "Eremex",
+  "avaloniaVersion": "11.3.8",
+  "eremexVersion": "1.3.62",
+  "installDirectory": "DesignSystem",
+  "files": [
+    {
+      "path": "Core/Controls/MessageBlock.cs",
+      "sha256": "3ac468d3194fb5da0419a03a88750b33f2d935240d6698e64c3208ee4d855304"
+    },
+    {
+      "path": "Core/Controls/PasswordBoxAssist.cs",
+      "sha256": "b33934ea88924cae31e50e7fa328cc2135bc6a24354a8afce15cc462b00da42d"
+    },
+    {
+      "path": "Core/Controls/ThemeToggleButton.cs",
+      "sha256": "a5b07208e8a9677e68265096751ca6309f177eccb13995c9d474f12be0e95e72"
+    },
+    {
+      "path": "Core/Styles/Brushes.axaml",
+      "sha256": "443c240cddbad59c4e058c019dac54bc629e6526d4e230f36cac6523d9bf0f55"
+    },
+    {
+      "path": "Core/Styles/Colors.axaml",
+      "sha256": "60cc128758d67ce312bc901b1b401ae22d275722817ad7f38035025614c58721"
+    },
+    {
+      "path": "Core/Styles/Components.axaml",
+      "sha256": "554136a153a6e364e84901efb180a05e20a54f66247014d7dd4381b487d5e289"
+    },
+    {
+      "path": "Core/Styles/Controls.axaml",
+      "sha256": "2b9eb5aea21eb3c442a99f0a2cb6e3ab08bf8e431193bcb5efa4d22354413817"
+    },
+    {
+      "path": "Core/Styles/FluentThemeOverrides.axaml",
+      "sha256": "c96d9e01ff8b80a26cdd4c4b4e9d022f3b04f5695dd9098dc5a093aee26803f6"
+    },
+    {
+      "path": "Core/Styles/Iconography.axaml",
+      "sha256": "a1cde082f89befb3db0f016c1caef815a3f4b87f2657be004a024217635f22c3"
+    },
+    {
+      "path": "Core/Styles/Layout.axaml",
+      "sha256": "27f0b1d31b12ac5b80eedc573a5bd53098a9e66b31e8895268f5f78baeb7463d"
+    },
+    {
+      "path": "Core/Styles/Semantics.axaml",
+      "sha256": "2eac48a58baded7143490b271f481f26237717b94670c79bb795e48f25639e27"
+    },
+    {
+      "path": "Core/Styles/Typography.axaml",
+      "sha256": "1297cb31c53c7d8fbbbcc4d86e03ad41e1c71806428c9ad1d43b38fb8867633b"
+    },
+    {
+      "path": "Core/Themes/ONEFoundations.axaml",
+      "sha256": "820a4cc0537f92632b76eb72a45484e657ebe79b55574e928abc686c9aa07d68"
+    },
+    {
+      "path": "Core/Themes/ONETheme.axaml",
+      "sha256": "ca9c80124ea0ad756f730103ed5562637114a54f4e06f3423726a79157f76e8b"
+    },
+    {
+      "path": "Eremex/Behaviors/PasswordEditorAssist.cs",
+      "sha256": "1d226419d16466c340fe1125ad15c278c87253b8e9efee74a8d5036b7d4ee7b7"
+    },
+    {
+      "path": "Eremex/Resources/ModifiedResources.axaml",
+      "sha256": "da76482cadb047b90f4faec498781e017f995d317375bbbc792ebd51fc349e85"
+    },
+    {
+      "path": "Eremex/Resources/ModifiedResourcesColor.axaml",
+      "sha256": "a9f218660620b0d26447b82d9af170d1cd20cf8cef7523c8771e0bae5f470200"
+    },
+    {
+      "path": "Eremex/Styles/Controls.axaml",
+      "sha256": "01941c9d4e3bb45f2612cc76f32d7aec0c1451bda9b8e025cf11f3d61124619e"
+    },
+    {
+      "path": "Eremex/Styles/EremexResourceIncludes.axaml",
+      "sha256": "4fe51b223eb48a6c8fb8ed88741c3bc6970953ce3b71039b3cb628657e90ddb7"
+    },
+    {
+      "path": "Eremex/Styles/Layout.axaml",
+      "sha256": "f0ade055d6da62e0472de72079fb2c8a3de98ee0a1cd0921bf1001829d55ac4c"
+    },
+    {
+      "path": "Eremex/Styles/TreeList.axaml",
+      "sha256": "df4029cae07a63713e5c7d3a55bd788e68950c1e441b3167bb855e5cd716fd5b"
+    },
+    {
+      "path": "Eremex/Themes/ONEEremexTheme.axaml",
+      "sha256": "da88825ec5e6ef4fff45c6ffac823fd8fb408411ba3608e7d94aa9e744a2256e"
+    },
+    {
+      "path": "README.md",
+      "sha256": "974941e3522941d3147afce61a1214733e816de3a98aca581fd0c1d397a04b52"
+    }
+  ]
+}

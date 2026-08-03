@@ -258,7 +258,7 @@
 
     <!-- Resources for ProgressBar.axaml -->
 
-    <StaticResource x:Key="ProgressBarForeground" ResourceKey="Fill/Accent/Primary/Pressed" />
+    <StaticResource x:Key="ProgressBarForeground" ResourceKey="Fill/Accent/Primary/Enabled" />
     <StaticResource x:Key="ProgressBarBackground" ResourceKey="Fill/Neutral/Secondary/Enabled" />
     <StaticResource x:Key="ProgressBarBorderBrush" ResourceKey="TransparentBrush" />
 
@@ -371,10 +371,10 @@
     <StaticResource x:Key="TextBoxForeground" ResourceKey="Text/Neutral/Primary" />
     <StaticResource x:Key="TextBoxBackground" ResourceKey="Fill/Neutral/Secondary/Enabled" />
     <StaticResource x:Key="TextBoxCaretBrush" ResourceKey="Text/Neutral/Primary" />
-    <StaticResource x:Key="TextBoxBorderBrush" ResourceKey="TransparentBrush" />
+    <StaticResource x:Key="TextBoxBorderBrush" ResourceKey="Outline/Neutral/Transparent/Medium" />
     <StaticResource x:Key="TextBoxSelectionBrush" ResourceKey="Fill/Accent/Highlighting/Text" />
     <StaticResource x:Key="EditorsErrorIconBrush" ResourceKey="Icons/Outline/Red" />
-    <StaticResource x:Key="TextBoxWatermarkBrush" ResourceKey="Text/Neutral/Tertiary" />
+    <StaticResource x:Key="TextBoxWatermarkBrush" ResourceKey="TextControlPlaceholderForeground" />
     <StaticResource x:Key="TextBoxSecondaryBackground" ResourceKey="Fill/Neutral/Primary/Enabled" />
     <StaticResource x:Key="TextBoxSecondaryBorderBrush" ResourceKey="Outline/Neutral/Transparent/Light" />
     <StaticResource x:Key="TextBoxForegroundDisabled" ResourceKey="Text/Neutral/Disabled" />
@@ -515,7 +515,7 @@
     <StaticResource x:Key="TextEditorBackground" ResourceKey="Fill/Neutral/Secondary/Enabled" />
     <StaticResource x:Key="TextEditorSecondaryBackground" ResourceKey="Fill/Neutral/Primary/Enabled" />
     <StaticResource x:Key="TextEditorBorderBrush" ResourceKey="Outline/Neutral/Transparent/Medium" />
-    <StaticResource x:Key="TextEditorReadOnlyForeground" ResourceKey="Text/Neutral/Disabled" />
+    <StaticResource x:Key="TextEditorReadOnlyForeground" ResourceKey="Text/Neutral/Primary" />
     <StaticResource x:Key="TextEditorForegroundDisabled" ResourceKey="Text/Neutral/Disabled" />
     <StaticResource x:Key="TextEditorActiveModeBackgroundDisabled" ResourceKey="Fill/Neutral/Secondary/Enabled" />
     <StaticResource x:Key="TextEditorFocusBorderBrush" ResourceKey="Outline/Accent/Focus" />
