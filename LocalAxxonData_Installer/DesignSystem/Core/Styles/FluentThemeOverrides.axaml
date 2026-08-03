@@ -109,9 +109,9 @@
           <SolidColorBrush x:Key="ComboBoxPlaceHolderForeground"
                            Color="{DynamicResource ThemeForegroundColor}" />
           <SolidColorBrush x:Key="ComboBoxBackgroundPointerOver"
-                           Color="{DynamicResource ThemeBackgroundColor-500}" />
+                           Color="{DynamicResource ThemeEditorHoverBackgroundColor}" />
           <SolidColorBrush x:Key="ComboBoxBorderBrushPointerOver"
-                           Color="{DynamicResource ThemeBackgroundColor-500}" />
+                           Color="{DynamicResource ThemeEditorHoverBorderColor}" />
           <SolidColorBrush x:Key="ComboBoxBackgroundPressed"
                            Color="{DynamicResource ThemeBackgroundColor-900}" />
           <SolidColorBrush x:Key="ComboBoxBorderBrushPressed"
@@ -486,9 +486,9 @@
           <SolidColorBrush x:Key="ComboBoxPlaceHolderForeground"
                            Color="{DynamicResource ThemeForegroundColor}" />
           <SolidColorBrush x:Key="ComboBoxBackgroundPointerOver"
-                           Color="{DynamicResource ThemeBackgroundColor-700}" />
+                           Color="{DynamicResource ThemeEditorHoverBackgroundColor}" />
           <SolidColorBrush x:Key="ComboBoxBorderBrushPointerOver"
-                           Color="{DynamicResource ThemeBackgroundColor-600}" />
+                           Color="{DynamicResource ThemeEditorHoverBorderColor}" />
           <SolidColorBrush x:Key="ComboBoxBackgroundPressed"
                            Color="{DynamicResource ThemeBackgroundColor-900}" />
           <SolidColorBrush x:Key="ComboBoxBorderBrushPressed"

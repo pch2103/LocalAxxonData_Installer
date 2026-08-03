@@ -1,6 +1,6 @@
 # Managed ONE.PSIM design-system snapshot
 
-Version: 0.1.0-preview.25
+Version: 0.1.0-preview.27
 Bundle: Eremex
 Avalonia: 11.3.8
 Eremex: 1.3.62

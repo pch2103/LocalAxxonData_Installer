@@ -1,6 +1,6 @@
 # Интеграция ONE.PSIM.DesignSystem — выполнено
 
-Текущая версия: `0.1.0-preview.25`
+Текущая версия: `0.1.0-preview.27`
 Канал поставки: `portable/Eremex/DesignSystem`
 Источник: <https://github.com/pch2103/ONE.PSIM.DesignSystem>
 
@@ -13,7 +13,7 @@ project reference, ссылки на соседний репозиторий и�
 
 Выполнено:
 
-- скопировано Eremex-ядро preview.21 для Avalonia 11.3.8 и Eremex 1.3.62;
+- скопировано Eremex-ядро preview.27 для Avalonia 11.3.8 и Eremex 1.3.62;
 - Eremex package references закреплены на версии 1.3.62;
 - добавлено переключение Dark/Light системным `ThemeToggleButton`;
 - локальные сообщения заменены системным `MessageBlock`;

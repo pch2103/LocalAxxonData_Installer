@@ -3,7 +3,7 @@
              x:Class="LocalAxxonData_Installer.App"
              RequestedThemeVariant="Dark">
     <Application.Styles>
-        <!-- Managed portable snapshot of ONE.PSIM.DesignSystem 0.1.0-preview.19. -->
+        <!-- Managed portable snapshot of ONE.PSIM.DesignSystem 0.1.0-preview.27. -->
         <StyleInclude Source="/DesignSystem/Eremex/Themes/ONEEremexTheme.axaml" />
     </Application.Styles>
 </Application>

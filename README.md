@@ -6,7 +6,7 @@
 
 - Репозиторий приложения: <https://github.com/pch2103/LocalAxxonData_Installer>
 - Актуальная дизайн-система: <https://github.com/pch2103/ONE.PSIM.DesignSystem>
-- Установленная версия ядра: `0.1.0-preview.25`
+- Установленная версия ядра: `0.1.0-preview.27`
 
 ## Архитектура интерфейса
 
@@ -70,7 +70,7 @@
 ```text
 LocalAxxonData_Installer/
 ├── Assets/                 продуктовые изображения
-├── DesignSystem/           полностью заменяемое ядро preview.21
+├── DesignSystem/           полностью заменяемое ядро preview.27
 │   ├── Core/
 │   ├── Eremex/
 │   └── manifest.json

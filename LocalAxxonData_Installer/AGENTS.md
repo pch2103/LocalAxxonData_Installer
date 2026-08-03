@@ -29,7 +29,7 @@ and a focused visual walkthrough.
 The UI foundation is a vendored snapshot of `ONE.PSIM.DesignSystem`:
 
 - source: <https://github.com/pch2103/ONE.PSIM.DesignSystem>;
-- installed version: `0.1.0-preview.25`;
+- installed version: `0.1.0-preview.27`;
 - snapshot path: `DesignSystem/`;
 - manifest: `DesignSystem/manifest.json`;
 - application entry point:
